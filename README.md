@@ -1,5 +1,7 @@
 # The Complete Andreescu Library
 
+![The Andreescu Library — a free guide to the books of Titu Andreescu](assets/og.png)
+
 **A free, beautifully organised guide to the life, achievements, and every book of [Titu Andreescu](https://en.wikipedia.org/wiki/Titu_Andreescu) — the Olympiad mathematics teacher who has trained, and written for, the world.**
 
 > Many talented students — and even teachers — have never heard his name. This project exists to change that: one place where any curious student, anywhere, can discover his work, understand why it matters, and find a **legitimate** way to read it.
