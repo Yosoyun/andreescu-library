@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Andreescu Library — A Complete, Free Guide to the Books of Titu Andreescu</title>
+<meta name="description" content="A freely accessible, beautifully organised guide to every book by Titu Andreescu — Olympiad mathematics teacher to the world. Biography, achievements, complete bibliography, co-authors, and legitimate ways to read or buy each book. Compiled for students and teachers everywhere." />
+<meta property="og:title" content="The Andreescu Library" />
+<meta property="og:description" content="The complete, free guide to the books of Titu Andreescu — for students and teachers everywhere." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#f4efe3; --bg2:#ece3d2; --panel:#faf6ec; --ink:#221d17; --ink-soft:#5d5446;
+    --rule:#d9cdb6; --rule-strong:#c3b594; --oxblood:#7c2426; --oxblood-soft:#9c4042;
+    --gold:#9a7b33; --gold-soft:#b89a55; --shadow:rgba(60,45,20,.12);
+    --tag:#efe7d6; --tag-ink:#6a5a38;
+    --maxw:1180px;
+  }
+  html[data-theme="dark"]{
+    --bg:#15130d; --bg2:#1d1a12; --panel:#1e1b13; --ink:#ece3d0; --ink-soft:#b0a587;
+    --rule:#39341f; --rule-strong:#4a4327; --oxblood:#d8746a; --oxblood-soft:#e0897e;
+    --gold:#d8b15f; --gold-soft:#e6c87f; --shadow:rgba(0,0,0,.45);
+    --tag:#262217; --tag-ink:#c9bb93;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Spectral",Georgia,serif; font-weight:400; font-size:18px; line-height:1.66;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    transition:background .5s ease,color .5s ease;
+  }
+  /* paper grain overlay */
+  body::before{
+    content:""; position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.5;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  }
+  html[data-theme="dark"] body::before{mix-blend-mode:screen; opacity:.6;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px; position:relative; z-index:2;}
+  a{color:inherit;}
+  ::selection{background:var(--oxblood); color:#fff;}
+
+  h1,h2,h3,.display{font-family:"Fraunces",Georgia,serif; font-optical-sizing:auto; font-weight:700; line-height:1.06; letter-spacing:-.01em;}
+  .eyebrow{font-family:"Spectral",serif; text-transform:uppercase; letter-spacing:.34em; font-size:.72rem; font-weight:600; color:var(--oxblood); margin:0 0 .9rem;}
+  .ornament{color:var(--gold); letter-spacing:.4em;}
+
+  /* ---------- top bar ---------- */
+  .topbar{position:sticky; top:0; z-index:50; backdrop-filter:blur(8px);
+    background:color-mix(in srgb, var(--bg) 86%, transparent);
+    border-bottom:1px solid var(--rule);}
+  .topbar .row{display:flex; align-items:center; justify-content:space-between; height:58px;}
+  .brandmark{display:flex; align-items:center; gap:.6rem; font-family:"Fraunces"; font-weight:900; letter-spacing:.02em; font-size:1.02rem;}
+  .brandmark .seal{width:30px; height:30px;}
+  .navlinks{display:flex; gap:1.6rem; align-items:center;}
+  .navlinks a{font-size:.82rem; text-transform:uppercase; letter-spacing:.16em; text-decoration:none; color:var(--ink-soft); transition:color .25s;}
+  .navlinks a:hover{color:var(--oxblood);}
+  .themebtn{background:none; border:1px solid var(--rule-strong); color:var(--ink-soft); width:38px;height:30px; border-radius:2px; cursor:pointer; font-size:.9rem; line-height:1; transition:all .25s;}
+  .themebtn:hover{border-color:var(--gold); color:var(--gold);}
+  @media(max-width:740px){ .navlinks a:not(.cta){display:none;} }
+
+  /* ---------- masthead ---------- */
+  .masthead{padding:64px 0 30px; text-align:center;}
+  .masthead .rule-d{border-top:1px solid var(--ink); border-bottom:3px double var(--ink); height:4px; max-width:680px; margin:0 auto 26px;}
+  .masthead .rule-d.bottom{margin:26px auto 0;}
+  .masthead h1{font-size:clamp(2.7rem,8vw,5.8rem); font-weight:900; margin:.2rem 0; }
+  .masthead h1 .the{display:block; font-size:.26em; letter-spacing:.42em; font-weight:600; color:var(--gold); text-transform:uppercase; margin-bottom:.4em;}
+  .masthead .sub{font-style:italic; font-size:clamp(1.05rem,2.6vw,1.5rem); color:var(--ink-soft); max-width:720px; margin:.7rem auto 0;}
+  .masthead .meta-line{display:flex; gap:1.4rem; justify-content:center; flex-wrap:wrap; margin-top:22px; font-size:.76rem; text-transform:uppercase; letter-spacing:.22em; color:var(--ink-soft);}
+  .masthead .meta-line b{color:var(--oxblood); font-weight:600;}
+
+  /* reveal animation */
+  .reveal{opacity:0; transform:translateY(22px); animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;}
+  @keyframes rise{to{opacity:1; transform:none;}}
+
+  /* ---------- hero intro ---------- */
+  .intro{display:grid; grid-template-columns:1.55fr .9fr; gap:54px; align-items:start; padding:38px 0 26px;}
+  @media(max-width:880px){ .intro{grid-template-columns:1fr; gap:34px;} }
+  .intro .lead{font-size:1.22rem; line-height:1.72;}
+  .intro .lead p:first-of-type::first-letter{
+    font-family:"Fraunces"; font-weight:900; float:left; font-size:4.6rem; line-height:.78;
+    padding:.06em .12em 0 0; color:var(--oxblood);
+  }
+  .intro .lead p{margin:0 0 1.1rem;}
+  .seal-card{background:var(--panel); border:1px solid var(--rule); padding:34px 30px; text-align:center; box-shadow:0 10px 30px -18px var(--shadow); position:relative;}
+  .seal-card::after{content:""; position:absolute; inset:7px; border:1px solid var(--rule); pointer-events:none;}
+  .seal-card .bigseal{width:120px; height:120px; margin:0 auto 14px;}
+  .seal-card .who{font-family:"Fraunces"; font-weight:700; font-size:1.5rem; margin:.2rem 0 .1rem;}
+  .seal-card .role{font-style:italic; color:var(--ink-soft); font-size:1rem;}
+  .seal-card . years{font-size:.74rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-top:.7rem;}
+
+  /* ---------- stats ---------- */
+  .stats{display:grid; grid-template-columns:repeat(5,1fr); gap:0; border-top:3px double var(--ink); border-bottom:3px double var(--ink); margin:34px 0 12px;}
+  @media(max-width:760px){ .stats{grid-template-columns:repeat(2,1fr);} .stats .stat:nth-child(5){grid-column:1/3;} }
+  .stat{padding:24px 12px; text-align:center; border-right:1px solid var(--rule);}
+  .stat:last-child{border-right:none;}
+  .stat .num{font-family:"Fraunces"; font-weight:900; font-size:2.6rem; color:var(--oxblood); line-height:1; font-variant-numeric:tabular-nums;}
+  .stat .lab{font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:var(--ink-soft); margin-top:.5rem;}
+
+  /* ---------- section frame ---------- */
+  section{padding:64px 0; position:relative;}
+  .sec-head{text-align:center; margin-bottom:42px;}
+  .sec-head h2{font-size:clamp(2rem,5vw,3.1rem); font-weight:700;}
+  .sec-head .kicker{margin-bottom:.8rem;}
+  .sec-head p{max-width:660px; margin:.6rem auto 0; color:var(--ink-soft); font-size:1.08rem;}
+  .divider{display:flex; align-items:center; gap:1rem; justify-content:center; color:var(--gold); margin:0 auto 8px; max-width:200px;}
+  .divider::before,.divider::after{content:""; height:1px; background:var(--rule-strong); flex:1;}
+
+  /* ---------- timeline ---------- */
+  .timeline{max-width:760px; margin:0 auto; position:relative; padding-left:26px;}
+  .timeline::before{content:""; position:absolute; left:6px; top:6px; bottom:6px; width:2px; background:linear-gradient(var(--gold),var(--rule));}
+  .tl-item{position:relative; padding:0 0 30px 30px;}
+  .tl-item::before{content:""; position:absolute; left:-1px; top:7px; width:14px; height:14px; border-radius:50%; background:var(--bg); border:3px solid var(--oxblood);}
+  .tl-item .yr{font-family:"Fraunces"; font-weight:700; color:var(--oxblood); font-size:1.15rem;}
+  .tl-item .ev{color:var(--ink-soft);}
+  .tl-item .ev b{color:var(--ink); font-weight:600;}
+
+  /* ---------- legacy cards ---------- */
+  .legacy{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:20px;}
+  .lc{background:var(--panel); border:1px solid var(--rule); padding:26px 24px; transition:transform .3s,box-shadow .3s; position:relative; overflow:hidden;}
+  .lc::before{content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--gold);}
+  .lc:hover{transform:translateY(-4px); box-shadow:0 16px 34px -20px var(--shadow);}
+  .lc h3{font-size:1.3rem; margin:.1rem 0 .5rem;}
+  .lc p{margin:0; font-size:.98rem; color:var(--ink-soft);}
+  .lc .yr{font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:600;}
+
+  /* ---------- catalog ---------- */
+  .catbg{background:var(--bg2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
+  .toolbar{display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:center; margin-bottom:14px;}
+  .search{flex:1 1 320px; max-width:440px; display:flex; align-items:center; gap:.5rem; background:var(--panel); border:1px solid var(--rule-strong); padding:.55rem .9rem;}
+  .search input{border:none; background:none; outline:none; font-family:"Spectral"; font-size:1rem; color:var(--ink); width:100%;}
+  .search svg{flex:none; color:var(--ink-soft);}
+  .filters{display:flex; gap:10px; flex-wrap:wrap; justify-content:center;}
+  .filters select{font-family:"Spectral"; font-size:.9rem; padding:.5rem .7rem; background:var(--panel); color:var(--ink); border:1px solid var(--rule-strong); cursor:pointer;}
+  .countline{text-align:center; font-size:.8rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:26px;}
+  .countline b{color:var(--oxblood);}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:22px;}
+  .card{background:var(--panel); border:1px solid var(--rule); padding:24px 24px 20px 28px; position:relative; display:flex; flex-direction:column; transition:transform .28s,box-shadow .28s,border-color .28s;}
+  .card::before{content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:var(--spine,var(--gold));}
+  .card:hover{transform:translateY(-5px); box-shadow:0 18px 40px -22px var(--shadow); border-color:var(--rule-strong);}
+  .card .toprow{display:flex; justify-content:space-between; align-items:baseline; gap:10px; margin-bottom:.4rem;}
+  .card .yr{font-family:"Fraunces"; font-weight:700; color:var(--gold); font-size:.95rem; font-variant-numeric:tabular-nums; flex:none;}
+  .card h3{font-size:1.32rem; line-height:1.12; margin:0;}
+  .card .subt{font-style:italic; color:var(--ink-soft); font-size:.96rem; margin:.25rem 0 0;}
+  .card .auth{font-size:.86rem; margin:.7rem 0 .2rem; color:var(--ink-soft);}
+  .card .auth b{color:var(--ink); font-weight:600;}
+  .card .blurb{font-size:.95rem; color:var(--ink-soft); margin:.6rem 0 .9rem; flex:1;}
+  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:.5rem;}
+  .tag{font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; background:var(--tag); color:var(--tag-ink); padding:.22rem .5rem; border-radius:2px;}
+  .tag.lvl{background:transparent; border:1px solid var(--oxblood); color:var(--oxblood);}
+  .tag.pub{background:transparent; border:1px dashed var(--rule-strong); color:var(--ink-soft);}
+  .access{display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:12px; border-top:1px solid var(--rule);}
+  .access a{font-size:.74rem; letter-spacing:.04em; text-decoration:none; padding:.34rem .58rem; border:1px solid var(--rule-strong); color:var(--ink-soft); transition:all .2s; white-space:nowrap;}
+  .access a:hover{background:var(--ink); color:var(--bg); border-color:var(--ink);}
+  .access a.free{border-color:var(--gold); color:var(--gold); font-weight:600;}
+  .access a.free:hover{background:var(--gold); color:#1a1408;}
+  .access a.buy{border-color:var(--oxblood); color:var(--oxblood);}
+  .access a.buy:hover{background:var(--oxblood); color:#fff;}
+
+  /* ---------- resources ---------- */
+  .res{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;}
+  .rc{background:var(--panel); border:1px solid var(--rule); padding:28px 26px; display:flex; flex-direction:column;}
+  .rc.flag{border:2px solid var(--gold); background:color-mix(in srgb,var(--gold) 8%,var(--panel));}
+  .rc .badge{font-size:.66rem; text-transform:uppercase; letter-spacing:.2em; color:var(--gold); font-weight:600; margin-bottom:.5rem;}
+  .rc h3{font-size:1.34rem; margin:0 0 .5rem;}
+  .rc p{margin:0 0 1.1rem; font-size:.96rem; color:var(--ink-soft); flex:1;}
+  .rc a.go{align-self:flex-start; text-decoration:none; font-size:.8rem; text-transform:uppercase; letter-spacing:.14em; border-bottom:2px solid var(--oxblood); color:var(--oxblood); padding-bottom:2px; transition:.2s;}
+  .rc a.go:hover{color:var(--ink); border-color:var(--ink);}
+
+  /* ---------- collaborators ---------- */
+  .collab{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; max-width:920px; margin:0 auto;}
+  .chip{background:var(--panel); border:1px solid var(--rule); padding:.5rem .9rem; font-size:.95rem; display:flex; align-items:center; gap:.5rem;}
+  .chip .ct{font-family:"Fraunces"; font-weight:700; color:var(--oxblood); font-size:.85rem; background:var(--tag); border-radius:50%; width:1.5rem; height:1.5rem; display:grid; place-items:center; font-variant-numeric:tabular-nums;}
+
+  /* ---------- mission / for everyone ---------- */
+  .mission{background:var(--bg2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
+  .mission .grid2{display:grid; grid-template-columns:1fr 1fr; gap:46px;}
+  @media(max-width:820px){ .mission .grid2{grid-template-columns:1fr; gap:30px;} }
+  .mission h3{font-size:1.5rem; margin:0 0 .6rem; color:var(--oxblood);}
+  .mission ul{margin:.4rem 0 0; padding-left:1.1rem;}
+  .mission li{margin:.5rem 0; color:var(--ink-soft);}
+  .mission li b{color:var(--ink);}
+  .pull{font-family:"Fraunces"; font-weight:500; font-style:italic; font-size:1.5rem; line-height:1.4; color:var(--ink); border-left:3px solid var(--gold); padding-left:1.2rem; margin:0;}
+
+  /* ---------- colophon ---------- */
+  .colophon{padding:60px 0 80px; text-align:center;}
+  .colophon .rule-d{border-top:1px solid var(--ink); border-bottom:3px double var(--ink); height:4px; max-width:520px; margin:0 auto 30px;}
+  .colophon .credit{font-family:"Fraunces"; font-weight:700; font-size:1.6rem;}
+  .colophon .credit b{color:var(--oxblood);}
+  .colophon .sub{color:var(--ink-soft); font-style:italic; margin-top:.4rem;}
+  .colophon .disc{max-width:760px; margin:28px auto 0; font-size:.82rem; line-height:1.7; color:var(--ink-soft); text-align:left; background:var(--panel); border:1px solid var(--rule); padding:20px 24px;}
+  .colophon .disc b{color:var(--ink);}
+  .colophon .src{font-size:.76rem; color:var(--ink-soft); margin-top:18px; letter-spacing:.04em;}
+  .colophon .src a{color:var(--gold);}
+  .backtop{margin-top:26px; display:inline-block; font-size:.76rem; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none; border:1px solid var(--rule-strong); padding:.6rem 1.2rem; transition:.25s;}
+  .backtop:hover{border-color:var(--gold); color:var(--gold);}
+
+  .empty{grid-column:1/-1; text-align:center; padding:50px; color:var(--ink-soft); font-style:italic;}
+</style>
+</head>
+<body>
+
+<!-- monogram seal (reused) -->
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="seal" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="0.8"/>
+    <text x="50" y="58" text-anchor="middle" font-family="Fraunces,serif" font-weight="900" font-size="34" fill="currentColor">TA</text>
+    <text x="50" y="22" text-anchor="middle" font-family="Spectral,serif" font-size="6.4" letter-spacing="2" fill="currentColor">★ OLYMPIAD ★</text>
+    <text x="50" y="84" text-anchor="middle" font-family="Spectral,serif" font-size="6.4" letter-spacing="2" fill="currentColor">MATHEMATICS</text>
+  </symbol>
+</defs></svg>
+
+<header class="topbar">
+  <div class="wrap row">
+    <div class="brandmark"><svg class="seal" style="color:var(--oxblood)"><use href="#seal"/></svg> The Andreescu Library</div>
+    <nav class="navlinks">
+      <a href="#life">Life</a>
+      <a href="#legacy">Legacy</a>
+      <a href="#library">The Library</a>
+      <a href="#free">Free to Read</a>
+      <a href="#everyone">Why It Matters</a>
+      <button class="themebtn" id="themebtn" title="Toggle midnight study mode">☾</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- MASTHEAD -->
+<div class="wrap masthead">
+  <div class="rule-d reveal"></div>
+  <p class="eyebrow reveal" style="animation-delay:.05s">A Free · Open · Independently Compiled Reference</p>
+  <h1 class="reveal" style="animation-delay:.1s"><span class="the">The Complete</span>Andreescu Library</h1>
+  <p class="sub reveal" style="animation-delay:.2s">A guide to every book by <b>Titu Andreescu</b> — the Olympiad mathematics teacher who has trained, and written for, the world.</p>
+  <div class="meta-line reveal" style="animation-delay:.3s">
+    <span><b>50+</b> Books Catalogued</span>
+    <span><b>30</b> Co-authors Mapped</span>
+    <span>Buy · Borrow · <b>Read Free</b></span>
+  </div>
+  <div class="rule-d bottom reveal" style="animation-delay:.35s"></div>
+</div>
+
+<!-- INTRO -->
+<div class="wrap intro">
+  <div class="lead reveal" style="animation-delay:.1s">
+    <p>Few people have shaped the mathematical lives of more students than Titu Andreescu. Across four decades — first in Romania, then in the United States and, through his books, in classrooms from Chennai to California — he has done one thing better than almost anyone alive: he has taught people how to <em>think</em> about hard problems.</p>
+    <p>He coached the USA team that scored a perfect 252 at the 1994 International Mathematical Olympiad. He directed America's competitions, founded the AwesomeMath summer program, launched the free journal <em>Mathematical Reflections</em>, and built XYZ Press into a home for serious problem books. And he has authored, co-authored, or edited <b>more than fifty</b> of them.</p>
+    <p>Yet many talented students — and even teachers — have never heard his name. <b>This library exists to change that.</b> Everything below is organised so that a curious student in any town can discover his work, understand why it matters, and find a legitimate way to read it.</p>
+  </div>
+  <aside class="seal-card reveal" style="animation-delay:.25s">
+    <svg class="bigseal" style="color:var(--oxblood)"><use href="#seal"/></svg>
+    <div class="who">Titu Andreescu</div>
+    <div class="role">Mathematician · Coach · Author · Publisher</div>
+    <div class=" years">b. 1956 · Timișoara, Romania</div>
+  </aside>
+</div>
+
+<!-- STATS -->
+<div class="wrap">
+  <div class="stats reveal">
+    <div class="stat"><div class="num" data-count="50" data-suffix="+">0</div><div class="lab">Books &amp; Volumes</div></div>
+    <div class="stat"><div class="num" data-count="10">0</div><div class="lab">Years as USA IMO Coach</div></div>
+    <div class="stat"><div class="num" data-count="1994">0</div><div class="lab">Perfect IMO (Hong Kong)</div></div>
+    <div class="stat"><div class="num" data-count="6">0</div><div class="lab">Programs Founded / Led</div></div>
+    <div class="stat"><div class="num" data-count="30" data-suffix="+">0</div><div class="lab">Collaborating Authors</div></div>
+  </div>
+</div>
+
+<!-- LIFE / TIMELINE -->
+<section id="life">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow kicker">The Life</p>
+      <div class="divider"><span class="ornament">✦</span></div>
+      <h2>A Teacher's Journey</h2>
+      <p>From a prize-winning schoolboy in Timișoara to one of the most prolific authors in olympiad mathematics.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item"><div class="yr">1956</div><div class="ev">Born in <b>Timișoara, Romania</b>; encouraged toward mathematics early by his father and uncle.</div></div>
+      <div class="tl-item"><div class="yr">1973–75</div><div class="ev">Wins the <b>Romanian national problem-solving contests</b> three years running as a high-school student.</div></div>
+      <div class="tl-item"><div class="yr">1980s</div><div class="ev">Teaches at the Constantin Diaconovici Loga school, edits <em>Revista Matematică din Timișoara</em>, and coaches the <b>Romanian IMO team</b>. Named "Distinguished Professor" (1983).</div></div>
+      <div class="tl-item"><div class="yr">1990</div><div class="ev">Emigrates to the United States; joins the <b>Illinois Mathematics and Science Academy</b>.</div></div>
+      <div class="tl-item"><div class="yr">1994</div><div class="ev">Coaches the <b>USA IMO team to a perfect score</b> in Hong Kong — the first time any nation achieved this.</div></div>
+      <div class="tl-item"><div class="yr">1998–2003</div><div class="ev">Directs the Mathematical Association of America's <b>American Mathematics Competitions (AMC)</b>; serves as head coach of the USA IMO team and chairman of the USAMO.</div></div>
+      <div class="tl-item"><div class="yr">2002</div><div class="ev">Elected to the <b>IMO Advisory Board</b>.</div></div>
+      <div class="tl-item"><div class="yr">2006</div><div class="ev">Founds <b>AwesomeMath</b> (summer program), the free journal <b>Mathematical Reflections</b>, and the <b>Metroplex Math Circle</b>. Becomes a professor at the <b>University of Texas at Dallas</b>.</div></div>
+      <div class="tl-item"><div class="yr">2003 →</div><div class="ev">Earns his Ph.D. (Diophantine analysis) and builds <b>XYZ Press</b> into a leading home for olympiad problem books — authoring dozens across every subject.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGACY -->
+<section id="legacy" style="background:var(--bg2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow kicker">The Legacy</p>
+      <div class="divider"><span class="ornament">✦</span></div>
+      <h2>What He Built</h2>
+      <p>Andreescu's influence is not only in his books — it is in the institutions that now train the next generation.</p>
+    </div>
+    <div class="legacy">
+      <div class="lc"><div class="yr">Since 2006</div><h3>AwesomeMath</h3><p>A summer program for gifted middle- and high-school students, expanded to UT Dallas, Cornell, and the University of Puget Sound — plus a year-round program (AMY).</p></div>
+      <div class="lc"><div class="yr">Since 2006 · Free</div><h3>Mathematical Reflections</h3><p>A free online journal he founded — six issues a year of problems and articles for students and teachers. Every issue is free to read.</p></div>
+      <div class="lc"><div class="yr">1998–2003</div><h3>The AMC</h3><p>As director of the MAA's American Mathematics Competitions, he shaped the contests that identify and develop talent across the United States.</p></div>
+      <div class="lc"><div class="yr">Publisher</div><h3>XYZ Press</h3><p>The publishing house he built specifically for rigorous, beautiful problem-solving books — many of which appear in the catalogue below.</p></div>
+      <div class="lc"><div class="yr">10 Years</div><h3>USA IMO Team</h3><p>Head coach of the United States team (1993–2002) and director of the Mathematical Olympiad Summer Program — including the historic 1994 perfect score.</p></div>
+      <div class="lc"><div class="yr">Since 2006</div><h3>Metroplex Math Circle</h3><p>A community math circle at UT Dallas bringing olympiad-style enrichment to local students every weekend.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIBRARY / CATALOG -->
+<section id="library" class="catbg">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow kicker">The Library</p>
+      <div class="divider"><span class="ornament">✦ ✦ ✦</span></div>
+      <h2>The Complete Catalogue</h2>
+      <p>Search and filter every book. Each card links you to legitimate ways to buy it in India, borrow it, or preview it — and to anything available free.</p>
+    </div>
+
+    <div class="toolbar">
+      <label class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="q" type="search" placeholder="Search titles, topics, co-authors…" aria-label="Search the catalogue" />
+      </label>
+      <div class="filters">
+        <select id="f-topic"><option value="">All topics</option></select>
+        <select id="f-level"><option value="">All levels</option></select>
+        <select id="f-pub"><option value="">All publishers</option></select>
+        <select id="f-sort"><option value="az">Sort: A → Z</option><option value="year">Sort: Newest</option><option value="yearold">Sort: Oldest</option></select>
+      </div>
+    </div>
+    <div class="countline"><b id="count">0</b> books shown · <span id="resetwrap" style="display:none"><a href="#" id="reset" style="color:var(--gold)">clear filters</a></span></div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- FREE RESOURCES -->
+<section id="free">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow kicker">Free &amp; Legal to Read</p>
+      <div class="divider"><span class="ornament">✦</span></div>
+      <h2>Where to Read Without Paying</h2>
+      <p>You do not need money to start. These resources are genuinely free or let you borrow legally — no piracy, no broken links.</p>
+    </div>
+    <div class="res">
+      <div class="rc flag">
+        <div class="badge">★ Start Here · 100% Free</div>
+        <h3>Mathematical Reflections</h3>
+        <p>The free online journal Titu Andreescu founded in 2006. Six issues every year, full of olympiad problems and articles at Junior, Senior, Olympiad and Undergraduate levels. Every current and archived issue is free to read.</p>
+        <a class="go" href="https://www.awesomemath.org/mathematical-reflections/" target="_blank" rel="noopener">Read the journal →</a>
+      </div>
+      <div class="rc">
+        <div class="badge">Free Problem Archive</div>
+        <h3>AMC · AIME · USAMO</h3>
+        <p>The competitions Andreescu helped direct. Decades of past problems and solutions are freely available through the MAA/AMC and the AoPS community wiki.</p>
+        <a class="go" href="https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions" target="_blank" rel="noopener">Browse past problems →</a>
+      </div>
+      <div class="rc">
+        <div class="badge">Borrow Legally</div>
+        <h3>Internet Archive</h3>
+        <p>Many of his books can be borrowed for free through controlled digital lending — like a library, one reader at a time. Sign in and borrow where available.</p>
+        <a class="go" href="https://archive.org/search?query=Titu+Andreescu" target="_blank" rel="noopener">Find books to borrow →</a>
+      </div>
+      <div class="rc">
+        <div class="badge">Preview Before You Buy</div>
+        <h3>Google Books</h3>
+        <p>Substantial free previews — often whole chapters — of most titles, so you can judge the level and style before committing.</p>
+        <a class="go" href="https://www.google.com/search?tbm=bks&q=Titu+Andreescu" target="_blank" rel="noopener">Open previews →</a>
+      </div>
+      <div class="rc">
+        <div class="badge">Community</div>
+        <h3>Art of Problem Solving</h3>
+        <p>Free forums, a vast wiki, and study communities where these very books are discussed problem-by-problem. The best companion to any Andreescu title.</p>
+        <a class="go" href="https://artofproblemsolving.com/community" target="_blank" rel="noopener">Join the community →</a>
+      </div>
+      <div class="rc">
+        <div class="badge">Ask Your Library</div>
+        <h3>Libraries &amp; Institutions</h3>
+        <p>School, college and city libraries can order or inter-loan these titles. Many Indian university libraries already hold the Springer/Birkhäuser editions — ask your librarian.</p>
+        <a class="go" href="https://www.worldcat.org/search?q=au%3ATitu+Andreescu" target="_blank" rel="noopener">Find a nearby copy →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLLABORATORS -->
+<section id="collab" style="background:var(--bg2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow kicker">The Collaborators</p>
+      <div class="divider"><span class="ornament">✦</span></div>
+      <h2>Written With…</h2>
+      <p>Andreescu rarely worked alone. These mathematicians co-authored the books above — the number shows how many titles each shares with him in this catalogue.</p>
+    </div>
+    <div class="collab" id="collab-list"></div>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS / FOR EVERYONE -->
+<section id="everyone" class="mission">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow kicker">For Students &amp; Teachers</p>
+      <div class="divider"><span class="ornament">✦</span></div>
+      <h2>Why This Matters — and How to Use It</h2>
+    </div>
+    <div class="grid2">
+      <div>
+        <h3>If you are a student</h3>
+        <ul>
+          <li><b>Start free.</b> Read a few problems in <em>Mathematical Reflections</em> and try the AMC archive. Cost nothing, lose nothing.</li>
+          <li><b>Pick your level.</b> Use the filters above — begin with <em>Intermediate</em> titles, grow into <em>Olympiad</em>, dream toward <em>Problems from the Book</em>.</li>
+          <li><b>Choose by weakness.</b> Bad at geometry? Filter the topic and work one book cover to cover.</li>
+          <li><b>You don't need a coach to start.</b> These books <em>are</em> the coaching — that was always the point.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>If you are a teacher</h3>
+        <ul>
+          <li><b>Share this page.</b> One link gives your whole class a map of where to go next.</li>
+          <li><b>Build a reading ladder.</b> Sequence titles by level for a year-long enrichment track.</li>
+          <li><b>Use the free journal</b> as a steady supply of fresh, vetted problems for clubs and circles.</li>
+          <li><b>Order for your library.</b> The library/WorldCat links make it easy to request institutional copies.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="pull" style="margin-top:40px">“Awareness is the first lesson. A student who has never heard of these books cannot choose to read them — so let everyone hear of them.”</p>
+  </div>
+</section>
+
+<!-- COLOPHON -->
+<div class="wrap colophon" id="colophon">
+  <div class="rule-d"></div>
+  <p class="eyebrow" style="text-align:center">Colophon</p>
+  <div class="credit">Compiled with care by <b>Vanindra</b></div>
+  <div class="sub">A free public resource · GitHub <a href="https://github.com/Yosoyun" target="_blank" rel="noopener" style="color:var(--gold)">@Yosoyun</a> · Built June 2026</div>
+  <div class="disc">
+    <b>About this guide.</b> This is an independent, non-commercial educational reference. It is <b>not</b> affiliated with, endorsed by, or produced by Titu Andreescu, AwesomeMath, XYZ Press, Springer/Birkhäuser, the MAA, or any retailer. <br/><br/>
+    <b>No files are hosted here.</b> Every book listed is copyrighted by its authors and publishers. This guide hosts <b>no</b> PDFs and links to <b>no</b> pirated copies. The "buy / borrow / preview" buttons are live search links that take you to legitimate retailers (Amazon India, Flipkart), legal lending (Internet Archive), free previews (Google Books), publisher pages, and genuinely free material (the <em>Mathematical Reflections</em> journal). Please support the authors by buying or borrowing through legitimate channels. <br/><br/>
+    <b>On accuracy.</b> Bibliographic details (titles, co-authors, years, publishers) were compiled from public sources; several titles have multiple editions and some entries list the lead author only. Corrections are welcome via the GitHub repository.
+  </div>
+  <div class="src">Sources: Wikipedia · Art of Problem Solving · AwesomeMath / XYZ Press · Springer &amp; Birkhäuser · Goodreads · the AMS &amp; MAA bookstores.</div>
+  <a class="backtop" href="#top">↑ Back to top</a>
+</div>
+</main>
+
+<script>
+const BOOKS = [
+  {
+    "id": "101-problems-in-algebra",
+    "title": "101 Problems in Algebra",
+    "subtitle": "From the Training of the USA IMO Team",
+    "year": 2001,
+    "coauthors": [
+      "Zuming Feng"
+    ],
+    "publisher": "AMT Publishing",
+    "series": "Training of the USA IMO Team",
+    "topics": [
+      "Algebra"
+    ],
+    "level": "Olympiad",
+    "blurb": "A graded set of algebra problems drawn from USA IMO team selection and training, with full solutions — an entry point into olympiad algebra."
+  },
+  {
+    "id": "102-combinatorial-problems",
+    "title": "102 Combinatorial Problems",
+    "subtitle": "From the Training of the USA IMO Team",
+    "year": 2003,
+    "coauthors": [
+      "Zuming Feng"
+    ],
+    "publisher": "Birkhäuser",
+    "series": "Training of the USA IMO Team",
+    "topics": [
+      "Combinatorics"
+    ],
+    "level": "Olympiad",
+    "blurb": "Counting, bijections, the pigeonhole principle and extremal arguments, taught through 102 carefully chosen competition problems."
+  },
+  {
+    "id": "103-trigonometry-problems",
+    "title": "103 Trigonometry Problems",
+    "subtitle": "From the Training of the USA IMO Team",
+    "year": 2005,
+    "coauthors": [
+      "Zuming Feng"
+    ],
+    "publisher": "Birkhäuser",
+    "series": "Training of the USA IMO Team",
+    "topics": [
+      "Trigonometry"
+    ],
+    "level": "Olympiad",
+    "blurb": "Identities, substitutions and trigonometric techniques that reach far beyond the classroom, built around 103 IMO-level problems."
+  },
+  {
+    "id": "104-number-theory-problems",
+    "title": "104 Number Theory Problems",
+    "subtitle": "From the Training of the USA IMO Team",
+    "year": 2007,
+    "coauthors": [
+      "Dorin Andrica",
+      "Zuming Feng"
+    ],
+    "publisher": "Birkhäuser",
+    "series": "Training of the USA IMO Team",
+    "topics": [
+      "Number Theory"
+    ],
+    "level": "Olympiad",
+    "blurb": "Divisibility, congruences, Diophantine ideas and more — a flagship of the training series and a favourite of serious students."
+  },
+  {
+    "id": "mathematical-olympiad-challenges",
+    "title": "Mathematical Olympiad Challenges",
+    "subtitle": "",
+    "year": 2000,
+    "coauthors": [
+      "Răzvan Gelca"
+    ],
+    "publisher": "Birkhäuser",
+    "series": "",
+    "topics": [
+      "Problem Solving"
+    ],
+    "level": "Olympiad",
+    "blurb": "A landmark collection organised by theme and technique; a 2nd edition (2009) expanded it. Widely used as a first serious olympiad book."
+  },
+  {
+    "id": "mathematical-olympiad-treasures",
+    "title": "Mathematical Olympiad Treasures",
+    "subtitle": "",
+    "year": 2004,
+    "coauthors": [
+      "Bogdan Enescu"
+    ],
+    "publisher": "Birkhäuser",
+    "series": "",
+    "topics": [
+      "Problem Solving"
+    ],
+    "level": "Olympiad",
+    "blurb": "Companion to 'Challenges': elegant problems across algebra, geometry, number theory and combinatorics, with instructive solutions."
+  },
+  {
+    "id": "path-to-combinatorics",
+    "title": "A Path to Combinatorics for Undergraduates",
+    "subtitle": "Counting Strategies",
+    "year": 2004,
+    "coauthors": [
+      "Zuming Feng"
+    ],
+    "publisher": "Birkhäuser",
+    "series": "",
+    "topics": [
+      "Combinatorics"
+    ],
+    "level": "Undergraduate",
+    "blurb": "Builds combinatorial maturity from first principles toward research-level counting strategies."
+  },
+  {
+    "id": "complex-numbers-a-to-z",
+    "title": "Complex Numbers from A to …Z",
+    "subtitle": "",
+    "year": 2006,
+    "coauthors": [
+      "Dorin Andrica"
+    ],
+    "publisher": "Birkhäuser",
+    "series": "",
+    "topics": [
+      "Complex Numbers",
+      "Geometry"
+    ],
+    "level": "Intermediate",
+    "blurb": "Complex numbers as a tool for algebra and geometry — from the basics to olympiad applications. A 2nd edition appeared in 2014."
+  },
+  {
+    "id": "number-theory-structures",
+    "title": "Number Theory",
+    "subtitle": "Structures, Examples, and Problems",
+    "year": 2009,
+    "coauthors": [
+      "Dorin Andrica"
+    ],
+    "publisher": "Birkhäuser",
+    "series": "",
+    "topics": [
+      "Number Theory"
+    ],
+    "level": "Intermediate",
+    "blurb": "A two-part text: structured theory followed by a rich bank of solved and proposed problems."
+  },
+  {
+    "id": "introduction-diophantine-equations",
+    "title": "An Introduction to Diophantine Equations",
+    "subtitle": "A Problem-Based Approach",
+    "year": 2010,
+    "coauthors": [
+      "Dorin Andrica",
+      "Ion Cucurezeanu"
+    ],
+    "publisher": "Birkhäuser",
+    "series": "",
+    "topics": [
+      "Number Theory",
+      "Diophantine Equations"
+    ],
+    "level": "Olympiad",
+    "blurb": "Classical and modern methods for solving equations in integers, developed entirely through problems."
+  },
+  {
+    "id": "essential-linear-algebra",
+    "title": "Essential Linear Algebra with Applications",
+    "subtitle": "A Problem-Solving Approach",
+    "year": 2014,
+    "coauthors": [],
+    "publisher": "Birkhäuser",
+    "series": "",
+    "topics": [
+      "Linear Algebra"
+    ],
+    "level": "Undergraduate",
+    "blurb": "A problem-driven path through linear algebra, bridging competition technique and university coursework."
+  },
+  {
+    "id": "geometric-problems-maxima-minima",
+    "title": "Geometric Problems on Maxima and Minima",
+    "subtitle": "",
+    "year": 2006,
+    "coauthors": [
+      "Oleg Mushkarov",
+      "Luchezar Stoyanov"
+    ],
+    "publisher": "Birkhäuser",
+    "series": "",
+    "topics": [
+      "Geometry",
+      "Inequalities"
+    ],
+    "level": "Olympiad",
+    "blurb": "Optimisation in geometry by synthetic, algebraic and calculus methods — a beautiful, underrated classic."
+  },
+  {
+    "id": "putnam-and-beyond",
+    "title": "Putnam and Beyond",
+    "subtitle": "",
+    "year": 2007,
+    "coauthors": [
+      "Răzvan Gelca"
+    ],
+    "publisher": "Springer",
+    "series": "",
+    "topics": [
+      "Problem Solving",
+      "Undergraduate"
+    ],
+    "level": "Undergraduate",
+    "blurb": "An encyclopaedic problem course spanning the entire undergraduate curriculum — the standard companion for the Putnam exam. 2nd edition 2017."
+  },
+  {
+    "id": "mathematical-bridges",
+    "title": "Mathematical Bridges",
+    "subtitle": "",
+    "year": 2017,
+    "coauthors": [
+      "Cristinel Mortici",
+      "Marian Tetiva"
+    ],
+    "publisher": "Birkhäuser",
+    "series": "",
+    "topics": [
+      "Analysis",
+      "Problem Solving"
+    ],
+    "level": "Undergraduate",
+    "blurb": "Connects elementary results to deeper mathematics, building 'bridges' from high-school technique to real analysis and beyond."
+  },
+  {
+    "id": "quadratic-diophantine-equations",
+    "title": "Quadratic Diophantine Equations",
+    "subtitle": "",
+    "year": 2015,
+    "coauthors": [
+      "Dorin Andrica"
+    ],
+    "publisher": "Springer",
+    "series": "Developments in Mathematics",
+    "topics": [
+      "Number Theory",
+      "Diophantine Equations"
+    ],
+    "level": "Advanced",
+    "blurb": "A focused monograph on Pell-type and quadratic equations — research-flavoured, with historical context."
+  },
+  {
+    "id": "problems-from-the-book",
+    "title": "Problems from the Book",
+    "subtitle": "",
+    "year": 2008,
+    "coauthors": [
+      "Gabriel Dospinescu"
+    ],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Problem Solving",
+      "Advanced"
+    ],
+    "level": "Advanced",
+    "blurb": "A celebrated, demanding tour of the most beautiful ideas in olympiad and beyond — often called a rite of passage. 2nd edition 2010."
+  },
+  {
+    "id": "straight-from-the-book",
+    "title": "Straight from the Book",
+    "subtitle": "",
+    "year": 2012,
+    "coauthors": [
+      "Gabriel Dospinescu"
+    ],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Problem Solving",
+      "Advanced"
+    ],
+    "level": "Advanced",
+    "blurb": "A companion of fully worked, multi-method solutions to selected problems from 'Problems from the Book'."
+  },
+  {
+    "id": "105-algebra-problems",
+    "title": "105 Algebra Problems",
+    "subtitle": "from the AwesomeMath Summer Program",
+    "year": 2011,
+    "coauthors": [],
+    "publisher": "XYZ Press",
+    "series": "AwesomeMath",
+    "topics": [
+      "Algebra"
+    ],
+    "level": "Olympiad",
+    "blurb": "Algebra problems used at the AwesomeMath Summer Program, graded for serious training."
+  },
+  {
+    "id": "106-geometry-problems",
+    "title": "106 Geometry Problems",
+    "subtitle": "from the AwesomeMath Summer Program",
+    "year": 2013,
+    "coauthors": [
+      "Michal Rolínek",
+      "Josef Tkadlec"
+    ],
+    "publisher": "XYZ Press",
+    "series": "AwesomeMath",
+    "topics": [
+      "Geometry"
+    ],
+    "level": "Olympiad",
+    "blurb": "Synthetic and computational geometry problems from AMSP, with thorough solutions."
+  },
+  {
+    "id": "107-geometry-problems",
+    "title": "107 Geometry Problems",
+    "subtitle": "from the AwesomeMath Year-Round Program",
+    "year": 2013,
+    "coauthors": [
+      "Michal Rolínek",
+      "Josef Tkadlec"
+    ],
+    "publisher": "XYZ Press",
+    "series": "AwesomeMath",
+    "topics": [
+      "Geometry"
+    ],
+    "level": "Olympiad",
+    "blurb": "Year-round program geometry, continuing the 106 Geometry collection."
+  },
+  {
+    "id": "108-algebra-problems",
+    "title": "108 Algebra Problems",
+    "subtitle": "from the AwesomeMath Year-Round Program",
+    "year": 2016,
+    "coauthors": [],
+    "publisher": "XYZ Press",
+    "series": "AwesomeMath",
+    "topics": [
+      "Algebra"
+    ],
+    "level": "Olympiad",
+    "blurb": "A year-round companion of algebra problems for sustained training."
+  },
+  {
+    "id": "110-geometry-problems-imo",
+    "title": "110 Geometry Problems for the International Mathematical Olympiad",
+    "subtitle": "",
+    "year": 2014,
+    "coauthors": [
+      "Cosmin Pohoață"
+    ],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Geometry"
+    ],
+    "level": "Olympiad",
+    "blurb": "IMO-calibre geometry, selected and solved for the strongest students."
+  },
+  {
+    "id": "117-polynomial-problems",
+    "title": "117 Polynomial Problems",
+    "subtitle": "from the AwesomeMath Summer Program",
+    "year": 2019,
+    "coauthors": [
+      "Navid Safaei",
+      "Alessandro Ventullo"
+    ],
+    "publisher": "XYZ Press",
+    "series": "AwesomeMath",
+    "topics": [
+      "Polynomials",
+      "Algebra"
+    ],
+    "level": "Olympiad",
+    "blurb": "Everything from roots and symmetric functions to advanced polynomial identities, through 117 problems."
+  },
+  {
+    "id": "lemmas-in-olympiad-geometry",
+    "title": "Lemmas in Olympiad Geometry",
+    "subtitle": "",
+    "year": 2016,
+    "coauthors": [
+      "Sam Korsky",
+      "Cosmin Pohoață"
+    ],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Geometry"
+    ],
+    "level": "Olympiad",
+    "blurb": "A systematic toolkit of the recurring lemmas that unlock hard olympiad geometry."
+  },
+  {
+    "id": "awesome-polynomials",
+    "title": "Awesome Polynomials for Mathematics Competitions",
+    "subtitle": "",
+    "year": 2019,
+    "coauthors": [
+      "Navid Safaei",
+      "Alessandro Ventullo"
+    ],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Polynomials"
+    ],
+    "level": "Olympiad",
+    "blurb": "A theory-plus-problems treatment of polynomials aimed squarely at competition success."
+  },
+  {
+    "id": "number-theory-concepts-problems",
+    "title": "Number Theory",
+    "subtitle": "Concepts and Problems",
+    "year": 2017,
+    "coauthors": [
+      "Gabriel Dospinescu",
+      "Oleg Mushkarov"
+    ],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Number Theory"
+    ],
+    "level": "Advanced",
+    "blurb": "A deep, comprehensive number theory course — concepts developed alongside a large, demanding problem set."
+  },
+  {
+    "id": "topics-in-functional-equations",
+    "title": "Topics in Functional Equations",
+    "subtitle": "Third Edition",
+    "year": 2020,
+    "coauthors": [
+      "Iurie Boreico",
+      "Oleg Mushkarov",
+      "Nikolai Nikolov"
+    ],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Functional Equations"
+    ],
+    "level": "Olympiad",
+    "blurb": "The standard reference for olympiad functional equations — methods, traps and a graded problem bank."
+  },
+  {
+    "id": "topics-in-geometric-inequalities",
+    "title": "Topics in Geometric Inequalities",
+    "subtitle": "",
+    "year": 2019,
+    "coauthors": [
+      "Oleg Mushkarov"
+    ],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Geometry",
+      "Inequalities"
+    ],
+    "level": "Olympiad",
+    "blurb": "Inequalities that live in geometry — from classical results to contest-ready techniques."
+  },
+  {
+    "id": "sums-and-products",
+    "title": "Sums and Products",
+    "subtitle": "",
+    "year": 2018,
+    "coauthors": [
+      "Marian Tetiva"
+    ],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Algebra",
+      "Inequalities"
+    ],
+    "level": "Olympiad",
+    "blurb": "A focused study of manipulating sums and products — telescoping, symmetric functions, estimation."
+  },
+  {
+    "id": "romanian-problem-book",
+    "title": "A Romanian Problem Book",
+    "subtitle": "",
+    "year": 2020,
+    "coauthors": [
+      "Marian Tetiva"
+    ],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Problem Solving"
+    ],
+    "level": "Olympiad",
+    "blurb": "Problems selected from Romanian team-selection tests — a window into one of the great olympiad traditions."
+  },
+  {
+    "id": "pristine-landscapes",
+    "title": "Pristine Landscapes in Elementary Mathematics",
+    "subtitle": "",
+    "year": 2018,
+    "coauthors": [
+      "Cristinel Mortici",
+      "Marian Tetiva"
+    ],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Problem Solving"
+    ],
+    "level": "Intermediate",
+    "blurb": "Beautiful, accessible problems that reveal surprising depth in elementary mathematics."
+  },
+  {
+    "id": "mathematical-induction",
+    "title": "Mathematical Induction",
+    "subtitle": "A Powerful and Elegant Method of Proof",
+    "year": 2017,
+    "coauthors": [
+      "Vlad Crișan"
+    ],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Proof Techniques"
+    ],
+    "level": "Intermediate",
+    "blurb": "A dedicated study of induction in all its forms, with a wide range of worked applications."
+  },
+  {
+    "id": "algebraic-inequalities",
+    "title": "Algebraic Inequalities",
+    "subtitle": "New Vistas",
+    "year": 2019,
+    "coauthors": [],
+    "publisher": "XYZ Press",
+    "series": "",
+    "topics": [
+      "Inequalities",
+      "Algebra"
+    ],
+    "level": "Olympiad",
+    "blurb": "Modern perspectives on inequalities — AM–GM, Cauchy–Schwarz, SOS and beyond — for the competition student."
+  },
+  {
+    "id": "awesome-math-pbl",
+    "title": "Awesome Math",
+    "subtitle": "Teaching Mathematics with Problem Based Learning",
+    "year": 2020,
+    "coauthors": [
+      "Kathy Cordeiro",
+      "Alina Andreescu"
+    ],
+    "publisher": "Wiley",
+    "series": "",
+    "topics": [
+      "Pedagogy"
+    ],
+    "level": "Educators",
+    "blurb": "For teachers: how to run a problem-based mathematics classroom, distilled from the AwesomeMath philosophy."
+  },
+  {
+    "id": "mathematical-olympiads-around-the-world",
+    "title": "Mathematical Olympiads: Problems and Solutions from Around the World",
+    "subtitle": "Annual series, 1995–2001 (MAA)",
+    "year": 1997,
+    "coauthors": [
+      "Zuming Feng",
+      "Kiran Kedlaya",
+      "(editors)"
+    ],
+    "publisher": "MAA",
+    "series": "MAA Problem Books",
+    "topics": [
+      "Competition Archive"
+    ],
+    "level": "Olympiad",
+    "blurb": "Edited yearly volumes collecting national-olympiad problems worldwide with solutions — a treasured archive."
+  },
+  {
+    "id": "usa-international-olympiads",
+    "title": "USA and International Mathematical Olympiads",
+    "subtitle": "Annual series, 2000–2004 (MAA)",
+    "year": 2001,
+    "coauthors": [
+      "Zuming Feng",
+      "(editors)"
+    ],
+    "publisher": "MAA",
+    "series": "MAA Problem Books",
+    "topics": [
+      "Competition Archive"
+    ],
+    "level": "Olympiad",
+    "blurb": "The official yearly record of USAMO and IMO problems with detailed solutions and commentary."
+  },
+  {
+    "id": "mathematical-reflections-volumes",
+    "title": "Mathematical Reflections — Collected Volumes",
+    "subtitle": "2006–2023, eight two-year books (XYZ Press)",
+    "year": 2011,
+    "coauthors": [
+      "(editor)"
+    ],
+    "publisher": "XYZ Press",
+    "series": "Mathematical Reflections",
+    "topics": [
+      "Anthology"
+    ],
+    "level": "Anthology",
+    "blurb": "Two-year hardcover collections of the free journal he founded: The First Two Years, The Next Two Years, Two More Years, Two Special Years (2014–15), Two Wonderful Years (2016–17), Two Lockdown Years (2020–21), Two Meaningful Years (2022–23). The journal itself is free online."
+  }
+];
+
+const $ = (s,el=document)=>el.querySelector(s);
+const enc = encodeURIComponent;
+const SPINE = {
+  "Number Theory":"#7c2426","Geometry":"#2f5d50","Algebra":"#b5852f","Combinatorics":"#4b5e8e",
+  "Trigonometry":"#9a5a2b","Complex Numbers":"#6a3d7a","Functional Equations":"#3d6e8e",
+  "Inequalities":"#a0682f","Problem Solving":"#5a4a8a","Diophantine Equations":"#7c2426",
+  "Polynomials":"#8a6a2a","Linear Algebra":"#2f5d50","Analysis":"#4b5e8e","Proof Techniques":"#6a3d7a",
+  "Pedagogy":"#7a5a3a","Competition Archive":"#5a5a5a","Anthology":"#9a7b33","Undergraduate":"#4b5e8e"
+};
+
+function publisherLink(b){
+  const key = enc(b.title + " Andreescu");
+  const p = b.publisher;
+  if(/XYZ|AwesomeMath/i.test(p)) return {label:"XYZ · AwesomeMath", url:`https://www.awesomemath.org/?s=${enc(b.title)}&post_type=product`};
+  if(/Springer|Birkh/i.test(p)) return {label:p, url:`https://link.springer.com/search?query=${key}`};
+  if(/MAA/i.test(p)) return {label:"MAA", url:`https://maa.org/press/maa-bookstore`};
+  if(/Wiley/i.test(p)) return {label:"Wiley", url:`https://www.wiley.com/en-us/search?pq=${key}`};
+  if(/AMT/i.test(p)) return {label:"AMT", url:`https://www.amtt.com.au/`};
+  return {label:p||"Publisher", url:`https://www.google.com/search?q=${key}`};
+}
+
+function cardHTML(b){
+  const key = enc(b.title + " Andreescu");
+  const spine = SPINE[b.topics[0]] || "var(--gold)";
+  const co = b.coauthors.filter(x=>x && !/^\(/.test(x));
+  const authText = co.length ? `Titu Andreescu <span style="color:var(--ink-soft)">with</span> <b>${co.join(", ")}</b>` : `<b>Titu Andreescu</b>`;
+  const isJournal = b.id === "mathematical-reflections-volumes";
+  const pub = publisherLink(b);
+  const tags = [
+    ...b.topics.map(t=>`<span class="tag">${t}</span>`),
+    `<span class="tag lvl">${b.level}</span>`,
+    `<span class="tag pub">${b.publisher}</span>`
+  ].join("");
+  let access = `
+    <a class="buy" href="https://www.amazon.in/s?k=${key}" target="_blank" rel="noopener">Buy · Amazon.in</a>
+    <a href="https://www.flipkart.com/search?q=${key}" target="_blank" rel="noopener">Flipkart</a>
+    <a href="${pub.url}" target="_blank" rel="noopener">${pub.label}</a>
+    <a href="https://www.google.com/search?tbm=bks&q=${key}" target="_blank" rel="noopener">Preview</a>
+    <a href="https://archive.org/search?query=${key}" target="_blank" rel="noopener">Borrow</a>`;
+  if(isJournal){
+    access = `<a class="free" href="https://www.awesomemath.org/mathematical-reflections/" target="_blank" rel="noopener">★ Read the free journal</a>` + access;
+  }
+  return `<article class="card" style="--spine:${spine}">
+    <div class="toprow"><h3>${b.title}</h3><span class="yr">${b.year||""}</span></div>
+    ${b.subtitle?`<div class="subt">${b.subtitle}</div>`:""}
+    <div class="auth">${authText}</div>
+    <div class="tags">${tags}</div>
+    <p class="blurb">${b.blurb}</p>
+    <div class="access">${access}</div>
+  </article>`;
+}
+
+// populate filters
+function uniq(arr){return [...new Set(arr)].sort();}
+const allTopics = uniq(BOOKS.flatMap(b=>b.topics));
+const allLevels = ["Intermediate","Olympiad","Undergraduate","Advanced","Educators","Anthology"].filter(l=>BOOKS.some(b=>b.level===l));
+const allPubs = uniq(BOOKS.map(b=>b.publisher));
+allTopics.forEach(t=>$("#f-topic").insertAdjacentHTML("beforeend",`<option>${t}</option>`));
+allLevels.forEach(t=>$("#f-level").insertAdjacentHTML("beforeend",`<option>${t}</option>`));
+allPubs.forEach(t=>$("#f-pub").insertAdjacentHTML("beforeend",`<option>${t}</option>`));
+
+const state = {q:"",topic:"",level:"",pub:"",sort:"az"};
+function render(){
+  let list = BOOKS.filter(b=>{
+    const hay = (b.title+" "+b.subtitle+" "+b.topics.join(" ")+" "+b.coauthors.join(" ")+" "+b.publisher+" "+b.blurb).toLowerCase();
+    if(state.q && !hay.includes(state.q.toLowerCase())) return false;
+    if(state.topic && !b.topics.includes(state.topic)) return false;
+    if(state.level && b.level!==state.level) return false;
+    if(state.pub && b.publisher!==state.pub) return false;
+    return true;
+  });
+  if(state.sort==="az") list.sort((a,b)=>a.title.localeCompare(b.title));
+  if(state.sort==="year") list.sort((a,b)=>(b.year||0)-(a.year||0));
+  if(state.sort==="yearold") list.sort((a,b)=>(a.year||0)-(b.year||0));
+  $("#grid").innerHTML = list.length ? list.map(cardHTML).join("") : `<div class="empty">No books match those filters. <a href="#" id="reset2" style="color:var(--gold)">Clear them?</a></div>`;
+  $("#count").textContent = list.length;
+  const active = state.q||state.topic||state.level||state.pub;
+  $("#resetwrap").style.display = active ? "inline" : "none";
+  const r2 = $("#reset2"); if(r2) r2.onclick = e=>{e.preventDefault(); clearAll();};
+}
+function clearAll(){state.q="";state.topic="";state.level="";state.pub="";$("#q").value="";$("#f-topic").value="";$("#f-level").value="";$("#f-pub").value="";render();}
+$("#q").addEventListener("input",e=>{state.q=e.target.value;render();});
+$("#f-topic").addEventListener("change",e=>{state.topic=e.target.value;render();});
+$("#f-level").addEventListener("change",e=>{state.level=e.target.value;render();});
+$("#f-pub").addEventListener("change",e=>{state.pub=e.target.value;render();});
+$("#f-sort").addEventListener("change",e=>{state.sort=e.target.value;render();});
+$("#reset").addEventListener("click",e=>{e.preventDefault();clearAll();});
+render();
+
+// collaborators
+const coCount = {};
+BOOKS.forEach(b=>b.coauthors.forEach(c=>{ if(c && !/^\(/.test(c)){ coCount[c]=(coCount[c]||0)+1; }}));
+const collabSorted = Object.entries(coCount).sort((a,b)=>b[1]-a[1]);
+$("#collab-list").innerHTML = collabSorted.map(([name,n])=>`<span class="chip">${name}<span class="ct">${n}</span></span>`).join("");
+
+// count-up stats
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      const el=en.target, target=+el.dataset.count, suf=el.dataset.suffix||"", isYear=target>1900;
+      let cur=0, dur=1400, t0=null;
+      function step(ts){ if(!t0)t0=ts; const p=Math.min((ts-t0)/dur,1); const e=1-Math.pow(1-p,3);
+        el.textContent=(isYear? Math.floor(target-(1-e)*40) : Math.floor(e*target))+ (p===1?suf:"");
+        if(p<1)requestAnimationFrame(step); else el.textContent=target+suf; }
+      requestAnimationFrame(step); obs.unobserve(el);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll(".num").forEach(el=>obs.observe(el));
+
+// theme
+const tb=$("#themebtn"), root=document.documentElement;
+const saved=localStorage.getItem("al-theme");
+if(saved){root.setAttribute("data-theme",saved); tb.textContent=saved==="dark"?"☀":"☾";}
+tb.addEventListener("click",()=>{
+  const d=root.getAttribute("data-theme")==="dark";
+  root.setAttribute("data-theme", d?"light":"dark");
+  tb.textContent=d?"☾":"☀";
+  localStorage.setItem("al-theme", d?"light":"dark");
+});
+document.getElementById("top")||document.body.insertAdjacentHTML("afterbegin",'<span id="top"></span>');
+</script>
+</body>
+</html>
