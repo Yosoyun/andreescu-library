@@ -1,52 +1,853 @@
 {
-  "_meta": {
-    "title": "The Andreescu Library — Dataset",
-    "description": "Bibliographic catalogue of books authored, co-authored or edited by Titu Andreescu. Facts only (titles, authors, years, publishers, topics). Access links are generated at render time as live search links to legitimate retailers, library lending, and previews — no files are hosted or redistributed.",
-    "compiled_by": "Indrajeet Yadav (GitHub @Yosoyun)",
-    "note_on_accuracy": "Years reflect first or notable editions; several titles have multiple editions. Co-author lists name the collaborators we could verify; where a field is empty the lead author is Titu Andreescu and additional contributors may exist — verify on the retailer/publisher page. Goodreads lists ~88 records including editions and translations; reliable profiles cite 'more than 40' distinct books. We count 50+ distinct titles and collected volumes below.",
-    "levels": ["Foundational", "Intermediate", "Olympiad", "Undergraduate", "Advanced", "Educators", "Anthology"],
-    "last_compiled": "2026-06-16"
+ "_meta": {
+  "title": "The Andreescu Library — Dataset",
+  "description": "Bibliographic catalogue of books authored, co-authored or edited by Titu Andreescu. Facts only (titles, authors, years, publishers, topics). Access links are generated at render time as live search links to legitimate retailers, library lending, and previews — no files are hosted or redistributed.",
+  "compiled_by": "Indrajeet Yadav (GitHub @Yosoyun)",
+  "note_on_accuracy": "Years reflect first or notable editions; several titles have multiple editions. Reliable third-party profiles cite 'more than forty' distinct books; counting editions, translations and the annual/journal volumes the total is higher (Goodreads lists 88+ records). Every access link below was machine-verified: each ISBN, publisher product page and Internet Archive item was independently re-fetched and confirmed to be this exact book. Where a check could not be confirmed the link is omitted rather than guessed.",
+  "levels": [
+   "Foundational",
+   "Intermediate",
+   "Olympiad",
+   "Undergraduate",
+   "Advanced",
+   "Educators",
+   "Anthology"
+  ],
+  "last_compiled": "2026-06-16",
+  "links_verified": true
+ },
+ "books": [
+  {
+   "id": "101-problems-in-algebra",
+   "title": "101 Problems in Algebra",
+   "subtitle": "From the Training of the USA IMO Team",
+   "year": 2001,
+   "coauthors": [
+    "Zuming Feng"
+   ],
+   "publisher": "AMT Publishing",
+   "series": "Training of the USA IMO Team",
+   "topics": [
+    "Algebra"
+   ],
+   "level": "Olympiad",
+   "blurb": "A graded set of algebra problems drawn from USA IMO team selection and training, with full solutions — an entry point into olympiad algebra.",
+   "links": {
+    "isbn10": "187642012X",
+    "isbn13": "9781876420123",
+    "publisher": "https://shop.amt.edu.au/products/101pa",
+    "archive": "101ProblemsInAlgebraByTituAndreescuZumingFeng"
+   }
   },
-  "books": [
-    {"id": "101-problems-in-algebra", "title": "101 Problems in Algebra", "subtitle": "From the Training of the USA IMO Team", "year": 2001, "coauthors": ["Zuming Feng"], "publisher": "AMT Publishing", "series": "Training of the USA IMO Team", "topics": ["Algebra"], "level": "Olympiad", "blurb": "A graded set of algebra problems drawn from USA IMO team selection and training, with full solutions — an entry point into olympiad algebra."},
-    {"id": "102-combinatorial-problems", "title": "102 Combinatorial Problems", "subtitle": "From the Training of the USA IMO Team", "year": 2003, "coauthors": ["Zuming Feng"], "publisher": "Birkhäuser", "series": "Training of the USA IMO Team", "topics": ["Combinatorics"], "level": "Olympiad", "blurb": "Counting, bijections, the pigeonhole principle and extremal arguments, taught through 102 carefully chosen competition problems."},
-    {"id": "103-trigonometry-problems", "title": "103 Trigonometry Problems", "subtitle": "From the Training of the USA IMO Team", "year": 2005, "coauthors": ["Zuming Feng"], "publisher": "Birkhäuser", "series": "Training of the USA IMO Team", "topics": ["Trigonometry"], "level": "Olympiad", "blurb": "Identities, substitutions and trigonometric techniques that reach far beyond the classroom, built around 103 IMO-level problems."},
-    {"id": "104-number-theory-problems", "title": "104 Number Theory Problems", "subtitle": "From the Training of the USA IMO Team", "year": 2007, "coauthors": ["Dorin Andrica", "Zuming Feng"], "publisher": "Birkhäuser", "series": "Training of the USA IMO Team", "topics": ["Number Theory"], "level": "Olympiad", "blurb": "Divisibility, congruences, Diophantine ideas and more — a flagship of the training series and a favourite of serious students."},
-    {"id": "mathematical-olympiad-challenges", "title": "Mathematical Olympiad Challenges", "subtitle": "", "year": 2000, "coauthors": ["Răzvan Gelca"], "publisher": "Birkhäuser", "series": "", "topics": ["Problem Solving"], "level": "Olympiad", "blurb": "A landmark collection organised by theme and technique; a 2nd edition (2009) expanded it. Widely used as a first serious olympiad book."},
-    {"id": "mathematical-olympiad-treasures", "title": "Mathematical Olympiad Treasures", "subtitle": "", "year": 2004, "coauthors": ["Bogdan Enescu"], "publisher": "Birkhäuser", "series": "", "topics": ["Problem Solving"], "level": "Olympiad", "blurb": "Companion to 'Challenges': elegant problems across algebra, geometry, number theory and combinatorics, with instructive solutions."},
-    {"id": "path-to-combinatorics", "title": "A Path to Combinatorics for Undergraduates", "subtitle": "Counting Strategies", "year": 2004, "coauthors": ["Zuming Feng"], "publisher": "Birkhäuser", "series": "", "topics": ["Combinatorics"], "level": "Undergraduate", "blurb": "Builds combinatorial maturity from first principles toward research-level counting strategies."},
-    {"id": "complex-numbers-a-to-z", "title": "Complex Numbers from A to …Z", "subtitle": "", "year": 2006, "coauthors": ["Dorin Andrica"], "publisher": "Birkhäuser", "series": "", "topics": ["Complex Numbers", "Geometry"], "level": "Intermediate", "blurb": "Complex numbers as a tool for algebra and geometry — from the basics to olympiad applications. A 2nd edition appeared in 2014."},
-    {"id": "number-theory-structures", "title": "Number Theory", "subtitle": "Structures, Examples, and Problems", "year": 2009, "coauthors": ["Dorin Andrica"], "publisher": "Birkhäuser", "series": "", "topics": ["Number Theory"], "level": "Intermediate", "blurb": "A two-part text: structured theory followed by a rich bank of solved and proposed problems."},
-    {"id": "introduction-diophantine-equations", "title": "An Introduction to Diophantine Equations", "subtitle": "A Problem-Based Approach", "year": 2010, "coauthors": ["Dorin Andrica", "Ion Cucurezeanu"], "publisher": "Birkhäuser", "series": "", "topics": ["Number Theory", "Diophantine Equations"], "level": "Olympiad", "blurb": "Classical and modern methods for solving equations in integers, developed entirely through problems."},
-    {"id": "essential-linear-algebra", "title": "Essential Linear Algebra with Applications", "subtitle": "A Problem-Solving Approach", "year": 2014, "coauthors": [], "publisher": "Birkhäuser", "series": "", "topics": ["Linear Algebra"], "level": "Undergraduate", "blurb": "A problem-driven path through linear algebra, bridging competition technique and university coursework."},
-    {"id": "geometric-problems-maxima-minima", "title": "Geometric Problems on Maxima and Minima", "subtitle": "", "year": 2006, "coauthors": ["Oleg Mushkarov", "Luchezar Stoyanov"], "publisher": "Birkhäuser", "series": "", "topics": ["Geometry", "Inequalities"], "level": "Olympiad", "blurb": "Optimisation in geometry by synthetic, algebraic and calculus methods — a beautiful, underrated classic."},
-    {"id": "putnam-and-beyond", "title": "Putnam and Beyond", "subtitle": "", "year": 2007, "coauthors": ["Răzvan Gelca"], "publisher": "Springer", "series": "", "topics": ["Problem Solving", "Undergraduate"], "level": "Undergraduate", "blurb": "An encyclopaedic problem course spanning the entire undergraduate curriculum — the standard companion for the Putnam exam. 2nd edition 2017."},
-    {"id": "mathematical-bridges", "title": "Mathematical Bridges", "subtitle": "", "year": 2017, "coauthors": ["Cristinel Mortici", "Marian Tetiva"], "publisher": "Birkhäuser", "series": "", "topics": ["Analysis", "Problem Solving"], "level": "Undergraduate", "blurb": "Connects elementary results to deeper mathematics, building 'bridges' from high-school technique to real analysis and beyond."},
-    {"id": "quadratic-diophantine-equations", "title": "Quadratic Diophantine Equations", "subtitle": "", "year": 2015, "coauthors": ["Dorin Andrica"], "publisher": "Springer", "series": "Developments in Mathematics", "topics": ["Number Theory", "Diophantine Equations"], "level": "Advanced", "blurb": "A focused monograph on Pell-type and quadratic equations — research-flavoured, with historical context."},
-
-    {"id": "problems-from-the-book", "title": "Problems from the Book", "subtitle": "", "year": 2008, "coauthors": ["Gabriel Dospinescu"], "publisher": "XYZ Press", "series": "", "topics": ["Problem Solving", "Advanced"], "level": "Advanced", "blurb": "A celebrated, demanding tour of the most beautiful ideas in olympiad and beyond — often called a rite of passage. 2nd edition 2010."},
-    {"id": "straight-from-the-book", "title": "Straight from the Book", "subtitle": "", "year": 2012, "coauthors": ["Gabriel Dospinescu"], "publisher": "XYZ Press", "series": "", "topics": ["Problem Solving", "Advanced"], "level": "Advanced", "blurb": "A companion of fully worked, multi-method solutions to selected problems from 'Problems from the Book'."},
-    {"id": "105-algebra-problems", "title": "105 Algebra Problems", "subtitle": "from the AwesomeMath Summer Program", "year": 2011, "coauthors": [], "publisher": "XYZ Press", "series": "AwesomeMath", "topics": ["Algebra"], "level": "Olympiad", "blurb": "Algebra problems used at the AwesomeMath Summer Program, graded for serious training."},
-    {"id": "106-geometry-problems", "title": "106 Geometry Problems", "subtitle": "from the AwesomeMath Summer Program", "year": 2013, "coauthors": ["Michal Rolínek", "Josef Tkadlec"], "publisher": "XYZ Press", "series": "AwesomeMath", "topics": ["Geometry"], "level": "Olympiad", "blurb": "Synthetic and computational geometry problems from AMSP, with thorough solutions."},
-    {"id": "107-geometry-problems", "title": "107 Geometry Problems", "subtitle": "from the AwesomeMath Year-Round Program", "year": 2013, "coauthors": ["Michal Rolínek", "Josef Tkadlec"], "publisher": "XYZ Press", "series": "AwesomeMath", "topics": ["Geometry"], "level": "Olympiad", "blurb": "Year-round program geometry, continuing the 106 Geometry collection."},
-    {"id": "108-algebra-problems", "title": "108 Algebra Problems", "subtitle": "from the AwesomeMath Year-Round Program", "year": 2016, "coauthors": [], "publisher": "XYZ Press", "series": "AwesomeMath", "topics": ["Algebra"], "level": "Olympiad", "blurb": "A year-round companion of algebra problems for sustained training."},
-    {"id": "110-geometry-problems-imo", "title": "110 Geometry Problems for the International Mathematical Olympiad", "subtitle": "", "year": 2014, "coauthors": ["Cosmin Pohoață"], "publisher": "XYZ Press", "series": "", "topics": ["Geometry"], "level": "Olympiad", "blurb": "IMO-calibre geometry, selected and solved for the strongest students."},
-    {"id": "117-polynomial-problems", "title": "117 Polynomial Problems", "subtitle": "from the AwesomeMath Summer Program", "year": 2019, "coauthors": ["Navid Safaei", "Alessandro Ventullo"], "publisher": "XYZ Press", "series": "AwesomeMath", "topics": ["Polynomials", "Algebra"], "level": "Olympiad", "blurb": "Everything from roots and symmetric functions to advanced polynomial identities, through 117 problems."},
-    {"id": "lemmas-in-olympiad-geometry", "title": "Lemmas in Olympiad Geometry", "subtitle": "", "year": 2016, "coauthors": ["Sam Korsky", "Cosmin Pohoață"], "publisher": "XYZ Press", "series": "", "topics": ["Geometry"], "level": "Olympiad", "blurb": "A systematic toolkit of the recurring lemmas that unlock hard olympiad geometry."},
-    {"id": "awesome-polynomials", "title": "Awesome Polynomials for Mathematics Competitions", "subtitle": "", "year": 2019, "coauthors": ["Navid Safaei", "Alessandro Ventullo"], "publisher": "XYZ Press", "series": "", "topics": ["Polynomials"], "level": "Olympiad", "blurb": "A theory-plus-problems treatment of polynomials aimed squarely at competition success."},
-    {"id": "number-theory-concepts-problems", "title": "Number Theory", "subtitle": "Concepts and Problems", "year": 2017, "coauthors": ["Gabriel Dospinescu", "Oleg Mushkarov"], "publisher": "XYZ Press", "series": "", "topics": ["Number Theory"], "level": "Advanced", "blurb": "A deep, comprehensive number theory course — concepts developed alongside a large, demanding problem set."},
-    {"id": "topics-in-functional-equations", "title": "Topics in Functional Equations", "subtitle": "Third Edition", "year": 2020, "coauthors": ["Iurie Boreico", "Oleg Mushkarov", "Nikolai Nikolov"], "publisher": "XYZ Press", "series": "", "topics": ["Functional Equations"], "level": "Olympiad", "blurb": "The standard reference for olympiad functional equations — methods, traps and a graded problem bank."},
-    {"id": "topics-in-geometric-inequalities", "title": "Topics in Geometric Inequalities", "subtitle": "", "year": 2019, "coauthors": ["Oleg Mushkarov"], "publisher": "XYZ Press", "series": "", "topics": ["Geometry", "Inequalities"], "level": "Olympiad", "blurb": "Inequalities that live in geometry — from classical results to contest-ready techniques."},
-    {"id": "sums-and-products", "title": "Sums and Products", "subtitle": "", "year": 2018, "coauthors": ["Marian Tetiva"], "publisher": "XYZ Press", "series": "", "topics": ["Algebra", "Inequalities"], "level": "Olympiad", "blurb": "A focused study of manipulating sums and products — telescoping, symmetric functions, estimation."},
-    {"id": "romanian-problem-book", "title": "A Romanian Problem Book", "subtitle": "", "year": 2020, "coauthors": ["Marian Tetiva"], "publisher": "XYZ Press", "series": "", "topics": ["Problem Solving"], "level": "Olympiad", "blurb": "Problems selected from Romanian team-selection tests — a window into one of the great olympiad traditions."},
-    {"id": "pristine-landscapes", "title": "Pristine Landscapes in Elementary Mathematics", "subtitle": "", "year": 2018, "coauthors": ["Cristinel Mortici", "Marian Tetiva"], "publisher": "XYZ Press", "series": "", "topics": ["Problem Solving"], "level": "Intermediate", "blurb": "Beautiful, accessible problems that reveal surprising depth in elementary mathematics."},
-    {"id": "mathematical-induction", "title": "Mathematical Induction", "subtitle": "A Powerful and Elegant Method of Proof", "year": 2017, "coauthors": ["Vlad Crișan"], "publisher": "XYZ Press", "series": "", "topics": ["Proof Techniques"], "level": "Intermediate", "blurb": "A dedicated study of induction in all its forms, with a wide range of worked applications."},
-    {"id": "algebraic-inequalities", "title": "Algebraic Inequalities", "subtitle": "New Vistas", "year": 2019, "coauthors": [], "publisher": "XYZ Press", "series": "", "topics": ["Inequalities", "Algebra"], "level": "Olympiad", "blurb": "Modern perspectives on inequalities — AM–GM, Cauchy–Schwarz, SOS and beyond — for the competition student."},
-    {"id": "awesome-math-pbl", "title": "Awesome Math", "subtitle": "Teaching Mathematics with Problem Based Learning", "year": 2020, "coauthors": ["Kathy Cordeiro", "Alina Andreescu"], "publisher": "Wiley", "series": "", "topics": ["Pedagogy"], "level": "Educators", "blurb": "For teachers: how to run a problem-based mathematics classroom, distilled from the AwesomeMath philosophy."},
-
-    {"id": "mathematical-olympiads-around-the-world", "title": "Mathematical Olympiads: Problems and Solutions from Around the World", "subtitle": "Annual series, 1995–2001 (MAA)", "year": 1997, "coauthors": ["Zuming Feng", "Kiran Kedlaya", "(editors)"], "publisher": "MAA", "series": "MAA Problem Books", "topics": ["Competition Archive"], "level": "Olympiad", "blurb": "Edited yearly volumes collecting national-olympiad problems worldwide with solutions — a treasured archive."},
-    {"id": "usa-international-olympiads", "title": "USA and International Mathematical Olympiads", "subtitle": "Annual series, 2000–2004 (MAA)", "year": 2001, "coauthors": ["Zuming Feng", "(editors)"], "publisher": "MAA", "series": "MAA Problem Books", "topics": ["Competition Archive"], "level": "Olympiad", "blurb": "The official yearly record of USAMO and IMO problems with detailed solutions and commentary."},
-
-    {"id": "mathematical-reflections-volumes", "title": "Mathematical Reflections — Collected Volumes", "subtitle": "2006–2023, eight two-year books (XYZ Press)", "year": 2011, "coauthors": ["(editor)"], "publisher": "XYZ Press", "series": "Mathematical Reflections", "topics": ["Anthology"], "level": "Anthology", "blurb": "Two-year hardcover collections of the free journal he founded: The First Two Years, The Next Two Years, Two More Years, Two Special Years (2014–15), Two Wonderful Years (2016–17), Two Lockdown Years (2020–21), Two Meaningful Years (2022–23). The journal itself is free online."}
-  ]
+  {
+   "id": "102-combinatorial-problems",
+   "title": "102 Combinatorial Problems",
+   "subtitle": "From the Training of the USA IMO Team",
+   "year": 2003,
+   "coauthors": [
+    "Zuming Feng"
+   ],
+   "publisher": "Birkhäuser",
+   "series": "Training of the USA IMO Team",
+   "topics": [
+    "Combinatorics"
+   ],
+   "level": "Olympiad",
+   "blurb": "Counting, bijections, the pigeonhole principle and extremal arguments, taught through 102 carefully chosen competition problems.",
+   "links": {
+    "isbn10": "0817643176",
+    "isbn13": "9780817643171",
+    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-8222-4",
+    "archive": "102CombinatorialProblems2002TituAndreescuZumingFeng"
+   }
+  },
+  {
+   "id": "103-trigonometry-problems",
+   "title": "103 Trigonometry Problems",
+   "subtitle": "From the Training of the USA IMO Team",
+   "year": 2005,
+   "coauthors": [
+    "Zuming Feng"
+   ],
+   "publisher": "Birkhäuser",
+   "series": "Training of the USA IMO Team",
+   "topics": [
+    "Trigonometry"
+   ],
+   "level": "Olympiad",
+   "blurb": "Identities, substitutions and trigonometric techniques that reach far beyond the classroom, built around 103 IMO-level problems.",
+   "links": {
+    "isbn10": "0817643346",
+    "isbn13": "9780817643348",
+    "archive": "103TrigonometryProblems_201508"
+   }
+  },
+  {
+   "id": "104-number-theory-problems",
+   "title": "104 Number Theory Problems",
+   "subtitle": "From the Training of the USA IMO Team",
+   "year": 2007,
+   "coauthors": [
+    "Dorin Andrica",
+    "Zuming Feng"
+   ],
+   "publisher": "Birkhäuser",
+   "series": "Training of the USA IMO Team",
+   "topics": [
+    "Number Theory"
+   ],
+   "level": "Olympiad",
+   "blurb": "Divisibility, congruences, Diophantine ideas and more — a flagship of the training series and a favourite of serious students.",
+   "links": {
+    "isbn10": "0817645276",
+    "isbn13": "9780817645274",
+    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-4561-8"
+   }
+  },
+  {
+   "id": "mathematical-olympiad-challenges",
+   "title": "Mathematical Olympiad Challenges",
+   "subtitle": "",
+   "year": 2000,
+   "coauthors": [
+    "Răzvan Gelca"
+   ],
+   "publisher": "Birkhäuser",
+   "series": "",
+   "topics": [
+    "Problem Solving"
+   ],
+   "level": "Olympiad",
+   "blurb": "A landmark collection organised by theme and technique; a 2nd edition (2009) expanded it. Widely used as a first serious olympiad book.",
+   "links": {
+    "isbn10": "0817641904",
+    "isbn13": "9780817641900",
+    "publisher": "https://link.springer.com/book/10.1007/978-1-4612-2138-8",
+    "archive": "mathematicalolym0000andr"
+   }
+  },
+  {
+   "id": "mathematical-olympiad-treasures",
+   "title": "Mathematical Olympiad Treasures",
+   "subtitle": "",
+   "year": 2004,
+   "coauthors": [
+    "Bogdan Enescu"
+   ],
+   "publisher": "Birkhäuser",
+   "series": "",
+   "topics": [
+    "Problem Solving"
+   ],
+   "level": "Olympiad",
+   "blurb": "Companion to 'Challenges': elegant problems across algebra, geometry, number theory and combinatorics, with instructive solutions.",
+   "links": {
+    "isbn10": "0817643052",
+    "isbn13": "9780817643058",
+    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-8253-8",
+    "archive": "isbn_9798181283220"
+   }
+  },
+  {
+   "id": "path-to-combinatorics",
+   "title": "A Path to Combinatorics for Undergraduates",
+   "subtitle": "Counting Strategies",
+   "year": 2004,
+   "coauthors": [
+    "Zuming Feng"
+   ],
+   "publisher": "Birkhäuser",
+   "series": "",
+   "topics": [
+    "Combinatorics"
+   ],
+   "level": "Undergraduate",
+   "blurb": "Builds combinatorial maturity from first principles toward research-level counting strategies.",
+   "links": {
+    "isbn10": "0817642889",
+    "isbn13": "9780817642884",
+    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-8154-8",
+    "archive": "pathtocombinator0000andr"
+   }
+  },
+  {
+   "id": "complex-numbers-a-to-z",
+   "title": "Complex Numbers from A to …Z",
+   "subtitle": "",
+   "year": 2006,
+   "coauthors": [
+    "Dorin Andrica"
+   ],
+   "publisher": "Birkhäuser",
+   "series": "",
+   "topics": [
+    "Complex Numbers",
+    "Geometry"
+   ],
+   "level": "Intermediate",
+   "blurb": "Complex numbers as a tool for algebra and geometry — from the basics to olympiad applications. A 2nd edition appeared in 2014.",
+   "links": {
+    "isbn10": "081768414X",
+    "isbn13": "9780817684143",
+    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-8415-0",
+    "archive": "complexnumbersfr0000andr_b4d8"
+   }
+  },
+  {
+   "id": "number-theory-structures",
+   "title": "Number Theory",
+   "subtitle": "Structures, Examples, and Problems",
+   "year": 2009,
+   "coauthors": [
+    "Dorin Andrica"
+   ],
+   "publisher": "Birkhäuser",
+   "series": "",
+   "topics": [
+    "Number Theory"
+   ],
+   "level": "Intermediate",
+   "blurb": "A two-part text: structured theory followed by a rich bank of solved and proposed problems.",
+   "links": {
+    "isbn10": "081763245X",
+    "isbn13": "9780817632458",
+    "publisher": "https://link.springer.com/book/10.1007/b11856",
+    "archive": "numbertheory00titu"
+   }
+  },
+  {
+   "id": "introduction-diophantine-equations",
+   "title": "An Introduction to Diophantine Equations",
+   "subtitle": "A Problem-Based Approach",
+   "year": 2010,
+   "coauthors": [
+    "Dorin Andrica",
+    "Ion Cucurezeanu"
+   ],
+   "publisher": "Birkhäuser",
+   "series": "",
+   "topics": [
+    "Number Theory",
+    "Diophantine Equations"
+   ],
+   "level": "Olympiad",
+   "blurb": "Classical and modern methods for solving equations in integers, developed entirely through problems.",
+   "links": {
+    "isbn10": "0817645489",
+    "isbn13": "9780817645489",
+    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-4549-6",
+    "archive": "an-introduction-to-diophantine-equations-a-problem-based-approach"
+   }
+  },
+  {
+   "id": "essential-linear-algebra",
+   "title": "Essential Linear Algebra with Applications",
+   "subtitle": "A Problem-Solving Approach",
+   "year": 2014,
+   "coauthors": [],
+   "publisher": "Birkhäuser",
+   "series": "",
+   "topics": [
+    "Linear Algebra"
+   ],
+   "level": "Undergraduate",
+   "blurb": "A problem-driven path through linear algebra, bridging competition technique and university coursework.",
+   "links": {
+    "isbn10": "0817643605",
+    "isbn13": "9780817643607",
+    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-4636-3",
+    "archive": "essentiallineara0000andr"
+   }
+  },
+  {
+   "id": "geometric-problems-maxima-minima",
+   "title": "Geometric Problems on Maxima and Minima",
+   "subtitle": "",
+   "year": 2006,
+   "coauthors": [
+    "Oleg Mushkarov",
+    "Luchezar Stoyanov"
+   ],
+   "publisher": "Birkhäuser",
+   "series": "",
+   "topics": [
+    "Geometry",
+    "Inequalities"
+   ],
+   "level": "Olympiad",
+   "blurb": "Optimisation in geometry by synthetic, algebraic and calculus methods — a beautiful, underrated classic.",
+   "links": {
+    "isbn10": "0817644733",
+    "isbn13": "9780817644734",
+    "publisher": "https://link.springer.com/book/10.1007/0-8176-4473-3"
+   }
+  },
+  {
+   "id": "putnam-and-beyond",
+   "title": "Putnam and Beyond",
+   "subtitle": "",
+   "year": 2007,
+   "coauthors": [
+    "Răzvan Gelca"
+   ],
+   "publisher": "Springer",
+   "series": "",
+   "topics": [
+    "Problem Solving",
+    "Undergraduate"
+   ],
+   "level": "Undergraduate",
+   "blurb": "An encyclopaedic problem course spanning the entire undergraduate curriculum — the standard companion for the Putnam exam. 2nd edition 2017.",
+   "links": {
+    "isbn10": "3319589865",
+    "isbn13": "9783319589862",
+    "publisher": "https://link.springer.com/book/10.1007/978-0-387-68445-1"
+   }
+  },
+  {
+   "id": "mathematical-bridges",
+   "title": "Mathematical Bridges",
+   "subtitle": "",
+   "year": 2017,
+   "coauthors": [
+    "Cristinel Mortici",
+    "Marian Tetiva"
+   ],
+   "publisher": "Birkhäuser",
+   "series": "",
+   "topics": [
+    "Analysis",
+    "Problem Solving"
+   ],
+   "level": "Undergraduate",
+   "blurb": "Connects elementary results to deeper mathematics, building 'bridges' from high-school technique to real analysis and beyond.",
+   "links": {
+    "isbn10": "081764394X",
+    "isbn13": "9780817643942",
+    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-4629-5",
+    "archive": "mathematicalbrid0000andr"
+   }
+  },
+  {
+   "id": "quadratic-diophantine-equations",
+   "title": "Quadratic Diophantine Equations",
+   "subtitle": "",
+   "year": 2015,
+   "coauthors": [
+    "Dorin Andrica"
+   ],
+   "publisher": "Springer",
+   "series": "Developments in Mathematics",
+   "topics": [
+    "Number Theory",
+    "Diophantine Equations"
+   ],
+   "level": "Advanced",
+   "blurb": "A focused monograph on Pell-type and quadratic equations — research-flavoured, with historical context.",
+   "links": {
+    "isbn10": "0387351566",
+    "isbn13": "9780387351568",
+    "publisher": "https://link.springer.com/book/10.1007/978-0-387-54109-9"
+   }
+  },
+  {
+   "id": "problems-from-the-book",
+   "title": "Problems from the Book",
+   "subtitle": "",
+   "year": 2008,
+   "coauthors": [
+    "Gabriel Dospinescu"
+   ],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Problem Solving",
+    "Advanced"
+   ],
+   "level": "Advanced",
+   "blurb": "A celebrated, demanding tour of the most beautiful ideas in olympiad and beyond — often called a rite of passage. 2nd edition 2010.",
+   "links": {
+    "isbn10": "0979926904",
+    "isbn13": "9780979926907",
+    "publisher": "https://www.awesomemath.org/product/problems-from-the-book/"
+   }
+  },
+  {
+   "id": "straight-from-the-book",
+   "title": "Straight from the Book",
+   "subtitle": "",
+   "year": 2012,
+   "coauthors": [
+    "Gabriel Dospinescu"
+   ],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Problem Solving",
+    "Advanced"
+   ],
+   "level": "Advanced",
+   "blurb": "A companion of fully worked, multi-method solutions to selected problems from 'Problems from the Book'.",
+   "links": {
+    "isbn10": "0979926939",
+    "isbn13": "9780979926938",
+    "publisher": "https://www.awesomemath.org/product/straight-from-the-book/"
+   }
+  },
+  {
+   "id": "105-algebra-problems",
+   "title": "105 Algebra Problems",
+   "subtitle": "from the AwesomeMath Summer Program",
+   "year": 2011,
+   "coauthors": [],
+   "publisher": "XYZ Press",
+   "series": "AwesomeMath",
+   "topics": [
+    "Algebra"
+   ],
+   "level": "Olympiad",
+   "blurb": "Algebra problems used at the AwesomeMath Summer Program, graded for serious training.",
+   "links": {
+    "isbn10": "0979926955",
+    "isbn13": "9780979926952"
+   }
+  },
+  {
+   "id": "106-geometry-problems",
+   "title": "106 Geometry Problems",
+   "subtitle": "from the AwesomeMath Summer Program",
+   "year": 2013,
+   "coauthors": [
+    "Michal Rolínek",
+    "Josef Tkadlec"
+   ],
+   "publisher": "XYZ Press",
+   "series": "AwesomeMath",
+   "topics": [
+    "Geometry"
+   ],
+   "level": "Olympiad",
+   "blurb": "Synthetic and computational geometry problems from AMSP, with thorough solutions.",
+   "links": {
+    "isbn10": "0979926947",
+    "isbn13": "9780979926945",
+    "publisher": "https://www.awesomemath.org/product/106-geometry-problems-from-the-awesomemath-summer-program/"
+   }
+  },
+  {
+   "id": "107-geometry-problems",
+   "title": "107 Geometry Problems",
+   "subtitle": "from the AwesomeMath Year-Round Program",
+   "year": 2013,
+   "coauthors": [
+    "Michal Rolínek",
+    "Josef Tkadlec"
+   ],
+   "publisher": "XYZ Press",
+   "series": "AwesomeMath",
+   "topics": [
+    "Geometry"
+   ],
+   "level": "Olympiad",
+   "blurb": "Year-round program geometry, continuing the 106 Geometry collection.",
+   "links": {
+    "isbn10": "0979926971",
+    "isbn13": "9780979926976",
+    "publisher": "https://www.awesomemath.org/product/107-geometry-problems-from-the-awesomemath-year-round-program/"
+   }
+  },
+  {
+   "id": "108-algebra-problems",
+   "title": "108 Algebra Problems",
+   "subtitle": "from the AwesomeMath Year-Round Program",
+   "year": 2016,
+   "coauthors": [],
+   "publisher": "XYZ Press",
+   "series": "AwesomeMath",
+   "topics": [
+    "Algebra"
+   ],
+   "level": "Olympiad",
+   "blurb": "A year-round companion of algebra problems for sustained training.",
+   "links": {
+    "isbn10": "0988562278",
+    "isbn13": "9780988562271",
+    "publisher": "https://www.awesomemath.org/product/108-algebra-problems-from-amy/"
+   }
+  },
+  {
+   "id": "110-geometry-problems-imo",
+   "title": "110 Geometry Problems for the International Mathematical Olympiad",
+   "subtitle": "",
+   "year": 2014,
+   "coauthors": [
+    "Cosmin Pohoață"
+   ],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Geometry"
+   ],
+   "level": "Olympiad",
+   "blurb": "IMO-calibre geometry, selected and solved for the strongest students.",
+   "links": {
+    "isbn10": "0988562227",
+    "isbn13": "9780988562226",
+    "google": "VQa6rQEACAAJ"
+   }
+  },
+  {
+   "id": "117-polynomial-problems",
+   "title": "117 Polynomial Problems",
+   "subtitle": "from the AwesomeMath Summer Program",
+   "year": 2019,
+   "coauthors": [
+    "Navid Safaei",
+    "Alessandro Ventullo"
+   ],
+   "publisher": "XYZ Press",
+   "series": "AwesomeMath",
+   "topics": [
+    "Polynomials",
+    "Algebra"
+   ],
+   "level": "Olympiad",
+   "blurb": "Everything from roots and symmetric functions to advanced polynomial identities, through 117 problems.",
+   "links": {
+    "isbn10": "0999342843",
+    "isbn13": "9780999342848",
+    "publisher": "https://www.awesomemath.org/product/117-polynomial-problems-from-amsp/",
+    "google": "BRS-vgEACAAJ"
+   }
+  },
+  {
+   "id": "lemmas-in-olympiad-geometry",
+   "title": "Lemmas in Olympiad Geometry",
+   "subtitle": "",
+   "year": 2016,
+   "coauthors": [
+    "Sam Korsky",
+    "Cosmin Pohoață"
+   ],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Geometry"
+   ],
+   "level": "Olympiad",
+   "blurb": "A systematic toolkit of the recurring lemmas that unlock hard olympiad geometry.",
+   "links": {
+    "isbn10": "0988562235",
+    "isbn13": "9780988562233",
+    "publisher": "https://bookstore.ams.org/xyz-19/",
+    "google": "YFOiDAEACAAJ"
+   }
+  },
+  {
+   "id": "awesome-polynomials",
+   "title": "Awesome Polynomials for Mathematics Competitions",
+   "subtitle": "",
+   "year": 2019,
+   "coauthors": [
+    "Navid Safaei",
+    "Alessandro Ventullo"
+   ],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Polynomials"
+   ],
+   "level": "Olympiad",
+   "blurb": "A theory-plus-problems treatment of polynomials aimed squarely at competition success.",
+   "links": {
+    "isbn10": "1735831514",
+    "isbn13": "9781735831510",
+    "publisher": "https://www.awesomemath.org/product/awesome-polynomials-for-mathematics-competitions/"
+   }
+  },
+  {
+   "id": "number-theory-concepts-problems",
+   "title": "Number Theory",
+   "subtitle": "Concepts and Problems",
+   "year": 2017,
+   "coauthors": [
+    "Gabriel Dospinescu",
+    "Oleg Mushkarov"
+   ],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Number Theory"
+   ],
+   "level": "Advanced",
+   "blurb": "A deep, comprehensive number theory course — concepts developed alongside a large, demanding problem set.",
+   "links": {
+    "isbn10": "0988562200",
+    "isbn13": "9780988562202",
+    "publisher": "https://www.awesomemath.org/product/number-theory-concepts-and-problems/"
+   }
+  },
+  {
+   "id": "topics-in-functional-equations",
+   "title": "Topics in Functional Equations",
+   "subtitle": "Third Edition",
+   "year": 2020,
+   "coauthors": [
+    "Iurie Boreico",
+    "Oleg Mushkarov",
+    "Nikolai Nikolov"
+   ],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Functional Equations"
+   ],
+   "level": "Olympiad",
+   "blurb": "The standard reference for olympiad functional equations — methods, traps and a graded problem bank.",
+   "links": {
+    "isbn10": "099934286X",
+    "isbn13": "9780999342862",
+    "publisher": "https://www.awesomemath.org/product/topics-in-functional-equations/"
+   }
+  },
+  {
+   "id": "topics-in-geometric-inequalities",
+   "title": "Topics in Geometric Inequalities",
+   "subtitle": "",
+   "year": 2019,
+   "coauthors": [
+    "Oleg Mushkarov"
+   ],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Geometry",
+    "Inequalities"
+   ],
+   "level": "Olympiad",
+   "blurb": "Inequalities that live in geometry — from classical results to contest-ready techniques.",
+   "links": {
+    "isbn10": "0999342835",
+    "isbn13": "9780999342831",
+    "publisher": "https://www.awesomemath.org/product/topics-in-geometric-inequalities/"
+   }
+  },
+  {
+   "id": "sums-and-products",
+   "title": "Sums and Products",
+   "subtitle": "",
+   "year": 2018,
+   "coauthors": [
+    "Marian Tetiva"
+   ],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Algebra",
+    "Inequalities"
+   ],
+   "level": "Olympiad",
+   "blurb": "A focused study of manipulating sums and products — telescoping, symmetric functions, estimation.",
+   "links": {
+    "isbn10": "0999342819",
+    "isbn13": "9780999342817",
+    "publisher": "https://www.awesomemath.org/product/sums-and-products/"
+   }
+  },
+  {
+   "id": "romanian-problem-book",
+   "title": "A Romanian Problem Book",
+   "subtitle": "",
+   "year": 2020,
+   "coauthors": [
+    "Marian Tetiva"
+   ],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Problem Solving"
+   ],
+   "level": "Olympiad",
+   "blurb": "Problems selected from Romanian team-selection tests — a window into one of the great olympiad traditions.",
+   "links": {
+    "isbn13": "9780999342886",
+    "publisher": "https://www.awesomemath.org/product/a-romanian-problem-book/",
+    "isbn10": "0999342886"
+   }
+  },
+  {
+   "id": "pristine-landscapes",
+   "title": "Pristine Landscapes in Elementary Mathematics",
+   "subtitle": "",
+   "year": 2018,
+   "coauthors": [
+    "Cristinel Mortici",
+    "Marian Tetiva"
+   ],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Problem Solving"
+   ],
+   "level": "Intermediate",
+   "blurb": "Beautiful, accessible problems that reveal surprising depth in elementary mathematics.",
+   "links": {
+    "isbn10": "0996874577",
+    "isbn13": "9780996874571",
+    "publisher": "https://bookstore.ams.org/XYZ/22",
+    "google": "b7MYvgAACAAJ",
+    "aops": "https://www.awesomemath.org/product/pristine-landscapes-in-elementary-mathematics/"
+   }
+  },
+  {
+   "id": "mathematical-induction",
+   "title": "Mathematical Induction",
+   "subtitle": "A Powerful and Elegant Method of Proof",
+   "year": 2017,
+   "coauthors": [
+    "Vlad Crișan"
+   ],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Proof Techniques"
+   ],
+   "level": "Intermediate",
+   "blurb": "A dedicated study of induction in all its forms, with a wide range of worked applications.",
+   "links": {
+    "isbn10": "0996874593",
+    "isbn13": "9780996874595",
+    "publisher": "https://www.awesomemath.org/product/mathematical-induction/"
+   }
+  },
+  {
+   "id": "algebraic-inequalities",
+   "title": "Algebraic Inequalities",
+   "subtitle": "New Vistas",
+   "year": 2019,
+   "coauthors": [],
+   "publisher": "XYZ Press",
+   "series": "",
+   "topics": [
+    "Inequalities",
+    "Algebra"
+   ],
+   "level": "Olympiad",
+   "blurb": "Modern perspectives on inequalities — AM–GM, Cauchy–Schwarz, SOS and beyond — for the competition student.",
+   "links": {
+    "isbn10": "1470434644",
+    "isbn13": "9781470434649",
+    "publisher": "https://bookstore.ams.org/mcl-19",
+    "google": "o5rOuQEACAAJ"
+   }
+  },
+  {
+   "id": "awesome-math-pbl",
+   "title": "Awesome Math",
+   "subtitle": "Teaching Mathematics with Problem Based Learning",
+   "year": 2020,
+   "coauthors": [
+    "Kathy Cordeiro",
+    "Alina Andreescu"
+   ],
+   "publisher": "Wiley",
+   "series": "",
+   "topics": [
+    "Pedagogy"
+   ],
+   "level": "Educators",
+   "blurb": "For teachers: how to run a problem-based mathematics classroom, distilled from the AwesomeMath philosophy.",
+   "links": {
+    "isbn10": "1119575710",
+    "isbn13": "9781119575719"
+   }
+  },
+  {
+   "id": "mathematical-olympiads-around-the-world",
+   "title": "Mathematical Olympiads: Problems and Solutions from Around the World",
+   "subtitle": "Annual series, 1996–2001 (MAA)",
+   "year": 1996,
+   "coauthors": [
+    "Zuming Feng",
+    "(editors, per volume)"
+   ],
+   "publisher": "MAA",
+   "series": "MAA Problem Books",
+   "topics": [
+    "Competition Archive"
+   ],
+   "level": "Olympiad",
+   "blurb": "Edited yearly volumes collecting national-olympiad problems worldwide with solutions — a treasured archive.",
+   "links": {
+    "isbn10": "0883858037",
+    "isbn13": "9780883858035",
+    "publisher": "https://bookstore.ams.org/prb-3",
+    "archive": "mathematicalolym0000unse_d6x0"
+   }
+  },
+  {
+   "id": "usa-international-olympiads",
+   "title": "USA and International Mathematical Olympiads",
+   "subtitle": "Annual series, 2000–2004 (MAA)",
+   "year": 2001,
+   "coauthors": [
+    "Zuming Feng",
+    "(editors)"
+   ],
+   "publisher": "MAA",
+   "series": "MAA Problem Books",
+   "topics": [
+    "Competition Archive"
+   ],
+   "level": "Olympiad",
+   "blurb": "The official yearly record of USAMO and IMO problems with detailed solutions and commentary.",
+   "links": {
+    "isbn10": "0883858045",
+    "isbn13": "9780883858042",
+    "archive": "usainternational0000unse"
+   }
+  },
+  {
+   "id": "mathematical-reflections-volumes",
+   "title": "Mathematical Reflections — Collected Volumes",
+   "subtitle": "2006–2023, eight two-year books (XYZ Press)",
+   "year": 2011,
+   "coauthors": [
+    "(editor)"
+   ],
+   "publisher": "XYZ Press",
+   "series": "Mathematical Reflections",
+   "topics": [
+    "Anthology"
+   ],
+   "level": "Anthology",
+   "blurb": "Two-year hardcover collections of the free journal he founded: The First Two Years, The Next Two Years, Two More Years, Two Special Years (2014–15), Two Wonderful Years (2016–17), Two Lockdown Years (2020–21), Two Meaningful Years (2022–23). The journal itself is free online.",
+   "links": {
+    "isbn10": "0999342827",
+    "isbn13": "9780999342824",
+    "publisher": "https://www.awesomemath.org/product/mathematical-reflections-two-wonderful-years/",
+    "google": "0W3evAEACAAJ",
+    "archive": "mathematicalrefl0000unse_g8c6"
+   }
+  },
+  {
+   "id": "360-problems-contests",
+   "title": "360 Problems for Mathematical Contests",
+   "subtitle": "",
+   "year": 2003,
+   "coauthors": [
+    "Dorin Andrica"
+   ],
+   "publisher": "GIL Publishing House",
+   "series": "",
+   "topics": [
+    "Problem Solving"
+   ],
+   "level": "Olympiad",
+   "blurb": "An early, wide-ranging Andreescu–Andrica anthology: 360 contest problems with full solutions across algebra, number theory, geometry and combinatorics.",
+   "links": {
+    "isbn13": "9789739417129"
+   }
+  }
+ ]
 }
