@@ -1,7 +1,7 @@
 ---
 title: "The Complete Andreescu Library"
 subtitle: "A Free Guide to the Books of Titu Andreescu — Olympiad Mathematics Teacher to the World"
-author: "Compiled by Vanindra · github.com/Yosoyun"
+author: "Compiled by Indrajeet Yadav · github.com/Yosoyun"
 date: "June 2026"
 ---
 
@@ -161,7 +161,7 @@ You do not need money to start. These resources are genuinely free, or let you b
 
 ## Colophon & Disclaimer
 
-**Compiled with care by Vanindra.** A free public resource · GitHub **@Yosoyun** · Built June 2026.
+**Compiled with care by Indrajeet Yadav.** A free public resource · GitHub **@Yosoyun** · Built June 2026.
 
 This is an independent, non-commercial educational reference. It is **not** affiliated with, endorsed by, or produced by Titu Andreescu, AwesomeMath, XYZ Press, Springer/Birkhäuser, the MAA, or any retailer.
 

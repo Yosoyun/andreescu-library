@@ -2,7 +2,7 @@
   "_meta": {
     "title": "The Andreescu Library — Dataset",
     "description": "Bibliographic catalogue of books authored, co-authored or edited by Titu Andreescu. Facts only (titles, authors, years, publishers, topics). Access links are generated at render time as live search links to legitimate retailers, library lending, and previews — no files are hosted or redistributed.",
-    "compiled_by": "Vanindra (GitHub @Yosoyun)",
+    "compiled_by": "Indrajeet Yadav (GitHub @Yosoyun)",
     "note_on_accuracy": "Years reflect first or notable editions; several titles have multiple editions. Co-author lists name the collaborators we could verify; where a field is empty the lead author is Titu Andreescu and additional contributors may exist — verify on the retailer/publisher page. Goodreads lists ~88 records including editions and translations; reliable profiles cite 'more than 40' distinct books. We count 50+ distinct titles and collected volumes below.",
     "levels": ["Foundational", "Intermediate", "Olympiad", "Undergraduate", "Advanced", "Educators", "Anthology"],
     "last_compiled": "2026-06-16"

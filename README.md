@@ -45,6 +45,6 @@ Bibliographic details may contain small errors (several titles have multiple edi
 
 ## Credits
 
-Compiled with care by **Vanindra** ([@Yosoyun](https://github.com/Yosoyun)) to help students and teachers everywhere discover these books. Free to share.
+Compiled with care by **Indrajeet Yadav** ([@Yosoyun](https://github.com/Yosoyun)) to help students and teachers everywhere discover these books. Free to share.
 
 *Content & code released for free educational use. Attribution appreciated.*
