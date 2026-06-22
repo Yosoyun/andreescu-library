@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Problem Hub — Practice by Topic | The Andreescu Library</title>
+<meta name="description" content="Practice olympiad mathematics by topic: learn from Titu Andreescu's books, solve thousands of free official problems (AMC, AIME, USAMO, IMO Shortlist, Putnam, Mathematical Reflections), and download original practice sets. Plus an IMO Shortlist explorer and a worksheet builder." />
+<meta property="og:title" content="The Problem Hub — Practice by Topic" />
+<meta property="og:description" content="Learn, solve free official problems, and download original practice sets — organized by topic." />
+<meta property="og:image" content="https://yosoyun.github.io/andreescu-library/assets/og.png" />
+<meta name="theme-color" content="#0e0d0b" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20fill='%230e0d0b'/%3E%3Ccircle%20cx='50'%20cy='50'%20r='42'%20fill='none'%20stroke='%23d4af56'%20stroke-width='4'/%3E%3Ctext%20x='50'%20y='67'%20font-family='Georgia'%20font-weight='bold'%20font-size='46'%20fill='%23d4af56'%20text-anchor='middle'%3ETA%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<span id="top"></span>
+<div id="progress"></div>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="seal" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.3"/>
+    <circle cx="50" cy="50" r="40.5" fill="none" stroke="currentColor" stroke-width=".7"/>
+    <text x="50" y="58" text-anchor="middle" font-family="Fraunces,serif" font-weight="900" font-size="33" fill="currentColor">TA</text>
+    <text x="50" y="21.5" text-anchor="middle" font-family="Spectral,serif" font-size="6" letter-spacing="2" fill="currentColor">★ OLYMPIAD ★</text>
+    <text x="50" y="84.5" text-anchor="middle" font-family="Spectral,serif" font-size="6" letter-spacing="2" fill="currentColor">MATHEMATICS</text>
+  </symbol>
+</defs></svg>
+
+<nav class="nav"><div class="wrap row">
+  <div class="brand"><a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:.65rem;color:inherit"><svg class="bz"><use href="#seal"/></svg> The Andreescu Library</a></div>
+  <div class="links">
+    <a href="index.html">Home</a><a href="index.html#problems">His Problems</a><a href="#hub">Topics</a><a href="#shortlist">IMO Shortlist</a><a href="#builder">Worksheet</a>
+    <span class="tgwrap"><button class="tg" id="tg" title="Toggle theme">☀</button></span>
+  </div>
+</div></nav>
+
+<header class="hub-hero"><div class="wrap">
+  <p class="eyebrow reveal in">The Problem Hub · Free to practice</p>
+  <h1 class="reveal in" style="font-family:Fraunces;font-weight:900;font-size:clamp(2.4rem,7vw,4.6rem);line-height:1.02"><span class="gold-text">Practice by Topic</span></h1>
+  <p class="lede reveal in" style="margin:1rem auto 0;max-width:680px;text-align:center">Learn from his books · solve thousands of <b>free official</b> problems · download <b>original</b> practice sets. Every external problem is linked to its legitimate source — nothing pirated.</p>
+</div></header>
+
+<section id="hub" style="padding-top:30px"><div class="wrap">
+  <div class="topicbar" id="topicbar"></div>
+  <div class="topicpanel" id="topicpanel"></div>
+</div></section>
+
+<section id="shortlist" class="band"><div class="wrap">
+  <div class="sec-head reveal"><div class="dash"><span>✦</span></div><h2>IMO Shortlist Explorer</h2><p>The richest free, topic-sorted set anywhere: each year's shortlisted problems <b>with official solutions</b>, grouped Algebra (A) · Combinatorics (C) · Geometry (G) · Number Theory (N).</p></div>
+  <div style="max-width:760px;margin:0 auto;overflow:auto">
+    <table class="sltable"><thead><tr><th>Year</th><th>Shortlist (problems + solutions)</th><th>Topics</th></tr></thead><tbody id="sltbody"></tbody></table>
+  </div>
+  <p id="slnote" style="text-align:center;color:var(--ink-dim);font-size:.82rem;margin-top:14px"></p>
+</div></section>
+
+<section id="builder"><div class="wrap">
+  <div class="sec-head reveal"><div class="dash"><span>✦</span></div><h2>Worksheet Builder</h2><p>Pick topics → get a consolidated, printable practice sheet of links: your original sets plus the best free official sources for each topic. Great for a class handout.</p></div>
+  <div class="builder reveal">
+    <div class="row" id="builder-picks"></div>
+    <div class="row">
+      <button class="btn solid" id="build-btn">Build my sheet</button>
+      <button class="btn" id="print-btn" style="display:none">Print / Save as PDF</button>
+    </div>
+    <div class="out" id="builder-out"></div>
+  </div>
+</div></section>
+
+<div class="wrap colophon" id="colophon">
+  <svg class="seal reveal" style="width:64px;height:64px;color:var(--gold);margin:0 auto 14px"><use href="#seal"/></svg>
+  <div class="credit reveal" style="font-family:Fraunces;font-weight:700;font-size:1.5rem">The Problem Hub · compiled by <b style="color:var(--gold)">Indrajeet Yadav</b></div>
+  <div class="disc reveal" style="max-width:780px;margin:22px auto 0;font-size:.82rem;line-height:1.7;color:var(--ink-dim);text-align:left;background:var(--panel);border:1px solid var(--rule);padding:20px 24px;border-radius:5px">
+    <b style="color:var(--ink-soft)">How this stays legal.</b> Competition problems (AMC/AIME/USAMO/IMO/Putnam) are owned by their organizers and are <b style="color:var(--ink-soft)">linked, never re-hosted</b> here — exactly as MAA, the IMO, and the Putnam archive request. Mathematical Reflections is free by its publisher. The only files we host are <b style="color:var(--ink-soft)">original practice sets we wrote ourselves</b> and publisher-sanctioned samples. Badges on each link show its provenance.
+  </div>
+  <p style="margin-top:18px"><a href="index.html" style="color:var(--gold);text-decoration:none">← Back to the Library</a></p>
+</div>
+
+<script>
+const $=(s,el=document)=>el.querySelector(s);
+const badgeClass=b=>{const t=(b||'').toLowerCase();if(t.includes('aops'))return'aops';if(t.includes('official'))return'official';if(t.includes('our')||t.includes('original'))return'original';return'free';};
+let DATA=null, BOOKMAP={};
+
+Promise.all([
+  fetch('data/practice.json').then(r=>r.json()),
+  fetch('data/books.json').then(r=>r.json())
+]).then(([practice,books])=>{
+  DATA=practice;
+  books.books.forEach(b=>{BOOKMAP[b.id]={title:b.title,subtitle:b.subtitle,links:b.links||{}};});
+  initTopics(); initShortlist(); initBuilder(); initReveal();
+}).catch(e=>{ $('#topicpanel').innerHTML='<p style="text-align:center;color:var(--oxblood)">Could not load data. If you opened this file directly, run it via a local server (it uses fetch).</p>'; });
+
+/* ---- topics ---- */
+function initTopics(){
+  const bar=$('#topicbar');
+  bar.innerHTML=DATA.topics.map((t,i)=>`<button class="tchip${i===0?' active':''}" data-k="${t.key}">${t.name}</button>`).join('');
+  bar.querySelectorAll('.tchip').forEach(c=>c.addEventListener('click',()=>{
+    bar.querySelectorAll('.tchip').forEach(x=>x.classList.remove('active'));
+    c.classList.add('active'); renderTopic(c.dataset.k);
+  }));
+  renderTopic(DATA.topics[0].key);
+}
+function renderTopic(key){
+  const t=DATA.topics.find(x=>x.key===key);
+  const books=(t.bookIds||[]).map(id=>BOOKMAP[id]).filter(Boolean);
+  const learn=books.length?books.map(b=>{
+    const L=b.links||{}; const href=L.sample||(L.isbn10?`https://www.amazon.in/dp/${L.isbn10}`:(L.publisher||'#'));
+    return `<a href="${href}" target="_blank" rel="noopener">${b.title}${b.subtitle?' — '+b.subtitle:''}</a>`;
+  }).join(''):'<p style="color:var(--ink-soft)">Browse the full catalogue on the home page.</p>';
+  const practice=(t.free||[]).map(s=>`<div class="srcrow"><div class="sl"><a href="${s.url}" target="_blank" rel="noopener">${s.label} ↗</a>${s.note?`<small>${s.note}</small>`:''}</div><span class="pbadge ${badgeClass(s.badge)}">${s.badge}</span></div>`).join('');
+  const dl=t.setReady
+    ? `<div class="dlbox"><p style="margin:0 0 14px;color:var(--ink-soft)">An original, free practice set for ${t.name} — problems written for this site (not copied from any book), with full solutions.</p><a class="dl" href="${t.set}" target="_blank" rel="noopener">⬇ Download ${t.name} set (PDF)</a></div>`
+    : `<div class="dlbox"><p class="soon">Original ${t.name} practice set — being finalized. Meanwhile, the <b>Practice (free)</b> tab has plenty to work on.</p></div>`;
+  $('#topicpanel').innerHTML=`
+    <h2>${t.name}</h2>
+    <p class="tp-blurb">${t.blurb}</p>
+    <div class="tabs">
+      <button class="tab active" data-p="practice">Practice (free)</button>
+      <button class="tab" data-p="learn">Learn (his books)</button>
+      <button class="tab" data-p="download">Download (original set)</button>
+    </div>
+    <div class="tabpanel active" data-panel="practice">${practice}</div>
+    <div class="tabpanel" data-panel="learn"><div class="bookmini">${learn}</div></div>
+    <div class="tabpanel" data-panel="download">${dl}</div>`;
+  $('#topicpanel').querySelectorAll('.tab').forEach(tab=>tab.addEventListener('click',()=>{
+    $('#topicpanel').querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    $('#topicpanel').querySelectorAll('.tabpanel').forEach(x=>x.classList.remove('active'));
+    tab.classList.add('active');
+    $(`#topicpanel .tabpanel[data-panel="${tab.dataset.p}"]`).classList.add('active');
+  }));
+}
+
+/* ---- shortlist ---- */
+function initShortlist(){
+  const sl=DATA.shortlist; const rows=[...sl.years].reverse().map(y=>{
+    const url=sl.pattern.replace('{Y}',y);
+    return `<tr><td>${y}</td><td><a href="${url}" target="_blank" rel="noopener">IMO ${y} Shortlist — problems + solutions ↗</a></td><td><span class="pbadge official">A · C · G · N</span></td></tr>`;
+  }).join('');
+  $('#sltbody').innerHTML=rows; $('#slnote').textContent=sl.note;
+}
+
+/* ---- worksheet builder ---- */
+function initBuilder(){
+  $('#builder-picks').innerHTML=DATA.topics.map(t=>`<label class="pick"><input type="checkbox" value="${t.key}"> ${t.name}</label>`).join('');
+  $('#builder-picks').querySelectorAll('label.pick').forEach(l=>{l.querySelector('input').addEventListener('change',e=>l.classList.toggle('on',e.target.checked));});
+  $('#build-btn').addEventListener('click',()=>{
+    const picked=[...$('#builder-picks').querySelectorAll('input:checked')].map(i=>i.value);
+    if(!picked.length){$('#builder-out').innerHTML='<p style="color:var(--oxblood)">Pick at least one topic.</p>';return;}
+    let html='<div style="background:var(--panel-solid);border:1px solid var(--rule);border-radius:6px;padding:24px"><h3 style="font-family:Fraunces;margin:0 0 .3rem">Practice Worksheet</h3><p style="color:var(--ink-dim);font-size:.82rem;margin:0 0 1rem">Compiled from The Andreescu Library · Problem Hub — links open the legitimate free source.</p>';
+    picked.forEach(k=>{const t=DATA.topics.find(x=>x.key===k);
+      html+=`<div style="margin:16px 0"><h4 style="font-family:Fraunces;color:var(--gold);margin:0 0 .4rem">${t.name}</h4><ul style="margin:.2rem 0;padding-left:1.1rem;line-height:1.9">`;
+      if(t.setReady) html+=`<li><a href="${t.set}" target="_blank" rel="noopener">Original ${t.name} practice set (PDF)</a> <span class="pbadge original">our original</span></li>`;
+      (t.free||[]).forEach(s=>{html+=`<li><a href="${s.url}" target="_blank" rel="noopener">${s.label}</a> <span class="pbadge ${badgeClass(s.badge)}">${s.badge}</span></li>`;});
+      html+='</ul></div>';
+    });
+    html+='</div>';
+    $('#builder-out').innerHTML=html; $('#print-btn').style.display='inline-flex';
+  });
+  $('#print-btn').addEventListener('click',()=>window.print());
+}
+
+/* ---- chrome ---- */
+function initReveal(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));}
+const prog=$('#progress');addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';},{passive:true});
+const tg=$('#tg'),root=document.documentElement,saved=localStorage.getItem('al-theme2');
+if(saved)root.setAttribute('data-theme',saved);tg.textContent=root.getAttribute('data-theme')==='light'?'☾':'☀';
+tg.addEventListener('click',()=>{const l=root.getAttribute('data-theme')==='light';root.setAttribute('data-theme',l?'dark':'light');tg.textContent=l?'☀':'☾';localStorage.setItem('al-theme2',l?'dark':'light');});
+</script>
+</body>
+</html>

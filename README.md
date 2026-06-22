@@ -20,6 +20,19 @@
 - **Legitimate access for every book** — live links to buy in India (Amazon.in, Flipkart), borrow legally (Internet Archive), preview free (Google Books), publisher pages, and genuinely free material.
 - **A "read for free" section** — starting with the *Mathematical Reflections* journal, which is 100% free online.
 
+## 🧮 The Problem Hub (`practice.html`)
+
+Beyond the books — a place to actually *practice*, organized by topic (Algebra, Number Theory, Geometry, Combinatorics, Trigonometry, Functional Equations, Inequalities, Polynomials, Complex Numbers, Diophantine):
+
+- **Learn** — his books on each topic.
+- **Practice (free)** — curated, link-only deep links to free official problems: AoPS topic categories, the **IMO Shortlist** (problems *with* solutions, sorted A/C/G/N), Putnam, and the free **Mathematical Reflections** journal. Each link carries a provenance badge.
+- **Download** — **80 original problems** (8 per topic) written for this site, sympy-verified, with full multi-method solutions, as free PDFs signed *Indrajeet Yadav* (`pdf/practice/<topic>.pdf`). Not copied from any book.
+- An **IMO Shortlist Explorer** and a **Worksheet Builder** (pick topics → printable link sheet).
+
+The home page also gained: **Problems He Gave the World** (real contest problems he authored), **The 1994 Perfect Team** + coaching record, **See Him Teach** (lectures), and a **"Read a free sample"** button on 30 book cards (publisher look-inside / Springer front-matter PDFs).
+
+**Legal line:** competition problems are *linked, never re-hosted* (per MAA/IMO/Putnam terms). Only original sets and publisher-sanctioned samples are downloadable here.
+
 ## Design
 
 A single self-contained `index.html` (no build step, no dependencies, works offline). Archival/editorial aesthetic — **Fraunces** + **Spectral** typefaces, parchment & ink palette, paper-grain texture, and a "midnight study" dark mode. Fully responsive.

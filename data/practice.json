@@ -1,0 +1,431 @@
+{
+ "topics": [
+  {
+   "key": "algebra",
+   "name": "Algebra",
+   "blurb": "Equations, sequences, sums and products — the language of every other topic.",
+   "bookIds": [
+    "101-problems-in-algebra",
+    "105-algebra-problems",
+    "108-algebra-problems",
+    "117-polynomial-problems",
+    "sums-and-products",
+    "algebraic-inequalities"
+   ],
+   "free": [
+    {
+     "label": "AoPS — Olympiad Algebra",
+     "url": "https://artofproblemsolving.com/wiki/index.php/Category:Olympiad_Algebra_Problems",
+     "badge": "AoPS · free",
+     "note": ""
+    },
+    {
+     "label": "IMO Shortlist (Algebra A-codes)",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "badge": "Official · link",
+     "note": "Each year's shortlist groups Algebra as A1, A2, …"
+    },
+    {
+     "label": "Putnam archive (Kedlaya)",
+     "url": "https://kskedlaya.org/putnam-archive/",
+     "badge": "Official · link",
+     "note": ""
+    }
+   ],
+   "set": "pdf/practice/algebra.pdf",
+   "setReady": true,
+   "problemCount": 8
+  },
+  {
+   "key": "number-theory",
+   "name": "Number Theory",
+   "blurb": "Divisibility, congruences, primes and the integers' hidden structure.",
+   "bookIds": [
+    "104-number-theory-problems",
+    "number-theory-structures",
+    "introduction-diophantine-equations",
+    "quadratic-diophantine-equations",
+    "number-theory-concepts-problems"
+   ],
+   "free": [
+    {
+     "label": "AoPS — Olympiad Number Theory",
+     "url": "https://artofproblemsolving.com/wiki/index.php/Category:Olympiad_Number_Theory_Problems",
+     "badge": "AoPS · free",
+     "note": ""
+    },
+    {
+     "label": "IMO Shortlist (Number Theory N-codes)",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "badge": "Official · link",
+     "note": ""
+    },
+    {
+     "label": "IMO problems 1959–",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "badge": "Official · link",
+     "note": ""
+    }
+   ],
+   "set": "pdf/practice/number-theory.pdf",
+   "setReady": true,
+   "problemCount": 8
+  },
+  {
+   "key": "geometry",
+   "name": "Geometry",
+   "blurb": "Angle-chasing, similarity and the synthetic eye that olympiads reward.",
+   "bookIds": [
+    "complex-numbers-a-to-z",
+    "geometric-problems-maxima-minima",
+    "106-geometry-problems",
+    "107-geometry-problems",
+    "110-geometry-problems-imo",
+    "lemmas-in-olympiad-geometry",
+    "topics-in-geometric-inequalities"
+   ],
+   "free": [
+    {
+     "label": "AoPS — Olympiad Geometry",
+     "url": "https://artofproblemsolving.com/wiki/index.php/Category:Olympiad_Geometry_Problems",
+     "badge": "AoPS · free",
+     "note": ""
+    },
+    {
+     "label": "IMO Shortlist (Geometry G-codes)",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "badge": "Official · link",
+     "note": ""
+    },
+    {
+     "label": "Evan Chen — Euclidean Geometry (free book)",
+     "url": "https://web.evanchen.cc/geombook.html",
+     "badge": "Free book",
+     "note": ""
+    }
+   ],
+   "set": "pdf/practice/geometry.pdf",
+   "setReady": true,
+   "problemCount": 8
+  },
+  {
+   "key": "combinatorics",
+   "name": "Combinatorics",
+   "blurb": "Counting, bijections, pigeonhole and extremal arguments.",
+   "bookIds": [
+    "102-combinatorial-problems",
+    "path-to-combinatorics"
+   ],
+   "free": [
+    {
+     "label": "AoPS — Olympiad Combinatorics",
+     "url": "https://artofproblemsolving.com/wiki/index.php/Category:Olympiad_Combinatorics_Problems",
+     "badge": "AoPS · free",
+     "note": ""
+    },
+    {
+     "label": "IMO Shortlist (Combinatorics C-codes)",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "badge": "Official · link",
+     "note": ""
+    }
+   ],
+   "set": "pdf/practice/combinatorics.pdf",
+   "setReady": true,
+   "problemCount": 8
+  },
+  {
+   "key": "trigonometry",
+   "name": "Trigonometry",
+   "blurb": "Identities and substitutions that reach far beyond the unit circle.",
+   "bookIds": [
+    "103-trigonometry-problems"
+   ],
+   "free": [
+    {
+     "label": "AoPS — past AMC/AIME (trig)",
+     "url": "https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions",
+     "badge": "AoPS · free",
+     "note": ""
+    },
+    {
+     "label": "TRIG · The Circular Arsenal (free book)",
+     "url": "https://yosoyun.github.io/ranker-masterbooks/",
+     "badge": "Free book",
+     "note": "A free 106-problem olympiad-trig book by Indrajeet Yadav"
+    }
+   ],
+   "set": "pdf/practice/trigonometry.pdf",
+   "setReady": true,
+   "problemCount": 8
+  },
+  {
+   "key": "functional-equations",
+   "name": "Functional Equations",
+   "blurb": "Pin down an unknown function from the rules it must obey.",
+   "bookIds": [
+    "topics-in-functional-equations"
+   ],
+   "free": [
+    {
+     "label": "Evan Chen — Intro to Functional Equations (PDF)",
+     "url": "https://web.evanchen.cc/handouts/FuncEq-Intro/FuncEq-Intro.pdf",
+     "badge": "Free handout",
+     "note": ""
+    },
+    {
+     "label": "AoPS — Olympiad Algebra (FE lives here)",
+     "url": "https://artofproblemsolving.com/wiki/index.php/Category:Olympiad_Algebra_Problems",
+     "badge": "AoPS · free",
+     "note": ""
+    },
+    {
+     "label": "IMO Shortlist (A-codes)",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "badge": "Official · link",
+     "note": ""
+    }
+   ],
+   "set": "pdf/practice/functional-equations.pdf",
+   "setReady": true,
+   "problemCount": 8
+  },
+  {
+   "key": "inequalities",
+   "name": "Inequalities",
+   "blurb": "AM–GM, Cauchy–Schwarz and the art of the tight bound.",
+   "bookIds": [
+    "geometric-problems-maxima-minima",
+    "topics-in-geometric-inequalities",
+    "sums-and-products",
+    "algebraic-inequalities"
+   ],
+   "free": [
+    {
+     "label": "AoPS — contest collections",
+     "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+     "badge": "AoPS · free",
+     "note": ""
+    },
+    {
+     "label": "IMO Shortlist (Algebra A-codes)",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "badge": "Official · link",
+     "note": ""
+    }
+   ],
+   "set": "pdf/practice/inequalities.pdf",
+   "setReady": true,
+   "problemCount": 8
+  },
+  {
+   "key": "polynomials",
+   "name": "Polynomials",
+   "blurb": "Roots, Vieta and symmetric functions.",
+   "bookIds": [
+    "117-polynomial-problems",
+    "awesome-polynomials"
+   ],
+   "free": [
+    {
+     "label": "AoPS — Olympiad Algebra",
+     "url": "https://artofproblemsolving.com/wiki/index.php/Category:Olympiad_Algebra_Problems",
+     "badge": "AoPS · free",
+     "note": ""
+    },
+    {
+     "label": "Putnam archive (Kedlaya)",
+     "url": "https://kskedlaya.org/putnam-archive/",
+     "badge": "Official · link",
+     "note": ""
+    }
+   ],
+   "set": "pdf/practice/polynomials.pdf",
+   "setReady": true,
+   "problemCount": 8
+  },
+  {
+   "key": "complex-numbers",
+   "name": "Complex Numbers",
+   "blurb": "Roots of unity and geometry made algebraic.",
+   "bookIds": [
+    "complex-numbers-a-to-z"
+   ],
+   "free": [
+    {
+     "label": "AoPS — Olympiad Algebra",
+     "url": "https://artofproblemsolving.com/wiki/index.php/Category:Olympiad_Algebra_Problems",
+     "badge": "AoPS · free",
+     "note": ""
+    },
+    {
+     "label": "IMO problems 1959–",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "badge": "Official · link",
+     "note": ""
+    }
+   ],
+   "set": "pdf/practice/complex-numbers.pdf",
+   "setReady": true,
+   "problemCount": 8
+  },
+  {
+   "key": "diophantine",
+   "name": "Diophantine Equations",
+   "blurb": "Equations that must be solved in whole numbers.",
+   "bookIds": [
+    "introduction-diophantine-equations",
+    "quadratic-diophantine-equations"
+   ],
+   "free": [
+    {
+     "label": "AoPS — Olympiad Number Theory",
+     "url": "https://artofproblemsolving.com/wiki/index.php/Category:Olympiad_Number_Theory_Problems",
+     "badge": "AoPS · free",
+     "note": ""
+    },
+    {
+     "label": "IMO Shortlist (Number Theory N-codes)",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "badge": "Official · link",
+     "note": ""
+    }
+   ],
+   "set": "pdf/practice/diophantine.pdf",
+   "setReady": true,
+   "problemCount": 8
+  }
+ ],
+ "shortlist": {
+  "pattern": "https://www.imo-official.org/problems/IMO{Y}SL.pdf",
+  "years": [
+   2006,
+   2007,
+   2008,
+   2009,
+   2010,
+   2011,
+   2012,
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "note": "Each IMO Shortlist PDF contains ~30 problems WITH official solutions, pre-grouped by topic: Algebra (A), Combinatorics (C), Geometry (G), Number Theory (N). The newest shortlist is released about a year after that IMO."
+ },
+ "andreescuProblems": [
+  {
+   "title": "IMO 2000, Problem 2",
+   "teaser": "A classic inequality for positive reals with abc = 1 — proposed by Titu Andreescu for the USA.",
+   "contest": "IMO 2000",
+   "credit": "Proposed by Titu Andreescu (USA)",
+   "url": "https://artofproblemsolving.com/wiki/index.php/2000_IMO_Problems/Problem_2"
+  },
+  {
+   "title": "USAMO 2003, Problem 1",
+   "teaser": "On n-digit numbers all of whose digits are odd and divisibility by 5^n.",
+   "contest": "USAMO 2003",
+   "credit": "Proposed by Titu Andreescu",
+   "url": "https://artofproblemsolving.com/wiki/index.php/2003_USAMO_Problems/Problem_1"
+  },
+  {
+   "title": "USAMO 2005, Problem 6",
+   "teaser": "A subset / digit-sum problem with a clean bound.",
+   "contest": "USAMO 2005",
+   "credit": "Proposed by Titu Andreescu & Gabriel Dospinescu",
+   "url": "https://artofproblemsolving.com/wiki/index.php/2005_USAMO_Problems/Problem_6"
+  },
+  {
+   "title": "USAMO 2008, Problem 1",
+   "teaser": "A number-theory construction problem.",
+   "contest": "USAMO 2008",
+   "credit": "Reported proposed by Titu Andreescu",
+   "url": "https://artofproblemsolving.com/wiki/index.php/2008_USAMO_Problems/Problem_1"
+  }
+ ],
+ "record": {
+  "teamUrl": "https://www.imo-official.org/results/team/country/USA/",
+  "individualUrl": "https://www.imo-official.org/results/individual/country/USA/",
+  "note": "Titu Andreescu was head coach of the USA IMO team (1994–2002) and director of the Mathematical Olympiad Summer Program (1995–2002). Verify every figure at the official IMO results pages.",
+  "perfect1994": {
+   "headline": "1994 · Hong Kong · a perfect 252/252",
+   "blurb": "The USA team Andreescu coached became the first nation in IMO history to post a perfect team score — all six contestants solved all six problems for 42/42 each.",
+   "team": [
+    "Jeremy Bem",
+    "Aleksandr Khazanov",
+    "Jacob Lurie",
+    "Noam Shazeer",
+    "Stephen Wang",
+    "Jonathan Weinstein"
+   ],
+   "wherenow": [
+    {
+     "name": "Jacob Lurie",
+     "note": "mathematician at the IAS; MacArthur Fellow and Breakthrough Prize winner."
+    },
+    {
+     "name": "Noam Shazeer",
+     "note": "AI researcher — co-author of “Attention Is All You Need” (the Transformer) and co-founder of Character.AI."
+    }
+   ]
+  }
+ },
+ "talks": [
+  {
+   "label": "“See him teach” — Metroplex Math Circle lecture",
+   "url": "https://www.youtube.com/watch?v=KYrcIW-alzo",
+   "type": "video"
+  },
+  {
+   "label": "Metroplex Math Circle — full lecture archive",
+   "url": "https://metroplexmathcircle.wordpress.com/category/titu-andreescu/",
+   "type": "archive"
+  },
+  {
+   "label": "UT Dallas — faculty profile",
+   "url": "https://profiles.utdallas.edu/titu.andreescu",
+   "type": "profile"
+  },
+  {
+   "label": "AwesomeMath — the program he founded (2006)",
+   "url": "https://www.awesomemath.org/",
+   "type": "site"
+  },
+  {
+   "label": "Book overview — Mathematical Olympiad Challenges",
+   "url": "https://www.youtube.com/watch?v=zezvtUB1aNc",
+   "type": "video"
+  }
+ ],
+ "mr": {
+  "archive": "https://www.awesomemath.org/mathematical-reflections/archives/",
+  "home": "https://www.awesomemath.org/mathematical-reflections/",
+  "note": "The free online journal Titu Andreescu founded in 2006. Six issues a year, every one free to read. Problems are split into columns by level: Junior (J), Senior (S), Olympiad (O) and Undergraduate (U) — cite them like “MR S612”.",
+  "columns": [
+   [
+    "J",
+    "Junior"
+   ],
+   [
+    "S",
+    "Senior"
+   ],
+   [
+    "O",
+    "Olympiad"
+   ],
+   [
+    "U",
+    "Undergraduate"
+   ]
+  ]
+ }
+}

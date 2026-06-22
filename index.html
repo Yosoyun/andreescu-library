@@ -22,226 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
-<style>
-  :root{
-    --bg:#0e0d0b; --bg2:#14120d; --panel:rgba(255,255,255,.026); --panel-solid:#17150f;
-    --ink:#f2ebde; --ink-soft:#a99d85; --ink-dim:#7c715b;
-    --gold:#d4af56; --gold-bright:#eccd76; --gold-deep:#9a7b33;
-    --oxblood:#c75a4f; --oxblood-deep:#a23d36;
-    --rule:rgba(212,175,86,.16); --rule-soft:rgba(255,255,255,.07);
-    --glow:rgba(212,175,86,.16); --shadow:rgba(0,0,0,.5);
-    --tag:rgba(212,175,86,.1); --tag-ink:#d8be7e;
-    --maxw:1200px;
-  }
-  html[data-theme="light"]{
-    --bg:#f5efe3; --bg2:#ece3d1; --panel:rgba(124,36,38,.025); --panel-solid:#fffaf0;
-    --ink:#231d16; --ink-soft:#5e5546; --ink-dim:#8a7c62;
-    --gold:#9a7b33; --gold-bright:#b8932f; --gold-deep:#7d6020;
-    --oxblood:#7c2426; --oxblood-deep:#601a1c;
-    --rule:rgba(124,36,38,.14); --rule-soft:rgba(0,0,0,.08);
-    --glow:rgba(154,123,51,.14); --shadow:rgba(80,60,20,.16);
-    --tag:rgba(124,36,38,.07); --tag-ink:#7d5a30;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:"Spectral",Georgia,serif; font-weight:400; font-size:18px; line-height:1.7;
-    -webkit-font-smoothing:antialiased; overflow-x:hidden;
-    transition:background .6s ease,color .6s ease;
-  }
-  body::before{
-    content:""; position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.4;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-    mix-blend-mode:overlay;
-  }
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 30px; position:relative; z-index:3;}
-  a{color:inherit;}
-  ::selection{background:var(--gold); color:#0e0d0b;}
-  ::-webkit-scrollbar{width:11px;}
-  ::-webkit-scrollbar-track{background:var(--bg2);}
-  ::-webkit-scrollbar-thumb{background:var(--gold-deep); border-radius:6px; border:3px solid var(--bg2);}
-
-  h1,h2,h3,.display{font-family:"Fraunces",Georgia,serif; font-optical-sizing:auto; font-weight:700; line-height:1.05; letter-spacing:-.012em;}
-  .eyebrow{font-family:"Spectral"; text-transform:uppercase; letter-spacing:.36em; font-size:.72rem; font-weight:600; color:var(--gold); margin:0 0 1rem;}
-  .script{font-family:"Cormorant Garamond"; font-style:italic; font-weight:500;}
-  .gold-text{background:linear-gradient(120deg,var(--gold-deep),var(--gold-bright) 45%,var(--gold) 60%,var(--gold-bright)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;}
-
-  #progress{position:fixed; top:0; left:0; height:3px; width:0; z-index:200;
-    background:linear-gradient(90deg,var(--gold-deep),var(--gold-bright)); box-shadow:0 0 10px var(--glow); transition:width .1s linear;}
-
-  .nav{position:sticky; top:0; z-index:100; backdrop-filter:blur(14px) saturate(140%);
-    background:color-mix(in srgb,var(--bg) 78%,transparent); border-bottom:1px solid var(--rule);}
-  .nav .row{display:flex; align-items:center; justify-content:space-between; height:62px;}
-  .brand{display:flex; align-items:center; gap:.65rem; font-family:"Fraunces"; font-weight:900; font-size:1.04rem; letter-spacing:.01em;}
-  .brand .bz{width:30px; height:30px; color:var(--gold);}
-  .links{display:flex; gap:1.7rem; align-items:center;}
-  .links a{font-size:.78rem; text-transform:uppercase; letter-spacing:.16em; text-decoration:none; color:var(--ink-soft); position:relative; padding:.2rem 0; transition:color .25s;}
-  .links a::after{content:""; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:var(--gold); transition:width .3s;}
-  .links a:hover{color:var(--ink);} .links a:hover::after{width:100%;}
-  .tg{background:none; border:1px solid var(--rule); color:var(--gold); width:40px; height:32px; border-radius:3px; cursor:pointer; font-size:.95rem; transition:.25s;}
-  .tg:hover{border-color:var(--gold); box-shadow:0 0 14px var(--glow);}
-  @media(max-width:820px){ .links a:not(.tgwrap){display:none;} }
-
-  .hero{position:relative; min-height:94vh; display:flex; align-items:center; overflow:hidden; padding:70px 0 50px;}
-  .aurora{position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.9;}
-  .aurora i{position:absolute; border-radius:50%; filter:blur(70px); opacity:.5; animation:float 18s ease-in-out infinite;}
-  .aurora i:nth-child(1){width:560px; height:560px; background:radial-gradient(circle,var(--glow),transparent 70%); top:-120px; right:-80px;}
-  .aurora i:nth-child(2){width:480px; height:480px; background:radial-gradient(circle,rgba(199,90,79,.14),transparent 70%); bottom:-140px; left:-100px; animation-delay:-6s;}
-  .aurora i:nth-child(3){width:380px; height:380px; background:radial-gradient(circle,var(--glow),transparent 70%); top:40%; left:38%; animation-delay:-11s;}
-  @keyframes float{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(30px,-26px) scale(1.08);}}
-  .hero .grid{display:grid; grid-template-columns:1.25fr .9fr; gap:60px; align-items:center; position:relative; z-index:3;}
-  @media(max-width:900px){ .hero .grid{grid-template-columns:1fr; gap:42px; text-align:center;} }
-  .hero h1{font-size:clamp(3rem,9vw,6.6rem); font-weight:900; margin:.4rem 0;}
-  .hero h1 .l1{display:block; font-family:"Cormorant Garamond"; font-style:italic; font-weight:500; font-size:.32em; letter-spacing:.02em; color:var(--ink-soft); margin-bottom:.1em;}
-  .hero .lede{font-size:clamp(1.05rem,2.4vw,1.4rem); color:var(--ink-soft); font-style:italic; font-family:"Cormorant Garamond"; max-width:540px; margin:1.1rem 0 0;}
-  @media(max-width:900px){ .hero .lede{margin-inline:auto;} }
-  .hero .cta{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
-  @media(max-width:900px){ .hero .cta{justify-content:center;} }
-  .btn{font-family:"Spectral"; font-size:.82rem; text-transform:uppercase; letter-spacing:.16em; text-decoration:none; padding:.85rem 1.6rem; border:1px solid var(--gold); color:var(--gold); transition:.28s; display:inline-flex; align-items:center; gap:.5rem; border-radius:2px;}
-  .btn:hover{background:var(--gold); color:#0e0d0b; box-shadow:0 0 24px var(--glow); transform:translateY(-2px);}
-  .btn.solid{background:linear-gradient(120deg,var(--gold-deep),var(--gold)); color:#0e0d0b; border-color:transparent;}
-  .btn.solid:hover{filter:brightness(1.12);}
-  .hero .quick{display:flex; gap:26px; margin-top:30px; flex-wrap:wrap;}
-  @media(max-width:900px){ .hero .quick{justify-content:center;} }
-  .hero .quick div{font-size:.74rem; text-transform:uppercase; letter-spacing:.14em; color:var(--ink-dim);}
-  .hero .quick b{display:block; font-family:"Fraunces"; font-weight:900; font-size:1.9rem; letter-spacing:0; color:var(--gold); -webkit-text-fill-color:initial;}
-
-  .portrait{position:relative; justify-self:center; width:min(360px,80vw); aspect-ratio:1; display:grid; place-items:center;}
-  .portrait .ring{position:absolute; inset:0; animation:spin 60s linear infinite;}
-  @keyframes spin{to{transform:rotate(360deg);}}
-  .portrait .frame{position:absolute; inset:7%; border-radius:50%; border:1px solid var(--rule); box-shadow:0 0 60px -10px var(--glow), inset 0 0 40px rgba(0,0,0,.4); overflow:hidden; background:radial-gradient(circle at 50% 35%,var(--bg2),var(--bg)); display:grid; place-items:center;}
-  .portrait .frame img{width:100%; height:100%; object-fit:cover; filter:grayscale(.15) contrast(1.02);}
-  .portrait .medallion{width:64%; color:var(--gold); opacity:.92;}
-  .portrait .cap{position:absolute; bottom:-6%; left:50%; transform:translateX(-50%); background:var(--bg); border:1px solid var(--rule); padding:.4rem 1.1rem; font-family:"Cormorant Garamond"; font-style:italic; font-size:1rem; color:var(--ink-soft); white-space:nowrap; box-shadow:0 8px 24px var(--shadow);}
-
-  section{padding:96px 0; position:relative;}
-  .sec-head{text-align:center; margin-bottom:54px;}
-  .sec-head h2{font-size:clamp(2.1rem,5.2vw,3.4rem);}
-  .sec-head .dash{display:flex; align-items:center; gap:1rem; justify-content:center; max-width:230px; margin:0 auto 14px; color:var(--gold);}
-  .sec-head .dash::before,.sec-head .dash::after{content:""; height:1px; background:linear-gradient(90deg,transparent,var(--gold)); flex:1;}
-  .sec-head .dash::after{background:linear-gradient(90deg,var(--gold),transparent);}
-  .sec-head p{max-width:660px; margin:.8rem auto 0; color:var(--ink-soft);}
-
-  .reveal{opacity:0; transform:translateY(34px); transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);}
-  .reveal.in{opacity:1; transform:none;}
-
-  .bio{display:grid; grid-template-columns:1fr 1.4fr; gap:54px; align-items:start;}
-  @media(max-width:880px){ .bio{grid-template-columns:1fr; gap:34px;} }
-  .bio .lead p:first-of-type::first-letter{font-family:"Fraunces"; font-weight:900; float:left; font-size:4.4rem; line-height:.76; padding:.05em .12em 0 0; color:var(--gold); -webkit-text-fill-color:initial;}
-  .bio .lead p{margin:0 0 1.15rem; color:var(--ink-soft); font-size:1.08rem;}
-  .bio .lead p strong{color:var(--ink); font-weight:600;}
-  .bio .photo-col{position:sticky; top:90px;}
-  .bio .photo-card{background:var(--panel); border:1px solid var(--rule); padding:14px; border-radius:4px; box-shadow:0 20px 50px -28px var(--shadow);}
-  .bio .photo-card .ph{aspect-ratio:4/5; border-radius:3px; overflow:hidden; background:radial-gradient(circle at 50% 30%,var(--bg2),var(--bg)); display:grid; place-items:center;}
-  .bio .photo-card .ph img{width:100%; height:100%; object-fit:cover;}
-  .bio .photo-card .ph svg{width:55%; color:var(--gold); opacity:.85;}
-  .bio .photo-card figcaption{font-family:"Cormorant Garamond"; font-style:italic; color:var(--ink-soft); font-size:.96rem; padding:.7rem .3rem .2rem; text-align:center;}
-  .bio .photo-card .attrib{font-size:.66rem; color:var(--ink-dim); text-align:center; padding:0 .3rem .2rem;}
-  .bio .photo-card .attrib a{color:var(--gold-deep);}
-  .factbar{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
-  .factbar span{font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; background:var(--tag); color:var(--tag-ink); padding:.34rem .6rem; border-radius:2px; border:1px solid var(--rule);}
-
-  .band{border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); background:var(--bg2);}
-  .stats{display:grid; grid-template-columns:repeat(5,1fr);}
-  @media(max-width:760px){ .stats{grid-template-columns:repeat(2,1fr);} .stats .st:nth-child(5){grid-column:1/3;} }
-  .st{padding:38px 14px; text-align:center; border-right:1px solid var(--rule);}
-  .st:last-child{border-right:none;}
-  .st .n{font-family:"Fraunces"; font-weight:900; font-size:2.9rem; line-height:1; color:var(--gold); font-variant-numeric:tabular-nums;}
-  .st .lab{font-size:.7rem; text-transform:uppercase; letter-spacing:.18em; color:var(--ink-soft); margin-top:.6rem;}
-
-  .timeline{max-width:780px; margin:0 auto; position:relative; padding-left:30px;}
-  .timeline::before{content:""; position:absolute; left:7px; top:8px; bottom:8px; width:2px; background:linear-gradient(var(--gold),transparent);}
-  .tl{position:relative; padding:0 0 34px 34px;}
-  .tl::before{content:""; position:absolute; left:-1px; top:7px; width:16px; height:16px; border-radius:50%; background:var(--bg); border:2px solid var(--gold); box-shadow:0 0 0 4px color-mix(in srgb,var(--gold) 14%,transparent);}
-  .tl .yr{font-family:"Fraunces"; font-weight:700; color:var(--gold); font-size:1.18rem;}
-  .tl .ev{color:var(--ink-soft);} .tl .ev b{color:var(--ink); font-weight:600;}
-
-  .legacy{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:22px;}
-  .lc{background:var(--panel); border:1px solid var(--rule); border-radius:4px; padding:30px 26px; position:relative; overflow:hidden; transition:transform .35s,box-shadow .35s,border-color .35s;}
-  .lc::before{content:""; position:absolute; left:0; top:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold-deep),var(--gold),transparent);}
-  .lc:hover{transform:translateY(-6px); border-color:var(--rule); box-shadow:0 26px 50px -28px var(--shadow),0 0 40px -20px var(--glow);}
-  .lc .ic{color:var(--gold); margin-bottom:14px;}
-  .lc h3{font-size:1.32rem; margin:0 0 .5rem;}
-  .lc p{margin:0; font-size:.97rem; color:var(--ink-soft);}
-  .lc .yr{font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-deep); font-weight:600; display:block; margin-bottom:.5rem;}
-
-  .toolbar{display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:center; margin-bottom:14px;}
-  .search{flex:1 1 320px; max-width:440px; display:flex; align-items:center; gap:.6rem; background:var(--panel); border:1px solid var(--rule); padding:.6rem 1rem; border-radius:3px; transition:border-color .25s,box-shadow .25s;}
-  .search:focus-within{border-color:var(--gold); box-shadow:0 0 18px var(--glow);}
-  .search input{border:none; background:none; outline:none; font-family:"Spectral"; font-size:1rem; color:var(--ink); width:100%;}
-  .search svg{color:var(--ink-soft); flex:none;}
-  .filters{display:flex; gap:10px; flex-wrap:wrap; justify-content:center;}
-  .filters select{font-family:"Spectral"; font-size:.88rem; padding:.55rem .8rem; background:var(--panel-solid); color:var(--ink); border:1px solid var(--rule); border-radius:3px; cursor:pointer;}
-  .countline{text-align:center; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-dim); margin-bottom:30px;}
-  .countline b{color:var(--gold);}
-
-  .grid-books{display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:24px;}
-  .card{background:var(--panel); border:1px solid var(--rule); border-radius:5px; padding:26px 26px 20px 30px; position:relative; display:flex; flex-direction:column; overflow:hidden; transition:transform .3s,box-shadow .3s,border-color .3s;}
-  .card::before{content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--spine,var(--gold)); box-shadow:0 0 18px -2px var(--spine,var(--gold));}
-  .card::after{content:""; position:absolute; inset:0; background:radial-gradient(120% 80% at 0% 0%,var(--glow),transparent 55%); opacity:0; transition:opacity .35s; pointer-events:none;}
-  .card:hover{transform:translateY(-6px); border-color:var(--rule); box-shadow:0 30px 56px -30px var(--shadow);}
-  .card:hover::after{opacity:.5;}
-  .card .top{display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:.3rem;}
-  .card h3{font-size:1.32rem; line-height:1.12; margin:0;}
-  .card .yr{font-family:"Fraunces"; font-weight:700; color:var(--gold); font-size:.94rem; flex:none; font-variant-numeric:tabular-nums;}
-  .card .subt{font-family:"Cormorant Garamond"; font-style:italic; color:var(--ink-soft); font-size:1.02rem; margin:.2rem 0 0;}
-  .card .auth{font-size:.85rem; margin:.7rem 0 .2rem; color:var(--ink-soft);}
-  .card .auth b{color:var(--ink); font-weight:600;}
-  .card .blurb{font-size:.94rem; color:var(--ink-soft); margin:.6rem 0 .9rem; flex:1;}
-  .tags{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:.5rem;}
-  .tag{font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; background:var(--tag); color:var(--tag-ink); padding:.24rem .55rem; border-radius:2px; border:1px solid var(--rule);}
-  .tag.lvl{border-color:var(--gold); color:var(--gold); background:transparent;}
-  .access{display:flex; flex-wrap:wrap; gap:7px; margin-top:auto; padding-top:13px; border-top:1px solid var(--rule);}
-  .access a{font-size:.73rem; letter-spacing:.03em; text-decoration:none; padding:.4rem .64rem; border:1px solid var(--rule); color:var(--ink-soft); border-radius:2px; transition:.2s; white-space:nowrap; display:inline-flex; align-items:center; gap:.35rem;}
-  .access a:hover{color:var(--ink); border-color:var(--gold); box-shadow:0 0 14px var(--glow);}
-  .access a.buy{border-color:var(--gold); color:var(--gold);}
-  .access a.buy:hover{background:var(--gold); color:#0e0d0b;}
-  .access a.free{border-color:var(--oxblood); color:var(--oxblood); font-weight:600;}
-  .access a.free:hover{background:var(--oxblood); color:#fff;}
-
-  .res{display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:22px;}
-  .rc{background:var(--panel); border:1px solid var(--rule); border-radius:5px; padding:30px 28px; display:flex; flex-direction:column; transition:transform .3s,box-shadow .3s;}
-  .rc:hover{transform:translateY(-5px); box-shadow:0 26px 50px -30px var(--shadow);}
-  .rc.flag{border:1px solid var(--gold); background:linear-gradient(160deg,color-mix(in srgb,var(--gold) 9%,transparent),transparent);}
-  .rc .badge{font-size:.64rem; text-transform:uppercase; letter-spacing:.2em; color:var(--gold); font-weight:600; margin-bottom:.6rem;}
-  .rc h3{font-size:1.34rem; margin:0 0 .5rem;}
-  .rc p{margin:0 0 1.2rem; font-size:.95rem; color:var(--ink-soft); flex:1;}
-  .rc a.go{align-self:flex-start; text-decoration:none; font-size:.78rem; text-transform:uppercase; letter-spacing:.14em; color:var(--gold); border-bottom:1px solid var(--gold); padding-bottom:3px; transition:.25s;}
-  .rc a.go:hover{color:var(--ink); border-color:var(--ink);}
-
-  .collab{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; max-width:940px; margin:0 auto;}
-  .chip{background:var(--panel); border:1px solid var(--rule); padding:.55rem .95rem; font-size:.94rem; display:flex; align-items:center; gap:.55rem; border-radius:40px; transition:.25s;}
-  .chip:hover{border-color:var(--gold); box-shadow:0 0 14px var(--glow);}
-  .chip .ct{font-family:"Fraunces"; font-weight:700; color:var(--gold); font-size:.82rem; background:var(--tag); border-radius:50%; width:1.55rem; height:1.55rem; display:grid; place-items:center; font-variant-numeric:tabular-nums;}
-
-  .mission{background:var(--bg2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
-  .g2{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
-  @media(max-width:820px){ .g2{grid-template-columns:1fr; gap:30px;} }
-  .mission h3{font-size:1.5rem; margin:0 0 .7rem; color:var(--gold);}
-  .mission ul{margin:0; padding-left:1.1rem;} .mission li{margin:.55rem 0; color:var(--ink-soft);} .mission li b{color:var(--ink);}
-  .pull{font-family:"Cormorant Garamond"; font-style:italic; font-size:1.7rem; line-height:1.45; color:var(--ink); border-left:2px solid var(--gold); padding-left:1.3rem; margin:46px 0 0; max-width:780px;}
-
-  .colophon{padding:80px 0 96px; text-align:center;}
-  .colophon .seal{width:74px; height:74px; color:var(--gold); margin:0 auto 18px;}
-  .colophon .credit{font-family:"Fraunces"; font-weight:700; font-size:1.9rem;}
-  .colophon .credit b{color:var(--gold); -webkit-text-fill-color:initial;}
-  .colophon .sub{color:var(--ink-soft); font-family:"Cormorant Garamond"; font-style:italic; font-size:1.1rem; margin-top:.4rem;}
-  .colophon .disc{max-width:780px; margin:30px auto 0; font-size:.82rem; line-height:1.75; color:var(--ink-dim); text-align:left; background:var(--panel); border:1px solid var(--rule); padding:22px 26px; border-radius:5px;}
-  .colophon .disc b{color:var(--ink-soft);}
-  .colophon .src{font-size:.75rem; color:var(--ink-dim); margin-top:18px;}
-  .colophon .src a{color:var(--gold-deep);}
-  .empty{grid-column:1/-1; text-align:center; padding:54px; color:var(--ink-soft); font-style:italic;}
-  .topbtn{position:fixed; right:22px; bottom:22px; z-index:90; width:46px; height:46px; border-radius:50%; background:var(--panel-solid); border:1px solid var(--gold); color:var(--gold); cursor:pointer; opacity:0; transform:translateY(12px); transition:.3s; display:grid; place-items:center;}
-  .topbtn.show{opacity:1; transform:none;}
-  .honors{max-width:760px;margin:0 auto;display:flex;flex-direction:column;}
-  .hn{display:flex;gap:20px;padding:17px 0;border-bottom:1px solid var(--rule);align-items:baseline;}
-  .hn:last-child{border-bottom:none;}
-  .hn .hy{font-family:"Fraunces";font-weight:700;color:var(--gold);min-width:62px;font-variant-numeric:tabular-nums;}
-  .hn .ht{color:var(--ink-soft);} .hn .ht b{color:var(--ink);font-weight:600;}
-  @media print{ .nav,.aurora,.topbtn,.access,.toolbar,.tg,#progress{display:none !important;} body{background:#fff;color:#111;} body::before{display:none;} .card,.lc,.rc{break-inside:avoid;} a{color:#111;} html{--ink:#111;--ink-soft:#333;} }
-  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} .reveal{opacity:1; transform:none;} }
-</style>
+<link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 <span id="top"></span>
@@ -272,7 +53,7 @@
 <nav class="nav"><div class="wrap row">
   <div class="brand"><svg class="bz"><use href="#seal"/></svg> The Andreescu Library</div>
   <div class="links">
-    <a href="#life">Life</a><a href="#legacy">Legacy</a><a href="#library">The Library</a><a href="#free">Read Free</a><a href="#everyone">Why It Matters</a>
+    <a href="practice.html">Practice</a><a href="#library">Books</a><a href="#problems">His Problems</a><a href="#record">Record</a><a href="#free">Read Free</a>
     <span class="tgwrap"><button class="tg" id="tg" title="Toggle theme">☀</button></span>
   </div>
 </div></nav>
@@ -284,7 +65,8 @@
       <h1><span class="l1">The Complete Library of</span><span class="gold-text">Titu Andreescu</span></h1>
       <p class="lede">The Olympiad mathematics teacher who has trained — and written for — the world. One place to discover his life, his legacy, and every book he wrote.</p>
       <div class="cta">
-        <a class="btn solid" href="#library">Explore the Books</a>
+        <a class="btn solid" href="practice.html">Practice by Topic</a>
+        <a class="btn" href="#library">Explore the Books</a>
         <a class="btn" href="#free">Read for Free</a>
       </div>
       <div class="quick">
@@ -359,6 +141,56 @@
   <div class="legacy" id="legacy-grid"></div>
 </div></section>
 
+<section id="record" class="band"><div class="wrap">
+  <div class="sec-head reveal"><div class="dash"><span>✦</span></div><h2>The Record — and the Perfect Team</h2><p>His coaching results are public and verifiable at the official IMO archive.</p></div>
+  <div class="perfect reveal">
+    <div class="big">252 / 252</div>
+    <div class="blurb">The USA team Andreescu coached became the first nation in IMO history to post a perfect team score — all six contestants solved all six problems for 42/42 each.</div>
+    <div class="team"><span class="mem"><b>Jeremy Bem</b></span><span class="mem"><b>Aleksandr Khazanov</b></span><span class="mem"><b>Jacob Lurie</b></span><span class="mem"><b>Noam Shazeer</b></span><span class="mem"><b>Stephen Wang</b></span><span class="mem"><b>Jonathan Weinstein</b></span></div>
+    <div class="wherenow">Among them: <b>Jacob Lurie</b> — now a leading mathematician (MacArthur Fellow, Breakthrough Prize in Mathematics) — and <b>Noam Shazeer</b>, co-author of “Attention Is All You Need” (the Transformer) and co-founder of Character.AI.</div>
+    <div class="reclinks">
+      <a class="btn" href="https://www.imo-official.org/results/team/country/USA/" target="_blank" rel="noopener">USA results by year ↗</a>
+      <a class="btn" href="https://www.imo-official.org/results/individual/country/USA/" target="_blank" rel="noopener">Verify the 1994 scores ↗</a>
+    </div>
+  </div>
+  <p style="text-align:center;color:var(--ink-dim);font-size:.82rem;margin:18px auto 0;max-width:760px;">Head coach of the USA IMO team 1994–2002 and director of the Mathematical Olympiad Summer Program 1995–2002. Every figure is drawn from the official IMO results pages linked above.</p>
+</div></section>
+
+<section id="problems"><div class="wrap">
+  <div class="sec-head reveal"><div class="dash"><span>✦</span></div><h2>Problems He Gave the World</h2><p>Beyond the books: real competition problems Titu Andreescu wrote, still studied today. Full statements and solutions open on the free AoPS / official pages.</p></div>
+  <div class="problems reveal">
+    <div class="pcard reveal">
+      <span class="pc-contest">IMO 2000</span>
+      <span class="pc-title">IMO 2000, Problem 2</span>
+      <span class="pc-credit">Proposed by Titu Andreescu (USA)</span>
+      <span class="pc-teaser">A classic inequality for positive reals with abc = 1 — proposed by Titu Andreescu for the USA.</span>
+      <a class="pc-go" href="https://artofproblemsolving.com/wiki/index.php/2000_IMO_Problems/Problem_2" target="_blank" rel="noopener">View full problem &amp; solution ↗</a>
+    </div>
+    <div class="pcard reveal">
+      <span class="pc-contest">USAMO 2003</span>
+      <span class="pc-title">USAMO 2003, Problem 1</span>
+      <span class="pc-credit">Proposed by Titu Andreescu</span>
+      <span class="pc-teaser">On n-digit numbers all of whose digits are odd and divisibility by 5^n.</span>
+      <a class="pc-go" href="https://artofproblemsolving.com/wiki/index.php/2003_USAMO_Problems/Problem_1" target="_blank" rel="noopener">View full problem &amp; solution ↗</a>
+    </div>
+    <div class="pcard reveal">
+      <span class="pc-contest">USAMO 2005</span>
+      <span class="pc-title">USAMO 2005, Problem 6</span>
+      <span class="pc-credit">Proposed by Titu Andreescu & Gabriel Dospinescu</span>
+      <span class="pc-teaser">A subset / digit-sum problem with a clean bound.</span>
+      <a class="pc-go" href="https://artofproblemsolving.com/wiki/index.php/2005_USAMO_Problems/Problem_6" target="_blank" rel="noopener">View full problem &amp; solution ↗</a>
+    </div>
+    <div class="pcard reveal">
+      <span class="pc-contest">USAMO 2008</span>
+      <span class="pc-title">USAMO 2008, Problem 1</span>
+      <span class="pc-credit">Reported proposed by Titu Andreescu</span>
+      <span class="pc-teaser">A number-theory construction problem.</span>
+      <a class="pc-go" href="https://artofproblemsolving.com/wiki/index.php/2008_USAMO_Problems/Problem_1" target="_blank" rel="noopener">View full problem &amp; solution ↗</a>
+    </div>
+  </div>
+  <p style="text-align:center;color:var(--ink-dim);font-size:.8rem;margin-top:16px;">We link the official / AoPS pages rather than reproduce copyrighted problem text. Attribution is shown as credited on those pages.</p>
+</div></section>
+
 <section id="library"><div class="wrap">
   <div class="sec-head reveal"><div class="dash"><span>✦ ✦ ✦</span></div><h2>The Complete Catalogue</h2><p>Search and filter every book. Each card links you to <b>verified, direct</b> ways to read or buy it — no dead links, no detours.</p></div>
   <div class="toolbar reveal">
@@ -373,6 +205,15 @@
   </div>
   <div class="countline"><b id="count">0</b> books shown · <a href="#" id="reset" style="color:var(--gold); display:none">clear filters</a></div>
   <div class="grid-books" id="grid"></div>
+</div></section>
+
+<section id="practice-promo"><div class="wrap">
+  <div class="perfect reveal">
+    <p class="eyebrow" style="text-align:center">Go beyond the books</p>
+    <h2 style="font-family:Fraunces;font-weight:900;font-size:clamp(1.8rem,5vw,2.8rem);margin:0">The Problem Hub</h2>
+    <div class="blurb">Practice by topic — his books to learn from, thousands of free official problems to solve, and original downloadable practice sets. Plus an IMO Shortlist explorer and a worksheet builder for teachers.</div>
+    <a class="btn solid" href="practice.html">Open the Problem Hub →</a>
+  </div>
 </div></section>
 
 <section id="free" class="band"><div class="wrap">
@@ -390,6 +231,17 @@
 <section id="collab"><div class="wrap">
   <div class="sec-head reveal"><div class="dash"><span>✦</span></div><h2>Written With…</h2><p>Andreescu rarely worked alone. The number shows how many books in this catalogue each collaborator shares with him.</p></div>
   <div class="collab reveal" id="collab-list"></div>
+</div></section>
+
+<section id="talks" class="band"><div class="wrap">
+  <div class="sec-head reveal"><div class="dash"><span>✦</span></div><h2>See Him Teach</h2><p>Lectures, the program he built, and his university profile.</p></div>
+  <div class="talks reveal">
+    <a class="talk reveal" href="https://www.youtube.com/watch?v=KYrcIW-alzo" target="_blank" rel="noopener"><svg class="ti" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m10 8 6 4-6 4V8z"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg><span class="tl">“See him teach” — Metroplex Math Circle lecture</span></a>
+    <a class="talk reveal" href="https://metroplexmathcircle.wordpress.com/category/titu-andreescu/" target="_blank" rel="noopener"><svg class="ti" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m10 8 6 4-6 4V8z"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg><span class="tl">Metroplex Math Circle — full lecture archive</span></a>
+    <a class="talk reveal" href="https://profiles.utdallas.edu/titu.andreescu" target="_blank" rel="noopener"><svg class="ti" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m10 8 6 4-6 4V8z"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg><span class="tl">UT Dallas — faculty profile</span></a>
+    <a class="talk reveal" href="https://www.awesomemath.org/" target="_blank" rel="noopener"><svg class="ti" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m10 8 6 4-6 4V8z"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg><span class="tl">AwesomeMath — the program he founded (2006)</span></a>
+    <a class="talk reveal" href="https://www.youtube.com/watch?v=zezvtUB1aNc" target="_blank" rel="noopener"><svg class="ti" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m10 8 6 4-6 4V8z"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg><span class="tl">Book overview — Mathematical Olympiad Challenges</span></a>
+  </div>
 </div></section>
 
 <section id="everyone" class="mission"><div class="wrap">
@@ -469,7 +321,8 @@ const BOOKS = [
    "isbn10": "0817643176",
    "isbn13": "9780817643171",
    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-8222-4",
-   "archive": "102CombinatorialProblems2002TituAndreescuZumingFeng"
+   "archive": "102CombinatorialProblems2002TituAndreescuZumingFeng",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-0-8176-8222-4/1.pdf"
   }
  },
  {
@@ -512,7 +365,8 @@ const BOOKS = [
   "links": {
    "isbn10": "0817645276",
    "isbn13": "9780817645274",
-   "publisher": "https://link.springer.com/book/10.1007/978-0-8176-4561-8"
+   "publisher": "https://link.springer.com/book/10.1007/978-0-8176-4561-8",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-0-8176-4561-8/1.pdf"
   }
  },
  {
@@ -534,7 +388,8 @@ const BOOKS = [
    "isbn10": "0817641904",
    "isbn13": "9780817641900",
    "publisher": "https://link.springer.com/book/10.1007/978-1-4612-2138-8",
-   "archive": "mathematicalolym0000andr"
+   "archive": "mathematicalolym0000andr",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-1-4612-2138-8/1.pdf"
   }
  },
  {
@@ -556,7 +411,8 @@ const BOOKS = [
    "isbn10": "0817643052",
    "isbn13": "9780817643058",
    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-8253-8",
-   "archive": "isbn_9798181283220"
+   "archive": "isbn_9798181283220",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-0-8176-8253-8/1.pdf"
   }
  },
  {
@@ -578,7 +434,8 @@ const BOOKS = [
    "isbn10": "0817642889",
    "isbn13": "9780817642884",
    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-8154-8",
-   "archive": "pathtocombinator0000andr"
+   "archive": "pathtocombinator0000andr",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-0-8176-8154-8/1.pdf"
   }
  },
  {
@@ -601,7 +458,8 @@ const BOOKS = [
    "isbn10": "081768414X",
    "isbn13": "9780817684143",
    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-8415-0",
-   "archive": "complexnumbersfr0000andr_b4d8"
+   "archive": "complexnumbersfr0000andr_b4d8",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-0-8176-8415-0/1.pdf"
   }
  },
  {
@@ -623,7 +481,8 @@ const BOOKS = [
    "isbn10": "081763245X",
    "isbn13": "9780817632458",
    "publisher": "https://link.springer.com/book/10.1007/b11856",
-   "archive": "numbertheory00titu"
+   "archive": "numbertheory00titu",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-0-8176-4645-5/1.pdf"
   }
  },
  {
@@ -647,7 +506,8 @@ const BOOKS = [
    "isbn10": "0817645489",
    "isbn13": "9780817645489",
    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-4549-6",
-   "archive": "an-introduction-to-diophantine-equations-a-problem-based-approach"
+   "archive": "an-introduction-to-diophantine-equations-a-problem-based-approach",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-0-8176-4549-6/1.pdf"
   }
  },
  {
@@ -667,7 +527,8 @@ const BOOKS = [
    "isbn10": "0817643605",
    "isbn13": "9780817643607",
    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-4636-3",
-   "archive": "essentiallineara0000andr"
+   "archive": "essentiallineara0000andr",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-0-8176-4636-3/1.pdf"
   }
  },
  {
@@ -690,7 +551,8 @@ const BOOKS = [
   "links": {
    "isbn10": "0817644733",
    "isbn13": "9780817644734",
-   "publisher": "https://link.springer.com/book/10.1007/0-8176-4473-3"
+   "publisher": "https://link.springer.com/book/10.1007/0-8176-4473-3",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-0-8176-4473-4/1.pdf"
   }
  },
  {
@@ -712,7 +574,8 @@ const BOOKS = [
   "links": {
    "isbn10": "3319589865",
    "isbn13": "9783319589862",
-   "publisher": "https://link.springer.com/book/10.1007/978-0-387-68445-1"
+   "publisher": "https://link.springer.com/book/10.1007/978-0-387-68445-1",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-3-319-58988-6/1.pdf"
   }
  },
  {
@@ -736,7 +599,8 @@ const BOOKS = [
    "isbn10": "081764394X",
    "isbn13": "9780817643942",
    "publisher": "https://link.springer.com/book/10.1007/978-0-8176-4629-5",
-   "archive": "mathematicalbrid0000andr"
+   "archive": "mathematicalbrid0000andr",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-0-8176-4629-5/1.pdf"
   }
  },
  {
@@ -758,7 +622,8 @@ const BOOKS = [
   "links": {
    "isbn10": "0387351566",
    "isbn13": "9780387351568",
-   "publisher": "https://link.springer.com/book/10.1007/978-0-387-54109-9"
+   "publisher": "https://link.springer.com/book/10.1007/978-0-387-54109-9",
+   "sample": "https://link.springer.com/content/pdf/bfm:978-0-387-54109-9/1.pdf"
   }
  },
  {
@@ -780,7 +645,8 @@ const BOOKS = [
   "links": {
    "isbn10": "0979926904",
    "isbn13": "9780979926907",
-   "publisher": "https://www.awesomemath.org/product/problems-from-the-book/"
+   "publisher": "https://www.awesomemath.org/product/problems-from-the-book/",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/problems-from-the-book-look-inside.pdf"
   }
  },
  {
@@ -802,7 +668,8 @@ const BOOKS = [
   "links": {
    "isbn10": "0979926939",
    "isbn13": "9780979926938",
-   "publisher": "https://www.awesomemath.org/product/straight-from-the-book/"
+   "publisher": "https://www.awesomemath.org/product/straight-from-the-book/",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/straight-from-the-book-look-inside.pdf"
   }
  },
  {
@@ -820,7 +687,8 @@ const BOOKS = [
   "blurb": "Algebra problems used at the AwesomeMath Summer Program, graded for serious training.",
   "links": {
    "isbn10": "0979926955",
-   "isbn13": "9780979926952"
+   "isbn13": "9780979926952",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/105-algebra-problems-look-inside.pdf"
   }
  },
  {
@@ -842,7 +710,8 @@ const BOOKS = [
   "links": {
    "isbn10": "0979926947",
    "isbn13": "9780979926945",
-   "publisher": "https://www.awesomemath.org/product/106-geometry-problems-from-the-awesomemath-summer-program/"
+   "publisher": "https://www.awesomemath.org/product/106-geometry-problems-from-the-awesomemath-summer-program/",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/106-geometry-problems-from-amsp-look-inside.pdf"
   }
  },
  {
@@ -864,7 +733,8 @@ const BOOKS = [
   "links": {
    "isbn10": "0979926971",
    "isbn13": "9780979926976",
-   "publisher": "https://www.awesomemath.org/product/107-geometry-problems-from-the-awesomemath-year-round-program/"
+   "publisher": "https://www.awesomemath.org/product/107-geometry-problems-from-the-awesomemath-year-round-program/",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/107-geometry-problems-from-amy-look-inside.pdf"
   }
  },
  {
@@ -883,7 +753,8 @@ const BOOKS = [
   "links": {
    "isbn10": "0988562278",
    "isbn13": "9780988562271",
-   "publisher": "https://www.awesomemath.org/product/108-algebra-problems-from-amy/"
+   "publisher": "https://www.awesomemath.org/product/108-algebra-problems-from-amy/",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/108-algebra-problems-from-amy-look-inside.pdf"
   }
  },
  {
@@ -928,7 +799,8 @@ const BOOKS = [
    "isbn10": "0999342843",
    "isbn13": "9780999342848",
    "publisher": "https://www.awesomemath.org/product/117-polynomial-problems-from-amsp/",
-   "google": "BRS-vgEACAAJ"
+   "google": "BRS-vgEACAAJ",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/117-polynomial-problems-from-amsp-look-inside.pdf"
   }
  },
  {
@@ -951,7 +823,8 @@ const BOOKS = [
    "isbn10": "0988562235",
    "isbn13": "9780988562233",
    "publisher": "https://bookstore.ams.org/xyz-19/",
-   "google": "YFOiDAEACAAJ"
+   "google": "YFOiDAEACAAJ",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/lemmas-in-olympiad-geometry-soft-look-inside.pdf"
   }
  },
  {
@@ -973,7 +846,8 @@ const BOOKS = [
   "links": {
    "isbn10": "1735831514",
    "isbn13": "9781735831510",
-   "publisher": "https://www.awesomemath.org/product/awesome-polynomials-for-mathematics-competitions/"
+   "publisher": "https://www.awesomemath.org/product/awesome-polynomials-for-mathematics-competitions/",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/awesome-polynomials-for-mathematics-competitions-look-inside.pdf"
   }
  },
  {
@@ -995,7 +869,8 @@ const BOOKS = [
   "links": {
    "isbn10": "0988562200",
    "isbn13": "9780988562202",
-   "publisher": "https://www.awesomemath.org/product/number-theory-concepts-and-problems/"
+   "publisher": "https://www.awesomemath.org/product/number-theory-concepts-and-problems/",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/number-theory-concepts-and-problems-look-inside.pdf"
   }
  },
  {
@@ -1018,7 +893,8 @@ const BOOKS = [
   "links": {
    "isbn10": "099934286X",
    "isbn13": "9780999342862",
-   "publisher": "https://www.awesomemath.org/product/topics-in-functional-equations/"
+   "publisher": "https://www.awesomemath.org/product/topics-in-functional-equations/",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/topics-in-functional-equations-3rd-edition-look-inside.pdf"
   }
  },
  {
@@ -1040,7 +916,8 @@ const BOOKS = [
   "links": {
    "isbn10": "0999342835",
    "isbn13": "9780999342831",
-   "publisher": "https://www.awesomemath.org/product/topics-in-geometric-inequalities/"
+   "publisher": "https://www.awesomemath.org/product/topics-in-geometric-inequalities/",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/topics-in-geometric-inequalities-look-inside.pdf"
   }
  },
  {
@@ -1062,7 +939,8 @@ const BOOKS = [
   "links": {
    "isbn10": "0999342819",
    "isbn13": "9780999342817",
-   "publisher": "https://www.awesomemath.org/product/sums-and-products/"
+   "publisher": "https://www.awesomemath.org/product/sums-and-products/",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/sums-and-products-look-inside.pdf"
   }
  },
  {
@@ -1083,7 +961,8 @@ const BOOKS = [
   "links": {
    "isbn13": "9780999342886",
    "publisher": "https://www.awesomemath.org/product/a-romanian-problem-book/",
-   "isbn10": "0999342886"
+   "isbn10": "0999342886",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/a-romanian-problem-book-look-inside.pdf"
   }
  },
  {
@@ -1107,7 +986,8 @@ const BOOKS = [
    "isbn13": "9780996874571",
    "publisher": "https://bookstore.ams.org/XYZ/22",
    "google": "b7MYvgAACAAJ",
-   "aops": "https://www.awesomemath.org/product/pristine-landscapes-in-elementary-mathematics/"
+   "aops": "https://www.awesomemath.org/product/pristine-landscapes-in-elementary-mathematics/",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/pristine-landscapes-in-elementary-mathematics-look-inside.pdf"
   }
  },
  {
@@ -1128,7 +1008,8 @@ const BOOKS = [
   "links": {
    "isbn10": "0996874593",
    "isbn13": "9780996874595",
-   "publisher": "https://www.awesomemath.org/product/mathematical-induction/"
+   "publisher": "https://www.awesomemath.org/product/mathematical-induction/",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/mathematical-induction-look-inside.pdf"
   }
  },
  {
@@ -1238,7 +1119,8 @@ const BOOKS = [
    "isbn13": "9780999342824",
    "publisher": "https://www.awesomemath.org/product/mathematical-reflections-two-wonderful-years/",
    "google": "0W3evAEACAAJ",
-   "archive": "mathematicalrefl0000unse_g8c6"
+   "archive": "mathematicalrefl0000unse_g8c6",
+   "sample": "https://www.awesomemath.org/wp-pdf-files/xyz/look-inside/mathematical-reflections-the-first-two-years-look-inside.pdf"
   }
  },
  {
@@ -1279,6 +1161,7 @@ function accessHTML(b){
   const L=b.links||{}; const out=[];
   if(b.free){ out.push(`<a class="free" href="${b.free}" target="_blank" rel="noopener">★ Read free</a>`); }
   if(L.isbn10){ out.push(`<a class="buy" href="https://www.amazon.in/dp/${L.isbn10}" target="_blank" rel="noopener">Buy · Amazon.in</a>`); }
+  if(L.sample){ out.push(`<a class="sample" href="${L.sample}" target="_blank" rel="noopener">Free sample</a>`); }
   if(L.publisher){ out.push(`<a href="${L.publisher}" target="_blank" rel="noopener">Publisher</a>`); }
   if(L.google){ out.push(`<a href="https://books.google.com/books?id=${L.google}" target="_blank" rel="noopener">Preview</a>`); }
   else if(L.isbn13){ out.push(`<a href="https://books.google.com/books?vid=ISBN${L.isbn13}" target="_blank" rel="noopener">Preview</a>`); }

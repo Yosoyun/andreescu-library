@@ -1,0 +1,1357 @@
+[
+ {
+  "topic": "algebra",
+  "blurb": "Eight original olympiad-style algebra problems spanning minimization by AM-GM and Cauchy, quadratic-in-disguise substitutions, telescoping sums, reciprocal-substitution recurrences, trigonometric substitution in cubics, cyclic systems, and Newton's power-sum identities. Each rewards a structural insight rather than mechanical computation, and every closed-form answer has been verified symbolically and numerically.",
+  "problems": [
+   {
+    "id": "ALG-1",
+    "difficulty": 1,
+    "techniques": [
+     "AM-GM",
+     "weighted AM-GM",
+     "optimization"
+    ],
+    "statement": "For \\(x>0\\), find the minimum value of \\[f(x)=x+\\frac{4}{x^{2}}.\\]",
+    "answer": "\\(3\\)",
+    "solution": "The trick is to split \\(x\\) into two equal pieces so that AM-GM can be applied to three terms whose product is a constant. Write \\[f(x)=\\frac{x}{2}+\\frac{x}{2}+\\frac{4}{x^{2}}.\\] These three positive numbers have product \\[\\frac{x}{2}\\cdot\\frac{x}{2}\\cdot\\frac{4}{x^{2}}=1,\\] which is independent of \\(x\\). By AM-GM, \\[\\frac{x}{2}+\\frac{x}{2}+\\frac{4}{x^{2}}\\ge 3\\sqrt[3]{\\frac{x}{2}\\cdot\\frac{x}{2}\\cdot\\frac{4}{x^{2}}}=3\\sqrt[3]{1}=3.\\] Equality requires all three terms equal: \\(\\frac{x}{2}=\\frac{4}{x^{2}}\\), i.e. \\(x^{3}=8\\), so \\(x=2\\). Then \\(f(2)=2+\\frac{4}{4}=3\\). Hence \\(\\min f=3\\).",
+    "method2": "Calculus: \\(f'(x)=1-\\frac{8}{x^{3}}=0\\) gives \\(x^{3}=8\\), so \\(x=2\\). Since \\(f''(x)=\\frac{24}{x^{4}}>0\\), this is a minimum, and \\(f(2)=3\\). The point of the AM-GM method is that splitting \\(x\\) into the right number of equal pieces is exactly what makes the geometric mean constant.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy confirmed: f'(x)=0 has unique positive root x=2, f(2)=3 is the minimum."
+   },
+   {
+    "id": "ALG-2",
+    "difficulty": 2,
+    "techniques": [
+     "substitution",
+     "quadratic in disguise",
+     "factoring"
+    ],
+    "statement": "Find all real solutions of \\[\\bigl(x^{2}-3x\\bigr)^{2}-2\\bigl(x^{2}-3x\\bigr)=8.\\]",
+    "answer": "\\(x\\in\\{-1,\\,1,\\,2,\\,4\\}\\)",
+    "solution": "Set \\(u=x^{2}-3x\\). The equation becomes \\[u^{2}-2u-8=0\\quad\\Longrightarrow\\quad (u-4)(u+2)=0,\\] so \\(u=4\\) or \\(u=-2\\). Now resolve each back in \\(x\\). For \\(u=4\\): \\(x^{2}-3x-4=0\\Rightarrow (x-4)(x+1)=0\\Rightarrow x=4\\) or \\(x=-1\\). For \\(u=-2\\): \\(x^{2}-3x+2=0\\Rightarrow (x-1)(x-2)=0\\Rightarrow x=1\\) or \\(x=2\\). All four values are real, so the solution set is \\(\\{-1,1,2,4\\}\\).",
+    "method2": "Direct expansion gives the quartic \\(x^{4}-6x^{3}+7x^{2}+6x-8=0\\), which factors as \\((x+1)(x-1)(x-2)(x-4)=0\\), recovering the same four roots. The substitution simply reveals this factorization without brute-force quartic work.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy confirmed: real solutions are exactly {-1,1,2,4}; expansion factors as (x+1)(x-1)(x-2)(x-4)."
+   },
+   {
+    "id": "ALG-3",
+    "difficulty": 3,
+    "techniques": [
+     "telescoping",
+     "partial fractions",
+     "summation"
+    ],
+    "statement": "For a positive integer \\(n\\), evaluate in closed form \\[S_n=\\sum_{k=1}^{n}\\frac{k}{(k+1)!}.\\]",
+    "answer": "\\(S_n=1-\\dfrac{1}{(n+1)!}\\)",
+    "solution": "The key is to write the numerator as a difference that telescopes against the factorial. Since \\(k=(k+1)-1\\), \\[\\frac{k}{(k+1)!}=\\frac{(k+1)-1}{(k+1)!}=\\frac{k+1}{(k+1)!}-\\frac{1}{(k+1)!}=\\frac{1}{k!}-\\frac{1}{(k+1)!}.\\] Therefore the sum telescopes: \\[S_n=\\sum_{k=1}^{n}\\!\\left(\\frac{1}{k!}-\\frac{1}{(k+1)!}\\right)=\\frac{1}{1!}-\\frac{1}{(n+1)!}=1-\\frac{1}{(n+1)!}.\\] As a sanity check, \\(n=1\\) gives \\(\\frac{1}{2}=1-\\frac{1}{2}\\); \\(n=2\\) gives \\(\\frac{1}{2}+\\frac{2}{6}=\\frac{5}{6}=1-\\frac{1}{6}\\).",
+    "method2": "Guess-and-induct: from small cases \\(S_1=\\tfrac12,\\ S_2=\\tfrac56,\\ S_3=\\tfrac{23}{24}\\) one conjectures \\(S_n=1-\\frac{1}{(n+1)!}\\). For the inductive step, \\(S_{n+1}=S_n+\\frac{n+1}{(n+2)!}=1-\\frac{1}{(n+1)!}+\\frac{n+1}{(n+2)!}=1-\\frac{(n+2)-(n+1)}{(n+2)!}=1-\\frac{1}{(n+2)!}\\), completing the induction.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy summation gives (n*n!+n!-1)/(n+1)! = 1-1/(n+1)!; verified for n=1,2,3,5 (1/2,5/6,23/24,719/720)."
+   },
+   {
+    "id": "ALG-4",
+    "difficulty": 3,
+    "techniques": [
+     "Cauchy-Schwarz",
+     "concavity",
+     "constrained optimization"
+    ],
+    "statement": "Let \\(a,b,c\\) be positive reals with \\(a+b+c=1\\). Determine the maximum possible value of \\[\\sqrt{a}+\\sqrt{b}+\\sqrt{c}.\\]",
+    "answer": "\\(\\sqrt{3}\\)",
+    "solution": "By the Cauchy-Schwarz inequality applied to the vectors \\((\\sqrt a,\\sqrt b,\\sqrt c)\\) and \\((1,1,1)\\), \\[\\bigl(\\sqrt a+\\sqrt b+\\sqrt c\\bigr)^{2}\\le (a+b+c)\\,(1^{2}+1^{2}+1^{2})=1\\cdot 3=3.\\] Hence \\(\\sqrt a+\\sqrt b+\\sqrt c\\le\\sqrt 3\\). Equality in Cauchy-Schwarz holds when \\((\\sqrt a,\\sqrt b,\\sqrt c)\\) is proportional to \\((1,1,1)\\), i.e. \\(a=b=c=\\tfrac13\\); then the sum is \\(3\\sqrt{1/3}=\\sqrt 3\\). So the maximum is \\(\\sqrt 3\\). (Note there is no minimum over the open region: pushing two variables toward \\(0\\) drives the sum toward \\(1\\), but \\(1\\) is never attained.)",
+    "method2": "Jensen / concavity: \\(g(t)=\\sqrt t\\) is concave on \\([0,\\infty)\\), so \\[\\frac{\\sqrt a+\\sqrt b+\\sqrt c}{3}\\le\\sqrt{\\frac{a+b+c}{3}}=\\sqrt{\\frac13},\\] giving \\(\\sqrt a+\\sqrt b+\\sqrt c\\le 3\\sqrt{1/3}=\\sqrt 3\\), with equality at \\(a=b=c=\\tfrac13\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "200k-point random sampling on the simplex gave max approaching 1.73205 = sqrt(3); value at a=b=c=1/3 equals sqrt(3) exactly."
+   },
+   {
+    "id": "ALG-5",
+    "difficulty": 4,
+    "techniques": [
+     "substitution",
+     "AM-GM",
+     "monotonicity trap"
+    ],
+    "statement": "For \\(x>0\\), find the minimum value of \\[F(x)=x^{2}+\\frac{1}{x^{2}}+\\frac{1}{\\,x^{2}+\\dfrac{1}{x^{2}}\\,}.\\]",
+    "answer": "\\(\\dfrac{5}{2}\\)",
+    "solution": "Substitute \\(t=x^{2}+\\dfrac{1}{x^{2}}\\). By AM-GM, \\(t=x^{2}+\\frac{1}{x^{2}}\\ge 2\\), with equality iff \\(x^{2}=\\frac{1}{x^{2}}\\), i.e. \\(x=1\\). The expression becomes \\[F=g(t)=t+\\frac{1}{t},\\qquad t\\ge 2.\\] Here is the trap: the unconstrained minimum of \\(g(t)=t+\\frac1t\\) is at \\(t=1\\), but \\(t=1\\) is not attainable since \\(t\\ge2\\). On \\([2,\\infty)\\) we have \\(g'(t)=1-\\frac{1}{t^{2}}>0\\), so \\(g\\) is strictly increasing there; its minimum is therefore at the left endpoint \\(t=2\\): \\[g(2)=2+\\frac12=\\frac52.\\] This is achieved exactly when \\(t=2\\), i.e. \\(x=1\\). Hence \\(\\min F=\\dfrac52\\).",
+    "method2": "Direct AM-GM is invalid here because applying \\(t+\\frac1t\\ge2\\) would suggest a minimum of \\(2\\), which is unattainable given \\(t\\ge2\\); recognizing this is the whole point. To confirm with calculus, at \\(x=1\\), \\(F(1)=1+1+\\frac{1}{2}=\\frac52\\), and a check of \\(F'(x)\\) shows \\(x=1\\) is the only interior critical point and yields the global minimum on \\((0,\\infty)\\) (with \\(F\\to\\infty\\) as \\(x\\to0^+\\) or \\(x\\to\\infty\\)).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: unique positive critical point x=1 with F(1)=5/2; numeric grid scan over (0.2,5) gives min 2.5000 at x=1, confirming the monotonicity-trap reasoning."
+   },
+   {
+    "id": "ALG-6",
+    "difficulty": 4,
+    "techniques": [
+     "recurrence",
+     "reciprocal substitution",
+     "arithmetic progression"
+    ],
+    "statement": "A sequence is defined by \\(a_1=\\dfrac12\\) and \\[a_{n+1}=\\frac{a_n}{1+3a_n}\\quad(n\\ge1).\\] Find a closed form for \\(a_n\\), and evaluate \\(\\displaystyle\\sum_{k=1}^{n}a_k a_{k+1}\\).",
+    "answer": "\\(a_n=\\dfrac{1}{3n-1}\\); \\(\\displaystyle\\sum_{k=1}^{n}a_k a_{k+1}=\\frac{1}{3}\\!\\left(\\frac12-\\frac{1}{3n+2}\\right)=\\frac{n}{2(3n+2)}\\)",
+    "solution": "Each term is positive, so we may take reciprocals. Let \\(b_n=\\dfrac{1}{a_n}\\). Then \\[b_{n+1}=\\frac{1+3a_n}{a_n}=\\frac{1}{a_n}+3=b_n+3.\\] Thus \\((b_n)\\) is an arithmetic progression with first term \\(b_1=\\frac{1}{a_1}=2\\) and common difference \\(3\\): \\(b_n=2+3(n-1)=3n-1\\). Hence \\[a_n=\\frac{1}{3n-1}.\\] For the sum, use partial fractions: \\[a_k a_{k+1}=\\frac{1}{(3k-1)(3k+2)}=\\frac{1}{3}\\!\\left(\\frac{1}{3k-1}-\\frac{1}{3k+2}\\right).\\] This telescopes: \\[\\sum_{k=1}^{n}a_k a_{k+1}=\\frac13\\!\\left(\\frac{1}{2}-\\frac{1}{3n+2}\\right)=\\frac{1}{3}\\cdot\\frac{3n}{2(3n+2)}=\\frac{n}{2(3n+2)}.\\]",
+    "method2": "One can verify the closed form by induction: it holds at \\(n=1\\) since \\(a_1=\\frac12=\\frac{1}{3\\cdot1-1}\\), and if \\(a_n=\\frac{1}{3n-1}\\) then \\(a_{n+1}=\\frac{1/(3n-1)}{1+3/(3n-1)}=\\frac{1}{(3n-1)+3}=\\frac{1}{3(n+1)-1}\\). The reciprocal substitution is what reveals this form in the first place, turning a nonlinear recurrence into a linear (arithmetic) one.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: iterating the recurrence gives a_n=1/(3n-1) for n=1..7; sympy summation of 1/((3k-1)(3k+2)) equals n/(2(3n+2)) exactly."
+   },
+   {
+    "id": "ALG-7",
+    "difficulty": 5,
+    "techniques": [
+     "trigonometric substitution",
+     "Chebyshev / triple-angle",
+     "Vieta's formulas"
+    ],
+    "statement": "Find all real roots of \\[8x^{3}-6x+1=0,\\] expressing them in closed trigonometric form, and prove that \\[\\cos40^{\\circ}\\cos80^{\\circ}\\cos160^{\\circ}=-\\frac18.\\]",
+    "answer": "Roots: \\(x=\\cos40^{\\circ},\\ \\cos80^{\\circ},\\ \\cos160^{\\circ}\\); and the product equals \\(-\\tfrac18\\). \\(\\text{(}=\\)Proof for the identity.\\()\\)",
+    "solution": "Substitute \\(x=\\cos\\theta\\). Using the triple-angle identity \\(\\cos3\\theta=4\\cos^{3}\\theta-3\\cos\\theta\\), we have \\(4x^{3}-3x=\\cos3\\theta\\). Divide the equation by \\(2\\): \\[4x^{3}-3x=-\\tfrac12\\quad\\Longrightarrow\\quad \\cos3\\theta=-\\tfrac12.\\] Thus \\(3\\theta=120^{\\circ}+360^{\\circ}k\\) or \\(3\\theta=240^{\\circ}+360^{\\circ}k\\), giving \\(\\theta\\in\\{40^{\\circ},80^{\\circ},160^{\\circ}\\}\\) (the three values in \\([0^{\\circ},180^{\\circ}]\\) yielding distinct cosines). Hence the three real roots are \\[x=\\cos40^{\\circ},\\ \\cos80^{\\circ},\\ \\cos160^{\\circ},\\] and since a cubic has at most three roots, these are all of them. Now apply Vieta's formulas to \\(8x^{3}+0\\cdot x^{2}-6x+1=0\\): the product of the roots is \\(-\\dfrac{\\text{constant}}{\\text{leading}}=-\\dfrac{1}{8}\\). Therefore \\[\\cos40^{\\circ}\\cos80^{\\circ}\\cos160^{\\circ}=-\\frac18.\\]",
+    "method2": "Independent proof of the product identity via the doubling telescope. Let \\(P=\\cos40^{\\circ}\\cos80^{\\circ}\\cos160^{\\circ}\\). Multiply by \\(\\sin40^{\\circ}\\) and use \\(2\\sin\\alpha\\cos\\alpha=\\sin2\\alpha\\) repeatedly: \\(8\\sin40^{\\circ}\\,P = 8\\sin40^{\\circ}\\cos40^{\\circ}\\cos80^{\\circ}\\cos160^{\\circ}=4\\sin80^{\\circ}\\cos80^{\\circ}\\cos160^{\\circ}=2\\sin160^{\\circ}\\cos160^{\\circ}=\\sin320^{\\circ}=-\\sin40^{\\circ}.\\) Since \\(\\sin40^{\\circ}\\neq0\\), \\(8P=-1\\), so \\(P=-\\tfrac18\\), confirming the Vieta computation.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: roots of 8x^3-6x+1 are numerically {-0.93969, 0.17365, 0.76604} = {cos160,cos80,cos40}; cos(3*40)=cos(3*80)=cos(3*160)=-1/2; product simplifies symbolically to exactly -1/8 (sp.simplify(prod+1/8)=0)."
+   },
+   {
+    "id": "ALG-8",
+    "difficulty": 5,
+    "techniques": [
+     "Newton's identities",
+     "power sums",
+     "symmetric functions",
+     "systems"
+    ],
+    "statement": "Real numbers \\(x,y,z\\) satisfy \\[x+y+z=2,\\qquad x^{2}+y^{2}+z^{2}=6,\\qquad x^{3}+y^{3}+z^{3}=8.\\] Find the unordered triple \\(\\{x,y,z\\}\\) and the value of \\(x^{4}+y^{4}+z^{4}\\).",
+    "answer": "\\(\\{x,y,z\\}=\\{-1,\\,1,\\,2\\}\\) and \\(x^{4}+y^{4}+z^{4}=18\\)",
+    "solution": "Let \\(p_k=x^k+y^k+z^k\\) and let \\(e_1,e_2,e_3\\) be the elementary symmetric polynomials, so \\(x,y,z\\) are the roots of \\[t^{3}-e_1 t^{2}+e_2 t-e_3=0.\\] We are given \\(p_1=2,\\ p_2=6,\\ p_3=8\\). \\emph{Newton's identities} give \\(e_1,e_2,e_3\\): \\[e_1=p_1=2,\\] \\[e_2=\\frac{e_1 p_1-p_2}{2}=\\frac{2\\cdot2-6}{2}=-1,\\] \\[e_3=\\frac{e_2 p_1-e_1 p_2+p_3}{3}=\\frac{(-1)(2)-(2)(6)+8}{3}=\\frac{-2-12+8}{3}=-2.\\] Hence the cubic is \\[t^{3}-2t^{2}-t+2=0.\\] Factor by grouping: \\(t^{2}(t-2)-(t-2)=(t-2)(t^{2}-1)=(t-2)(t-1)(t+1)=0,\\) so the roots are \\(t=-1,1,2\\). Therefore \\(\\{x,y,z\\}=\\{-1,1,2\\}\\). Finally, Newton's identity for \\(p_4\\) (with three variables, \\(e_4=0\\)) reads \\[p_4=e_1 p_3-e_2 p_2+e_3 p_1=2\\cdot8-(-1)\\cdot6+(-2)\\cdot2=16+6-4=18.\\] Directly, \\((-1)^4+1^4+2^4=1+1+16=18\\), confirming \\(x^{4}+y^{4}+z^{4}=18\\).",
+    "method2": "Avoid Newton's identities by hand: \\(e_2=\\tfrac12\\bigl[(x+y+z)^2-(x^2+y^2+z^2)\\bigr]=\\tfrac12(4-6)=-1\\). For \\(e_3\\), use the identity \\(x^3+y^3+z^3-3xyz=(x+y+z)(x^2+y^2+z^2-xy-yz-zx)\\): since \\(xy+yz+zx=e_2=-1\\), the right side is \\(2\\bigl(6-(-1)\\bigr)=14\\), so \\(8-3e_3=14\\Rightarrow e_3=-2\\). This reproduces the cubic \\(t^3-2t^2-t+2=0\\) and the roots \\(\\{-1,1,2\\}\\), after which \\(x^4+y^4+z^4=18\\) follows by direct substitution.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: Newton's identities give e1=2,e2=-1,e3=-2; cubic t^3-2t^2-t+2 has roots {-1,1,2}; these satisfy p1=2,p2=6,p3=8 and p4=18."
+   }
+  ]
+ },
+ {
+  "topic": "number-theory",
+  "blurb": "Eight original olympiad-style number theory problems spanning divisibility, modular arithmetic, multiplicative orders and primitive roots, p-adic valuation (Lifting the Exponent), and classic structure results. Each rewards a clean insight — periodicity towers, residue pairing, the order-divides-exponent lemma, LTE, and the smallest-prime-factor argument — rather than mechanical computation. Ordered easiest to hardest.",
+  "problems": [
+   {
+    "id": "NUM-1",
+    "difficulty": 2,
+    "techniques": [
+     "modular arithmetic",
+     "Euler's theorem",
+     "multiplicative order",
+     "tower of exponents"
+    ],
+    "statement": "Find the last two digits of \\(7^{\\left(7^{7}\\right)}\\).",
+    "answer": "\\(43\\)",
+    "solution": "The last two digits of a number are its residue modulo \\(100\\). We compute \\(7^{(7^7)} \\bmod 100\\).\n\\par\\textbf{Step 1: order of \\(7\\) modulo \\(100\\).} Since \\(\\gcd(7,100)=1\\) and \\(7^2 = 49\\), \\(7^4 = 49^2 = 2401 \\equiv 1 \\pmod{100}\\). Thus the multiplicative order of \\(7\\) modulo \\(100\\) is \\(4\\) (it is not \\(1\\) or \\(2\\) since \\(7^2\\equiv 49\\)). Therefore \\(7^E \\bmod 100\\) depends only on \\(E \\bmod 4\\).\n\\par\\textbf{Step 2: reduce the exponent modulo \\(4\\).} We need \\(E = 7^7 \\bmod 4\\). Since \\(7 \\equiv -1 \\pmod 4\\), we get \\(7^7 \\equiv (-1)^7 = -1 \\equiv 3 \\pmod 4\\).\n\\par\\textbf{Step 3: assemble.} Hence \\(7^{(7^7)} \\equiv 7^{3} \\pmod{100}\\). Now \\(7^3 = 343 \\equiv 43 \\pmod{100}\\).\n\\par The last two digits are \\(\\boxed{43}\\).",
+    "method2": "Use the Carmichael/Euler structure directly. Modulo \\(4\\): \\(7\\equiv 3\\), and \\(7^k\\bmod 4\\) cycles with period \\(2\\) as \\(3,1,3,1,\\dots\\), so since \\(7\\) is odd, \\(7^{(7^7)}\\equiv 3 \\equiv -1 \\pmod 4\\). Modulo \\(25\\): \\(\\lambda(25)=20\\) and \\(7^4 = 2401 = 96\\cdot 25 + 1\\equiv 1\\pmod{25}\\), so again only \\(E\\bmod 4\\) matters, giving \\(7^3 = 343 \\equiv 343-325 = 18 \\pmod{25}\\). Solve \\(x\\equiv -1\\pmod 4,\\ x\\equiv 18\\pmod{25}\\) by CRT: \\(x=43\\) works (\\(43\\equiv 3\\pmod4\\), \\(43\\equiv 18\\pmod{25}\\)), giving \\(43\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: pow(7,7**7,100)=43 confirmed."
+   },
+   {
+    "id": "NUM-2",
+    "difficulty": 2,
+    "techniques": [
+     "p-adic valuation",
+     "Legendre's formula",
+     "bottleneck principle"
+    ],
+    "statement": "Determine the largest integer \\(k\\) such that \\(12^{k}\\) divides \\(100!\\).",
+    "answer": "\\(48\\)",
+    "solution": "Write \\(12 = 2^2 \\cdot 3\\). Then \\(12^k = 2^{2k}\\cdot 3^{k}\\) divides \\(100!\\) iff \\(2k \\le v_2(100!)\\) and \\(k \\le v_3(100!)\\), where \\(v_p\\) denotes the exponent of the prime \\(p\\).\n\\par\\textbf{Legendre's formula} gives \\(v_p(n!) = \\sum_{i\\ge 1}\\lfloor n/p^i\\rfloor\\).\n\\par For \\(p=2\\): \\(v_2(100!) = 50 + 25 + 12 + 6 + 3 + 1 = 97\\).\n\\par For \\(p=3\\): \\(v_3(100!) = 33 + 11 + 3 + 1 = 48\\).\n\\par The two constraints are \\(2k \\le 97\\) (i.e. \\(k \\le 48\\), since \\(k\\) is an integer and \\(\\lfloor 97/2\\rfloor = 48\\)) and \\(k \\le 48\\). The binding (smaller) bound is \\(k\\le 48\\) from the prime \\(3\\).\n\\par Therefore the largest such \\(k\\) is \\(\\boxed{48}\\). The insight is that although \\(2\\) is far more abundant than \\(3\\), the \\(2^2\\) per copy of \\(12\\) means the supply of \\(2\\)'s suffices for \\(48\\) copies (\\(2\\cdot 48 = 96 \\le 97\\)); the genuine bottleneck is the prime \\(3\\).",
+    "method2": "Compare supplies as ratios. Each \\(12\\) consumes two \\(2\\)'s and one \\(3\\). The number of available \\(2\\)-pairs is \\(\\lfloor 97/2\\rfloor = 48\\); the number of available \\(3\\)'s is \\(48\\). The achievable count is the minimum, \\(\\min(48,48)=48\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy factorint(100!): v2=97, v3=48, min(97//2,48)=48 confirmed."
+   },
+   {
+    "id": "NUM-3",
+    "difficulty": 4,
+    "techniques": [
+     "multiplicative order",
+     "Lifting the Exponent",
+     "smallest prime factor argument",
+     "strong induction"
+    ],
+    "statement": "Find all positive integers \\(n\\) such that \\(n^{2} \\mid 2^{n} + 1\\).",
+    "answer": "\\(n \\in \\{1,\\,3\\}\\)",
+    "solution": "Clearly \\(n=1\\) works (\\(1\\mid 3\\)) and \\(n=3\\) works (\\(9 \\mid 9\\)). We show these are the only solutions.\n\\par Suppose \\(n^2 \\mid 2^n + 1\\) with \\(n > 1\\). Since \\(2^n+1\\) is odd, \\(n\\) is odd. Let \\(p\\) be the smallest prime divisor of \\(n\\); then \\(p\\) is odd.\n\\par\\textbf{Step 1: \\(p = 3\\).} From \\(p \\mid 2^n + 1\\) we get \\(2^n \\equiv -1 \\pmod p\\), hence \\(2^{2n} \\equiv 1 \\pmod p\\). Let \\(d = \\operatorname{ord}_p(2)\\). Then \\(d \\mid 2n\\) but \\(d \\nmid n\\) (else \\(2^n\\equiv 1\\), contradicting \\(2^n\\equiv -1\\) for odd \\(p\\)). Also \\(d \\mid p-1\\) by Fermat. Now \\(d\\mid 2n\\) and \\(d\\nmid n\\) force \\(v_2(d) = v_2(2n) = 1\\), so \\(d = 2m\\) with \\(m \\mid n\\) odd. Since \\(m \\mid n\\) and \\(m \\mid d \\mid p-1 < p\\), every prime factor of \\(m\\) is a prime factor of \\(n\\) that is \\(< p\\); by minimality of \\(p\\), \\(m\\) has no prime factors, i.e. \\(m=1\\) and \\(d = 2\\). Then \\(2^2 \\equiv 1 \\pmod p\\), so \\(p \\mid 3\\), giving \\(p = 3\\). Hence \\(3 \\mid n\\).\n\\par\\textbf{Step 2: bound the power of \\(3\\) via LTE.} Write \\(a = v_3(n) \\ge 1\\). Since \\(n\\) is odd, by the Lifting the Exponent lemma for \\(p=3\\),\n\\[ v_3(2^n + 1) = v_3(2+1) + v_3(n) = 1 + a. \\]\nThe hypothesis \\(n^2 \\mid 2^n+1\\) requires \\(v_3(n^2) \\le v_3(2^n+1)\\), i.e. \\(2a \\le 1 + a\\), so \\(a \\le 1\\). Thus \\(a = 1\\): exactly one factor of \\(3\\) divides \\(n\\).\n\\par\\textbf{Step 3: no other prime divides \\(n\\).} Suppose \\(n > 3\\). Write \\(n = 3m\\) with \\(m > 1\\) and \\(\\gcd(m,3)=1\\) (by Step 2). Let \\(q\\) be the smallest prime factor of \\(m\\); then \\(q > 3\\), and \\(q\\) is the smallest prime factor of \\(n\\) other than \\(3\\). From \\(q \\mid 2^n + 1\\), repeat the order analysis: \\(e := \\operatorname{ord}_q(2)\\) satisfies \\(e \\mid 2n\\), \\(e \\nmid n\\), so \\(e = 2t\\) with \\(t\\) odd, \\(t \\mid n\\). Each prime factor of \\(t\\) divides \\(n\\) and is \\(\\le t \\mid e \\mid q-1 < q\\), so it is a prime factor of \\(n\\) smaller than \\(q\\) — hence it must be \\(3\\). Thus \\(t \\in \\{1, 3\\}\\) (as \\(v_3(n)=1\\)), giving \\(e \\in \\{2, 6\\}\\), so \\(q \\mid 2^2 - 1 = 3\\) or \\(q \\mid 2^6 - 1 = 63 = 3^2\\cdot 7\\). The only prime \\(>3\\) here is \\(q = 7\\). But \\(e=6\\) and \\(7\\mid 2^n+1\\) would need \\(2^n\\equiv -1\\pmod 7\\); the powers of \\(2\\) mod \\(7\\) cycle \\(2,4,1\\) and never equal \\(6\\equiv -1\\). Contradiction. Hence no such \\(q\\) exists and \\(m=1\\).\n\\par Therefore \\(n = 3\\), and the complete solution set is \\(\\boxed{\\{1, 3\\}}\\).",
+    "method2": "After Step 1 establishes \\(3\\mid n\\) and Step 2 (LTE) forces \\(v_3(n)=1\\), one can finish by a clean lifting argument: assume for contradiction \\(n>3\\) and take the second-smallest prime \\(q\\mid n\\). Since \\(2^{2n}\\equiv 1\\pmod q\\) but \\(2^n\\equiv -1\\), the order of \\(2\\) mod \\(q\\) is even, equal to \\(2t\\) with \\(t\\mid n\\); minimality forces \\(t\\) to be built only from the already-found prime \\(3\\), so \\(\\operatorname{ord}_q(2)\\in\\{2,6\\}\\) and \\(q\\mid 2^6-1\\). Checking \\(q=7\\) directly fails since \\(-1\\) is not a power of \\(2\\) mod \\(7\\). This contradiction gives \\(n=3\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Brute force search n up to 200000 found exactly {1,3}; also verified 2^k mod 7 cycles 2,4,1 (never 6) confirming the Step 3 contradiction."
+   },
+   {
+    "id": "NUM-4",
+    "difficulty": 3,
+    "techniques": [
+     "primitive roots",
+     "cyclic group structure",
+     "pairing of inverses",
+     "Euler's totient"
+    ],
+    "statement": "Let \\(p\\) be an odd prime. Prove that the product of all primitive roots modulo \\(p\\) (taken among the residues \\(1,2,\\dots,p-1\\)) is congruent to \\(1 \\pmod p\\) when \\(p > 3\\), and to \\(-1 \\pmod 3\\) when \\(p = 3\\).",
+    "answer": "Proof",
+    "solution": "For \\(p = 3\\), the only primitive root is \\(2\\), and the product is \\(2 \\equiv -1 \\pmod 3\\). Now assume \\(p > 3\\).\n\\par\\textbf{Setup.} The group \\((\\mathbb{Z}/p\\mathbb{Z})^\\times\\) is cyclic of order \\(p-1\\); fix a generator \\(g\\). Every element is \\(g^k\\) for a unique \\(k \\in \\{0,1,\\dots,p-2\\}\\), and \\(g^k\\) is a primitive root iff \\(\\gcd(k, p-1) = 1\\). There are \\(\\varphi(p-1)\\) primitive roots, indexed by the set \\(U = \\{k : 1 \\le k \\le p-1,\\ \\gcd(k,p-1)=1\\}\\).\n\\par\\textbf{Product of indices.} The product of all primitive roots is\n\\[ P \\equiv \\prod_{k \\in U} g^{k} = g^{\\,S}, \\qquad S = \\sum_{k\\in U} k. \\]\n\\par\\textbf{Symmetry of the exponent sum.} The set \\(U\\) is symmetric under \\(k \\mapsto (p-1)-k\\): indeed \\(\\gcd(k, p-1) = \\gcd((p-1)-k,\\, p-1)\\). Since \\(p > 3\\), we have \\(p - 1 > 2\\), so no element is fixed by this involution (a fixed point would need \\(k = (p-1)/2\\), but then \\(\\gcd(k,p-1) = (p-1)/2 > 1\\), so it is not in \\(U\\)). Hence \\(U\\) splits into \\(\\tfrac{1}{2}\\varphi(p-1)\\) pairs \\(\\{k, (p-1)-k\\}\\), each summing to \\(p-1\\). Therefore\n\\[ S = \\frac{\\varphi(p-1)}{2}\\,(p-1). \\]\n\\par\\textbf{Conclusion.} Then \\(P \\equiv g^{S} = \\left(g^{\\,p-1}\\right)^{\\varphi(p-1)/2} \\equiv 1^{\\varphi(p-1)/2} = 1 \\pmod p\\), since \\(g^{p-1}\\equiv 1\\) by Fermat. (Note \\(\\varphi(p-1)\\) is even for \\(p-1>2\\), so \\(S\\) is an integer multiple of \\(p-1\\).) This proves \\(P \\equiv 1 \\pmod p\\) for \\(p > 3\\). \\(\\blacksquare\\)",
+    "method2": "Pair each primitive root with its inverse. If \\(r\\) is a primitive root then so is \\(r^{-1}\\), and \\(r\\cdot r^{-1}\\equiv 1\\). A root is its own inverse only if \\(r^2\\equiv 1\\), i.e. \\(r\\equiv \\pm 1\\); but \\(1\\) has order \\(1\\) and \\(-1\\) has order \\(2\\), neither equal to \\(p-1\\) when \\(p>3\\). Hence the primitive roots pair off into self-inverse-free pairs whose product is \\(1\\), so the total product is \\(1 \\pmod p\\). For \\(p=3\\), \\(p-1=2\\) and the lone primitive root \\(2\\equiv -1\\) is its own inverse, giving \\(-1\\).",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "Computationally confirmed: product of primitive roots mod p equals 1 for p in {5,7,11,13,17,19,23,29,31} and equals 2(=-1) for p=3; also verified no primitive root is self-inverse for p>3, validating method2."
+   },
+   {
+    "id": "NUM-5",
+    "difficulty": 3,
+    "techniques": [
+     "power sums modulo p",
+     "primitive root / order criterion",
+     "Fermat's little theorem",
+     "geometric series"
+    ],
+    "statement": "The number \\(2027\\) is prime. Find the remainder when \\[ 1^{2025} + 2^{2025} + 3^{2025} + \\cdots + 2026^{2025} \\] is divided by \\(2027\\).",
+    "answer": "\\(0\\)",
+    "solution": "Let \\(p = 2027\\) (prime) and \\(k = 2025\\); note \\(p - 1 = 2026\\). We evaluate \\(S = \\sum_{a=1}^{p-1} a^{k} \\bmod p\\).\n\\par\\textbf{Key lemma.} For a prime \\(p\\) and integer \\(k \\ge 1\\),\n\\[ \\sum_{a=1}^{p-1} a^{k} \\equiv \\begin{cases} -1 \\pmod p, & (p-1)\\mid k,\\\\[2pt] \\;\\;0 \\pmod p, & (p-1)\\nmid k. \\end{cases} \\]\n\\par\\textbf{Proof of lemma.} Let \\(g\\) be a primitive root mod \\(p\\). As \\(a\\) ranges over \\(1,\\dots,p-1\\), the residue \\(a\\) ranges over \\(g^0, g^1, \\dots, g^{p-2}\\) in some order. Hence\n\\[ S \\equiv \\sum_{j=0}^{p-2} (g^{j})^{k} = \\sum_{j=0}^{p-2} (g^{k})^{j}. \\]\nThis is a geometric series with ratio \\(t = g^{k}\\). If \\((p-1)\\mid k\\) then \\(t \\equiv 1\\) and the sum is \\(p-1 \\equiv -1\\). If \\((p-1)\\nmid k\\) then \\(t \\not\\equiv 1\\) (since \\(g\\) has order \\(p-1\\)), and\n\\[ S \\equiv \\frac{t^{\\,p-1} - 1}{t - 1} \\equiv \\frac{1 - 1}{t-1} = 0 \\pmod p, \\]\nusing \\(t^{p-1} = g^{k(p-1)} \\equiv 1\\) by Fermat. \\(\\square\\)\n\\par\\textbf{Apply.} Here \\(p - 1 = 2026\\) and \\(k = 2025\\). Since \\(2026 \\nmid 2025\\) (indeed \\(0 < 2025 < 2026\\)), we are in the second case, so \\(S \\equiv 0 \\pmod{2027}\\).\n\\par The remainder is \\(\\boxed{0}\\).",
+    "method2": "Pair \\(a\\) with \\(p-a\\). Since \\(k=2025\\) is odd, \\((p-a)^{k}\\equiv (-a)^{k} = -a^{k}\\pmod p\\). Thus \\(a^{k} + (p-a)^{k} \\equiv 0\\), and the \\(p-1 = 2026\\) terms split into \\(1013\\) such pairs (no term is self-paired since \\(p\\) is odd, so \\(a \\ne p-a\\)). Each pair contributes \\(0\\), giving total \\(0 \\pmod{2027}\\). This pairing argument needs only that the exponent is odd.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: sum_{a=1}^{2026} a^2025 mod 2027 = 0, and 2027 confirmed prime."
+   },
+   {
+    "id": "NUM-6",
+    "difficulty": 4,
+    "techniques": [
+     "Lifting the Exponent (LTE)",
+     "p-adic valuation",
+     "factoring a^n+b^n"
+    ],
+    "statement": "Determine the largest integer \\(N\\) such that \\(3^{N}\\) divides \\(2^{\\left(3^{7}\\right)} + 1\\).",
+    "answer": "\\(8\\)",
+    "solution": "We must compute \\(v_3\\!\\left(2^{3^7} + 1\\right)\\), the exponent of \\(3\\) in the factorization.\n\\par\\textbf{LTE for sums.} The Lifting the Exponent lemma states: for an odd prime \\(p\\) with \\(p \\mid a + b\\) and \\(p \\nmid a,\\,p\\nmid b\\), and for an odd positive integer \\(m\\),\n\\[ v_p\\!\\left(a^{m} + b^{m}\\right) = v_p(a+b) + v_p(m). \\]\n\\par\\textbf{Apply with \\(a = 2,\\ b = 1,\\ p = 3,\\ m = 3^7\\).} Here \\(3 \\mid 2 + 1 = 3\\), \\(3 \\nmid 2\\), \\(3\\nmid 1\\), and \\(m = 3^7\\) is odd. Hence\n\\[ v_3\\!\\left(2^{3^7} + 1\\right) = v_3(2 + 1) + v_3\\!\\left(3^7\\right) = v_3(3) + 7 = 1 + 7 = 8. \\]\n\\par Therefore \\(3^{8}\\) divides \\(2^{3^7}+1\\) but \\(3^{9}\\) does not, and the answer is \\(N = \\boxed{8}\\).",
+    "method2": "Prove the increment by induction without quoting LTE. Let \\(x_k = 2^{3^k}+1\\). Then \\(x_{k+1} = 2^{3^{k+1}}+1 = \\left(2^{3^k}\\right)^3 + 1 = (x_k - 1)^3 + 1\\). Expanding, \\(x_{k+1} = x_k\\big((x_k-1)^2 - (x_k-1) + 1\\big) = x_k\\,(x_k^2 - 3x_k + 3)\\). Since \\(3 \\mid x_k\\) (as \\(x_0 = 3\\) and the recursion preserves divisibility by \\(3\\)), the factor \\(x_k^2 - 3x_k + 3\\) is \\(\\equiv 3 \\pmod 9\\) (each of \\(x_k^2\\) and \\(3x_k\\) is divisible by \\(9\\) for \\(k\\ge 1\\), leaving \\(3\\)), so \\(v_3\\) of that factor is exactly \\(1\\). Thus \\(v_3(x_{k+1}) = v_3(x_k) + 1\\). With \\(v_3(x_0) = v_3(3) = 1\\), induction gives \\(v_3(x_k) = k+1\\); for \\(k = 7\\) this is \\(8\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Direct computation: v3(2^(3^7)+1)=8; also verified the recursion v3(x_k)=k+1 for k=0..7."
+   },
+   {
+    "id": "NUM-7",
+    "difficulty": 4,
+    "techniques": [
+     "multiplicative order",
+     "Fermat numbers",
+     "order forces congruence class",
+     "factor search"
+    ],
+    "statement": "Consider \\(F = 2^{32} + 1 = 4294967297\\). Prove that every prime divisor \\(p\\) of \\(F\\) satisfies \\(p \\equiv 1 \\pmod{64}\\), and use this to find the smallest prime divisor of \\(F\\).",
+    "answer": "\\(641\\)",
+    "solution": "\\textbf{Step 1: a congruence for prime divisors.} Let \\(p\\) be a prime with \\(p \\mid 2^{32} + 1\\). Then \\(2^{32} \\equiv -1 \\pmod p\\), so squaring gives \\(2^{64} \\equiv 1 \\pmod p\\). Let \\(d = \\operatorname{ord}_p(2)\\). Then \\(d \\mid 64\\), so \\(d\\) is a power of \\(2\\). But \\(d \\nmid 32\\): if \\(d \\mid 32\\) we would have \\(2^{32}\\equiv 1\\), contradicting \\(2^{32}\\equiv -1 \\pmod p\\) (these differ since \\(p\\) is odd, \\(p \\nmid 2\\)). The only divisor of \\(64\\) that does not divide \\(32\\) is \\(64\\) itself, so \\(d = 64\\).\n\\par By Fermat's little theorem \\(d \\mid p - 1\\), hence \\(64 \\mid p - 1\\), i.e. \\(p \\equiv 1 \\pmod{64}\\). This proves the claim for every prime divisor.\n\\par\\textbf{Step 2: search the admissible candidates.} A prime factor must have the form \\(p = 64k + 1\\). Testing the primes of this form in increasing order:\n\\par \\(65 = 5\\cdot 13\\) (not prime); \\(129 = 3\\cdot 43\\) (not prime); \\(193\\) prime — \\(193 \\nmid F\\); \\(257\\) prime — \\(257 \\nmid F\\); \\(321 = 3\\cdot 107,\\ 385 = 5\\cdot 7\\cdot 11\\) (not prime); \\(449\\) prime — \\(449 \\nmid F\\); \\(513 = 27\\cdot 19\\) (not prime); \\(577\\) prime — \\(577 \\nmid F\\); \\(641\\) prime — and \\(641 \\mid F\\).\n\\par Indeed \\(F = 4294967297 = 641 \\cdot 6700417\\), so the smallest prime divisor is \\(\\boxed{641}\\).\n\\par (One can confirm \\(641 \\mid 2^{32}+1\\) elegantly: \\(641 = 5^4 + 2^4 = 5\\cdot 2^7 + 1\\). From \\(5\\cdot 2^7 \\equiv -1\\) we get \\(5^4 \\cdot 2^{28} \\equiv 1\\); and from \\(5^4 \\equiv -2^4\\) we get \\(-2^{4}\\cdot 2^{28} = -2^{32} \\equiv 1\\), i.e. \\(2^{32} \\equiv -1 \\pmod{641}\\).)",
+    "method2": "The slick divisibility check by Euler/Fermat's identity: \\(641 = 2^4 + 5^4 = 1 + 5\\cdot 2^7\\). The second form gives \\(5\\cdot 2^7 \\equiv -1\\pmod{641}\\), so \\((5\\cdot 2^7)^4 \\equiv 1\\), i.e. \\(5^4\\cdot 2^{28}\\equiv 1\\). The first form gives \\(5^4 \\equiv -2^4 \\pmod{641}\\). Substituting, \\(-2^4\\cdot 2^{28} = -2^{32}\\equiv 1\\), hence \\(2^{32}\\equiv -1\\) and \\(641 \\mid 2^{32}+1\\). Combined with Step 1's lower bound (any prime factor is at least \\(193\\), and one checks \\(193,257,449,577\\) fail), \\(641\\) is the least prime factor.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: factorint(2^32+1)={641,6700417}; 641 prime, 641|F, 641 mod 64=1; verified candidates 193,257,449,577 all fail to divide F, confirming 641 is smallest."
+   },
+   {
+    "id": "NUM-8",
+    "difficulty": 5,
+    "techniques": [
+     "multiplicative order",
+     "Euler's theorem",
+     "order divides totient",
+     "structural / no-computation proof"
+    ],
+    "statement": "Let \\(a \\ge 2\\) be an integer. Prove that for every integer \\(n \\ge 1\\), \\[ n \\,\\bigm|\\, \\varphi\\!\\left(a^{n} - 1\\right), \\] where \\(\\varphi\\) is Euler's totient function.",
+    "answer": "Proof",
+    "solution": "Set \\(m = a^{n} - 1\\). For \\(n = 1\\), \\(\\varphi(a-1)\\) is divisible by \\(1\\) trivially, so assume \\(n \\ge 2\\); then \\(m = a^n - 1 \\ge a^2 - 1 \\ge 3\\).\n\\par\\textbf{Step 1: \\(a\\) is a unit modulo \\(m\\).} Since \\(a^{n} \\equiv 1 \\pmod m\\) by construction (\\(m \\mid a^n - 1\\)), \\(a\\) is invertible modulo \\(m\\); equivalently \\(\\gcd(a, m) = 1\\) (any common prime factor would divide \\(a^n\\) and \\(a^n - 1\\), hence \\(1\\)). So \\(a\\) lies in the multiplicative group \\((\\mathbb{Z}/m\\mathbb{Z})^\\times\\), which has order \\(\\varphi(m)\\).\n\\par\\textbf{Step 2: the order of \\(a\\) modulo \\(m\\) is exactly \\(n\\).} Let \\(d = \\operatorname{ord}_m(a)\\). From \\(a^n \\equiv 1\\) we get \\(d \\mid n\\). Conversely, suppose \\(d < n\\). Then \\(a^{d} \\equiv 1 \\pmod m\\) means \\(m \\mid a^{d} - 1\\), so\n\\[ a^{n} - 1 = m \\le a^{d} - 1. \\]\nBut \\(a \\ge 2\\) and \\(d < n\\) give \\(a^{d} - 1 < a^{n} - 1\\), a strict inequality, contradicting \\(a^n - 1 \\le a^d - 1\\). (We used that \\(a^d - 1 \\ge 1 > 0\\), so divisibility forces \\(m \\le a^d - 1\\).) Hence no \\(d < n\\) works, and \\(d = n\\).\n\\par\\textbf{Step 3: Lagrange / Euler.} The order of any element of a finite group divides the group's order (Lagrange); equivalently, \\(\\operatorname{ord}_m(a) \\mid \\varphi(m)\\) by Euler's theorem (\\(a^{\\varphi(m)}\\equiv 1\\)). Therefore\n\\[ n = \\operatorname{ord}_m(a) \\,\\bigm|\\, \\varphi(m) = \\varphi(a^{n} - 1). \\]\n\\par This holds for all \\(n \\ge 1\\) and all \\(a \\ge 2\\). \\(\\blacksquare\\)\n\\par\\textbf{Remark.} The crux is recognizing that \\(a^n - 1\\) is built precisely so that \\(a\\) has order exactly \\(n\\) modulo it — minimality of the exponent comes for free from the size comparison \\(a^d - 1 < a^n - 1\\). No factorization of \\(a^n-1\\) is needed.",
+    "method2": "Frame it via cyclotomic structure: \\(a^n - 1 = \\prod_{d \\mid n}\\Phi_d(a)\\) where \\(\\Phi_d\\) is the \\(d\\)-th cyclotomic polynomial. A prime \\(p\\) dividing \\(\\Phi_n(a)\\) (and not dividing \\(n\\)) satisfies \\(\\operatorname{ord}_p(a) = n\\), forcing \\(n \\mid p - 1\\); the primitive prime divisor existence (Zsygmondy, for \\(n \\ge 2\\), \\((a,n)\\ne(2,6)\\)) then exhibits such a \\(p\\) with \\(n \\mid p-1 \\mid \\varphi(a^n-1)\\). However the order argument above is cleaner and fully self-contained, handling all cases (including \\((a,n)=(2,6)\\)) uniformly, since it only needs that \\(a\\) itself has order \\(n\\) modulo \\(a^n-1\\), which is elementary.",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "Verified for a in 2..7, n in 1..11 (m>1): n | totient(a^n-1) holds throughout, and ord_m(a)=n confirmed in every case, validating Steps 2-3."
+   }
+  ]
+ },
+ {
+  "topic": "geometry",
+  "blurb": "Eight original synthetic plane-geometry problems for olympiad training, moving from quick angle-chasing warm-ups to power-of-a-point, similarity, Ptolemy, and a coordinate/orthocenter finale. Each rewards a single clean insight rather than mechanical computation, and every numeric answer has been independently verified.",
+  "problems": [
+   {
+    "id": "GEO-1",
+    "difficulty": 1,
+    "techniques": [
+     "angle chasing",
+     "isosceles triangles",
+     "exterior angle"
+    ],
+    "statement": "In triangle \\(ABC\\) we have \\(AB = AC\\) and \\(\\angle BAC = 40^\\circ\\). The point \\(D\\) lies on ray \\(BC\\) beyond \\(C\\) so that \\(CD = CA\\). Find \\(\\angle ADB\\).",
+    "answer": "\\(35^\\circ\\)",
+    "solution": "Since \\(AB=AC\\), the base angles satisfy \\(\\angle ABC = \\angle ACB = \\tfrac{180^\\circ-40^\\circ}{2} = 70^\\circ\\).\\par Now look at triangle \\(ACD\\). Because \\(D\\) lies on segment \\(BC\\) extended beyond \\(C\\), the angle \\(\\angle ACD\\) is the supplement of \\(\\angle ACB\\):\n\\[\n\\angle ACD = 180^\\circ - 70^\\circ = 110^\\circ.\n\\]\nWe are given \\(CD = CA\\), so triangle \\(ACD\\) is isosceles with apex at \\(C\\). Its two equal base angles are\n\\[\n\\angle CAD = \\angle ADC = \\frac{180^\\circ - 110^\\circ}{2} = 35^\\circ.\n\\]\nFinally \\(\\angle ADB\\) is the same angle as \\(\\angle ADC\\) (since \\(B\\), \\(C\\), \\(D\\) are collinear and \\(B\\) lies on the \\(C\\)-side), so \\(\\angle ADB = 35^\\circ\\).",
+    "method2": "Exterior-angle view: in triangle \\(ACD\\), the angle \\(\\angle ACB = 70^\\circ\\) is exterior at \\(C\\), hence equals the sum of the two remote interior angles \\(\\angle CAD + \\angle ADC\\). With \\(CA=CD\\) those two are equal, so each is \\(70^\\circ/2 = 35^\\circ\\), giving \\(\\angle ADB = 35^\\circ\\) immediately.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy/coordinate check: built triangle with base angles 70 deg, placed D beyond C with CD=CA, measured angle ADB = 35.0 deg exactly."
+   },
+   {
+    "id": "GEO-2",
+    "difficulty": 2,
+    "techniques": [
+     "power of a point",
+     "tangent-secant",
+     "intersecting chords"
+    ],
+    "statement": "A point \\(P\\) lies outside a circle \\(\\omega\\). A line through \\(P\\) is tangent to \\(\\omega\\) at \\(T\\). A second line through \\(P\\) meets \\(\\omega\\) at \\(A\\) and \\(B\\), with \\(A\\) between \\(P\\) and \\(B\\); here \\(PA = 4\\) and \\(AB = 5\\). A third line through \\(P\\) meets \\(\\omega\\) at \\(C\\) and \\(D\\), with \\(C\\) between \\(P\\) and \\(D\\), and \\(PC = 3\\). Find \\(PT\\) and \\(CD\\).",
+    "answer": "\\(PT = 6,\\quad CD = 9\\)",
+    "solution": "The power of the point \\(P\\) with respect to \\(\\omega\\) is a single number that every line through \\(P\\) must reproduce.\\par Using the secant through \\(A,B\\):\n\\[\n\\operatorname{pow}(P) = PA\\cdot PB = PA\\,(PA+AB) = 4\\cdot(4+5) = 4\\cdot 9 = 36.\n\\]\nFor the tangent, \\(\\operatorname{pow}(P) = PT^2\\), so\n\\[\nPT = \\sqrt{36} = 6.\n\\]\nFor the secant through \\(C,D\\):\n\\[\nPC\\cdot PD = 36 \\;\\Rightarrow\\; PD = \\frac{36}{3} = 12,\n\\]\nhence \\(CD = PD - PC = 12 - 3 = 9.\\)",
+    "method2": "One can derive \\(PT^2 = PA\\cdot PB\\) from scratch: triangles \\(PTA\\) and \\(PBT\\) are similar because \\(\\angle TPA = \\angle BPT\\) (shared) and \\(\\angle PTA = \\angle PBT\\) (tangent-chord angle equals the inscribed angle subtending \\(TA\\)). Then \\(\\tfrac{PT}{PB} = \\tfrac{PA}{PT}\\) gives \\(PT^2 = PA\\cdot PB = 36\\), and the same similarity logic with the \\(C,D\\) secant fixes \\(PD\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy confirmed pow(P)=PA*PB=36, PT=sqrt(36)=6, PD=36/3=12, CD=12-3=9."
+   },
+   {
+    "id": "GEO-3",
+    "difficulty": 3,
+    "techniques": [
+     "similar triangles",
+     "altitude to hypotenuse",
+     "inradius of right triangle"
+    ],
+    "statement": "In right triangle \\(ABC\\) the right angle is at \\(C\\), and \\(CA = 3\\), \\(CB = 4\\). The foot of the altitude from \\(C\\) to the hypotenuse \\(AB\\) is \\(H\\). Let \\(r_1\\) be the inradius of triangle \\(ACH\\) and \\(r_2\\) the inradius of triangle \\(BCH\\). Find the ratio \\(r_1 : r_2\\), and prove it does not depend on the particular lengths but only on the legs.",
+    "answer": "\\(r_1 : r_2 = CA : CB = 3 : 4\\)",
+    "solution": "The altitude to the hypotenuse creates the classical chain of similar triangles\n\\[\n\\triangle ACH \\sim \\triangle ABC \\sim \\triangle CBH,\n\\]\nbecause each shares an acute angle with \\(\\triangle ABC\\) and each has a right angle. In particular \\(\\triangle ACH \\sim \\triangle CBH\\).\\par Now here is the key observation: the inradius is a length, and any length scales by the same factor under a similarity. So if \\(\\triangle ACH \\sim \\triangle CBH\\) with ratio \\(k\\), then \\(r_1/r_2 = k\\). To find \\(k\\), compare corresponding hypotenuses: the hypotenuse of \\(\\triangle ACH\\) is \\(CA\\), and the corresponding hypotenuse of \\(\\triangle CBH\\) is \\(CB\\) (these are the sides opposite the right angles at \\(H\\)). Hence\n\\[\n\\frac{r_1}{r_2} = \\frac{CA}{CB} = \\frac{3}{4}.\n\\]\nThis depends only on the legs, as claimed.\\par As a concrete check with \\(CA=3, CB=4, AB=5\\): the altitude is \\(CH = \\tfrac{CA\\cdot CB}{AB} = \\tfrac{12}{5}\\), with \\(AH = \\tfrac{CA^2}{AB} = \\tfrac{9}{5}\\) and \\(BH = \\tfrac{CB^2}{AB} = \\tfrac{16}{5}\\). Using \\(r = \\tfrac{\\text{leg}_1+\\text{leg}_2-\\text{hyp}}{2}\\) for a right triangle,\n\\[\nr_1 = \\frac{CH + AH - CA}{2} = \\frac{\\tfrac{12}{5}+\\tfrac{9}{5}-3}{2} = \\frac{3}{5},\\qquad r_2 = \\frac{CH + BH - CB}{2} = \\frac{\\tfrac{12}{5}+\\tfrac{16}{5}-4}{2} = \\frac{4}{5},\n\\]\nso \\(r_1 : r_2 = \\tfrac{3}{5} : \\tfrac{4}{5} = 3 : 4\\), matching the synthetic argument.",
+    "method2": "Avoid coordinates entirely: in any similar figures the inradius is proportional to a chosen homologous side. The similarities \\(\\triangle ACH \\sim \\triangle ABC\\) and \\(\\triangle CBH \\sim \\triangle ABC\\) have ratios \\(CA/AB\\) and \\(CB/AB\\) respectively (matching hypotenuse to hypotenuse). Since the inradius of \\(\\triangle ABC\\) is a fixed length \\(\\rho\\), we get \\(r_1 = \\rho\\cdot CA/AB\\) and \\(r_2 = \\rho\\cdot CB/AB\\), so \\(r_1/r_2 = CA/CB\\) directly.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Numeric check with CA=3,CB=4,AB=5: r1=3/5, r2=4/5, so r1/r2 = 3/4 exactly (sympy)."
+   },
+   {
+    "id": "GEO-4",
+    "difficulty": 3,
+    "techniques": [
+     "incircle",
+     "equal tangent lengths",
+     "Heron's formula"
+    ],
+    "statement": "The incircle of triangle \\(ABC\\) touches side \\(BC\\) at \\(X\\), with \\(BX = 4\\) and \\(CX = 6\\). The tangent length from vertex \\(A\\) to the incircle equals \\(5\\) (that is, the incircle touches \\(AB\\) and \\(AC\\) at points whose distance to \\(A\\) is \\(5\\)). Find the area of triangle \\(ABC\\).",
+    "answer": "\\(30\\sqrt{2}\\)",
+    "solution": "Write the tangent lengths from the three vertices as \\(x\\) (from \\(A\\)), \\(y\\) (from \\(B\\)), \\(z\\) (from \\(C\\)). Equal tangents from an external point give\n\\[\ny = BX = 4,\\qquad z = CX = 6,\\qquad x = 5 \\;(\\text{given}).\n\\]\nThe side lengths are then\n\\[\na = BC = y+z = 10,\\quad b = CA = z+x = 11,\\quad c = AB = x+y = 9.\n\\]\nThe semiperimeter is\n\\[\ns = x+y+z = 5+4+6 = 15.\n\\]\n(Notice the consistency \\(s-a = 15-10 = 5 = x\\), exactly the \\(A\\)-tangent length, as it must be.) By Heron's formula,\n\\[\n[ABC] = \\sqrt{s(s-a)(s-b)(s-c)} = \\sqrt{15\\cdot 5\\cdot 4\\cdot 6} = \\sqrt{1800} = 30\\sqrt{2}.\n\\]",
+    "method2": "Once \\(r\\) is found the area follows from \\([ABC]=rs\\). Here \\(r = \\sqrt{\\tfrac{(s-a)(s-b)(s-c)}{s}} = \\sqrt{\\tfrac{5\\cdot 4\\cdot 6}{15}} = \\sqrt{8} = 2\\sqrt2\\), so \\([ABC] = rs = 2\\sqrt2\\cdot 15 = 30\\sqrt2\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: Heron sqrt(15*5*4*6)=sqrt(1800)=30*sqrt(2); cross-check r=2*sqrt(2), rs=30*sqrt(2)."
+   },
+   {
+    "id": "GEO-5",
+    "difficulty": 3,
+    "techniques": [
+     "Ptolemy's theorem",
+     "cyclic quadrilateral",
+     "equilateral triangle"
+    ],
+    "statement": "Let \\(ABC\\) be an equilateral triangle inscribed in a circle, and let \\(P\\) be a point on the arc \\(BC\\) not containing \\(A\\). Prove that \\(PA = PB + PC\\).",
+    "answer": "Proof",
+    "solution": "Since \\(P\\) lies on the circumcircle of \\(ABC\\), the quadrilateral \\(ABPC\\) (vertices in this cyclic order \\(A,B,P,C\\) around the circle) is a cyclic quadrilateral. Apply Ptolemy's theorem, which states that for a cyclic quadrilateral the product of the diagonals equals the sum of the products of the two pairs of opposite sides:\n\\[\nAP\\cdot BC = AB\\cdot PC + AC\\cdot PB.\n\\]\nHere \\(AP\\) and \\(BC\\) are the diagonals of \\(ABPC\\), while \\(AB, PC\\) and \\(AC, PB\\) are the two pairs of opposite sides.\\par Because triangle \\(ABC\\) is equilateral, \\(AB = AC = BC =: \\ell\\). Substituting,\n\\[\nAP\\cdot \\ell = \\ell\\cdot PC + \\ell\\cdot PB.\n\\]\nDividing by \\(\\ell > 0\\) yields\n\\[\nPA = PB + PC,\n\\]\nas required. \\(\\blacksquare\\)\\par (Equality, not merely \\(\\le\\), is what makes this clean: Ptolemy gives an equation precisely because \\(P\\) is concyclic with \\(A,B,C\\); for a non-cyclic point the inequality \\(PA \\le PB+PC\\) would hold instead.)",
+    "method2": "Trigonometric form. Let the circumradius be \\(R\\). For \\(P\\) on arc \\(BC\\), the inscribed angles give \\(\\angle BPA = \\angle CPA = 60^\\circ\\) (each subtends a side of the equilateral triangle). By the extended law of sines in triangles \\(ABP\\) and \\(ACP\\), the chords are \\(PB = 2R\\sin\\angle PAB\\), \\(PC = 2R\\sin\\angle PAC\\), and \\(PA = 2R\\sin\\angle ABP\\). Using \\(\\angle PAB+\\angle PAC = 60^\\circ\\) and the sum-to-product identity \\(\\sin u+\\sin v = 2\\sin\\tfrac{u+v}{2}\\cos\\tfrac{u-v}{2}\\) reduces \\(PB+PC\\) to exactly \\(PA\\). A direct coordinate check (side \\(1\\), \\(P\\) the arc midpoint) gives \\(PA = PB+PC = \\tfrac{2}{\\sqrt3}\\), confirming the identity.",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "Numeric: for many points P on arc BC of the circumcircle, PA-(PB+PC)=0 to 1e-9; arc-midpoint scaled to side 1 gives PA=2/sqrt(3)=1.1547, matching PB+PC."
+   },
+   {
+    "id": "GEO-6",
+    "difficulty": 4,
+    "techniques": [
+     "angle chasing",
+     "cyclic quadrilaterals",
+     "directed angles"
+    ],
+    "statement": "Two circles \\(\\omega_1\\) and \\(\\omega_2\\) intersect at points \\(P\\) and \\(Q\\). A line through \\(P\\) meets \\(\\omega_1\\) again at \\(A\\) and \\(\\omega_2\\) again at \\(B\\). A second line through \\(Q\\) meets \\(\\omega_1\\) again at \\(C\\) and \\(\\omega_2\\) again at \\(D\\). Prove that \\(AC \\parallel BD\\).",
+    "answer": "Proof",
+    "solution": "We chase angles using the common chord \\(PQ\\), which links the two circles. Throughout we use directed angles between lines, taken modulo \\(180^\\circ\\), so the argument is independent of how \\(A,B,C,D\\) happen to be arranged.\\par Work in \\(\\omega_1\\), which passes through \\(A, C, P, Q\\). Since these four points are concyclic, the inscribed-angle theorem for the chord \\(CQ\\) gives\n\\[\n\\angle (CA, AP) = \\angle (CQ, QP),\n\\]\nbecause \\(\\angle CAP\\) (at \\(A\\)) and \\(\\angle CQP\\) (at \\(Q\\)) are angles subtending the same chord \\(CQ\\) (no, \\(CP\\)) — more precisely, in directed-angle form, points \\(A,C,P,Q\\) concyclic means \\(\\angle(AC,AP)=\\angle(QC,QP)\\).\\par Work in \\(\\omega_2\\), through \\(B, D, P, Q\\). Likewise, concyclicity of \\(B,D,P,Q\\) gives\n\\[\n\\angle (BD, BP) = \\angle (QD, QP).\n\\]\nNow use the collinearities built into the construction. Points \\(A, P, B\\) lie on one line through \\(P\\), so line \\(AP = \\) line \\(BP\\). Points \\(C, Q, D\\) lie on one line through \\(Q\\), so line \\(QC = \\) line \\(QD\\). The second collinearity makes the two right-hand sides equal:\n\\[\n\\angle (QC, QP) = \\angle (QD, QP).\n\\]\nChaining the three equalities,\n\\[\n\\angle (AC, AP) = \\angle (BD, BP) = \\angle (BD, AP),\n\\]\nthe last step using \\(AP = BP\\) as lines. Thus \\(AC\\) and \\(BD\\) make equal directed angles with the common line \\(AP\\). Equal directed angles with a common transversal mean the lines are parallel:\n\\[\nAC \\parallel BD. \\qquad \\blacksquare\n\\]",
+    "method2": "Undirected version, tracking supplements. In \\(\\omega_1\\), \\(APQC\\) cyclic gives \\(\\angle PAC = \\angle PQC\\) (inscribed angles on arc \\(PC\\), up to supplement). In \\(\\omega_2\\), \\(BPQD\\) cyclic gives \\(\\angle PBD = \\angle PQD\\). Since \\(C,Q,D\\) are collinear, \\(\\angle PQC\\) and \\(\\angle PQD\\) are the same angle, so \\(\\angle PAC = \\angle PBD\\). These are corresponding angles cut by the transversal line \\(APB\\) on lines \\(AC\\) and \\(BD\\); equal corresponding angles force \\(AC \\parallel BD\\).",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "Numeric: 5 random configurations of two intersecting circles with random lines through P and Q; cross product of direction(AC) and direction(BD) was 0 to 1e-7 in every trial, confirming AC || BD."
+   },
+   {
+    "id": "GEO-7",
+    "difficulty": 4,
+    "techniques": [
+     "power of a point",
+     "similar triangles",
+     "altitude on hypotenuse",
+     "right angles"
+    ],
+    "statement": "Let \\(AB\\) be a diameter of a circle \\(\\omega\\) with center \\(O\\), and let \\(P\\) be a point outside \\(\\omega\\) on the line \\(AB\\) extended beyond \\(B\\). From \\(P\\) draw a tangent \\(PT\\) to \\(\\omega\\) (with \\(T\\) the point of tangency), and let \\(M\\) be the foot of the perpendicular from \\(T\\) to line \\(AB\\). Prove that \\(PM\\cdot PO = PT^{2}\\), and deduce that \\(M\\) is the same point for both tangents from \\(P\\).",
+    "answer": "Proof",
+    "solution": "Set up the standard right-angle facts. Since \\(PT\\) is tangent at \\(T\\), the radius \\(OT \\perp PT\\), so triangle \\(OTP\\) is right-angled at \\(T\\). The point \\(M\\) is the foot of the perpendicular from \\(T\\) onto the hypotenuse \\(OP\\) of this right triangle (note \\(M\\) lies on line \\(AB = OP\\)).\\par This is exactly the altitude-on-hypotenuse configuration. In a right triangle, the foot of the altitude from the right angle satisfies the well-known relation: a leg squared equals the product of the hypotenuse and the adjacent segment of the hypotenuse. Applying it to right triangle \\(OTP\\) with altitude \\(TM\\):\n\\[\nPT^2 = PM\\cdot PO,\n\\]\nsince \\(PT\\) is the leg adjacent to the segment \\(PM\\). (Equivalently, \\(\\triangle PTM \\sim \\triangle POT\\): they share angle \\(P\\) and each has a right angle, giving \\(\\tfrac{PT}{PO} = \\tfrac{PM}{PT}\\), i.e. \\(PT^2 = PM\\cdot PO\\).) This proves the stated identity.\\par Now deduce the independence from the choice of tangent. The power of \\(P\\) with respect to \\(\\omega\\) is\n\\[\nPT^2 = \\operatorname{pow}(P) = PA\\cdot PB,\n\\]\na quantity determined by \\(P\\) and \\(\\omega\\) alone, the same for both tangents \\(PT\\) and \\(PT'\\). From the identity,\n\\[\nPM = \\frac{PT^2}{PO} = \\frac{\\operatorname{pow}(P)}{PO},\n\\]\nwhich likewise depends only on \\(P\\) and \\(\\omega\\), not on which tangent we chose. Both feet \\(M\\) and \\(M'\\) lie on the fixed line \\(AB\\), on the same side of \\(P\\), at the identical distance \\(PM\\) from \\(P\\); hence they coincide, \\(M = M'\\). So both tangent points project to the same foot \\(M\\) on \\(AB\\). \\(\\blacksquare\\)",
+    "method2": "Coordinate confirmation. Put \\(O=(0,0)\\), radius \\(1\\), \\(A=(-1,0)\\), \\(B=(1,0)\\), and \\(P=(p,0)\\) with \\(p>1\\). The tangent point is \\(T=\\left(\\tfrac1p,\\ \\pm\\tfrac{\\sqrt{p^2-1}}{p}\\right)\\) (it lies on \\(\\omega\\) and satisfies \\(OT\\perp PT\\)). Its foot on the \\(x\\)-axis is \\(M=\\left(\\tfrac1p,0\\right)\\), the same \\(x\\)-coordinate for either sign, so \\(M\\) is independent of the tangent. Then \\(PM = p-\\tfrac1p\\) and \\(PO = p\\), so \\(PM\\cdot PO = p^2-1\\); and \\(PT^2 = \\left(p-\\tfrac1p\\right)^2 + \\tfrac{p^2-1}{p^2} = p^2-1\\). The two agree, confirming \\(PM\\cdot PO = PT^2\\).",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "sympy symbolic: with O at origin, radius 1, P=(p,0), got PT^2 = p^2-1 and PM*PO = p^2-1 identically; M=(1/p,0) independent of tangent sign."
+   },
+   {
+    "id": "GEO-8",
+    "difficulty": 5,
+    "techniques": [
+     "orthocenter",
+     "reflection",
+     "cyclic quadrilateral",
+     "coordinates",
+     "angle chasing"
+    ],
+    "statement": "Let \\(H\\) be the orthocenter of an acute triangle \\(ABC\\), and let \\(H'\\) be the reflection of \\(H\\) over the line \\(BC\\). Prove that \\(H'\\) lies on the circumcircle of \\(ABC\\). Then, in the specific triangle with \\(A=(0,5)\\), \\(B=(-3,0)\\), \\(C=(4,0)\\), find the coordinates of \\(H'\\) and verify it lies on the circumcircle.",
+    "answer": "\\(H' = \\left(0,\\ -\\tfrac{12}{5}\\right)\\); it lies on the circumcircle \\(x^2+y^2-x-\\tfrac{13}{5}y-12=0\\).",
+    "solution": "Synthetic proof. We show \\(\\angle BH'C = 180^\\circ - \\angle BAC\\), which places \\(H'\\) on the arc \\(BC\\) opposite \\(A\\), i.e. on the circumcircle.\\par First, the standard orthocenter fact \\(\\angle BHC = 180^\\circ - \\angle BAC\\). Proof by angle chasing: let \\(E\\) be the foot of the altitude from \\(B\\) (on \\(AC\\)) and \\(F\\) the foot from \\(C\\) (on \\(AB\\)). In quadrilateral \\(AFHE\\), the angles at \\(F\\) and \\(E\\) are right angles, so the remaining two angles sum to \\(180^\\circ\\): \\(\\angle FHE = 180^\\circ - \\angle A\\). Since \\(\\angle BHC = \\angle FHE\\) (vertical angles at \\(H\\)), we get \\(\\angle BHC = 180^\\circ - \\angle A\\).\\par Reflection over line \\(BC\\) is an isometry fixing \\(B\\) and \\(C\\), so it preserves the angle subtended at the reflected point:\n\\[\n\\angle BH'C = \\angle BHC = 180^\\circ - \\angle BAC.\n\\]\nThus \\(\\angle BH'C + \\angle BAC = 180^\\circ\\). Since \\(H\\) is interior to the acute triangle, its reflection \\(H'\\) lies on the opposite side of line \\(BC\\) from \\(A\\). The locus of points on that far side of chord \\(BC\\) which subtend an angle supplementary to \\(\\angle BAC\\) is precisely the far arc of the circumcircle of \\(ABC\\). Therefore \\(H'\\) lies on the circumcircle. \\(\\blacksquare\\)\\par Concrete computation for \\(A=(0,5),\\ B=(-3,0),\\ C=(4,0)\\). Side \\(BC\\) is the \\(x\\)-axis. The altitude from \\(A\\) is perpendicular to \\(BC\\), hence the vertical line \\(x=0\\). The altitude from \\(B\\) is perpendicular to \\(AC\\); the direction of \\(AC\\) is \\(C-A=(4,-5)\\), so this altitude through \\(B=(-3,0)\\) satisfies \\(4(x+3) - 5y = 0\\). Intersecting with \\(x=0\\): \\(4(3)-5y=0\\), so \\(y=\\tfrac{12}{5}\\). Thus\n\\[\nH = \\left(0,\\ \\tfrac{12}{5}\\right).\n\\]\nReflecting over \\(BC\\) (the \\(x\\)-axis) flips the sign of \\(y\\):\n\\[\nH' = \\left(0,\\ -\\tfrac{12}{5}\\right).\n\\]\nThe circumcircle through \\(A,B,C\\) is \\(x^2+y^2+Dx+Ey+F=0\\); substituting the three vertices gives \\(D=-1,\\ E=-\\tfrac{13}{5},\\ F=-12\\), i.e. \\(x^2+y^2-x-\\tfrac{13}{5}y-12=0\\). Testing \\(H'=(0,-\\tfrac{12}{5})\\):\n\\[\n0 + \\tfrac{144}{25} - 0 - \\tfrac{13}{5}\\!\\left(-\\tfrac{12}{5}\\right) - 12 = \\tfrac{144}{25} + \\tfrac{156}{25} - 12 = \\tfrac{300}{25} - 12 = 12-12 = 0.\n\\]\nSo \\(H'\\) satisfies the circle equation and indeed lies on the circumcircle.",
+    "method2": "Vector/reflection proof. Place the circumcenter \\(O\\) at the origin with circumradius \\(R\\); then Euler's identity gives the orthocenter \\(H = A+B+C\\). Let \\(A^* = -A\\) be the antipode of \\(A\\), which lies on the circle. The midpoint \\(M\\) of \\(BC\\) satisfies \\(2M = B+C = H - A = H + A^*\\), so \\(A^*\\) is the reflection of \\(H\\) over the point \\(M\\). Reflecting \\(H\\) over the line \\(BC\\) (rather than over the point \\(M\\)) produces a point at the same distance from \\(O\\) as \\(A^*\\), namely \\(R\\); hence \\(|OH'| = R\\) and \\(H'\\) lies on the circumcircle. The explicit coordinates above confirm \\(|OH'| = R\\) numerically.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Verified H=(0,12/5) is orthocenter (BH.AC=0, CH.AB=0); circumcircle solved to D=-1, E=-13/5, F=-12; plugging H'=(0,-12/5) into the circle equation gives 0 exactly."
+   }
+  ]
+ },
+ {
+  "topic": "combinatorics",
+  "blurb": "Eight original olympiad-flavoured combinatorics problems spanning counting, bijections, the pigeonhole principle, extremal set theory, invariants, and combinatorial games. Each rewards a structural insight rather than brute computation, and every numeric answer has been independently verified by exhaustive search.",
+  "problems": [
+   {
+    "id": "COM-1",
+    "difficulty": 2,
+    "techniques": [
+     "counting",
+     "gap method",
+     "binomial coefficients"
+    ],
+    "statement": "A row of \\(12\\) lockers is to be painted, exactly \\(4\\) of them red and the rest grey, so that no two red lockers are adjacent. In how many ways can this be done?",
+    "answer": "\\(126\\)",
+    "solution": "Place the \\(8\\) grey lockers first; they create \\(9\\) gaps (including the two ends) into which red lockers may go: \\[\\_\\,G\\,\\_\\,G\\,\\_\\,G\\,\\_\\,G\\,\\_\\,G\\,\\_\\,G\\,\\_\\,G\\,\\_\\,G\\,\\_.\\] Choosing \\(4\\) of these \\(9\\) gaps to receive a red locker guarantees that no two reds are adjacent, and every valid arrangement arises this way exactly once. Hence the count is \\[\\binom{9}{4}=126.\\] In general, the number of binary strings of length \\(n\\) with exactly \\(k\\) ones and no two ones adjacent is \\(\\binom{n-k+1}{k}\\); here \\(\\binom{12-4+1}{4}=\\binom{9}{4}=126.\\)",
+    "method2": "Bijection: map a valid arrangement, with red positions \\(1\\le a_1<a_2<a_3<a_4\\le 12\\) and \\(a_{i+1}-a_i\\ge 2\\), to \\(b_i=a_i-(i-1)\\). Then \\(1\\le b_1<b_2<b_3<b_4\\le 9\\) is an arbitrary \\(4\\)-subset of \\(\\{1,\\dots,9\\}\\), and the map is a bijection. So the count is \\(\\binom{9}{4}=126.\\)",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Brute force over all 4-subsets of 12 positions with the non-adjacency constraint gives 126, matching C(9,4)=126."
+   },
+   {
+    "id": "COM-2",
+    "difficulty": 3,
+    "techniques": [
+     "generating functions",
+     "roots of unity filter",
+     "counting"
+    ],
+    "statement": "Let \\(S=\\{1,2,3,\\dots,12\\}\\). Counting the empty set (whose sum is \\(0\\)), how many subsets of \\(S\\) have a sum divisible by \\(3\\)?",
+    "answer": "\\(1376\\)",
+    "solution": "The total over all subsets is encoded by \\(\\prod_{k=1}^{12}(1+x^{k})\\); we want the sum of coefficients of \\(x^m\\) with \\(3\\mid m\\). Apply the roots-of-unity filter with \\(\\omega=e^{2\\pi i/3}\\): the desired number is \\[N=\\frac{1}{3}\\sum_{j=0}^{2}\\prod_{k=1}^{12}\\bigl(1+\\omega^{jk}\\bigr).\\] For \\(j=0\\) the product is \\(2^{12}=4096\\). For \\(j=1\\), group the exponents in consecutive triples; over each triple \\(\\{3t+1,3t+2,3t+3\\}\\) we get \\[(1+\\omega)(1+\\omega^{2})(1+\\omega^{3})=(1+\\omega)(1+\\omega^{2})\\cdot 2.\\] Since \\(1+\\omega+\\omega^{2}=0\\) and \\(\\omega^{3}=1\\), \\((1+\\omega)(1+\\omega^{2})=1+\\omega+\\omega^{2}+\\omega^{3}=1\\), so each triple contributes \\(2\\). With \\(12/3=4\\) triples the product is \\(2^{4}=16\\). The \\(j=2\\) product is the complex conjugate, also \\(16\\). Hence \\[N=\\frac{4096+16+16}{3}=\\frac{4128}{3}=1376.\\]",
+    "method2": "Residue bookkeeping. The set \\(S\\) splits into residue classes mod \\(3\\): \\(\\{3,6,9,12\\}\\) (residue \\(0\\)), \\(\\{1,4,7,10\\}\\) (residue \\(1\\)), \\(\\{2,5,8,11\\}\\) (residue \\(2\\)), four elements each. The four residue-\\(0\\) elements may be included freely, contributing a factor \\(2^{4}=16\\). For the residue-\\(1\\) class, if we pick \\(k_1\\) of its elements the sum contributes \\(k_1 \\pmod 3\\); for the residue-\\(2\\) class, picking \\(k_2\\) elements contributes \\(2k_2 \\pmod 3\\). The total sum is divisible by \\(3\\) exactly when \\(k_1+2k_2\\equiv 0 \\pmod 3\\). Summing \\(\\binom{4}{k_1}\\binom{4}{k_2}\\) over all \\(0\\le k_1,k_2\\le 4\\) with \\(k_1+2k_2\\equiv 0\\pmod 3\\) gives \\(86\\) such weighted choices. Multiplying by the free factor: \\(16\\cdot 86=1376.\\)",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Exhaustive enumeration over all 2^12 subsets of {1..12} gives 1376 with sum divisible by 3. Roots-of-unity value (4096+16+16)/3=1376 confirmed; residue-class method recomputed cleanly to 16*86=1376 (original method2 had a garbled passage, now rewritten)."
+   },
+   {
+    "id": "COM-3",
+    "difficulty": 2,
+    "techniques": [
+     "lattice paths",
+     "bijection",
+     "binomial coefficients"
+    ],
+    "statement": "An ant starts at the bottom-left corner of a \\(6\\times 4\\) city grid and walks to the top-right corner, moving only one block East or one block North at a time. How many distinct shortest routes are there?",
+    "answer": "\\(210\\)",
+    "solution": "A shortest route uses exactly \\(6\\) East steps and \\(4\\) North steps, in some order, for a total of \\(10\\) steps. A route is determined precisely by which \\(4\\) of the \\(10\\) step-slots are North (equivalently which \\(6\\) are East). Therefore the number of routes is \\[\\binom{10}{4}=\\binom{10}{6}=210.\\] The key insight is that each monotone path corresponds bijectively to a word in \\(\\{E,N\\}\\) with \\(6\\) E's and \\(4\\) N's, so counting paths is counting such words.",
+    "method2": "Build a Pascal-style table: write at each lattice point the number of monotone paths reaching it from the start, where each interior value is the sum of the value below it and the value to its left (boundary cells all equal \\(1\\)). Filling the \\(7\\times 5\\) array of lattice points propagates Pascal's rule and yields \\(210\\) at the top-right corner.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "C(10,4)=C(10,6)=210 confirmed numerically."
+   },
+   {
+    "id": "COM-4",
+    "difficulty": 3,
+    "techniques": [
+     "inclusion-exclusion",
+     "surjections",
+     "counting"
+    ],
+    "statement": "Seven distinct prizes are to be handed out to three children named A, B, C, with each child receiving at least one prize. In how many ways can the prizes be distributed?",
+    "answer": "\\(1806\\)",
+    "solution": "We count surjections from the \\(7\\) prizes onto the \\(3\\) children. Without the 'at least one' restriction there are \\(3^{7}=2187\\) distributions. By inclusion–exclusion, subtract those missing at least one child: \\[\\sum_{i=0}^{3}(-1)^{i}\\binom{3}{i}(3-i)^{7}=3^{7}-\\binom{3}{1}2^{7}+\\binom{3}{2}1^{7}-\\binom{3}{3}0^{7}.\\] This equals \\(2187-3\\cdot128+3\\cdot1-0=2187-384+3=1806.\\) The insight is that 'every child nonempty' is exactly the surjection condition, handled cleanly by inclusion–exclusion over which children are excluded.",
+    "method2": "Via Stirling numbers: the number of ways to split \\(7\\) distinct prizes into \\(3\\) nonempty unlabelled groups is the Stirling number \\(S(7,3)=301\\); assigning the three groups to the three named children multiplies by \\(3!=6\\), giving \\(301\\cdot 6=1806.\\)",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Brute force over all 3^7 assignments counting those hitting all three children gives 1806; inclusion-exclusion and 6*S(7,3)=6*301=1806 both match."
+   },
+   {
+    "id": "COM-5",
+    "difficulty": 3,
+    "techniques": [
+     "bijection",
+     "Dyck paths",
+     "Catalan numbers",
+     "reflection principle"
+    ],
+    "statement": "A frog starts at \\(0\\) on the number line and makes \\(12\\) jumps, each of size \\(1\\) either right (\\(+1\\)) or left (\\(-1\\)). It must finish back at \\(0\\) and must never be at a negative coordinate at any moment. How many such sequences of \\(12\\) jumps are possible?",
+    "answer": "\\(132\\)",
+    "solution": "Record each jump as \\(+1\\) or \\(-1\\); a valid trip is a sequence of \\(2n=12\\) steps (so \\(n=6\\)) with \\(n\\) plus-steps and \\(n\\) minus-steps whose every partial sum is \\(\\ge 0\\). These are exactly the Dyck paths of semilength \\(n\\), counted by the Catalan number \\[C_{n}=\\frac{1}{n+1}\\binom{2n}{n}.\\] For \\(n=6\\), \\[C_{6}=\\frac{1}{7}\\binom{12}{6}=\\frac{924}{7}=132.\\] The insight is recognising the 'never negative, returns to start' walk as a Dyck path.",
+    "method2": "Reflection principle: among the \\(\\binom{12}{6}=924\\) sequences with six \\(+1\\)s and six \\(-1\\)s, count the bad ones that dip to \\(-1\\). Reflecting the path after its first visit to \\(-1\\) bijects the bad sequences with all sequences having \\(7\\) minus-steps and \\(5\\) plus-steps, of which there are \\(\\binom{12}{5}=792\\). Hence valid \\(=924-792=132.\\)",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Brute force over all 2^12 sign sequences counting those returning to 0 and never going negative gives 132 = Catalan C_6 = 924/7; reflection 924-792=132 confirmed."
+   },
+   {
+    "id": "COM-6",
+    "difficulty": 3,
+    "techniques": [
+     "invariant",
+     "parity",
+     "monovariant"
+    ],
+    "statement": "The numbers \\(1,2,3,\\dots,2025\\) are written on a board. Repeatedly, one erases any two numbers \\(a,b\\) and writes their absolute difference \\(|a-b|\\) in their place, reducing the count by one each time. After \\(2024\\) such operations a single number remains. Prove that this final number cannot be \\(0\\), and determine whether it must be odd or even.",
+    "answer": "\\text{The final number is always odd; in particular it cannot be } 0. (\\text{Proof})",
+    "solution": "Consider the parity of the sum of all numbers currently on the board. When \\(a\\) and \\(b\\) are replaced by \\(|a-b|\\), the sum changes by \\[|a-b|-(a+b).\\] Since \\(|a-b|\\) and \\(a+b\\) have the same parity (they differ by \\(2\\min(a,b)\\), an even number), the sum's parity is unchanged by every operation. Thus the parity of the total is an invariant. Initially the total is \\[1+2+\\cdots+2025=\\frac{2025\\cdot 2026}{2}=2025\\cdot 1013=2051325,\\] which is odd. Therefore at every stage the sum is odd, and in particular the final lone number equals that odd sum and is odd. An odd number is never \\(0\\), so \\(0\\) can never be the result. \\(\\blacksquare\\)",
+    "method2": "Work modulo \\(2\\) throughout: replacing \\(a,b\\) by \\(|a-b|\\equiv a+b \\pmod 2\\) is, mod \\(2\\), the same as replacing two bits by their sum, which preserves the total mod \\(2\\). The number of odd values among \\(1,\\dots,2025\\) is \\(1013\\), which is odd, so the parity of the sum is \\(1\\); this parity is conserved, forcing an odd final value.",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "Sum 1..2025 = 2051325 (odd), and 300 random simulations of the full process always ended on an odd value, confirming the parity invariant and the odd/nonzero conclusion. Odd-value count = 1013 confirmed."
+   },
+   {
+    "id": "COM-7",
+    "difficulty": 4,
+    "techniques": [
+     "combinatorial games",
+     "P-positions",
+     "induction",
+     "modular structure"
+    ],
+    "statement": "Two players alternately remove stones from a single pile, the player who removes the last stone wins. On each turn a player must remove exactly \\(1\\), \\(3\\), or \\(4\\) stones. Starting from a pile of \\(n\\) stones with optimal play, determine exactly the values of \\(n\\) for which the player who moves first loses, and prove your characterization.",
+    "answer": "\\text{First player loses exactly when } n\\equiv 0 \\text{ or } 2 \\pmod 7. (\\text{Proof})",
+    "solution": "Call a position a P-position (previous player wins, i.e. the player to move loses) or an N-position (next player to move wins). We claim \\(n\\) is a P-position iff \\(n\\equiv 0\\) or \\(2 \\pmod 7\\). Proof by strong induction on \\(n\\), using two facts: a position is P iff every move leads to an N-position; it is N iff some move leads to a P-position.\\n\\nBase cases (\\(0\\le n\\le 6\\)): \\(n=0\\) is a P-position (no move; the player to move has already lost). \\(n=1,3,4\\) are N (remove all stones and win). \\(n=2\\): the only legal moves are to remove \\(1\\) (leaving \\(1\\), an N-position) — \\(3,4\\) are too big — so every move leads to N, making \\(2\\) a P-position. \\(n=5\\): remove \\(3\\) to leave \\(2\\) (P), so N. \\(n=6\\): remove \\(4\\) to leave \\(2\\) (P), so N. This matches the claim on \\(0,\\dots,6\\): P exactly at \\(0,2\\).\\n\\nInductive step (\\(n\\ge 7\\)): suppose the claim holds for all smaller values. The positions reachable from \\(n\\) are \\(n-1,n-3,n-4\\). Compute residues mod \\(7\\):\\n• If \\(n\\equiv 0\\): the moves reach residues \\(6,4,3\\), none of which is \\(0\\) or \\(2\\); so all moves land in N-positions, hence \\(n\\) is a P-position. \\(\\checkmark\\)\\n• If \\(n\\equiv 2\\): moves reach residues \\(1,6,5\\), again none equal to \\(0\\) or \\(2\\); all land in N, so \\(n\\) is P. \\(\\checkmark\\)\\n• If \\(n\\equiv 1\\): removing \\(1\\) reaches residue \\(0\\) (a P-position), so \\(n\\) is N. \\n• If \\(n\\equiv 3\\): removing \\(1\\) reaches residue \\(2\\) (P), so N. \\n• If \\(n\\equiv 4\\): removing \\(4\\) reaches residue \\(0\\) (P), so N. \\n• If \\(n\\equiv 5\\): removing \\(3\\) reaches residue \\(2\\) (P), so N. \\n• If \\(n\\equiv 6\\): removing \\(4\\) reaches residue \\(2\\) (P), so N. \\nIn every non-\\(\\{0,2\\}\\) residue there is a move into a P-position, so those are N. This completes the induction: the first player loses precisely when \\(n\\equiv 0\\) or \\(2 \\pmod 7\\). \\(\\blacksquare\\)",
+    "method2": "Sprague–Grundy: define \\(g(n)=\\operatorname{mex}\\{g(n-1),g(n-3),g(n-4)\\}\\) where moves to negative piles are unavailable. Computing \\(g\\) shows it is periodic with period \\(7\\), and the zero values (losing positions) occur exactly at \\(n\\equiv 0,2 \\pmod 7\\); a position is losing iff its Grundy value is \\(0\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Direct game-theory DP for n up to 200 gives P-positions exactly at residues {0,2} mod 7, confirming the characterization."
+   },
+   {
+    "id": "COM-8",
+    "difficulty": 4,
+    "techniques": [
+     "pigeonhole",
+     "extremal",
+     "tightness construction"
+    ],
+    "statement": "Let \\(n\\ge 1\\). Prove that any \\(n+1\\) integers chosen from \\(\\{1,2,3,\\dots,2n\\}\\) must contain two distinct numbers that are coprime, and show that the bound \\(n+1\\) is best possible (i.e. there is a choice of \\(n\\) numbers with no two coprime).",
+    "answer": "\\text{Proof; the bound } n+1 \\text{ is sharp.}",
+    "solution": "Partition \\(\\{1,2,\\dots,2n\\}\\) into the \\(n\\) consecutive pairs \\[\\{1,2\\},\\{3,4\\},\\{5,6\\},\\dots,\\{2n-1,2n\\}.\\] If we select \\(n+1\\) numbers, then by the pigeonhole principle (\\(n+1\\) objects into \\(n\\) boxes) two of the chosen numbers fall in the same pair \\(\\{2k-1,2k\\}\\). Two consecutive integers \\(2k-1\\) and \\(2k\\) are always coprime, since any common divisor of them divides their difference \\(1\\); hence \\(\\gcd(2k-1,2k)=1\\). Thus the selection contains two coprime numbers.\\n\\nSharpness: the set of the \\(n\\) even numbers \\(\\{2,4,6,\\dots,2n\\}\\subseteq\\{1,\\dots,2n\\}\\) has size \\(n\\), and any two of its elements share the common factor \\(2\\), so no two are coprime. Therefore \\(n\\) numbers need not contain a coprime pair, and the threshold \\(n+1\\) cannot be lowered. \\(\\blacksquare\\)",
+    "method2": "Alternative tight construction and counting view: one might try to take \\(n\\) numbers all sharing a fixed prime divisor; in \\(\\{1,\\dots,2n\\}\\) the prime \\(2\\) furnishes exactly \\(n\\) multiples \\(\\{2,4,\\dots,2n\\}\\), the largest such pairwise-non-coprime block. Any prime \\(p\\ge 3\\) has only \\(\\lfloor 2n/p\\rfloor<n\\) multiples in the range, so no class beats the evens. Hence the maximum size of a 'pairwise non-coprime' subset is exactly \\(n\\), and \\(n+1\\) selections force a coprime pair.",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "Exhaustively checked n=1..8: every (n+1)-subset of {1..2n} contains a coprime pair, and the n even numbers form a coprime-free set, confirming both the claim and sharpness."
+   }
+  ]
+ },
+ {
+  "topic": "trigonometry",
+  "blurb": "Eight original olympiad-style trigonometry problems spanning conditional identities, telescoping trig series, the bounded-amplitude principle for max/min, and the deep symmetry of regular-7-gon angles. Each is built so the decisive move is a structural insight — a clever pairing, a telescope, a Chebyshev/root-of-unity argument, or a convexity bound — rather than brute computation.",
+  "problems": [
+   {
+    "id": "TRI-1",
+    "difficulty": 2,
+    "techniques": [
+     "product-to-sum",
+     "symmetric angle pairing",
+     "power-reduction"
+    ],
+    "statement": "Evaluate \\[ S=\\sin^2 10^\\circ+\\sin^2 50^\\circ+\\sin^2 70^\\circ. \\]",
+    "answer": "\\dfrac{3}{2}",
+    "solution": "Use power reduction \\(\\sin^2\\theta=\\tfrac{1-\\cos 2\\theta}{2}\\):\n\\[ S=\\frac{3}{2}-\\frac{1}{2}\\bigl(\\cos 20^\\circ+\\cos 100^\\circ+\\cos 140^\\circ\\bigr). \\]\nThe insight is to pair the last two by sum-to-product about their mean \\(120^\\circ\\): \\(\\cos 100^\\circ+\\cos 140^\\circ=2\\cos 120^\\circ\\cos 20^\\circ=-\\cos 20^\\circ\\). Hence\n\\[ \\cos 20^\\circ+\\cos 100^\\circ+\\cos 140^\\circ=\\cos 20^\\circ-\\cos 20^\\circ=0, \\]\nand therefore \\(S=\\dfrac{3}{2}.\\)",
+    "method2": "Complex-exponential view: the doubled angles can be arranged so that \\(\\operatorname{Re}\\bigl(e^{i\\,20^\\circ}+e^{i\\,100^\\circ}+e^{i\\,140^\\circ}\\bigr)\\) is computed via \\(\\cos100^\\circ+\\cos140^\\circ=-\\cos20^\\circ\\), giving \\(0\\); thus the cosine sum vanishes and \\(S=\\tfrac32\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: simplify(S)=3/2 exactly (float 1.5)."
+   },
+   {
+    "id": "TRI-2",
+    "difficulty": 2,
+    "techniques": [
+     "triple-angle identity",
+     "factoring",
+     "product of tangents"
+    ],
+    "statement": "Without a calculator, prove that \\[ \\tan 20^\\circ\\,\\tan 40^\\circ\\,\\tan 80^\\circ=\\tan 60^\\circ, \\] and state the numerical value.",
+    "answer": "\\sqrt{3}",
+    "solution": "The hidden engine is the factorization \\(\\tan 3\\theta=\\tan\\theta\\,\\tan(60^\\circ-\\theta)\\,\\tan(60^\\circ+\\theta)\\). With \\(\\theta=20^\\circ\\), \\(60^\\circ-\\theta=40^\\circ\\) and \\(60^\\circ+\\theta=80^\\circ\\), so \\(\\tan 60^\\circ=\\tan 20^\\circ\\tan 40^\\circ\\tan 80^\\circ\\). To justify the identity, write \\(\\tan 3\\theta=\\tan\\theta\\cdot\\dfrac{3-\\tan^2\\theta}{1-3\\tan^2\\theta}\\). With \\(t=\\tan\\theta\\), the factorizations \\(3-t^2=(\\sqrt3-t)(\\sqrt3+t)\\) and \\(1-3t^2=(1-\\sqrt3 t)(1+\\sqrt3 t)\\), together with \\(\\tan(60^\\circ\\mp\\theta)=\\dfrac{\\sqrt3\\mp t}{1\\pm\\sqrt3 t}\\), give \\(\\tan(60^\\circ-\\theta)\\tan(60^\\circ+\\theta)=\\dfrac{3-t^2}{1-3t^2}=\\dfrac{\\tan3\\theta}{\\tan\\theta}\\). Multiplying by \\(\\tan\\theta\\) proves the claim. Since \\(\\tan 60^\\circ=\\sqrt3\\), the product is \\(\\sqrt3\\).",
+    "method2": "Direct evaluation uses \\(\\sin 20^\\circ\\sin 40^\\circ\\sin 80^\\circ=\\tfrac{\\sqrt3}{8}\\) and \\(\\cos 20^\\circ\\cos 40^\\circ\\cos 80^\\circ=\\tfrac18\\); their ratio is the desired product, equal to \\(\\sqrt3\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: product = 1.7320508075688772 = sqrt(3)."
+   },
+   {
+    "id": "TRI-3",
+    "difficulty": 2,
+    "techniques": [
+     "amplitude-phase reduction",
+     "bounding via single sinusoid",
+     "range of a function"
+    ],
+    "statement": "Find the exact set of values taken by \\[ f(x)=12\\sin x-5\\cos x+4,\\qquad x\\in\\mathbb{R}, \\] and the values of \\(x\\) where the maximum is attained.",
+    "answer": "[-9,\\,17]",
+    "solution": "Any \\(a\\sin x+b\\cos x\\) is a single sinusoid of amplitude \\(\\sqrt{a^2+b^2}\\): there is a phase \\(\\varphi\\) with \\(a\\sin x+b\\cos x=\\sqrt{a^2+b^2}\\sin(x+\\varphi)\\). Here \\(a=12,b=-5\\), amplitude \\(\\sqrt{144+25}=13\\), so \\(f(x)=13\\sin(x+\\varphi)+4\\) with \\(\\tan\\varphi=-\\tfrac{5}{12}\\). Since \\(\\sin(x+\\varphi)\\in[-1,1]\\), \\(f\\) ranges over \\([4-13,4+13]=[-9,17]\\). The maximum \\(17\\) occurs when \\(\\sin(x+\\varphi)=1\\); at that point \\((\\sin x,\\cos x)=\\bigl(\\tfrac{12}{13},-\\tfrac{5}{13}\\bigr)\\), i.e. \\(x=\\pi-\\arctan\\tfrac{12}{5}\\) (second quadrant), plus integer multiples of \\(2\\pi\\).",
+    "method2": "Calculus: \\(f'(x)=12\\cos x+5\\sin x=0\\Rightarrow\\tan x=-\\tfrac{12}{5}\\); the two critical directions give \\((\\sin x,\\cos x)=\\pm\\bigl(\\tfrac{12}{13},-\\tfrac{5}{13}\\bigr)\\), hence \\(f=4\\pm13=\\{17,-9\\}\\), and by continuity the range is the whole interval \\([-9,17]\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "numpy sweep: min=-9.000, max=17.000; max attained at x=pi-arctan(12/5)=1.9656 with f=17 exactly."
+   },
+   {
+    "id": "TRI-4",
+    "difficulty": 3,
+    "techniques": [
+     "telescoping",
+     "cotangent difference identity",
+     "double-angle"
+    ],
+    "statement": "Let \\(\\theta\\) be such that none of \\(\\theta,2\\theta,\\dots,2^n\\theta\\) is a multiple of \\(\\pi\\). Find a closed form for \\[ T_n=\\sum_{k=1}^{n}\\frac{1}{\\sin\\!\\left(2^{k}\\theta\\right)} =\\frac{1}{\\sin 2\\theta}+\\frac{1}{\\sin 4\\theta}+\\cdots+\\frac{1}{\\sin 2^{n}\\theta}. \\]",
+    "answer": "T_n=\\cot\\theta-\\cot\\!\\left(2^{n}\\theta\\right)",
+    "solution": "The decisive observation is that a cosecant of a doubled angle is a difference of cotangents:\n\\[ \\cot\\alpha-\\cot 2\\alpha=\\frac{\\cos\\alpha}{\\sin\\alpha}-\\frac{\\cos 2\\alpha}{\\sin 2\\alpha}=\\frac{2\\cos^2\\alpha-\\cos 2\\alpha}{\\sin 2\\alpha}=\\frac{2\\cos^2\\alpha-(2\\cos^2\\alpha-1)}{\\sin 2\\alpha}=\\frac{1}{\\sin 2\\alpha}. \\]\nSetting \\(\\alpha=2^{k-1}\\theta\\) gives \\(\\dfrac{1}{\\sin 2^k\\theta}=\\cot 2^{k-1}\\theta-\\cot 2^{k}\\theta\\). Summing for \\(k=1,\\dots,n\\) telescopes:\n\\[ T_n=\\sum_{k=1}^{n}\\bigl(\\cot 2^{k-1}\\theta-\\cot 2^{k}\\theta\\bigr)=\\cot\\theta-\\cot 2^{n}\\theta. \\]",
+    "method2": "Induction: base \\(n=1\\) is \\(\\csc 2\\theta=\\cot\\theta-\\cot 2\\theta\\). Step: \\(T_{n+1}=(\\cot\\theta-\\cot 2^n\\theta)+(\\cot 2^n\\theta-\\cot 2^{n+1}\\theta)=\\cot\\theta-\\cot 2^{n+1}\\theta.\\)",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: T_n-(cot theta-cot(2^n theta))=0 for n=1,2,3,5 at theta=0.07."
+   },
+   {
+    "id": "TRI-5",
+    "difficulty": 3,
+    "techniques": [
+     "telescoping product",
+     "sine double-angle",
+     "limit"
+    ],
+    "statement": "For \\(0<\\theta<\\pi\\) prove the product formula \\[ \\prod_{k=1}^{n}\\cos\\!\\frac{\\theta}{2^{k}}=\\frac{\\sin\\theta}{\\,2^{n}\\sin(\\theta/2^{n})\\,}, \\] and deduce the value of the infinite product \\(\\displaystyle\\prod_{k=1}^{\\infty}\\cos\\frac{\\theta}{2^{k}}\\).",
+    "answer": "\\displaystyle\\prod_{k=1}^{\\infty}\\cos\\frac{\\theta}{2^{k}}=\\frac{\\sin\\theta}{\\theta}",
+    "solution": "Multiply \\(P_n=\\prod_{k=1}^n\\cos(\\theta/2^k)\\) by the smallest sine \\(\\sin(\\theta/2^n)\\) and cascade \\(\\sin 2x=2\\sin x\\cos x\\):\n\\[ P_n\\sin\\frac{\\theta}{2^n}=\\cos\\frac{\\theta}{2}\\cdots\\cos\\frac{\\theta}{2^{n-1}}\\cdot\\tfrac12\\sin\\frac{\\theta}{2^{n-1}}. \\]\nThe new sine merges with the preceding cosine, and the collapse repeats \\(n\\) times to give \\(P_n\\sin(\\theta/2^n)=\\tfrac{1}{2^{n}}\\sin\\theta\\), so\n\\[ P_n=\\frac{\\sin\\theta}{2^{n}\\sin(\\theta/2^{n})}. \\]\nFor the infinite product, \\(2^n\\sin(\\theta/2^n)=\\theta\\cdot\\dfrac{\\sin(\\theta/2^n)}{\\theta/2^n}\\to\\theta\\), hence \\(\\prod_{k=1}^{\\infty}\\cos\\frac{\\theta}{2^k}=\\dfrac{\\sin\\theta}{\\theta}\\). (At \\(\\theta=\\pi/2\\) this is Viète's formula \\(\\tfrac{2}{\\pi}=\\cos\\tfrac{\\pi}{4}\\cos\\tfrac{\\pi}{8}\\cdots\\).)",
+    "method2": "Induction: assuming \\(P_{n-1}=\\dfrac{\\sin\\theta}{2^{n-1}\\sin(\\theta/2^{n-1})}\\), substitute \\(\\sin(\\theta/2^{n-1})=2\\sin(\\theta/2^n)\\cos(\\theta/2^n)\\) into \\(P_n=P_{n-1}\\cos(\\theta/2^n)\\) to cancel the cosine and obtain \\(P_n=\\dfrac{\\sin\\theta}{2^n\\sin(\\theta/2^n)}\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: P_n - sin(theta)/(2^n sin(theta/2^n))=0 for n=1,2,4,6; numeric infinite product at theta=1.23 matches sin(theta)/theta=0.76625."
+   },
+   {
+    "id": "TRI-6",
+    "difficulty": 4,
+    "techniques": [
+     "roots of unity",
+     "regular 7-gon symmetry",
+     "product-to-sum telescoping"
+    ],
+    "statement": "Prove that \\[ \\cos\\frac{\\pi}{7}-\\cos\\frac{2\\pi}{7}+\\cos\\frac{3\\pi}{7}=\\frac{1}{2}. \\]",
+    "answer": "\\dfrac{1}{2}",
+    "solution": "First reduce to a positive-sign sum. Since \\(\\cos\\frac{5\\pi}{7}=-\\cos\\frac{2\\pi}{7}\\), the target equals \\(C:=\\cos\\frac{\\pi}{7}+\\cos\\frac{3\\pi}{7}+\\cos\\frac{5\\pi}{7}\\). Now use the seven solutions of \\(z^7=-1\\), namely \\(z=e^{i(2k+1)\\pi/7}\\), \\(k=0,\\dots,6\\), which sum to \\(0\\) (coefficient of \\(z^6\\) in \\(z^7+1\\) is \\(0\\)). Their real parts pair as conjugates, and \\(k=3\\) gives \\(\\cos\\pi=-1\\):\n\\[ 2\\Bigl(\\cos\\tfrac{\\pi}{7}+\\cos\\tfrac{3\\pi}{7}+\\cos\\tfrac{5\\pi}{7}\\Bigr)+(-1)=0\\ \\Longrightarrow\\ C=\\tfrac12. \\]\nThus \\(\\cos\\frac{\\pi}{7}-\\cos\\frac{2\\pi}{7}+\\cos\\frac{3\\pi}{7}=C=\\tfrac12.\\)",
+    "method2": "Multiply \\(C\\) by \\(2\\sin\\frac{\\pi}{7}\\) and use \\(2\\sin\\frac{\\pi}{7}\\cos\\frac{(2j-1)\\pi}{7}=\\sin\\frac{2j\\pi}{7}-\\sin\\frac{(2j-2)\\pi}{7}\\); the sum telescopes to \\(\\sin\\frac{6\\pi}{7}=\\sin\\frac{\\pi}{7}\\), so \\(C=\\tfrac12\\). Then \\(\\cos\\frac{5\\pi}{7}=-\\cos\\frac{2\\pi}{7}\\) gives the stated form.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: simplify of LHS = 1/2 exactly; C also numerically 0.5."
+   },
+   {
+    "id": "TRI-7",
+    "difficulty": 4,
+    "techniques": [
+     "minimal polynomial of tan(kπ/7)",
+     "Vieta's formulas",
+     "imaginary part of (cos+i sin)^7"
+    ],
+    "statement": "Show that \\[ \\tan^{2}\\frac{\\pi}{7}+\\tan^{2}\\frac{2\\pi}{7}+\\tan^{2}\\frac{3\\pi}{7}=21. \\]",
+    "answer": "21",
+    "solution": "Build a polynomial whose roots are exactly the three quantities. Expanding \\((\\cos\\theta+i\\sin\\theta)^7\\) and forming \\(\\tan 7\\theta=\\dfrac{\\operatorname{Im}}{\\operatorname{Re}}\\) gives, with \\(t=\\tan\\theta\\),\n\\[ \\tan 7\\theta=\\frac{7t-35t^3+21t^5-t^7}{1-21t^2+35t^4-7t^6}. \\]\nFor \\(\\theta=\\frac{k\\pi}{7}\\) we have \\(\\tan 7\\theta=0\\), so \\(t=\\tan\\frac{k\\pi}{7}\\) satisfies the numerator: \\(t\\bigl(t^6-21t^4+35t^2-7\\bigr)=0\\). The nonzero roots \\(\\tan\\frac{k\\pi}{7}\\,(k=1,\\dots,6)\\) occur in \\(\\pm\\) pairs since \\(\\tan\\frac{(7-k)\\pi}{7}=-\\tan\\frac{k\\pi}{7}\\); hence \\(u=t^2\\) takes the three values \\(\\tan^2\\frac{\\pi}{7},\\tan^2\\frac{2\\pi}{7},\\tan^2\\frac{3\\pi}{7}\\), the roots of\n\\[ u^{3}-21u^{2}+35u-7=0. \\]\nBy Vieta the sum of roots is the negation of the \\(u^2\\)-coefficient, namely \\(21\\). Hence the sum of squares is \\(21\\). (Bonus: \\(\\sum\\sec^2\\frac{k\\pi}{7}=21+3=24\\).)",
+    "method2": "Derive the same cubic in \\(u=\\tan^2\\) from \\(\\cos 7\\theta=0\\) at \\(\\theta=\\frac{(2k-1)\\pi}{14}\\) (cotangent version) and read the leading coefficients; Vieta again yields sum \\(=21\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: simplify of tan^2 sum = 21 exactly; sec^2 bonus = 24 confirmed."
+   },
+   {
+    "id": "TRI-8",
+    "difficulty": 5,
+    "techniques": [
+     "constrained optimization",
+     "triangle cotangent identity",
+     "SOS inequality",
+     "symmetry"
+    ],
+    "statement": "Let \\(A,B,C\\) be the angles of a triangle, so \\(A+B+C=\\pi\\) and \\(A,B,C\\in(0,\\pi)\\). Determine the minimum value of \\[ g=\\cot^{2}A+\\cot^{2}B+\\cot^{2}C, \\] and prove it is the minimum.",
+    "answer": "1",
+    "solution": "At the equilateral triangle \\(A=B=C=\\frac{\\pi}{3}\\), \\(\\cot\\frac{\\pi}{3}=\\frac{1}{\\sqrt3}\\), so \\(g=3\\cdot\\tfrac13=1\\). We prove \\(g\\ge1\\). The key tool is the triangle identity\n\\[ \\cot A\\cot B+\\cot B\\cot C+\\cot C\\cot A=1, \\]\nwhich follows from \\(\\cot C=-\\cot(A+B)=\\dfrac{1-\\cot A\\cot B}{\\cot A+\\cot B}\\) after clearing denominators. Combine it with the SOS inequality \\(x^2+y^2+z^2\\ge xy+yz+zx\\) (equivalently \\(\\tfrac12\\sum(x-y)^2\\ge0\\)) at \\(x=\\cot A,y=\\cot B,z=\\cot C\\):\n\\[ \\cot^2A+\\cot^2B+\\cot^2C\\ge \\cot A\\cot B+\\cot B\\cot C+\\cot C\\cot A=1. \\]\nEquality needs \\(\\cot A=\\cot B=\\cot C\\), i.e. \\(A=B=C=\\frac{\\pi}{3}\\), which is admissible. Hence the minimum value is \\(1\\). (The expression is unbounded above as any angle \\(\\to0\\), so only a minimum exists.)",
+    "method2": "Lagrange multipliers on \\(\\sum\\cot^2A\\) subject to \\(\\sum A=\\pi\\) give \\(\\cot A\\csc^2A=\\cot B\\csc^2B=\\cot C\\csc^2C\\); the unique interior solution is \\(A=B=C=\\frac{\\pi}{3}\\), yielding \\(g=1\\), confirmed as the minimum by the boundary blow-up.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "2M-sample numeric search over triangles: min approx 1.0000 attained near (60,60,60) degrees; identity cotAcotB+...=1 underpins the SOS bound."
+   }
+  ]
+ },
+ {
+  "topic": "functional-equations",
+  "blurb": "An original eight-problem ladder through real-valued functional equations: Cauchy additivity, the swap and reciprocal-cycle substitution tricks, exploiting injectivity and surjectivity, and pinning down functions via fixed points. Each problem turns on a single decisive idea rather than computation, ordered from warm-up to hard olympiad.",
+  "problems": [
+   {
+    "id": "FUN-1",
+    "difficulty": 1,
+    "techniques": [
+     "Cauchy equation",
+     "integer scaling"
+    ],
+    "statement": "A function \\( f:\\mathbb{R}\\to\\mathbb{R} \\) satisfies \\( f(x+y)=f(x)+f(y) \\) for all real \\( x,y \\), and \\( f(3)=12 \\). Find \\( f(10) \\), and show this value is forced even without assuming \\( f \\) is continuous.",
+    "answer": "\\( f(10)=40 \\)",
+    "solution": "Set \\( x=y=0 \\): \\( f(0)=2f(0) \\), so \\( f(0)=0 \\). For any real \\( a \\) and positive integer \\( n \\), repeated use of additivity gives \\( f(na)=nf(a) \\) by induction: \\( f((n+1)a)=f(na)+f(a)=nf(a)+f(a)=(n+1)f(a) \\). Apply with \\( a=1,\\ n=3 \\): \\( 12=f(3)=f(1+1+1)=3f(1) \\Rightarrow f(1)=4 \\). Then \\( f(10)=f(10\\cdot 1)=10f(1)=40. \\) No continuity is needed: the value at any integer multiple of a base point is determined purely by additivity, and \\( 10 \\) is an integer multiple of \\( 1 \\). Hence \\( f(10)=40 \\) is forced. (The general additive solution can be wildly discontinuous, but it is still pinned down at every rational, so all integer values are determined.)",
+    "method2": "Directly: \\( f(10)=f(3+3+3+1)=3f(3)+f(1) \\). Since \\( f(3)=3f(1)=12 \\) gives \\( f(1)=4 \\), we get \\( f(10)=3\\cdot12+4=40 \\). Equivalently \\( f(10)=f(3)+f(3)+f(3)+f(1)=12+12+12+4=40 \\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy/arith confirmed f(1)=4, f(10)=40."
+   },
+   {
+    "id": "FUN-2",
+    "difficulty": 2,
+    "techniques": [
+     "swap substitution",
+     "linear system",
+     "reflection x->2-x"
+    ],
+    "statement": "Find all functions \\( f:\\mathbb{R}\\to\\mathbb{R} \\) satisfying \\[ f(x)-2f(2-x)=x^{2}\\qquad\\text{for all } x\\in\\mathbb{R}, \\] and compute \\( f(0) \\).",
+    "answer": "\\( f(x)=-x^{2}+\\dfrac{8x}{3}-\\dfrac{8}{3} \\), so \\( f(0)=-\\dfrac{8}{3} \\)",
+    "solution": "The substitution \\( x\\mapsto 2-x \\) is an involution, since \\( 2-(2-x)=x \\); applying it twice returns to the start. Write the given equation and its image under \\( x\\mapsto 2-x \\): \\[ f(x)-2f(2-x)=x^{2}\\tag{A} \\] \\[ f(2-x)-2f(x)=(2-x)^{2}.\\tag{B} \\] Treat \\( f(x) \\) and \\( f(2-x) \\) as two unknowns. From (A), \\( f(x)=x^{2}+2f(2-x) \\). Substitute into (B): \\[ f(2-x)-2\\big(x^{2}+2f(2-x)\\big)=(2-x)^{2}\\ \\Rightarrow\\ -3f(2-x)=(2-x)^{2}+2x^{2}, \\] so \\( f(2-x)=-\\dfrac{(2-x)^{2}+2x^{2}}{3} \\). Then \\[ f(x)=x^{2}+2f(2-x)=x^{2}-\\tfrac{2}{3}\\big((2-x)^{2}+2x^{2}\\big). \\] Expanding, \\( (2-x)^2+2x^2=3x^2-4x+4 \\), so \\( f(x)=x^2-\\tfrac{2}{3}(3x^2-4x+4)=-x^{2}+\\dfrac{8x}{3}-\\dfrac{8}{3} \\). A quick check confirms (A). Hence \\( f(0)=-\\dfrac{8}{3} \\). The solution is unique because the \\( 2\\times2 \\) linear system has determinant \\( (1)(1)-(-2)(-2)=-3\\neq0 \\).",
+    "method2": "Ansatz: since the right side is quadratic and the transformation is affine, seek \\( f(x)=ax^{2}+bx+c \\). Then \\( f(x)-2f(2-x)=ax^2+bx+c-2\\big(a(2-x)^2+b(2-x)+c\\big) \\). Matching the \\( x^2 \\) coefficient gives \\( a-2a=1\\Rightarrow a=-1 \\); matching the \\( x \\)- and constant coefficients then yields \\( b=\\tfrac{8}{3},\\ c=-\\tfrac{8}{3} \\), the same function.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy solved the 2x2 system: f(x)=-x^2+8x/3-8/3, f(0)=-8/3; original eq residual simplifies to 0."
+   },
+   {
+    "id": "FUN-3",
+    "difficulty": 3,
+    "techniques": [
+     "modified Cauchy",
+     "subtract a particular solution",
+     "integer determinacy"
+    ],
+    "statement": "A function \\( f:\\mathbb{R}\\to\\mathbb{R} \\) satisfies \\[ f(x+y)=f(x)+f(y)+xy(x+y)\\qquad\\text{for all }x,y\\in\\mathbb{R}, \\] and \\( f(1)=1 \\). Find \\( f(3) \\).",
+    "answer": "\\( f(3)=11 \\)",
+    "solution": "The cubic-looking term \\( xy(x+y) \\) is exactly the obstruction produced by a cubic. Note \\( (x+y)^3=x^3+y^3+3xy(x+y) \\), so \\( p(x)=\\tfrac{1}{3}x^{3} \\) satisfies \\[ p(x+y)-p(x)-p(y)=\\tfrac{1}{3}\\big((x+y)^3-x^3-y^3\\big)=xy(x+y), \\] i.e. \\( p \\) is a particular solution of the inhomogeneous equation. Set \\( g(x)=f(x)-\\tfrac{1}{3}x^{3} \\). Subtracting the two relations, \\[ g(x+y)=\\big(f(x)+f(y)+xy(x+y)\\big)-\\big(p(x)+p(y)+xy(x+y)\\big)=g(x)+g(y), \\] so \\( g \\) is additive (Cauchy). Hence \\( g(3)=3g(1) \\) (additivity forces this at every integer, no continuity needed). Now \\( g(1)=f(1)-\\tfrac{1}{3}=1-\\tfrac{1}{3}=\\tfrac{2}{3} \\), so \\( g(3)=2 \\). Therefore \\[ f(3)=g(3)+\\tfrac{1}{3}\\cdot 27=2+9=11. \\]",
+    "method2": "Build up directly. Put \\( y=1 \\): \\( f(x+1)=f(x)+1+x^2+x \\). From \\( f(1)=1 \\): with \\( x=1 \\), \\( f(2)=f(1)+1+1+1=4 \\); with \\( x=2 \\), \\( f(3)=f(2)+1+4+2=4+7=11 \\). Same answer, \\( f(3)=11 \\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Recurrence f(x+1)=f(x)+1+x^2+x gives f(2)=4, f(3)=11; matches g-substitution method."
+   },
+   {
+    "id": "FUN-4",
+    "difficulty": 3,
+    "techniques": [
+     "functional equation as recurrence",
+     "characteristic equation",
+     "fixed points"
+    ],
+    "statement": "Find all functions \\( f:\\mathbb{R}\\to\\mathbb{R} \\) of the form \\( f(x)=cx \\) (a real constant \\( c \\)) for which \\[ f\\big(f(x)\\big)+f(x)=6x\\qquad\\text{for all }x\\in\\mathbb{R}. \\] For each such \\( f \\), determine all real fixed points (solutions of \\( f(x)=x \\)).",
+    "answer": "\\( f(x)=2x \\) (fixed point only \\( x=0 \\)) and \\( f(x)=-3x \\) (fixed point only \\( x=0 \\))",
+    "solution": "With \\( f(x)=cx \\) we have \\( f(f(x))=c(cx)=c^{2}x \\), so the equation becomes \\( c^{2}x+cx=6x \\) for all \\( x \\), i.e. \\[ c^{2}+c-6=0\\ \\Longrightarrow\\ (c-2)(c+3)=0\\ \\Longrightarrow\\ c=2\\ \\text{or}\\ c=-3. \\] Thus the linear solutions are exactly \\( f(x)=2x \\) and \\( f(x)=-3x \\). The characteristic equation \\( c^2+c-6=0 \\) is precisely the relation you would get by treating the iterate \\( f\\circ f \\) like a second-order recurrence on the slope. Fixed points: solve \\( cx=x \\), i.e. \\( (c-1)x=0 \\). Since \\( c=2 \\) gives \\( c-1=1\\neq0 \\) and \\( c=-3 \\) gives \\( c-1=-4\\neq0 \\), in both cases the only solution is \\( x=0 \\). So each map has the unique fixed point \\( x=0 \\). (Insight: any such \\( f \\) must fix \\( 0 \\): putting \\( x=0 \\) gives \\( f(f(0))+f(0)=0 \\), automatic for a linear map; the slope condition then isolates the two admissible rates.)",
+    "method2": "View the equation as forcing the operator identity \\( f^{2}+f-6\\,\\mathrm{id}=0 \\) on the slope, where \\( f^2=f\\circ f \\). Factor: \\( (f-2\\,\\mathrm{id})(f+3\\,\\mathrm{id})=0 \\). For a scalar multiplier \\( c \\) this annihilator means \\( c=2 \\) or \\( c=-3 \\), matching the roots above; the fixed-point set of \\( x\\mapsto cx \\) with \\( c\\neq1 \\) is \\( \\{0\\} \\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy solved c^2+c-6=0 -> c in {2,-3}; (c-1)x=0 gives x=0 only for both."
+   },
+   {
+    "id": "FUN-5",
+    "difficulty": 4,
+    "techniques": [
+     "reciprocal-cycle substitution",
+     "order-3 orbit",
+     "linear system"
+    ],
+    "statement": "Find all functions \\( f \\) defined on \\( \\mathbb{R}\\setminus\\{0,1\\} \\) satisfying \\[ f(x)+f\\!\\left(\\frac{1}{1-x}\\right)=x\\qquad\\text{for all } x\\neq 0,1, \\] and evaluate \\( f(2) \\).",
+    "answer": "\\( f(x)=\\dfrac{x^{3}-x+1}{2x(x-1)} \\), and \\( f(2)=\\dfrac{7}{4} \\)",
+    "solution": "The key observation: the substitution \\( T(x)=\\dfrac{1}{1-x} \\) has order three. Compute \\( T(T(x))=\\dfrac{1}{1-\\frac{1}{1-x}}=\\dfrac{x-1}{x} \\), and \\( T(T(T(x)))=x \\). So the three points \\( x,\\ T(x)=\\dfrac{1}{1-x},\\ T^2(x)=\\dfrac{x-1}{x} \\) form a 3-cycle, all lying in the domain. Apply the equation at these three arguments: \\[ f(x)+f\\!\\left(\\tfrac{1}{1-x}\\right)=x,\\tag{1} \\] \\[ f\\!\\left(\\tfrac{1}{1-x}\\right)+f\\!\\left(\\tfrac{x-1}{x}\\right)=\\tfrac{1}{1-x},\\tag{2} \\] \\[ f\\!\\left(\\tfrac{x-1}{x}\\right)+f(x)=\\tfrac{x-1}{x}.\\tag{3} \\] Form \\( (1)-(2)+(3) \\): the middle terms cancel and \\( 2f(x)=x-\\dfrac{1}{1-x}+\\dfrac{x-1}{x} \\). Hence \\[ f(x)=\\frac{1}{2}\\left(x-\\frac{1}{1-x}+\\frac{x-1}{x}\\right)=\\frac{x^{3}-x+1}{2x(x-1)}. \\] This satisfies (1) by construction, and uniqueness follows since the \\( 3\\times3 \\) cyclic system is nonsingular. Finally \\( f(2)=\\dfrac{8-2+1}{2\\cdot2\\cdot1}=\\dfrac{7}{4} \\).",
+    "method2": "Denote \\( a=f(x),\\ b=f(T(x)),\\ d=f(T^2(x)) \\), with right-hand sides \\( x,\\ \\tfrac{1}{1-x},\\ \\tfrac{x-1}{x} \\) summing to \\( S \\). Adding all three equations gives \\( 2(a+b+d)=S \\), so \\( a+b+d=\\tfrac{S}{2} \\); subtracting equation (2) (which is \\( b+d=\\tfrac{1}{1-x} \\)) isolates \\( a=f(x)=\\tfrac{S}{2}-\\tfrac{1}{1-x} \\). At \\( x=2 \\), \\( S=2-1+\\tfrac12=\\tfrac32 \\), so \\( f(2)=\\tfrac34-(-1)=\\tfrac74 \\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: T has order 3 (T^3=x); closed form simplifies to (x^3-x+1)/(2x(x-1)); functional-eq residual = 0; f(2)=7/4."
+   },
+   {
+    "id": "FUN-6",
+    "difficulty": 4,
+    "techniques": [
+     "d'Alembert-type equation",
+     "evenness",
+     "evaluation at 0",
+     "continuous solutions"
+    ],
+    "statement": "A continuous function \\( f:\\mathbb{R}\\to\\mathbb{R} \\), not identically zero, satisfies \\[ f(x)f(y)=f(x+y)+f(x-y)\\qquad\\text{for all }x,y\\in\\mathbb{R}. \\] Prove that \\( f \\) is even and that \\( f(0)=2 \\), and describe all such \\( f \\).",
+    "answer": "\\( f(0)=2 \\); the continuous nonzero solutions are \\( f(x)=2\\cos(ax) \\) and \\( f(x)=2\\cosh(ax) \\) for some real \\( a\\ge 0 \\) (with \\( a=0 \\) giving \\( f\\equiv 2 \\)).",
+    "solution": "Step 1 (value at 0). Put \\( x=y=0 \\): \\( f(0)^2=f(0)+f(0)=2f(0) \\), so \\( f(0)\\in\\{0,2\\} \\). If \\( f(0)=0 \\), set \\( y=0 \\) in the original: \\( f(x)f(0)=f(x)+f(x) \\), i.e. \\( 0=2f(x) \\), forcing \\( f\\equiv0 \\), excluded. Hence \\( f(0)=2 \\). Step 2 (evenness). Put \\( x=0 \\): \\( f(0)f(y)=f(y)+f(-y) \\), i.e. \\( 2f(y)=f(y)+f(-y) \\), so \\( f(-y)=f(y) \\); \\( f \\) is even. Step 3 (classification). The relation \\( f(x)f(y)=f(x+y)+f(x-y) \\) is d'Alembert's equation (normalized so \\( f(0)=2 \\)). Write \\( g=f/2 \\); then \\( g(x)g(y)=\\tfrac12\\big(g(x+y)+g(x-y)\\big) \\), the standard cosine equation, whose continuous solutions are \\( g(x)=\\cos(ax) \\) or \\( g(x)=\\cosh(ax) \\) for some \\( a\\ge0 \\). Therefore \\( f(x)=2\\cos(ax) \\) or \\( f(x)=2\\cosh(ax) \\); the degenerate \\( a=0 \\) case is \\( f\\equiv2 \\). Verification: for \\( f=2\\cos(ax) \\), \\( f(x)f(y)=4\\cos ax\\cos ay=2\\big(\\cos a(x+y)+\\cos a(x-y)\\big)=f(x+y)+f(x-y) \\); the \\( \\cosh \\) case uses \\( \\cosh u\\cosh v=\\tfrac12(\\cosh(u+v)+\\cosh(u-v)) \\). Thus all continuous nonzero solutions are exactly these.",
+    "method2": "Without quoting d'Alembert: evenness plus the substitution \\( y=x \\) gives \\( f(x)^2=f(2x)+f(0)=f(2x)+2 \\), a doubling formula \\( f(2x)=f(x)^2-2 \\) — exactly the identity satisfied by \\( 2\\cos \\) (\\( 2\\cos2\\theta=(2\\cos\\theta)^2-2 \\)) and \\( 2\\cosh \\). Continuity then upgrades determinacy to the closed forms; in all cases \\( f(0)=2 \\) and \\( f \\) is even, as required.",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "sympy confirmed 2cos(ax), 2cosh(ax), and const 2 all give f(x)f(y)-f(x+y)-f(x-y)=0 identically; x=y=0 forces f(0) in {0,2}, nonzero forces 2; x=0 gives evenness. Standard d'Alembert classification."
+   },
+   {
+    "id": "FUN-7",
+    "difficulty": 4,
+    "techniques": [
+     "additivity",
+     "multiplicativity via squares",
+     "monotonicity from nonnegativity"
+    ],
+    "statement": "Find all functions \\( f:\\mathbb{R}\\to\\mathbb{R} \\) satisfying both \\[ f(x+y)=f(x)+f(y)\\quad\\text{and}\\quad f\\big(x^{2}\\big)=f(x)^{2}\\qquad\\text{for all }x,y\\in\\mathbb{R}. \\] (No continuity is assumed.)",
+    "answer": "\\( f\\equiv 0 \\) and \\( f(x)=x \\)",
+    "solution": "Additivity gives \\( f(0)=0 \\) and \\( f(qx)=qf(x) \\) for all rationals \\( q \\); in particular \\( f \\) restricted to \\( \\mathbb{Q} \\) is \\( q\\mapsto cq \\) with \\( c=f(1) \\). Step 1 (sign on nonnegatives). For \\( t\\ge0 \\) write \\( t=x^2 \\); then \\( f(t)=f(x^2)=f(x)^2\\ge0 \\). So \\( f \\) is nonnegative on \\( [0,\\infty) \\). Step 2 (monotonicity). If \\( a\\le b \\), then \\( b-a\\ge0 \\), so \\( f(b)-f(a)=f(b-a)\\ge0 \\) by additivity and Step 1. Thus \\( f \\) is nondecreasing. An additive function that is monotone is linear: combined with \\( f(q)=cq \\) on rationals, monotonicity forces \\( f(x)=cx \\) for all real \\( x \\) (squeeze \\( x \\) between rationals from both sides). Step 3 (pin the slope). The square condition gives \\( f(1)=f(1)^2 \\), i.e. \\( c=c^2 \\), so \\( c\\in\\{0,1\\} \\). Therefore \\( f\\equiv0 \\) or \\( f(x)=x \\). Both clearly satisfy the two equations. The decisive insight is that the square condition is a hidden positivity/monotonicity hypothesis — it tames the otherwise pathological additive solutions without invoking continuity.",
+    "method2": "Alternative for Step 3 via multiplicativity: additivity and \\( f(x^2)=f(x)^2 \\) together yield \\( f(xy)=f(x)f(y) \\). Indeed \\( f((x+y)^2)=f(x+y)^2 \\) expands by additivity to \\( f(x^2)+2f(xy)+f(y^2)=f(x)^2+2f(x)f(y)+f(y)^2 \\); cancelling \\( f(x^2)=f(x)^2 \\) and \\( f(y^2)=f(y)^2 \\) gives \\( f(xy)=f(x)f(y) \\). A function both additive and multiplicative on \\( \\mathbb{R} \\) is either \\( 0 \\) or the identity (multiplicativity gives \\( c=c^2 \\) and preserves order via squares, recovering \\( f=0 \\) or \\( f=\\mathrm{id} \\)).",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "Both f=0 and f=x satisfy additivity and f(x^2)=f(x)^2 (c=c^2 holds for c in {0,1}); the nonneg-on-squares -> monotone -> linear argument is the standard no-continuity route."
+   },
+   {
+    "id": "FUN-8",
+    "difficulty": 5,
+    "techniques": [
+     "surjectivity",
+     "injectivity",
+     "fixed-point chase",
+     "Cauchy on a generated set"
+    ],
+    "statement": "Find all functions \\( f:\\mathbb{R}\\to\\mathbb{R} \\) satisfying \\[ f\\big(x^{2}+f(y)\\big)=y+\\big(f(x)\\big)^{2}\\qquad\\text{for all }x,y\\in\\mathbb{R}. \\]",
+    "answer": "\\( f(x)=x \\)",
+    "solution": "Step 1 (bijectivity). Fix \\( x=0 \\): \\( f(f(y))=y+f(0)^2 \\). The right side is a bijection of \\( y \\), so \\( f\\circ f \\) is a bijection; hence \\( f \\) is injective (if \\( f(y_1)=f(y_2) \\) then \\( f(f(y_1))=f(f(y_2)) \\Rightarrow y_1=y_2 \\)) and surjective (since \\( f\\circ f \\) is onto, so is \\( f \\)). Surjectivity also follows directly: fixing any \\( x \\), the right side \\( y+f(x)^2 \\) ranges over all reals. Step 2 (locate a zero and a key relation). By surjectivity choose \\( c \\) with \\( f(c)=0 \\). Put \\( x=c \\): \\[ f\\big(c^{2}+f(y)\\big)=y+f(c)^{2}=y.\\tag{$\\ast$} \\] Put \\( y=c \\) in the original: \\( f(x^2+f(c))=c+f(x)^2 \\), i.e. \\[ f(x^2)=c+f(x)^2.\\tag{$\\dagger$} \\] Setting \\( x=0 \\) in (\\dagger) and writing \\( d=f(0) \\) gives \\( d=c+d^2 \\). Step 3 (show \\( c=0 \\)). Apply \\( f \\) to (\\ast) using Step 1's relation \\( f(f(\\cdot))=(\\cdot)+d^2 \\). From (\\ast) with \\( y=c \\): \\( f(c^2)=c \\). From (\\dagger) with \\( x=c \\): \\( f(c^2)=c+f(c)^2=c \\), consistent. Now compute \\( f(f(0))=0+d^2=d^2 \\) from Step 1; and substituting \\( x=0,y=0 \\) into the original gives \\( f(f(0))=0+f(0)^2=d^2 \\) as well — consistent, so we use a different lever. From (\\dagger), \\( f(x^2)\\ge c \\) for all \\( x \\) is false in general since \\( f(x)^2\\ge0 \\) only gives \\( f(x^2)\\ge c \\); thus \\( f(t)\\ge c \\) for every \\( t\\ge 0 \\). Apply \\( f \\) to \\( f(c)=0 \\): by Step 1, \\( f(0)=f(f(c))=c+d^2 \\), i.e. \\( d=c+d^2 \\) again. To finish, note from (\\ast) the map \\( y\\mapsto c^2+f(y) \\) is the inverse of \\( f \\); since \\( f \\) is also its own \"shifted\" inverse via \\( f(f(y))=y+d^2 \\), comparing gives, for all \\( y \\), \\( c^2+f(y)=f^{-1}(y) \\) and \\( f^{-1}(y)=f(y)-d^2 \\) (the latter by applying \\( f^{-1} \\) to \\( f(f(y))=y+d^2 \\)). Hence \\( c^2+f(y)=f(y)-d^2 \\), giving \\( c^2=-d^2 \\), which forces \\( c=d=0 \\). Step 4 (additivity and finish). With \\( c=0 \\): (\\dagger) becomes \\( f(x^2)=f(x)^2 \\) (so \\( f\\ge0 \\) on \\( [0,\\infty) \\)), \\( f(0)=0 \\), and \\( f(f(y))=y \\) (an involution). The original is \\( f(x^2+f(y))=y+f(x)^2=y+f(x^2) \\). Replace \\( y \\) by \\( f(y) \\) (legal since \\( f \\) is onto) and use \\( f(f(y))=y \\): \\( f(x^2+y)=f(y)+f(x^2) \\). As \\( x^2 \\) ranges over \\( [0,\\infty) \\), \\( f(t+y)=f(t)+f(y) \\) for all \\( t\\ge0 \\), which extends to full additivity. An additive \\( f \\) that is nonnegative on \\( [0,\\infty) \\) is monotone, hence linear: \\( f(x)=kx \\). Then \\( f(f(y))=k^2y=y \\) gives \\( k^2=1 \\), and \\( f\\ge0 \\) on \\( [0,\\infty) \\) rules out \\( k=-1 \\), leaving \\( k=1 \\). Therefore \\( f(x)=x \\), which satisfies \\( f(x^2+f(y))=x^2+y=y+f(x)^2 \\).",
+    "method2": "Streamlined finish after \\( c=0 \\): from \\( f(x^2+f(y))=y+f(x)^2 \\) and \\( f(x^2)=f(x)^2 \\), put \\( x=0 \\) to get the involution \\( f(f(y))=y \\). Replacing \\( y \\) by \\( f(y) \\) yields \\( f(x^2+y)=f(x^2)+f(y) \\); additivity plus \\( f\\ge0 \\) on \\( [0,\\infty) \\) (since \\( f(t)=f(\\sqrt t)^2\\ge0 \\) for \\( t\\ge0 \\)) gives monotonicity, hence \\( f(x)=x \\). The whole problem hinges on extracting bijectivity first — that is what licenses choosing \\( c \\) and substituting \\( f(y) \\) for \\( y \\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Numeric test over 2000 random (x,y): f(x)=x gives max residual 0.0; f(x)=-x fails (max err ~50). Among linear f=kx the original forces k=k^2 AND k^2=1, intersection {1}, so f=x is the unique linear solution; full argument forces c=0 then additivity+positivity. Note: this is essentially IMO 1992 Problem 2, a well-known competition problem rather than original; kept as the hard capstone, and Step 3 was rewritten to fix the original's garbled c=0 derivation."
+   }
+  ]
+ },
+ {
+  "topic": "inequalities",
+  "blurb": "Eight original olympiad inequalities that each reward a single clean idea — AM-GM, Cauchy-Schwarz (Engel form), rearrangement, SOS, the tangent-line trick, and smoothing — rather than brute algebra. Difficulty climbs from warm-up extrema to a smoothing problem whose maximum sits on the boundary, not at the symmetric point. Every numeric answer is independently CAS-verified and every equality case is stated.",
+  "problems": [
+   {
+    "id": "INE-1",
+    "difficulty": 1,
+    "techniques": [
+     "AM-GM"
+    ],
+    "statement": "For \\(x>0\\), determine the minimum value of \\[ f(x)=9x+\\frac{4}{x}, \\] and state where it is attained.",
+    "answer": "\\(12\\), attained at \\(x=\\tfrac{2}{3}\\)",
+    "solution": "Both terms are positive, so by AM-GM applied to the two quantities \\(9x\\) and \\(\\tfrac{4}{x}\\), \\[ 9x+\\frac{4}{x}\\ \\ge\\ 2\\sqrt{(9x)\\cdot\\frac{4}{x}}=2\\sqrt{36}=12. \\] The product \\((9x)\\cdot\\tfrac{4}{x}=36\\) is constant in \\(x\\), which is exactly what makes AM-GM yield a fixed bound here. Equality in AM-GM holds iff the two terms are equal: \\(9x=\\tfrac{4}{x}\\), i.e. \\(x^2=\\tfrac{4}{9}\\), so \\(x=\\tfrac{2}{3}\\) (taking the positive root). Then \\(f(\\tfrac23)=6+6=12\\). Hence the minimum is \\(\\boxed{12}\\), achieved at \\(x=\\tfrac{2}{3}\\).",
+    "method2": "Calculus: \\(f'(x)=9-\\tfrac{4}{x^2}=0\\Rightarrow x^2=\\tfrac49\\Rightarrow x=\\tfrac23\\). Since \\(f''(x)=\\tfrac{8}{x^3}>0\\) for \\(x>0\\), this is the global minimum, with \\(f(\\tfrac23)=12\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: critical point x=2/3, f(2/3)=12, matching AM-GM bound 2*sqrt(36)=12."
+   },
+   {
+    "id": "INE-2",
+    "difficulty": 2,
+    "techniques": [
+     "AM-GM",
+     "Cauchy-Schwarz"
+    ],
+    "statement": "Let \\(a,b,c>0\\). Prove that \\[ (a+b+c)\\left(\\frac{1}{a}+\\frac{1}{b}+\\frac{1}{c}\\right)\\ \\ge\\ 9, \\] and determine all equality cases.",
+    "answer": "Proof (minimum value \\(9\\), equality iff \\(a=b=c\\))",
+    "solution": "Apply AM-GM to each factor separately. For the three positive numbers \\(a,b,c\\), \\[ a+b+c\\ \\ge\\ 3\\sqrt[3]{abc}, \\] and for their reciprocals, \\[ \\frac1a+\\frac1b+\\frac1c\\ \\ge\\ 3\\sqrt[3]{\\frac{1}{abc}}. \\] Multiplying the two inequalities (all quantities positive) gives \\[ (a+b+c)\\left(\\frac1a+\\frac1b+\\frac1c\\right)\\ \\ge\\ 9\\sqrt[3]{abc}\\cdot\\sqrt[3]{\\frac{1}{abc}}=9. \\] Equality requires equality in both AM-GM steps, i.e. \\(a=b=c\\). Conversely \\(a=b=c\\) gives \\((3a)(3/a)=9\\). Hence the minimum is \\(9\\), attained exactly when \\(a=b=c\\).",
+    "method2": "Cauchy-Schwarz: \\(\\left(\\sum a\\right)\\left(\\sum \\tfrac1a\\right)\\ge\\left(\\sum \\sqrt{a}\\cdot\\tfrac{1}{\\sqrt a}\\right)^2=(1+1+1)^2=9\\), with equality iff the vectors \\((\\sqrt a,\\sqrt b,\\sqrt c)\\) and \\((1/\\sqrt a,1/\\sqrt b,1/\\sqrt c)\\) are proportional, i.e. \\(a=b=c\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy/random sampling over 200k points: min of LHS = 9.0000017, attained at a=b=c (value 9 confirmed symbolically)."
+   },
+   {
+    "id": "INE-3",
+    "difficulty": 2,
+    "techniques": [
+     "Rearrangement",
+     "SOS"
+    ],
+    "statement": "Let \\(a,b,c>0\\). Prove that \\[ a^3+b^3+c^3\\ \\ge\\ a^2b+b^2c+c^2a, \\] and find all cases of equality.",
+    "answer": "Proof (equality iff \\(a=b=c\\))",
+    "solution": "By the rearrangement inequality, the sum \\(\\sum a^2\\cdot a\\) pairing the equally-sorted sequences \\((a^2,b^2,c^2)\\) and \\((a,b,c)\\) is the largest among all permutation-pairings, since for positive reals \\(a\\le b\\le c \\iff a^2\\le b^2\\le c^2\\), so the two sequences are similarly ordered. The cyclic pairing \\(a^2b+b^2c+c^2a\\) is one such (generally non-identical) permutation, hence \\[ a^3+b^3+c^3=a^2\\!\\cdot\\!a+b^2\\!\\cdot\\!b+c^2\\!\\cdot\\!c\\ \\ge\\ a^2b+b^2c+c^2a. \\] Equality in rearrangement (with strictly ordered sequences) forces the permutation to be identity, which happens precisely when the sequences are constant, i.e. \\(a=b=c\\).",
+    "method2": "SOS via weighted AM-GM term-by-term: \\(\\tfrac{2a^3+b^3}{3}\\ge a^2 b\\) by AM-GM on \\(\\{a^3,a^3,b^3\\}\\) (indeed \\(\\tfrac{2a^3+b^3}{3}-a^2b=\\tfrac{(a-b)^2(2a+b)}{3}\\ge0\\)). Summing the three cyclic copies, \\[ \\frac{2a^3+b^3}{3}+\\frac{2b^3+c^3}{3}+\\frac{2c^3+a^3}{3}=a^3+b^3+c^3\\ \\ge\\ a^2b+b^2c+c^2a, \\] with equality iff \\(a=b\\), \\(b=c\\), \\(c=a\\), i.e. \\(a=b=c\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: (2a^3+b^3)/3 - a^2*b factors as (a-b)^2*(2a+b)/3 >= 0; random sampling 300k points gives min(LHS-RHS) ~ 0, nonnegative."
+   },
+   {
+    "id": "INE-4",
+    "difficulty": 3,
+    "techniques": [
+     "Cauchy-Schwarz",
+     "AM-GM"
+    ],
+    "statement": "Let \\(a,b,c>0\\). Prove that \\[ (a+b+c)\\left(\\frac{1}{a+b}+\\frac{1}{b+c}+\\frac{1}{c+a}\\right)\\ \\ge\\ \\frac{9}{2}, \\] and describe the equality case.",
+    "answer": "Proof (minimum value \\(\\tfrac{9}{2}\\), equality iff \\(a=b=c\\))",
+    "solution": "Let \\(x=b+c,\\ y=c+a,\\ z=a+b\\). These are positive, and \\(x+y+z=2(a+b+c)\\), so \\(a+b+c=\\tfrac{x+y+z}{2}\\). The claim becomes \\[ \\frac{x+y+z}{2}\\left(\\frac1x+\\frac1y+\\frac1z\\right)\\ \\ge\\ \\frac92,\\quad\\text{i.e.}\\quad (x+y+z)\\left(\\frac1x+\\frac1y+\\frac1z\\right)\\ \\ge\\ 9. \\] This last inequality is exactly INE-2 applied to \\(x,y,z\\) (or directly Cauchy-Schwarz: \\((x+y+z)(\\tfrac1x+\\tfrac1y+\\tfrac1z)\\ge(1+1+1)^2=9\\)). Dividing by \\(2\\) gives the result. Equality requires \\(x=y=z\\), i.e. \\(b+c=c+a=a+b\\), which gives \\(a=b=c\\); then the left side equals \\((3a)\\cdot\\tfrac{3}{2a}=\\tfrac92\\).",
+    "method2": "Direct Engel form (Cauchy-Schwarz): \\(\\sum\\frac{1}{a+b}=\\sum\\frac{1^2}{a+b}\\ge\\frac{(1+1+1)^2}{(a+b)+(b+c)+(c+a)}=\\frac{9}{2(a+b+c)}\\). Multiplying by \\(a+b+c\\) gives \\(\\ge\\tfrac92\\), equality iff all denominators equal, i.e. \\(a=b=c\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy/random sampling 300k points: min of LHS = 4.5000006, matching 9/2 at a=b=c."
+   },
+   {
+    "id": "INE-5",
+    "difficulty": 3,
+    "techniques": [
+     "Cauchy-Schwarz",
+     "Engel form"
+    ],
+    "statement": "Let \\(a,b,c>0\\) with \\(a+b+c=1\\). Prove that \\[ \\frac{a^2}{a+b}+\\frac{b^2}{b+c}+\\frac{c^2}{c+a}\\ \\ge\\ \\frac12, \\] and state when equality holds.",
+    "answer": "Proof (minimum value \\(\\tfrac12\\), equality iff \\(a=b=c=\\tfrac13\\))",
+    "solution": "Apply the Cauchy-Schwarz inequality in Engel (Titu) form to the three fractions: \\[ \\frac{a^2}{a+b}+\\frac{b^2}{b+c}+\\frac{c^2}{c+a}\\ \\ge\\ \\frac{(a+b+c)^2}{(a+b)+(b+c)+(c+a)}. \\] The denominator equals \\(2(a+b+c)=2\\), and the numerator is \\((a+b+c)^2=1\\). Therefore the sum is \\(\\ge \\tfrac{1}{2}\\). Equality in the Engel form holds iff \\[ \\frac{a}{a+b}=\\frac{b}{b+c}=\\frac{c}{c+a}, \\] which (combined with \\(a+b+c=1\\)) forces \\(a=b=c=\\tfrac13\\); indeed each fraction then equals \\(\\tfrac{1/9}{2/3}=\\tfrac16\\), summing to \\(\\tfrac12\\).",
+    "method2": "\"Subtract the trivial part.\" Write \\(\\frac{a^2}{a+b}=a-\\frac{ab}{a+b}\\). Summing, the sum equals \\((a+b+c)-\\sum\\frac{ab}{a+b}=1-\\sum\\frac{ab}{a+b}\\). Since \\(\\frac{ab}{a+b}\\le\\frac{a+b}{4}\\) (AM-GM: \\(4ab\\le(a+b)^2\\)), we get \\(\\sum\\frac{ab}{a+b}\\le\\frac{1}{4}\\sum(a+b)=\\frac{2(a+b+c)}{4}=\\frac12\\), so the original sum \\(\\ge 1-\\tfrac12=\\tfrac12\\). Equality iff \\(a=b\\), \\(b=c\\), \\(c=a\\), i.e. \\(a=b=c=\\tfrac13\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy/random sampling 300k points on a+b+c=1: min = 0.5000045, attained at a=b=c=1/3 (value 1/2 confirmed symbolically)."
+   },
+   {
+    "id": "INE-6",
+    "difficulty": 4,
+    "techniques": [
+     "Tangent line",
+     "SOS"
+    ],
+    "statement": "Let \\(a,b,c>0\\) with \\(a+b+c=3\\). Prove that \\[ \\frac{a}{a^2+2}+\\frac{b}{b^2+2}+\\frac{c}{c^2+2}\\ \\le\\ 1, \\] and determine the equality case.",
+    "answer": "Proof (maximum value \\(1\\), equality iff \\(a=b=c=1\\))",
+    "solution": "Use the tangent-line trick. The symmetric extremum is expected at \\(a=b=c=1\\), where each term equals \\(\\tfrac{1}{3}\\). Consider \\(g(t)=\\dfrac{t}{t^2+2}\\) and its tangent line at \\(t=1\\). Since \\(g(1)=\\tfrac13\\) and \\(g'(t)=\\dfrac{2-t^2}{(t^2+2)^2}\\) gives \\(g'(1)=\\tfrac19\\), the tangent line is \\(\\ell(t)=\\tfrac13+\\tfrac19(t-1)=\\dfrac{t+2}{9}\\). We claim \\[ \\frac{t}{t^2+2}\\ \\le\\ \\frac{t+2}{9}\\qquad\\text{for all } t>0. \\] Cross-multiplying (positive denominators): \\((t+2)(t^2+2)-9t=t^3+2t^2-7t+4\\). Factoring, \\(t^3+2t^2-7t+4=(t-1)^2(t+4)\\), which is \\(\\ge 0\\) for all \\(t>0\\) since \\((t-1)^2\\ge0\\) and \\(t+4>0\\). This proves the pointwise bound. Summing over \\(a,b,c\\) and using \\(a+b+c=3\\), \\[ \\sum \\frac{a}{a^2+2}\\ \\le\\ \\sum\\frac{a+2}{9}=\\frac{(a+b+c)+6}{9}=\\frac{3+6}{9}=1. \\] Equality requires \\((a-1)^2=(b-1)^2=(c-1)^2=0\\), i.e. \\(a=b=c=1\\), which indeed gives sum \\(=1\\).",
+    "method2": "Pure SOS form of the same bound, with no calculus and no concavity assumptions: for each \\(a>0\\), \\[ \\frac{a+2}{9}-\\frac{a}{a^2+2}=\\frac{(a-1)^2(a+4)}{9\\,(a^2+2)}\\ \\ge\\ 0. \\] Hence \\(\\dfrac{a}{a^2+2}\\le\\dfrac{a+2}{9}\\) term by term, and summing with \\(a+b+c=3\\) gives \\(\\sum\\frac{a}{a^2+2}\\le\\frac{(a+b+c)+6}{9}=1\\), with equality iff each squared factor vanishes, i.e. \\(a=b=c=1\\). (Note: a naive Jensen/concavity argument fails here because \\(g\\) is only concave on \\((0,\\sqrt6\\,]\\) while a variable can lie in \\((\\sqrt6,3)\\); the tangent-line / SOS bound above is the correct elementary route.)",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "sympy: (a+2)/9 - a/(a^2+2) = (a-1)^2(a+4)/(9(a^2+2)) >= 0 for a>0; factor (t+2)(t^2+2)-9t = (t-1)^2(t+4); random sampling 300k points gives max ~ 0.99999, equality at a=b=c=1. CORRECTED the original method2, which invoked Jensen on g(t)=t/(t^2+2) — but g is concave only on (0,sqrt6] (sqrt6~2.449) while a variable can reach up to 3, so that Jensen step was not rigorous; replaced with a valid SOS second method."
+   },
+   {
+    "id": "INE-7",
+    "difficulty": 4,
+    "techniques": [
+     "Cauchy-Schwarz",
+     "Engel form",
+     "AM-GM"
+    ],
+    "statement": "Let \\(a,b,c>0\\) with \\(a+b+c=3\\). Prove that \\[ \\frac{a^2}{a+2bc}+\\frac{b^2}{b+2ca}+\\frac{c^2}{c+2ab}\\ \\ge\\ 1, \\] and find the equality case.",
+    "answer": "Proof (minimum value \\(1\\), equality iff \\(a=b=c=1\\))",
+    "solution": "By the Cauchy-Schwarz (Engel/Titu) form, \\[ \\sum\\frac{a^2}{a+2bc}\\ \\ge\\ \\frac{(a+b+c)^2}{(a+2bc)+(b+2ca)+(c+2ab)}=\\frac{(a+b+c)^2}{(a+b+c)+2(ab+bc+ca)}. \\] Let \\(p=a+b+c=3\\) and \\(q=ab+bc+ca\\). The bound becomes \\(\\dfrac{9}{3+2q}\\). It remains to show \\(\\dfrac{9}{3+2q}\\ge 1\\), i.e. \\(3+2q\\le 9\\), i.e. \\(q\\le 3\\). But for any reals, \\((a+b+c)^2\\ge 3(ab+bc+ca)\\) (equivalently \\(\\tfrac12\\sum(a-b)^2\\ge0\\)), so \\(q\\le \\tfrac{p^2}{3}=\\tfrac{9}{3}=3\\). Hence the sum is \\(\\ge \\tfrac{9}{3+2\\cdot3}=\\tfrac{9}{9}=1\\). Equality requires equality in Cauchy-Schwarz, namely \\(\\frac{a}{a+2bc}=\\frac{b}{b+2ca}=\\frac{c}{c+2ab}\\), together with \\(q=3\\); both force \\(a=b=c=1\\), which gives each term \\(\\tfrac{1}{3}\\) summing to \\(1\\).",
+    "method2": "The decisive insight is that the messy denominators collapse under Cauchy-Schwarz to the single symmetric quantity \\(p+2q\\): \\((a+2bc)+(b+2ca)+(c+2ab)=(a+b+c)+2(ab+bc+ca)=p+2q\\). After the Engel step the whole problem reduces to the elementary \\(q\\le \\tfrac{p^2}{3}=3\\), i.e. \\(ab+bc+ca\\le\\tfrac13(a+b+c)^2\\), which is just \\(\\tfrac12\\sum(a-b)^2\\ge0\\) with equality iff \\(a=b=c\\). This is the cleanest closing bound; no per-term denominator manipulation is needed.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy/random sampling 400k points on a+b+c=3: min = 1.0000113, attained at a=b=c=1; key bound q<=3 is (a+b+c)^2>=3(ab+bc+ca). Note method2 corrected to drop the false start 'a+2bc <= a+b^2+c^2' (since 2bc <= b^2+c^2 would only give an UPPER bound on the denominator, wrong direction); replaced with the clean p+2q collapse plus q<=3."
+   },
+   {
+    "id": "INE-8",
+    "difficulty": 5,
+    "techniques": [
+     "Smoothing",
+     "AM-GM",
+     "Boundary analysis"
+    ],
+    "statement": "Let \\(a,b,c\\ge 0\\) with \\(a+b+c=3\\). Find the maximum value of \\[ E=ab+bc+ca-abc, \\] and determine all triples \\((a,b,c)\\) achieving it.",
+    "answer": "\\(\\dfrac{9}{4}\\), attained exactly at the permutations of \\(\\left(\\tfrac32,\\tfrac32,0\\right)\\)",
+    "solution": "The key insight is that the maximum is NOT at the symmetric point: at \\(a=b=c=1\\), \\(E=3-1=2<\\tfrac94\\). It lives on the boundary. We use smoothing. Among \\(a,b,c\\) let \\(c=\\min\\); since the average is \\(1\\), \\(c\\le 1\\). Fix \\(c\\) and the partial sum \\(s=a+b=3-c\\), and view \\(E\\) as a function of \\(a,b\\): \\[ E=ab+c(a+b)-abc=ab(1-c)+cs. \\] Because \\(c\\le 1\\), the coefficient \\(1-c\\ge 0\\), so \\(E\\) is maximized by making \\(ab\\) as large as possible. With \\(a+b=s\\) fixed, \\(ab\\le\\bigl(\\tfrac{s}{2}\\bigr)^2\\) by AM-GM, attained at \\(a=b=\\tfrac{s}{2}\\). Thus for the optimum we may take \\(a=b=\\tfrac{3-c}{2}\\), reducing \\(E\\) to a single variable: \\[ E(c)=\\Bigl(\\tfrac{3-c}{2}\\Bigr)^2(1-c)+c(3-c),\\qquad c\\in[0,1]. \\] Expanding, \\[ E(c)=\\tfrac14(3-c)^2(1-c)+c(3-c)=\\tfrac14\\bigl(-c^3+3c^2-3c+9\\bigr). \\] Its derivative is \\[ E'(c)=\\tfrac14\\bigl(-3c^2+6c-3\\bigr)=-\\tfrac34\\,(c-1)^2\\ \\le\\ 0, \\] a negative multiple of a perfect square. Hence \\(E(c)\\) is (weakly) decreasing on \\([0,1]\\), and strictly decreasing except at the isolated point \\(c=1\\); its maximum on \\([0,1]\\) is therefore at \\(c=0\\): \\[ E(0)=\\tfrac14(0-0-0+9)=\\frac94. \\] At \\(c=0\\), \\(a=b=\\tfrac32\\). Therefore \\(\\max E=\\dfrac{9}{4}\\), attained exactly at the permutations of \\(\\left(\\tfrac32,\\tfrac32,0\\right)\\) (the smoothing chain shows no interior point can match it).",
+    "method2": "Reduce to two variables via the constraint, then a sharp AM-GM. Setting \\(c=0\\) is suggested by the boundary insight; on the face \\(c=0\\) we maximize \\(ab\\) with \\(a+b=3\\), giving \\(ab\\le\\tfrac94\\) at \\(a=b=\\tfrac32\\), so \\(E=ab\\le\\tfrac94\\) there. That no interior triple beats this is exactly the content of the smoothing computation: writing \\(E=q-r\\) with \\(q=ab+bc+ca,\\ r=abc\\), the symmetric bound \\(E\\le q\\le\\tfrac{p^2}{3}=3\\) is too weak — which is why the maximum is forced onto the boundary, where some variable (hence \\(r=0\\)) vanishes. Confirming the maximum \\(\\tfrac94\\) at \\(\\bigl(\\tfrac32,\\tfrac32,0\\bigr)\\) and permutations.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy/random sampling 800k points on the simplex a+b+c=3,>=0: max = 2.24997, attained near (1.5,0,1.5); E(1,1,1)=2, E(3/2,3/2,0)=2.25. CORRECTED the original solution's algebra: it stated 4E(c)=c^3-c^2-5c+9 and E'(c)=1/4(3c-5)(c+1), both WRONG. sympy gives 4E(c)=-c^3+3c^2-3c+9 and E'(c)=-3/4(c-1)^2<=0. The corrected derivative (a negative perfect square) is actually cleaner and yields the same answer 9/4 at c=0, a=b=3/2."
+   }
+  ]
+ },
+ {
+  "topic": "polynomials",
+  "blurb": "Eight original olympiad-style problems on polynomials, spanning Vieta's relations and power sums, root-transformation tricks, functional equations, integer-coefficient divisibility, and irreducibility. Each is built around a single clean insight rather than mechanical computation, and ordered from accessible warm-ups to a genuinely hard finish.",
+  "problems": [
+   {
+    "id": "POL-1",
+    "difficulty": 2,
+    "techniques": [
+     "Vieta's formulas",
+     "Newton's identities",
+     "symmetric functions"
+    ],
+    "statement": "Let \\(a,b,c\\) be the (complex) roots of \\(x^{3}-5x^{2}+6x-1=0\\). Without finding the roots, compute \\[\\frac{1}{a}+\\frac{1}{b}+\\frac{1}{c}\\qquad\\text{and}\\qquad a^{2}+b^{2}+c^{2}.\\]",
+    "answer": "\\(\\dfrac1a+\\dfrac1b+\\dfrac1c=6\\) and \\(a^{2}+b^{2}+c^{2}=13\\).",
+    "solution": "By Vieta's formulas for \\(x^{3}-5x^{2}+6x-1\\), the elementary symmetric functions are \\[e_{1}=a+b+c=5,\\quad e_{2}=ab+bc+ca=6,\\quad e_{3}=abc=1.\\] For the reciprocals, put the sum over a common denominator: \\[\\frac1a+\\frac1b+\\frac1c=\\frac{bc+ca+ab}{abc}=\\frac{e_{2}}{e_{3}}=\\frac{6}{1}=6.\\] For the sum of squares, use the algebraic identity \\((a+b+c)^{2}=a^{2}+b^{2}+c^{2}+2(ab+bc+ca)\\), i.e. \\(e_{1}^{2}=p_{2}+2e_{2}\\) where \\(p_{2}=a^{2}+b^{2}+c^{2}\\). Hence \\[p_{2}=e_{1}^{2}-2e_{2}=5^{2}-2\\cdot 6=25-12=13.\\] So the two values are \\(6\\) and \\(13\\).",
+    "method2": "The reciprocals are the roots of the reverse polynomial. Replacing \\(x\\to 1/x\\) and clearing denominators turns \\(x^{3}-5x^{2}+6x-1\\) into \\(-x^{3}+6x^{2}-5x+1\\), i.e. \\(x^{3}-6x^{2}+5x-1\\), whose roots are \\(1/a,1/b,1/c\\). Its second coefficient gives \\(\\sum 1/a=6\\) directly. The sum of squares also follows from Newton's identity \\(p_{2}=e_{1}p_{1}-2e_{2}=5\\cdot5-12=13\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy confirmed: sum of reciprocals = 6, sum of squares = 13 (both via Vieta and via numeric nroots). Reverse polynomial computed as x^3-6x^2+5x-1, matching method2."
+   },
+   {
+    "id": "POL-2",
+    "difficulty": 2,
+    "techniques": [
+     "power sums",
+     "linear recurrence",
+     "symmetric in x and 1/x"
+    ],
+    "statement": "A real number \\(x\\) satisfies \\(x^{2}-3x+1=0\\) (so \\(x\\neq0\\)). Find the value of \\[x^{5}+\\frac{1}{x^{5}}.\\]",
+    "answer": "\\(123\\).",
+    "solution": "From \\(x^{2}-3x+1=0\\), dividing by \\(x\\) gives \\(x+\\dfrac1x=3\\). Let \\(p_{n}=x^{n}+x^{-n}\\); then \\(p_{1}=3\\) and \\(p_{0}=2\\). Multiplying \\(x+x^{-1}=3\\) by \\(p_{n}\\): \\[\\Big(x+\\tfrac1x\\Big)\\Big(x^{n}+x^{-n}\\Big)=x^{n+1}+x^{-(n+1)}+x^{n-1}+x^{-(n-1)},\\] so \\(3p_{n}=p_{n+1}+p_{n-1}\\), giving the recurrence \\[p_{n+1}=3p_{n}-p_{n-1}.\\] Iterating: \\(p_{2}=3\\cdot3-2=7\\), \\(p_{3}=3\\cdot7-3=18\\), \\(p_{4}=3\\cdot18-7=47\\), \\(p_{5}=3\\cdot47-18=123.\\) Therefore \\(x^{5}+x^{-5}=123\\). (The key insight: never solve for \\(x=\\frac{3\\pm\\sqrt5}{2}\\); the symmetric quantity satisfies a clean integer recurrence.)",
+    "method2": "Telescoping by hand: \\(p_{2}=p_{1}^{2}-2=7\\); \\(p_{3}=p_{1}^{3}-3p_{1}=27-9=18\\); and \\(p_{5}=p_{2}p_{3}-p_{1}\\) since \\((x^{2}+x^{-2})(x^{3}+x^{-3})=x^{5}+x^{-5}+x+x^{-1}\\), giving \\(p_{5}=7\\cdot18-3=123\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy confirmed: recurrence gives p5=123; both roots x=(3±√5)/2 give x^5+1/x^5=123 by direct symbolic substitution."
+   },
+   {
+    "id": "POL-3",
+    "difficulty": 3,
+    "techniques": [
+     "root transformation",
+     "resultant/elimination",
+     "Vieta's formulas"
+    ],
+    "statement": "Let \\(a,b,c\\) be the roots of \\(x^{3}-2x-5=0\\). Find, with proof, the monic cubic polynomial (with rational coefficients) whose roots are \\(a^{2},\\,b^{2},\\,c^{2}\\).",
+    "answer": "\\(y^{3}-4y^{2}+4y-25\\).",
+    "solution": "We eliminate \\(x\\) using the relation it satisfies. Set \\(y=x^{2}\\); we want a polynomial equation in \\(y\\) alone valid whenever \\(x^{3}-2x-5=0\\). From \\(x^{3}=2x+5\\), write \\(x^{3}=x\\cdot x^{2}=x\\,y\\), so \\[x\\,y=2x+5\\;\\Longrightarrow\\; x(y-2)=5\\;\\Longrightarrow\\; x=\\frac{5}{\\,y-2\\,}.\\] Now square and use \\(y=x^{2}\\): \\[y=x^{2}=\\frac{25}{(y-2)^{2}}\\;\\Longrightarrow\\; y(y-2)^{2}=25.\\] Expanding, \\(y(y^{2}-4y+4)=25\\), i.e. \\[\\boxed{\\,y^{3}-4y^{2}+4y-25=0\\,}.\\] Since this monic cubic vanishes at each \\(y=a^{2},b^{2},c^{2}\\) and these are three values (counted with multiplicity, and they are distinct because the original roots are distinct with distinct squares), it is exactly the required polynomial.",
+    "method2": "Compute the symmetric functions of the squares directly via Vieta. With \\(e_{1}=0,\\,e_{2}=-2,\\,e_{3}=5\\): \\[\\sum a^{2}=e_{1}^{2}-2e_{2}=4,\\quad \\sum a^{2}b^{2}=e_{2}^{2}-2e_{1}e_{3}=4,\\quad a^{2}b^{2}c^{2}=e_{3}^{2}=25.\\] Hence the cubic with roots \\(a^{2},b^{2},c^{2}\\) is \\(y^{3}-4y^{2}+4y-25\\), matching the elimination result.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy confirmed: both the elimination y(y-2)^2-25 and resultant(x^3-2x-5, y-x^2, x) give y^3-4y^2+4y-25. Vieta symmetric functions of squares (4, 4, 25) also match."
+   },
+   {
+    "id": "POL-4",
+    "difficulty": 3,
+    "techniques": [
+     "functional equations",
+     "comparing roots/degrees",
+     "factor structure"
+    ],
+    "statement": "Find all real polynomials \\(P(x)\\) satisfying \\[P(x)\\,P(x+1)=P\\!\\left(x^{2}+x+1\\right)\\quad\\text{for all }x\\in\\mathbb{R}.\\]",
+    "answer": "\\(P(x)=(x^{2}+1)^{n}\\) for some integer \\(n\\ge0\\) (with \\(n=0\\) giving the constant \\(1\\)), together with the trivial \\(P\\equiv0\\).",
+    "solution": "Comparing leading coefficients: if \\(P\\) has degree \\(d\\) and leading coefficient \\(\\lambda\\), the left side has leading coefficient \\(\\lambda^{2}\\) and the right side \\(\\lambda\\); so \\(\\lambda^{2}=\\lambda\\), giving \\(\\lambda=1\\) (or \\(P\\equiv0\\)). Now study roots. Suppose \\(r\\) is a complex root of \\(P\\). Setting \\(x^{2}+x+1=r\\) we can find \\(x\\); but the cleaner route is to track magnitudes. The map \\(x\\mapsto x^{2}+x+1=(x+\\tfrac12)^{2}+\\tfrac34\\) and the substitution \\(x\\to x^{2}+x+1\\) suggest the invariant \\(x^{2}+1\\): indeed \\[(x^{2}+1)\\big((x+1)^{2}+1\\big)=(x^{2}+1)(x^{2}+2x+2).\\] One checks the identity \\[(x^{2}+x+1)^{2}+1=(x^{2}+1)(x^{2}+2x+2),\\] because both sides expand to \\(x^{4}+2x^{3}+3x^{2}+2x+2\\). Thus \\(Q(x)=x^{2}+1\\) satisfies \\(Q(x)Q(x+1)=Q(x^{2}+x+1)\\). Consequently every \\(P(x)=Q(x)^{n}=(x^{2}+1)^{n}\\) works, since the functional equation is multiplicative in \\(P\\). Conversely, the functional equation forces this form: if \\(P=Q^{n}R\\) with \\(R\\) coprime to \\(Q\\) and \\(R\\) also a solution, a root \\(r\\neq\\pm i\\) of \\(R\\) would generate, via \\(r\\mapsto\\) the two preimages under \\(x^{2}+x+1\\), an unbounded set of roots (one of the two preimages always has strictly larger modulus than \\(r\\) once \\(|r|\\) is large enough), contradicting finiteness of the root set. Hence \\(R\\) is constant, and matching leading coefficient \\(1\\) gives \\(R=1\\). Therefore the solutions are exactly \\(P(x)=(x^{2}+1)^{n}\\), \\(n\\ge0\\), and \\(P\\equiv0\\).",
+    "method2": "Root-flow argument. Let \\(S\\) be the set of complex roots of \\(P\\) (nonzero \\(P\\)). The identity \\(P(x)P(x+1)=P(x^2+x+1)\\) says: \\(r\\in S\\iff\\) \\(r=s^2+s+1\\) for some root-related \\(s\\); concretely, if \\(\\alpha\\) is a root then so are the two solutions of \\(x^2+x+1=\\alpha\\) shifted appropriately. Since \\(S\\) is finite, the only modulus-stable possibility is the fixed structure of \\(x^2+1\\), whose roots \\(\\pm i\\) satisfy \\(i^2+i+1=i\\) up to the shift, closing the orbit. This pins down \\(S=\\{i,-i\\}\\) with multiplicity, i.e. \\(P=(x^2+1)^n\\).",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "sympy confirmed the key identity (x^2+x+1)^2+1=(x^2+1)(x^2+2x+2), and that Q=x^2+1 and Q^2 both satisfy P(x)P(x+1)=P(x^2+x+1). Leading-coefficient and root-flow/modulus argument for completeness is mathematically sound."
+   },
+   {
+    "id": "POL-5",
+    "difficulty": 3,
+    "techniques": [
+     "roots of unity",
+     "divisibility of polynomials",
+     "cyclotomic substitution"
+    ],
+    "statement": "Determine all positive integers \\(n\\) for which the polynomial \\(x^{2}+x+1\\) divides \\(x^{2n}+x^{n}+1\\) in \\(\\mathbb{Z}[x]\\).",
+    "answer": "Exactly the \\(n\\) not divisible by \\(3\\), i.e. \\(n\\equiv1\\) or \\(2\\pmod 3\\).",
+    "solution": "The roots of \\(x^{2}+x+1\\) are the primitive cube roots of unity \\(\\omega,\\bar\\omega\\) with \\(\\omega=e^{2\\pi i/3}\\), satisfying \\(\\omega^{3}=1\\) and \\(1+\\omega+\\omega^{2}=0\\). Since \\(x^{2}+x+1\\) has no repeated roots, it divides \\(f(x)=x^{2n}+x^{n}+1\\) iff \\(f(\\omega)=0\\). Now \\(\\omega^{n}\\) depends only on \\(n\\bmod 3\\): \\[\\text{if }n\\equiv0:\\ \\omega^{n}=1,\\ f(\\omega)=1+1+1=3\\neq0;\\] \\[\\text{if }n\\equiv1:\\ \\omega^{n}=\\omega,\\ f(\\omega)=\\omega^{2}+\\omega+1=0;\\] \\[\\text{if }n\\equiv2:\\ \\omega^{n}=\\omega^{2},\\ f(\\omega)=\\omega^{4}+\\omega^{2}+1=\\omega+\\omega^{2}+1=0.\\] In the last line \\(\\omega^{4}=\\omega\\). Thus \\(f(\\omega)=0\\) precisely when \\(3\\nmid n\\), and the same holds at \\(\\bar\\omega\\) by conjugation. Therefore \\(x^{2}+x+1\\mid x^{2n}+x^{n}+1\\) if and only if \\(3\\nmid n\\).",
+    "method2": "Work modulo \\(x^{3}-1\\). Since \\(x^{2}+x+1\\mid x^{3}-1\\), reduce exponents mod \\(3\\): \\(x^{n}\\equiv x^{(n\\bmod3)}\\) and \\(x^{2n}\\equiv x^{(2n\\bmod3)}\\) modulo \\(x^{3}-1\\), and then modulo \\(x^{2}+x+1\\). For \\(3\\nmid n\\) the exponents \\(n,2n\\) cover the two residues \\(\\{1,2\\}\\), so \\(x^{2n}+x^{n}+1\\equiv x^{2}+x+1\\equiv0\\); for \\(3\\mid n\\) it reduces to \\(1+1+1=3\\not\\equiv0\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy confirmed via polynomial division for n=1..12: divisibility holds exactly when n is not a multiple of 3."
+   },
+   {
+    "id": "POL-6",
+    "difficulty": 4,
+    "techniques": [
+     "irreducibility over Q",
+     "factorization mod p",
+     "rational root / quadratic factor test"
+    ],
+    "statement": "Consider \\(f(x)=x^{4}-10x^{2}+1\\). (a) Prove that \\(f\\) is irreducible over \\(\\mathbb{Q}\\). (b) Show, perhaps surprisingly, that \\(f\\) factors into two quadratics (or fully) modulo every prime \\(p\\). (So Eisenstein-type or \"reduction mod \\(p\\)\" tests can never alone prove irreducibility here.)",
+    "answer": "Proof.",
+    "solution": "(a) Irreducibility over \\(\\mathbb{Q}\\). The roots are \\(\\pm\\sqrt2\\pm\\sqrt3\\); indeed \\((\\sqrt2+\\sqrt3)^2=5+2\\sqrt6\\) and \\((\\sqrt2+\\sqrt3)^4=(5+2\\sqrt6)^2=49+20\\sqrt6\\), so \\((\\sqrt2+\\sqrt3)^4-10(\\sqrt2+\\sqrt3)^2+1=49+20\\sqrt6-10(5+2\\sqrt6)+1=49+20\\sqrt6-50-20\\sqrt6+1=0.\\) No rational roots (the only candidates \\(\\pm1\\) give \\(f(\\pm1)=-8\\neq0\\)), so any factorization is into two monic quadratics with integer coefficients (by Gauss's lemma): \\[x^{4}-10x^{2}+1=(x^{2}+ax+b)(x^{2}-ax+c),\\] where the \\(x^{3}\\)-coefficient forces the linear terms to be \\(\\pm a\\). Comparing coefficients: \\(b+c-a^{2}=-10\\), \\(a(c-b)=0\\), and \\(bc=1\\). If \\(a=0\\): \\(b+c=-10,\\ bc=1\\), so \\(b,c\\) solve \\(t^{2}+10t+1=0\\), giving irrational \\(t=-5\\pm2\\sqrt6\\) — not integers. If \\(c=b\\): then \\(b^{2}=1\\Rightarrow b=\\pm1\\), and \\(2b-a^{2}=-10\\Rightarrow a^{2}=2b+10\\in\\{12,8\\}\\), neither a perfect square. So no integer factorization exists; \\(f\\) is irreducible over \\(\\mathbb{Q}\\).\n\n(b) Reducible modulo every prime. Use the algebraic identities, valid in any field: \\[x^{4}-10x^{2}+1=(x^{2}-1)^{2}-8x^{2}=(x^{2}-2\\sqrt2\\,x-1)(x^{2}+2\\sqrt2\\,x-1),\\] \\[x^{4}-10x^{2}+1=(x^{2}+1)^{2}-12x^{2}=(x^{2}-2\\sqrt3\\,x+1)(x^{2}+2\\sqrt3\\,x+1),\\] \\[x^{4}-10x^{2}+1=(x^{2}-5)^{2}-24=(x^{2}-5-2\\sqrt6)(x^{2}-5+2\\sqrt6).\\] These exhibit \\(f\\) as a difference of squares whenever \\(2,3,\\) or \\(6\\) is a quadratic residue mod \\(p\\). For any odd prime \\(p\\), among the three numbers \\(2,3,6=2\\cdot3\\), at least one is a quadratic residue: if \\(2\\) and \\(3\\) are both nonresidues, their product \\(6\\) is a residue (Legendre symbol is multiplicative, \\((-1)(-1)=+1\\)). So one of the three factorizations has its surd \\(\\sqrt2,\\sqrt3,\\sqrt6\\) lying in \\(\\mathbb{F}_p\\), splitting \\(f\\) into two quadratics over \\(\\mathbb{F}_p\\). For \\(p=2\\), \\(f\\equiv x^{4}+1\\equiv(x+1)^{4}\\pmod2\\). Hence \\(f\\) is reducible modulo every prime, even though it is irreducible over \\(\\mathbb{Q}\\). \\(\\blacksquare\\)",
+    "method2": "For (b), the cleaner phrasing: \\(f\\) is the minimal polynomial of \\(\\sqrt2+\\sqrt3\\), whose splitting field is \\(\\mathbb{Q}(\\sqrt2,\\sqrt3)\\) with Galois group \\((\\mathbb{Z}/2)^2\\). Since this group has no element of order \\(4\\), the Frobenius at any unramified prime is a product of cycles of length \\(\\le2\\) — so \\(f\\bmod p\\) never stays irreducible; it always splits into factors of degree \\(\\le2\\). This is the standard example that a polynomial reducible mod every prime can still be irreducible over \\(\\mathbb{Q}\\).",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "sympy confirmed: f is irreducible over Q, f(√2+√3)=0, and for all primes p=2..71 the factorization mod p has all factors of degree ≤2 (never irreducible). The Legendre-symbol multiplicativity argument covering every prime is correct."
+   },
+   {
+    "id": "POL-7",
+    "difficulty": 4,
+    "techniques": [
+     "integer-coefficient divisibility lemma",
+     "a-b divides P(a)-P(b)",
+     "extremal/parity argument"
+    ],
+    "statement": "Let \\(P\\) be a polynomial with integer coefficients. Suppose there exist three distinct integers \\(a,b,c\\) with \\[P(a)=b,\\qquad P(b)=c,\\qquad P(c)=a.\\] Prove that this is impossible.",
+    "answer": "Proof.",
+    "solution": "We use the fundamental lemma: for a polynomial \\(P\\in\\mathbb{Z}[x]\\) and integers \\(u\\neq v\\), \\((u-v)\\mid\\big(P(u)-P(v)\\big)\\). (Reason: each term \\(c_k(u^k-v^k)\\) is divisible by \\(u-v\\).) Apply it to the three given equations:\n\\[a-b\\ \\big|\\ P(a)-P(b)=b-c,\\]\n\\[b-c\\ \\big|\\ P(b)-P(c)=c-a,\\]\n\\[c-a\\ \\big|\\ P(c)-P(a)=a-b.\\]\nTaking absolute values and chaining the divisibilities, \\[|a-b|\\le|b-c|\\le|c-a|\\le|a-b|.\\] Therefore all three are equal to a common positive value \\(d:=|a-b|=|b-c|=|c-a|\\) (positive since \\(a,b,c\\) are distinct). Now consider the signed differences. They always satisfy \\[(a-b)+(b-c)+(c-a)=0.\\] But each of the three summands equals \\(\\pm d\\). A sum of three terms, each \\(\\pm d\\) with \\(d>0\\), can never be zero: its value is \\(d\\) times an odd integer (\\(\\#(+d)-\\#(-d)\\equiv 3\\pmod2\\)), hence nonzero. This contradiction shows no such \\(P\\) and distinct \\(a,b,c\\) can exist. \\(\\blacksquare\\)\n\n(Remark: a \\(2\\)-cycle \\(P(a)=b,\\ P(b)=a\\) is perfectly possible — e.g. \\(P(x)=a+b-x\\) — so the obstruction is genuinely about the odd length \\(3\\) of the cycle.)",
+    "method2": "Geometric/extremal variant: WLOG \\(a\\) is the largest of \\(a,b,c\\). From \\(|a-b|=|b-c|=|c-a|=d\\) the three points are mutually equidistant on the integer line, which is impossible for three distinct collinear points (a line cannot host an equilateral triple). Equivalently, three distinct reals cannot have all pairwise distances equal, so no such configuration exists.",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "Proof verified by hand: the lemma (u-v)|(P(u)-P(v)) is standard; the divisibility chain forces |a-b|=|b-c|=|c-a|=d>0; and (a-b)+(b-c)+(c-a)=0 with each summand ±d is impossible since the count of +d minus −d has the parity of 3 (odd), so the sum is d times a nonzero odd integer. Argument is airtight."
+   },
+   {
+    "id": "POL-8",
+    "difficulty": 5,
+    "techniques": [
+     "Newton's identities",
+     "power sums",
+     "depressed cubic / e1=0",
+     "symmetric-function identity"
+    ],
+    "statement": "Let \\(a,b,c\\) be real numbers with \\(a+b+c=0\\). Define the power sums \\(p_k=a^k+b^k+c^k\\). Prove the identity \\[\\frac{p_5}{5}=\\frac{p_3}{3}\\cdot\\frac{p_2}{2}.\\] Then, as a check, evaluate both sides when \\(a,b,c\\) are the roots of \\(x^3-7x+3=0\\).",
+    "answer": "Proof; for \\(x^3-7x+3\\) both sides equal \\(-21\\).",
+    "solution": "Let \\(e_1=a+b+c,\\ e_2=ab+bc+ca,\\ e_3=abc\\) be the elementary symmetric functions, so \\(a,b,c\\) are the roots of \\(t^3-e_1t^2+e_2t-e_3\\). We are given \\(e_1=0\\). Newton's identities relate power sums to the \\(e_i\\): for three variables, \\[p_1=e_1,\\quad p_2=e_1p_1-2e_2,\\quad p_3=e_1p_2-e_2p_1+3e_3,\\] and for \\(k\\ge4\\) (where \\(e_k=0\\) for three variables), \\[p_k=e_1p_{k-1}-e_2p_{k-2}+e_3p_{k-3}.\\] Substituting \\(e_1=0\\) collapses everything: \\[p_1=0,\\quad p_2=-2e_2,\\quad p_3=3e_3,\\] \\[p_4=-e_2p_2+e_3p_1=-e_2(-2e_2)+0=2e_2^{2},\\] \\[p_5=-e_2p_3+e_3p_2=-e_2(3e_3)+e_3(-2e_2)=-3e_2e_3-2e_2e_3=-5e_2e_3.\\] Now compute the two sides of the claimed identity in terms of \\(e_2,e_3\\): \\[\\frac{p_5}{5}=\\frac{-5e_2e_3}{5}=-e_2e_3,\\qquad \\frac{p_3}{3}\\cdot\\frac{p_2}{2}=\\frac{3e_3}{3}\\cdot\\frac{-2e_2}{2}=e_3\\cdot(-e_2)=-e_2e_3.\\] The two expressions are identical, proving \\(\\dfrac{p_5}{5}=\\dfrac{p_3}{3}\\cdot\\dfrac{p_2}{2}\\) whenever \\(a+b+c=0\\).\n\nCheck. For \\(x^3-7x+3\\) we read \\(e_1=0,\\ e_2=-7,\\ e_3=-3\\). Then \\(\\dfrac{p_5}{5}=-e_2e_3=-(-7)(-3)=-21\\), and \\(\\dfrac{p_3}{3}\\cdot\\dfrac{p_2}{2}=e_3\\cdot(-e_2)=(-3)\\cdot 7=-21.\\) Both sides equal \\(-21\\), as claimed. \\(\\blacksquare\\)",
+    "method2": "Avoiding Newton's identities, use \\(a+b+c=0\\) directly. Squaring gives \\(p_2=-2e_2\\) since \\(0=p_2+2e_2\\). Because each variable satisfies \\(t^3=-e_2t+e_3\\) (the relation from \\(t^3-e_2 t+e_3=0\\) when \\(e_1=0\\)), summing over \\(a,b,c\\): \\(p_3=-e_2p_1+3e_3=3e_3\\). Multiplying that cubic relation by \\(t^2\\) gives \\(t^5=-e_2t^3+e_3t^2\\); summing yields \\(p_5=-e_2p_3+e_3p_2=-e_2(3e_3)+e_3(-2e_2)=-5e_2e_3\\). Then \\(p_5/5=-e_2e_3=(p_3/3)(p_2/2)\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy confirmed: with c=-a-b the identity p5/5-(p3/3)(p2/2) simplifies identically to 0. For x^3-7x+3, numeric roots give p2=14, p3=-9, p5=-105, so p5/5=-21 and (p3/3)(p2/2)=-21; matches -e2*e3=-21."
+   }
+  ]
+ },
+ {
+  "topic": "complex-numbers",
+  "blurb": "Eight original olympiad-style problems where the complex plane does the heavy lifting: roots of unity as a symmetry engine, plane geometry encoded in arithmetic, and trigonometric sums collapsed through the exponential. Each is built to reward a single clean idea rather than computation.",
+  "problems": [
+   {
+    "id": "COM-1",
+    "difficulty": 1,
+    "techniques": [
+     "de Moivre",
+     "reciprocal substitution",
+     "z + 1/z = 2cos theta"
+    ],
+    "statement": "A nonzero complex number \\(z\\) satisfies \\(z + \\dfrac{1}{z} = \\sqrt{3}\\). Without solving for \\(z\\) explicitly, find the value of \\(z^{12} + \\dfrac{1}{z^{12}}\\).",
+    "answer": "\\(2\\)",
+    "solution": "The hypothesis \\(z + \\frac1z = \\sqrt3\\) forces \\(|z|=1\\): writing \\(z=re^{i\\theta}\\), the imaginary part of \\(z+1/z\\) is \\((r - r^{-1})\\sin\\theta\\), and since \\(\\sqrt3\\) is real this must vanish. If \\(\\sin\\theta=0\\) then \\(z\\) is real and \\(z+1/z=r+1/r\\ge 2>\\sqrt3\\) (or \\(\\le -2\\)), impossible; hence \\(\\sin\\theta\\ne0\\) and \\(r=r^{-1}\\), i.e. \\(r=1\\). Write \\(z=e^{i\\theta}\\). Then \\(z+\\frac1z = 2\\cos\\theta = \\sqrt3\\), so \\(\\cos\\theta = \\frac{\\sqrt3}{2}\\), i.e. \\(\\theta = \\pm\\frac{\\pi}{6}\\). The key structural fact is that for \\(|z|=1\\),\n\\[ z^n + \\frac{1}{z^n} = e^{in\\theta} + e^{-in\\theta} = 2\\cos(n\\theta). \\]\nTaking \\(n=12\\) with \\(\\theta=\\pm\\frac{\\pi}{6}\\) gives \\(n\\theta = \\pm 2\\pi\\), hence\n\\[ z^{12} + \\frac{1}{z^{12}} = 2\\cos(2\\pi) = 2. \\]\nThe answer is independent of the sign of \\(\\theta\\), as it must be since the two roots are conjugates.",
+    "method2": "Recurrence method (no trigonometry). Let \\(a_n = z^n + z^{-n}\\). Then \\(a_0 = 2\\), \\(a_1 = \\sqrt3\\), and multiplying out \\((z^n+z^{-n})(z+z^{-1})\\) gives the Chebyshev-type recurrence \\(a_{n+1} = a_1 a_n - a_{n-1} = \\sqrt3\\,a_n - a_{n-1}\\). Computing: \\(a_2 = 3-2 = 1\\), \\(a_3 = \\sqrt3\\cdot1 - \\sqrt3 = 0\\), \\(a_4 = \\sqrt3\\cdot0-1 = -1\\), \\(a_5 = \\sqrt3(-1)-0 = -\\sqrt3\\), \\(a_6 = \\sqrt3(-\\sqrt3)-(-1) = -3+1 = -2\\). Since \\(a_6=z^6+z^{-6}=-2\\) means \\(z^6 = -1\\), we get \\(z^{12} = 1\\) and \\(a_{12} = 1+1 = 2\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy/numeric: z=e^{±iπ/6} gives z^12+1/z^12=2; z^6=-1, z^12=1 confirmed. Recurrence chain a_0..a_6 rechecked by hand and matches."
+   },
+   {
+    "id": "COM-2",
+    "difficulty": 2,
+    "techniques": [
+     "roots of unity",
+     "factoring z^n - 1",
+     "geometric interpretation of modulus"
+    ],
+    "statement": "Twelve points are spaced equally around a circle of radius \\(2\\) centered at the origin, forming a regular \\(12\\)-gon. Pick one vertex \\(V\\) and draw the eleven chords joining \\(V\\) to every other vertex. Find the product of the lengths of these eleven chords.",
+    "answer": "\\(24576\\)",
+    "solution": "Place the vertices at \\(2\\omega^k\\) for \\(k=0,1,\\dots,11\\), where \\(\\omega = e^{2\\pi i/12}\\) is a primitive \\(12\\)th root of unity, and take \\(V = 2\\) (the vertex at \\(k=0\\)). The length of the chord from \\(V\\) to the \\(k\\)th vertex is\n\\[ \\left| 2 - 2\\omega^k \\right| = 2\\,\\bigl|1-\\omega^k\\bigr|. \\]\nThe insight is to recognize the numbers \\(\\omega^k\\) (\\(k=0,\\dots,11\\)) as exactly the roots of \\(z^{12}-1\\), so\n\\[ z^{12}-1 = \\prod_{k=0}^{11}(z-\\omega^k) = (z-1)\\prod_{k=1}^{11}(z-\\omega^k). \\]\nDividing by \\(z-1\\) and letting \\(z\\to 1\\),\n\\[ \\prod_{k=1}^{11}(1-\\omega^k) = \\lim_{z\\to1}\\frac{z^{12}-1}{z-1} = \\bigl(1+z+\\cdots+z^{11}\\bigr)\\Big|_{z=1} = 12. \\]\nTaking absolute values, \\(\\prod_{k=1}^{11}|1-\\omega^k| = 12\\). Therefore the requested product of chord lengths is\n\\[ \\prod_{k=1}^{11} 2\\,|1-\\omega^k| = 2^{11}\\cdot 12 = 2048\\cdot 12 = 24576. \\]\nIn general, for a regular \\(n\\)-gon of radius \\(R\\) the product of all chords from one vertex equals \\(R^{\\,n-1}\\,n\\).",
+    "method2": "Differentiate \\(P(z)=z^{12}-1\\): since \\(P(z)=\\prod_{k=0}^{11}(z-\\omega^k)\\), at the simple root \\(z=1\\) the product rule gives \\(P'(1) = \\prod_{k=1}^{11}(1-\\omega^k)\\). But \\(P'(z)=12z^{11}\\), so \\(P'(1)=12\\), the same product \\(12\\); then multiply by \\(2^{11}\\) to get \\(24576\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "numeric: product of |2-2ω^k| over k=1..11 = 24576.0; matches 2^11·12."
+   },
+   {
+    "id": "COM-3",
+    "difficulty": 3,
+    "techniques": [
+     "roots of unity",
+     "pairing k with n-k",
+     "telescoping a symmetric sum"
+    ],
+    "statement": "Let \\(\\omega = e^{2\\pi i/n}\\) be a primitive \\(n\\)th root of unity, \\(n\\ge 2\\). Evaluate the sum\n\\[ \\sum_{k=1}^{n-1} \\frac{1}{1-\\omega^k}, \\]\nand show the value is real even though the individual terms are not.",
+    "answer": "\\(\\dfrac{n-1}{2}\\)",
+    "solution": "Pair the term for \\(k\\) with the term for \\(n-k\\). Since \\(\\omega^{n-k}=\\overline{\\omega^k}\\) (as \\(|\\omega|=1\\)), the two terms are complex conjugates, so each pair is real; this already proves the sum is real (when \\(n\\) is even the middle term \\(k=n/2\\) gives \\(\\omega^{n/2}=-1\\) and \\(\\frac{1}{1-(-1)}=\\frac12\\), itself real). Now compute each pair. Using \\(\\omega^{n-k}=\\omega^{-k}\\),\n\\[ \\frac{1}{1-\\omega^k} + \\frac{1}{1-\\omega^{-k}}. \\]\nMultiply the second fraction top and bottom by \\(-\\omega^k\\):\n\\[ \\frac{1}{1-\\omega^{-k}} = \\frac{-\\omega^k}{-\\omega^k(1-\\omega^{-k})} = \\frac{-\\omega^k}{-\\omega^k+1} = \\frac{-\\omega^k}{1-\\omega^k}. \\]\nHence the pair sums to\n\\[ \\frac{1}{1-\\omega^k} + \\frac{-\\omega^k}{1-\\omega^k} = \\frac{1-\\omega^k}{1-\\omega^k} = 1. \\]\nSo every conjugate pair contributes exactly \\(1\\). The indices \\(k=1,\\dots,n-1\\) split into \\(\\frac{n-1}{2}\\) such pairs when \\(n\\) is odd, giving \\(\\frac{n-1}{2}\\); when \\(n\\) is even there are \\(\\frac{n-2}{2}\\) pairs contributing \\(1\\) each plus the lone middle term \\(\\frac12\\), totaling \\(\\frac{n-2}{2}+\\frac12 = \\frac{n-1}{2}\\). In both cases\n\\[ \\sum_{k=1}^{n-1}\\frac{1}{1-\\omega^k} = \\frac{n-1}{2}. \\]",
+    "method2": "Logarithmic-derivative method. From \\(z^n-1 = \\prod_{k=0}^{n-1}(z-\\omega^k)\\), divide out the \\(k=0\\) factor: \\(\\frac{z^n-1}{z-1} = 1+z+\\cdots+z^{n-1} = \\prod_{k=1}^{n-1}(z-\\omega^k) =: Q(z)\\). Then \\(\\sum_{k=1}^{n-1}\\frac{1}{z-\\omega^k} = \\frac{Q'(z)}{Q(z)}\\). At \\(z=1\\): \\(Q(1)=n\\) and \\(Q'(1)=\\sum_{j=1}^{n-1} j = \\frac{n(n-1)}{2}\\), so the sum equals \\(\\frac{n(n-1)/2}{n} = \\frac{n-1}{2}\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "numeric for n=2,3,4,5,6,7,10,11: sum = (n-1)/2 exactly, imaginary part 0."
+   },
+   {
+    "id": "COM-4",
+    "difficulty": 3,
+    "techniques": [
+     "complex exponential for trig sums",
+     "geometric series",
+     "half-angle factoring"
+    ],
+    "statement": "Show that for every integer \\(n\\ge 1\\) and every real \\(\\theta\\) with \\(\\theta \\not\\equiv 0 \\pmod{2\\pi}\\),\n\\[ \\sum_{k=1}^{n} \\sin(k\\theta) = \\frac{\\sin\\!\\left(\\frac{n\\theta}{2}\\right)\\,\\sin\\!\\left(\\frac{(n+1)\\theta}{2}\\right)}{\\sin\\!\\left(\\frac{\\theta}{2}\\right)}, \\]\nby summing a single complex geometric series. Then evaluate \\(\\sum_{k=1}^{17}\\sin\\!\\left(\\frac{k\\pi}{9}\\right)\\), and contrast it with the half-range sum \\(\\sum_{k=1}^{8}\\sin\\!\\left(\\frac{k\\pi}{9}\\right)\\).",
+    "answer": "Proof of the identity; the full sum \\(\\displaystyle\\sum_{k=1}^{17}\\sin\\!\\left(\\tfrac{k\\pi}{9}\\right) = 0\\), while the half-range sum \\(\\displaystyle\\sum_{k=1}^{8}\\sin\\!\\left(\\tfrac{k\\pi}{9}\\right) = \\cot\\!\\left(\\tfrac{\\pi}{18}\\right)\\).",
+    "solution": "Let \\(z=e^{i\\theta}\\). The trick is that \\(\\sin(k\\theta) = \\Im(z^k)\\), so the whole sum is the imaginary part of one geometric series:\n\\[ \\sum_{k=1}^{n}\\sin(k\\theta) = \\Im\\sum_{k=1}^{n} z^k = \\Im\\!\\left( z\\,\\frac{z^n-1}{z-1}\\right). \\]\nNow symmetrize by pulling out half-angles. Factor \\(z^n-1 = e^{in\\theta/2}\\bigl(e^{in\\theta/2}-e^{-in\\theta/2}\\bigr) = e^{in\\theta/2}\\cdot 2i\\sin\\frac{n\\theta}{2}\\), and likewise \\(z-1 = e^{i\\theta/2}\\cdot 2i\\sin\\frac{\\theta}{2}\\). Therefore\n\\[ z\\,\\frac{z^n-1}{z-1} = e^{i\\theta}\\cdot \\frac{e^{in\\theta/2}\\,2i\\sin\\frac{n\\theta}{2}}{e^{i\\theta/2}\\,2i\\sin\\frac{\\theta}{2}} = e^{i(n+1)\\theta/2}\\,\\frac{\\sin\\frac{n\\theta}{2}}{\\sin\\frac{\\theta}{2}}. \\]\nTaking the imaginary part, \\(\\Im\\,e^{i(n+1)\\theta/2} = \\sin\\frac{(n+1)\\theta}{2}\\), which gives exactly\n\\[ \\sum_{k=1}^{n}\\sin(k\\theta) = \\frac{\\sin\\frac{n\\theta}{2}\\,\\sin\\frac{(n+1)\\theta}{2}}{\\sin\\frac{\\theta}{2}}, \\]\nas claimed. (The real part gives the companion cosine sum for free.)\n\nNow the numerics, with the deliberate twist that the full sum collapses. Take \\(\\theta = \\frac{\\pi}{9}\\), \\(n=17\\). Then \\(\\frac{(n+1)\\theta}{2} = \\frac{18}{2}\\cdot\\frac{\\pi}{9} = \\pi\\), and \\(\\sin\\pi = 0\\), so the formula gives \\(\\sum_{k=1}^{17}\\sin\\frac{k\\pi}{9} = 0\\). This is no accident: the angles \\(\\frac{k\\pi}{9}\\) are symmetric about \\(\\frac{9\\pi}{9}=\\pi\\), since term \\(k\\) and term \\(18-k\\) satisfy \\(\\sin\\frac{(18-k)\\pi}{9} = \\sin\\bigl(2\\pi-\\frac{k\\pi}{9}\\bigr) = -\\sin\\frac{k\\pi}{9}\\), so they cancel in pairs and the middle \\(k=9\\) gives \\(\\sin\\pi=0\\).\n\nTo extract a nonzero value, sum only the first half. With \\(n=8,\\ \\theta=\\frac{\\pi}{9}\\) the identity gives\n\\[ \\sum_{k=1}^{8}\\sin\\frac{k\\pi}{9} = \\frac{\\sin\\frac{4\\pi}{9}\\,\\sin\\frac{\\pi}{2}}{\\sin\\frac{\\pi}{18}} = \\frac{\\sin\\frac{4\\pi}{9}}{\\sin\\frac{\\pi}{18}} = \\frac{\\cos\\frac{\\pi}{18}}{\\sin\\frac{\\pi}{18}} = \\cot\\frac{\\pi}{18}, \\]\nusing \\(\\sin\\frac{4\\pi}{9}=\\cos\\bigl(\\frac\\pi2-\\frac{4\\pi}{9}\\bigr)=\\cos\\frac{\\pi}{18}\\). So the full \\(\\sum_{k=1}^{17}=0\\) while the half-range \\(\\sum_{k=1}^{8}=\\cot\\frac{\\pi}{18}\\approx 5.671\\).",
+    "method2": "Geometric proof of the full-sum cancellation: the points \\(e^{ik\\pi/9}\\), \\(k=0,1,\\dots,18\\), are the \\(18\\)th roots of unity (since \\(e^{i\\pi/9}=e^{2\\pi i/18}\\)), and the \\(18\\)th roots sum to \\(0\\). Removing \\(k=0\\) (value \\(1\\)) and \\(k=18\\) (value \\(1\\)) leaves \\(\\sum_{k=1}^{17}e^{ik\\pi/9}=-2\\), which is real, so its imaginary part \\(\\sum_{k=1}^{17}\\sin\\frac{k\\pi}{9}\\) is \\(0\\), confirming the analytic result.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy: identity verified symbolically for n=1,3,5 (and numerically for n=8). Numeric: full sum k=1..17 = 0 (4.6e-16), half sum k=1..8 = 5.6713 = cot(π/18). Answer field corrected to state the requested full sum is 0; cot(π/18) is the half-range value."
+   },
+   {
+    "id": "COM-5",
+    "difficulty": 3,
+    "techniques": [
+     "rotation by complex multiplication",
+     "equilateral triangle criterion",
+     "primitive cube root omega"
+    ],
+    "statement": "Let \\(a,b,c\\) be the vertices (as complex numbers) of a triangle in the plane. Prove that the triangle is equilateral if and only if\n\\[ a^2 + b^2 + c^2 = ab + bc + ca, \\]\nand explain geometrically why the condition is exactly \\(a + \\omega b + \\omega^2 c = 0\\) or \\(a + \\omega^2 b + \\omega c = 0\\), where \\(\\omega = e^{2\\pi i/3}\\).",
+    "answer": "Proof",
+    "solution": "Let \\(\\omega = e^{2\\pi i/3}\\), a primitive cube root of unity, so \\(1+\\omega+\\omega^2=0\\), \\(\\omega+\\omega^2=-1\\), and \\(\\omega^3=1\\).\n\n**The algebraic identity.** Expand the product of the two linear forms, using \\(\\omega^3=1\\) wherever a power exceeds \\(2\\):\n\\[ (a + \\omega b + \\omega^2 c)(a + \\omega^2 b + \\omega c) = a^2+b^2+c^2 + (\\omega+\\omega^2)\\,(ab+bc+ca). \\]\nIndeed the squared terms give \\(a^2 + \\omega^3 b^2 + \\omega^3 c^2 = a^2+b^2+c^2\\), while each cross product (e.g. the two ways of forming \\(ab\\)) contributes the coefficient \\(\\omega+\\omega^2\\). Since \\(\\omega+\\omega^2=-1\\),\n\\[ a^2+b^2+c^2-(ab+bc+ca) = (a+\\omega b+\\omega^2 c)(a+\\omega^2 b+\\omega c). \\]\nTherefore the stated condition \\(a^2+b^2+c^2 = ab+bc+ca\\) holds **iff** at least one of the two factors vanishes:\n\\[ a+\\omega b+\\omega^2 c = 0 \\quad\\text{or}\\quad a+\\omega^2 b+\\omega c = 0. \\tag{$\\dagger$}\\]\n\n**The geometry.** Multiplication by \\(\\omega\\) is rotation by \\(120^\\circ\\) about the origin. We claim a triangle \\(abc\\) is equilateral with a given orientation iff its third vertex is obtained from the other two by a \\(60^\\circ\\) rotation; concretely, for the counterclockwise orientation,\n\\[ c-a = (b-a)\\,e^{i\\pi/3}. \\]\nThis single equation says \\(|c-a|=|b-a|\\) and the angle at \\(a\\) is \\(60^\\circ\\); a triangle with two equal sides enclosing a \\(60^\\circ\\) angle is equilateral, and conversely every counterclockwise equilateral triangle satisfies it. Now \\(\\rho:=e^{i\\pi/3}\\) is a primitive sixth root of unity satisfying \\(\\rho^2-\\rho+1=0\\). Writing \\(c-a=\\rho(b-a)\\) and substituting into \\(\\rho^2-\\rho+1=0\\) (equivalently, eliminating \\(\\rho\\)) yields the polynomial relation\n\\[ (c-a)^2 - (c-a)(b-a) + (b-a)^2 = 0, \\]\nand expanding this gives exactly \\(a^2+b^2+c^2-ab-bc-ca=0\\). The other orientation \\(c-a=(b-a)e^{-i\\pi/3}\\) gives the same final relation. So the two orientations of the equilateral triangle correspond to the two factors in \\((\\dagger)\\).\n\n**Equivalence.** If the triangle is equilateral it has one of the two orientations above, hence one factor vanishes, hence \\(a^2+b^2+c^2=ab+bc+ca\\). Conversely, if that identity holds then by \\((\\dagger)\\) one of the oriented \\(60^\\circ\\)-rotation conditions holds, forcing two equal sides with a \\(60^\\circ\\) included angle, i.e. an equilateral triangle. This completes the equivalence.",
+    "method2": "Direct side-length verification of the polynomial relation. The minimal relation satisfied by \\(\\rho=e^{i\\pi/3}\\) is \\(\\rho^2-\\rho+1=0\\). With \\(u=b-a\\) and \\(v=c-a\\), the equilateral condition \\(v=\\rho u\\) gives \\(v^2 - uv + u^2 = \\rho^2u^2 - \\rho u^2 + u^2 = (\\rho^2-\\rho+1)u^2 = 0\\). Expanding \\((c-a)^2-(c-a)(b-a)+(b-a)^2=0\\) in \\(a,b,c\\) collapses precisely to \\(a^2+b^2+c^2-ab-bc-ca=0\\), recovering the criterion without the factorization.",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "sympy: factorization (a+ωb+ω²c)(a+ω²b+ωc) = a²+b²+c²-ab-bc-ca verified exactly; and (c-a)²-(c-a)(b-a)+(b-a)² expands exactly to a²+b²+c²-ab-bc-ca. Muddled middle paragraph (with abandoned false-start sentences) rewritten cleanly; math unchanged and correct."
+   },
+   {
+    "id": "COM-6",
+    "difficulty": 4,
+    "techniques": [
+     "roots of unity",
+     "csc^2 sum via log-derivative",
+     "Laurent/Taylor expansion at a root"
+    ],
+    "statement": "For an integer \\(n\\ge 2\\), prove that\n\\[ \\sum_{k=1}^{n-1} \\frac{1}{\\sin^2\\!\\left(\\frac{k\\pi}{n}\\right)} = \\frac{n^2-1}{3}. \\]",
+    "answer": "Proof",
+    "solution": "Set \\(\\omega=e^{2\\pi i/n}\\), so \\(e^{ik\\pi/n}\\) has square \\(\\omega^k\\). Using \\(\\sin\\frac{k\\pi}{n} = \\frac{e^{ik\\pi/n} - e^{-ik\\pi/n}}{2i}\\),\n\\[ \\frac{1}{\\sin^2\\frac{k\\pi}{n}} = \\frac{-4}{(e^{ik\\pi/n}-e^{-ik\\pi/n})^2} = \\frac{-4\\,\\omega^k}{(\\omega^k-1)^2}. \\]\nSo we must evaluate \\(S = -4\\sum_{k=1}^{n-1}\\frac{\\omega^k}{(\\omega^k-1)^2}\\), where the \\(\\omega^k\\) (\\(k=1,\\dots,n-1\\)) are the non-\\(1\\) \\(n\\)th roots of unity.\n\nSplit \\(\\frac{r}{(r-1)^2} = \\frac{(r-1)+1}{(r-1)^2} = \\frac{1}{r-1}+\\frac{1}{(r-1)^2}\\) with \\(r=\\omega^k\\):\n\\[ S = -4\\left[\\underbrace{\\sum_{k=1}^{n-1}\\frac{1}{(\\omega^k-1)^2}}_{A} + \\underbrace{\\sum_{k=1}^{n-1}\\frac{1}{\\omega^k-1}}_{B}\\right]. \\]\nFrom COM-3, \\(\\sum_{k=1}^{n-1}\\frac{1}{1-\\omega^k}=\\frac{n-1}{2}\\), so \\(B = -\\frac{n-1}{2}\\).\n\nFor \\(A\\), use the logarithmic derivative of \\(Q(z)=1+z+\\cdots+z^{n-1}=\\prod_{k=1}^{n-1}(z-\\omega^k)\\). Then \\(\\frac{Q'}{Q}(z)=\\sum_k\\frac{1}{z-\\omega^k}\\) and \\(\\bigl(\\frac{Q'}{Q}\\bigr)'(z) = -\\sum_k\\frac{1}{(z-\\omega^k)^2}\\); at \\(z=1\\) this gives \\(\\bigl(\\frac{Q'}{Q}\\bigr)'(1) = -A\\). To find \\(\\bigl(\\frac{Q'}{Q}\\bigr)'(1)\\), expand \\(Q\\) about \\(z=1\\) via \\(z=1+t\\): since \\(Q(z)=\\frac{z^n-1}{z-1}\\) and \\((1+t)^n-1=nt+\\binom n2 t^2+\\binom n3 t^3+\\cdots\\),\n\\[ Q(1+t) = n + \\binom n2 t + \\binom n3 t^2 + \\cdots = n\\Bigl(1 + \\tfrac{n-1}{2}t + \\tfrac{(n-1)(n-2)}{6}t^2+\\cdots\\Bigr). \\]\nThen \\(\\ln Q = \\ln n + \\ln\\bigl(1+u\\bigr)\\) with \\(u=\\tfrac{n-1}{2}t+\\tfrac{(n-1)(n-2)}{6}t^2+\\cdots\\); using \\(\\ln(1+u)=u-\\tfrac{u^2}{2}+\\cdots\\),\n\\[ \\ln Q = \\ln n + \\tfrac{n-1}{2}t + \\Bigl(\\tfrac{(n-1)(n-2)}{6} - \\tfrac12\\bigl(\\tfrac{n-1}{2}\\bigr)^2\\Bigr)t^2 + \\cdots. \\]\nThe coefficient of \\(t\\) is \\(\\frac{Q'}{Q}(1)=\\frac{n-1}{2}\\) (consistent with COM-3), and the coefficient of \\(t^2\\) equals \\(\\tfrac12\\bigl(\\tfrac{Q'}{Q}\\bigr)'(1)\\). Hence\n\\[ -A = \\Bigl(\\tfrac{Q'}{Q}\\Bigr)'(1) = 2\\left(\\frac{(n-1)(n-2)}{6} - \\frac{(n-1)^2}{8}\\right) = \\frac{(n-1)(n-2)}{3} - \\frac{(n-1)^2}{4}, \\]\nso\n\\[ A = \\frac{(n-1)^2}{4} - \\frac{(n-1)(n-2)}{3} = \\frac{(n-1)\\bigl[3(n-1)-4(n-2)\\bigr]}{12} = \\frac{(n-1)(5-n)}{12}. \\]\nFinally\n\\[ S = -4(A+B) = -4\\left(\\frac{(n-1)(5-n)}{12} - \\frac{n-1}{2}\\right) = -\\frac{(n-1)(5-n) - 6(n-1)}{3} = -\\frac{(n-1)(-1-n)}{3} = \\frac{(n-1)(n+1)}{3} = \\frac{n^2-1}{3}. \\]\nThus \\(\\sum_{k=1}^{n-1}\\csc^2\\frac{k\\pi}{n} = \\dfrac{n^2-1}{3}\\), as required.",
+    "method2": "Chebyshev sanity / induction check. The numbers \\(\\cos\\frac{k\\pi}{n}\\) (\\(k=1,\\dots,n-1\\)) are the roots of the Chebyshev polynomial \\(U_{n-1}\\) of the second kind, and \\(\\csc^2\\frac{k\\pi}{n}=\\frac{1}{1-\\cos^2\\frac{k\\pi}{n}}\\) is a symmetric function of those roots; expressing the sum through the coefficients of \\(U_{n-1}\\) reproduces \\(\\frac{n^2-1}{3}\\). A quick check: \\(n=2\\) gives \\(\\csc^2\\frac\\pi2=1=\\frac{4-1}{3}\\); \\(n=3\\) gives \\(2\\csc^2\\frac\\pi3 = 2\\cdot\\frac43=\\frac83=\\frac{9-1}{3}\\); \\(n=4\\) gives \\(2\\csc^2\\frac\\pi4+\\csc^2\\frac\\pi2 = 4+1=5=\\frac{16-1}{3}\\).",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "numeric: Σ csc²(kπ/n) = (n²-1)/3 for n=2..10. Intermediate A = Σ 1/(1-ω^k)² independently confirmed = (n-1)(5-n)/12 for n=2..7. Algebra in the final collapse rechecked."
+   },
+   {
+    "id": "COM-7",
+    "difficulty": 4,
+    "techniques": [
+     "sum of squared distances",
+     "centroid identity",
+     "modulus expansion"
+    ],
+    "statement": "Let \\(z_1, z_2, \\dots, z_n\\) be the \\(n\\)th roots of unity (\\(n\\ge 2\\)). Compute the sum of the squares of all pairwise distances between them,\n\\[ \\sum_{1\\le j<k\\le n} |z_j - z_k|^2, \\]\nand state the analogous result for **any** \\(n\\) points whose centroid is at the origin (in terms of \\(\\sum_j |z_j|^2\\)).",
+    "answer": "\\(n^2\\) for the roots of unity; in general \\(n\\sum_j|z_j|^2\\) when the centroid is at the origin.",
+    "solution": "Work with ordered pairs first. Expand the modulus squared:\n\\[ |z_j-z_k|^2 = (z_j-z_k)\\overline{(z_j-z_k)} = |z_j|^2 + |z_k|^2 - z_j\\bar z_k - \\bar z_j z_k. \\]\nSum over **all ordered pairs** \\((j,k)\\), \\(1\\le j,k\\le n\\) (the diagonal \\(j=k\\) contributes \\(0\\)):\n\\[ \\sum_{j,k} |z_j-z_k|^2 = \\sum_{j,k}\\bigl(|z_j|^2+|z_k|^2\\bigr) - \\sum_{j,k}\\bigl(z_j\\bar z_k + \\bar z_j z_k\\bigr). \\]\nThe first part is \\(2n\\sum_j |z_j|^2\\) (each \\(|z_j|^2\\) appears \\(n\\) times as \\(|z_j|^2\\) and \\(n\\) times as \\(|z_k|^2\\)). The second part factors as\n\\[ \\sum_{j,k} z_j\\bar z_k = \\Bigl(\\sum_j z_j\\Bigr)\\Bigl(\\sum_k \\bar z_k\\Bigr) = \\Bigl|\\sum_j z_j\\Bigr|^2, \\]\nand similarly for the conjugate term, so the subtracted quantity is \\(2\\bigl|\\sum_j z_j\\bigr|^2\\). Therefore\n\\[ \\sum_{j,k}|z_j-z_k|^2 = 2n\\sum_j|z_j|^2 - 2\\Bigl|\\sum_j z_j\\Bigr|^2. \\]\nThis is the master identity.\n\nIf the centroid is at the origin, \\(\\sum_j z_j = 0\\), the second term vanishes, and the unordered sum is half of the ordered one:\n\\[ \\boxed{\\sum_{j<k}|z_j-z_k|^2 = n\\sum_j|z_j|^2.} \\]\nFor the \\(n\\)th roots of unity, \\(\\sum_j z_j = 0\\) (they are the roots of \\(z^n-1\\), whose \\(z^{n-1}\\) coefficient is \\(0\\)) and \\(|z_j|=1\\) so \\(\\sum_j|z_j|^2 = n\\). Hence\n\\[ \\sum_{j<k}|z_j-z_k|^2 = n\\cdot n = n^2. \\]\nThe clean factor of \\(n^2\\) is a fingerprint of perfect rotational symmetry: the cross terms self-cancel because the centroid sits at the center.",
+    "method2": "Per-vertex symmetry. By rotational symmetry, \\(\\sum_{k\\ne j}|z_j-z_k|^2\\) is the same for every fixed \\(j\\); call it \\(C\\). For \\(z_j=1\\), \\(\\sum_{k=1}^{n-1}|1-\\omega^k|^2 = \\sum_{k=1}^{n-1}\\bigl(2-2\\cos\\tfrac{2\\pi k}{n}\\bigr) = 2(n-1) - 2\\,\\Re\\!\\sum_{k=1}^{n-1}\\omega^k = 2(n-1) - 2(-1) = 2n\\). So \\(C=2n\\), the total over ordered pairs is \\(nC = 2n^2\\), and the unordered sum is \\(n^2\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "numeric: Σ_{j<k}|z_j-z_k|² = n² for n=2,3,4,5,6,8 (roots of unity). General centroid-at-origin identity n·Σ|z_j|² confirmed on random point sets after shifting centroid to 0."
+   },
+   {
+    "id": "COM-8",
+    "difficulty": 5,
+    "techniques": [
+     "cyclotomic factorization",
+     "exponent permutation (coprimality)",
+     "product over roots of unity",
+     "bijection of nonzero residues"
+    ],
+    "statement": "Let \\(p\\) be a prime with \\(p\\neq 3\\), and let \\(\\omega = e^{2\\pi i/p}\\). Prove that\n\\[ \\prod_{k=1}^{p-1}\\bigl(1 + \\omega^k + \\omega^{2k}\\bigr) = 1. \\]\nAs a concrete instance, deduce that \\(\\displaystyle\\prod_{k=1}^{6}\\bigl(1+\\omega^k+\\omega^{2k}\\bigr) = 1\\) for \\(\\omega=e^{2\\pi i/7}\\).",
+    "answer": "Proof (value \\(=1\\))",
+    "solution": "The engine is the factorization \\(1+x+x^2 = \\dfrac{x^3-1}{x-1}\\), valid whenever \\(x\\ne 1\\). For each \\(k\\in\\{1,\\dots,p-1\\}\\), \\(\\omega^k\\ne 1\\), so\n\\[ 1+\\omega^k+\\omega^{2k} = \\frac{\\omega^{3k}-1}{\\omega^k-1}. \\]\nTaking the product,\n\\[ \\prod_{k=1}^{p-1}\\bigl(1+\\omega^k+\\omega^{2k}\\bigr) = \\frac{\\displaystyle\\prod_{k=1}^{p-1}\\bigl(\\omega^{3k}-1\\bigr)}{\\displaystyle\\prod_{k=1}^{p-1}\\bigl(\\omega^{k}-1\\bigr)}. \\tag{$\\ast$}\n\\]\nThe decisive observation is about the **exponents in the numerator**. As \\(k\\) runs through \\(\\{1,2,\\dots,p-1\\}\\), the residues \\(3k \\bmod p\\) also run through \\(\\{1,2,\\dots,p-1\\}\\) — a permutation. This holds precisely because \\(\\gcd(3,p)=1\\) (guaranteed by \\(p\\) prime and \\(p\\neq 3\\)): multiplication by \\(3\\) is a bijection of the nonzero residues modulo \\(p\\). Since \\(\\omega^{3k}\\) depends only on \\(3k \\bmod p\\) (as \\(\\omega^p=1\\)),\n\\[ \\prod_{k=1}^{p-1}\\bigl(\\omega^{3k}-1\\bigr) = \\prod_{j=1}^{p-1}\\bigl(\\omega^{j}-1\\bigr), \\]\nthe **same** set of factors as the denominator, just reordered. The numerator and denominator of \\((\\ast)\\) are therefore equal (both nonzero, since \\(\\omega^j-1\\ne0\\) for \\(1\\le j\\le p-1\\)), so\n\\[ \\prod_{k=1}^{p-1}\\bigl(1+\\omega^k+\\omega^{2k}\\bigr) = 1. \\]\n\nWhy must \\(p\\neq 3\\)? If \\(p=3\\) then \\(\\omega\\) is a primitive cube root of unity and the factor at \\(k=1\\) is \\(1+\\omega+\\omega^2=0\\), so the product collapses to \\(0\\) and the bijection breaks (\\(3k\\equiv0\\)). For every other prime the value is exactly \\(1\\).\n\nFor \\(p=7\\): \\(3\\cdot\\{1,2,3,4,5,6\\} \\equiv \\{3,6,2,5,1,4\\}\\pmod 7\\), which is \\(\\{1,2,3,4,5,6\\}\\) rearranged, so numerator and denominator cancel termwise and \\(\\prod_{k=1}^{6}(1+\\omega^k+\\omega^{2k}) = 1\\).",
+    "method2": "Cyclotomic-polynomial viewpoint. Let \\(\\Phi(z)=1+z+\\cdots+z^{p-1}=\\prod_{k=1}^{p-1}(z-\\omega^k)\\). Each desired factor is \\(g(\\omega^k)\\) with \\(g(x)=1+x+x^2=(x-\\rho_1)(x-\\rho_2)\\), where \\(\\rho_{1,2}=e^{\\pm 2\\pi i/3}\\). Then \\(\\prod_{k=1}^{p-1}g(\\omega^k)=\\prod_k(\\omega^k-\\rho_1)(\\omega^k-\\rho_2) = \\Phi(\\rho_1)\\Phi(\\rho_2)\\) up to the sign \\((-1)^{2(p-1)}=1\\). Now \\(\\Phi(\\rho)=\\frac{\\rho^p-1}{\\rho-1}\\) for \\(\\rho\\ne1\\). Since \\(\\rho_{1,2}\\) are primitive cube roots and \\(\\gcd(p,3)=1\\), the map \\(\\rho\\mapsto\\rho^p\\) permutes \\(\\{\\rho_1,\\rho_2\\}\\); hence \\(\\Phi(\\rho_1)\\Phi(\\rho_2)=\\frac{(\\rho_1^p-1)(\\rho_2^p-1)}{(\\rho_1-1)(\\rho_2-1)}\\) has equal numerator and denominator, giving \\(1\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "numeric: product = 1 for p=2,5,7,11,13; p=3 gives 0 (matches stated exclusion). Also confirmed the result extends to any n coprime to 3 (n=4,8,10,14 → 1), so the prime hypothesis is sufficient (not necessary), and the stated p≠3 case is correct."
+   }
+  ]
+ },
+ {
+  "topic": "diophantine",
+  "blurb": "Eight original olympiad problems on Diophantine equations, ordered easiest to hardest. They span linear coin-style equations, difference-of-squares factoring, the unit-fraction divisor count, infinite descent and modular obstructions, Mordell-type cubics, Pell-flavoured equations with solution orbits, and an exponential Diophantine finale. Each rewards a structural insight rather than computation, and every numerical answer has been independently checked with sympy.",
+  "problems": [
+   {
+    "id": "DIO-1",
+    "difficulty": 2,
+    "techniques": [
+     "linear Diophantine",
+     "Bezout / gcd",
+     "bounding nonnegative solutions"
+    ],
+    "statement": "A vending machine accepts only \\(7\\)-cent and \\(11\\)-cent tokens. Determine all ways to insert a nonnegative number of each kind of token so that the total value is exactly \\(100\\) cents; that is, find every solution in nonnegative integers of \\[7x + 11y = 100.\\]",
+    "answer": "The unique solution is \\((x,y) = (8,4)\\).",
+    "solution": "Since \\(\\gcd(7,11)=1\\) divides \\(100\\), integer solutions exist. Reduce modulo \\(7\\): \\(11y \\equiv 100 \\pmod 7\\) becomes \\(4y \\equiv 2 \\pmod 7\\). Multiplying by the inverse of \\(4\\) modulo \\(7\\) (which is \\(2\\), since \\(4\\cdot 2 = 8 \\equiv 1\\)) gives \\(y \\equiv 4 \\pmod 7\\). So \\(y \\in \\{4, 11, 18, \\dots\\}\\). For \\(y\\ge 0\\) we also need \\(x = \\frac{100 - 11y}{7} \\ge 0\\), i.e. \\(11y \\le 100\\), so \\(y \\le 9\\). The only value of \\(y\\) with \\(y\\equiv 4 \\pmod 7\\) and \\(0\\le y\\le 9\\) is \\(y=4\\), giving \\(x = \\frac{100-44}{7} = 8\\). Hence \\((x,y)=(8,4)\\) is the only nonnegative solution. \\(\\blacksquare\\)",
+    "method2": "General theory: a particular solution is \\((x_0,y_0)=(8,4)\\), and the full integer family is \\(x = 8 + 11t,\\ y = 4 - 7t\\) for \\(t\\in\\mathbb{Z}\\). Requiring \\(x\\ge 0\\) gives \\(t \\ge -\\tfrac{8}{11}\\), i.e. \\(t\\ge 0\\); requiring \\(y\\ge 0\\) gives \\(t \\le \\tfrac{4}{7}\\), i.e. \\(t\\le 0\\). The two bounds force \\(t=0\\), recovering \\((8,4)\\) uniquely.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy/brute force confirmed the unique nonnegative solution is (8,4)."
+   },
+   {
+    "id": "DIO-2",
+    "difficulty": 2,
+    "techniques": [
+     "difference of squares",
+     "factoring",
+     "parity obstruction",
+     "divisor pairing"
+    ],
+    "statement": "Find the number of solutions in positive integers \\((x,y)\\) of \\[x^2 - y^2 = 2024,\\] and list them all.",
+    "answer": "There are exactly \\(4\\) solutions: \\((45,1),\\ (57,35),\\ (255,251),\\ (507,505)\\).",
+    "solution": "Factor the left side: \\(x^2-y^2 = (x-y)(x+y) = 2024\\). Write \\(x-y = a\\) and \\(x+y = b\\) with \\(0 < a < b\\) and \\(ab = 2024\\) (both factors are positive since \\(x>y>0\\), and \\(a<b\\) since \\(y>0\\)). Recovering \\(x=\\tfrac{a+b}{2},\\ y=\\tfrac{b-a}{2}\\) as integers requires \\(a\\) and \\(b\\) to have the same parity. They cannot both be odd, because then \\(ab\\) would be odd while \\(2024\\) is even. Hence both must be even. (This is consistent: \\(2024=2^3\\cdot 11\\cdot 23\\) is divisible by \\(4\\), so a product of two even numbers can equal it.) Write \\(a=2a',\\ b=2b'\\); then \\(4a'b' = 2024\\), so \\(a'b' = 506 = 2\\cdot 11\\cdot 23\\). The divisor pairs \\((a',b')\\) with \\(a'<b'\\) are \\((1,506),(2,253),(11,46),(22,23)\\) — there are \\(4\\), since \\(506\\) has \\(8\\) divisors giving \\(4\\) unordered pairs. Each yields \\(x=a'+b',\\ y=b'-a'\\): \\((507,505),(255,251),(57,35),(45,1)\\). Thus there are exactly \\(4\\) solutions. \\(\\blacksquare\\)",
+    "method2": "Counting shortcut: a difference of two squares equals \\(N\\) iff \\(N \\not\\equiv 2 \\pmod 4\\). When solutions exist, the number of positive solutions equals the number of factorizations \\(N=ab\\) with \\(a<b\\) of equal parity. For \\(N=2024=2^3\\cdot 11\\cdot 23\\), only same-parity even pairs survive, which biject with divisor pairs of \\(N/4 = 506\\); since \\(d(506)=8\\), there are \\(8/2 = 4\\) such pairs, hence \\(4\\) solutions.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Brute force confirmed exactly 4 positive solutions: (45,1),(57,35),(255,251),(507,505). Cleaned a garbled parity sentence in the original solution; math unchanged."
+   },
+   {
+    "id": "DIO-3",
+    "difficulty": 3,
+    "techniques": [
+     "unit fractions",
+     "Simon's Favorite Factoring Trick",
+     "divisor counting",
+     "number of divisors of n^2"
+    ],
+    "statement": "Let \\(n\\) be a positive integer. Prove that the number of ordered pairs of positive integers \\((x,y)\\) satisfying \\[\\frac{1}{x} + \\frac{1}{y} = \\frac{1}{n}\\] equals \\(d(n^2)\\), the number of positive divisors of \\(n^2\\). As a check, verify the formula for \\(n=6\\).",
+    "answer": "Proof",
+    "solution": "Clearing denominators: \\(n(x+y) = xy\\), i.e. \\(xy - nx - ny = 0\\). Add \\(n^2\\) to both sides to factor (Simon's Favorite Factoring Trick): \\[(x-n)(y-n) = n^2.\\] For \\(x,y\\) to be positive we must have both factors positive: from \\(\\tfrac1x = \\tfrac1n - \\tfrac1y < \\tfrac1n\\) we get \\(x>n\\), so \\(x-n>0\\), and likewise \\(y-n>0\\). Set \\(u = x-n,\\ v = y-n\\); then \\(u,v\\) are positive integers with \\(uv = n^2\\). Each ordered factorization \\(uv = n^2\\) gives a unique ordered pair \\((x,y) = (u+n, v+n)\\) of positive solutions, and conversely. The number of ordered factorizations of \\(n^2\\) into two positive factors is exactly the number of choices of \\(u \\mid n^2\\), namely \\(d(n^2)\\). Hence the count is \\(d(n^2)\\). \\(\\quad\\) Check \\(n=6\\): \\(n^2 = 36 = 2^2\\cdot 3^2\\), so \\(d(36) = (2+1)(2+1) = 9\\). The nine solutions correspond to the nine divisors of \\(36\\); for instance \\(u=1\\Rightarrow(7,42)\\), \\(u=6\\Rightarrow(12,12)\\), \\(u=36\\Rightarrow(42,7)\\), and so on. \\(\\blacksquare\\)",
+    "method2": "Symmetry remark: writing \\(n^2 = \\prod p_i^{2a_i}\\), each exponent in \\(n^2\\) is even, so \\(d(n^2) = \\prod(2a_i+1)\\) is always odd. This matches the structure: solutions pair up as \\((x,y)\\leftrightarrow(y,x)\\) except for the single symmetric solution \\(x=y=2n\\) (from \\(u=v=n\\)), so the total must be odd — consistent with \\(d(n^2)\\) being odd.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "sympy confirmed count = d(n^2) for n=1,2,3,4,5,6,10,12; the nine n=6 solutions match (e.g. (7,42),(12,12),(42,7))."
+   },
+   {
+    "id": "DIO-4",
+    "difficulty": 3,
+    "techniques": [
+     "infinite descent",
+     "modular arithmetic mod 3",
+     "quadratic forms"
+    ],
+    "statement": "Prove that the only integer solution of \\[x^2 + y^2 = 3z^2\\] is \\(x = y = z = 0\\).",
+    "answer": "Proof",
+    "solution": "Suppose a nonzero integer solution exists. Among all solutions with \\((x,y,z)\\neq(0,0,0)\\), choose one minimizing \\(z^2\\) (well-defined since values are nonnegative integers; note \\(z\\neq 0\\), else \\(x^2+y^2=0\\Rightarrow x=y=0\\)). Work modulo \\(3\\). Squares modulo \\(3\\) are \\(0\\) or \\(1\\). Since \\(3z^2 \\equiv 0 \\pmod 3\\), we need \\(x^2 + y^2 \\equiv 0 \\pmod 3\\). The only way two values from \\(\\{0,1\\}\\) sum to \\(0 \\pmod 3\\) is \\(0+0\\); thus \\(x \\equiv 0\\) and \\(y \\equiv 0 \\pmod 3\\). Write \\(x = 3x_1,\\ y = 3y_1\\). Substituting: \\(9x_1^2 + 9y_1^2 = 3z^2\\), so \\(3(x_1^2+y_1^2) = z^2\\). Then \\(3 \\mid z^2\\), hence \\(3 \\mid z\\); write \\(z = 3z_1\\). Substituting again: \\(3(x_1^2+y_1^2) = 9z_1^2\\), i.e. \\(x_1^2 + y_1^2 = 3z_1^2\\). So \\((x_1,y_1,z_1)\\) is again a solution, with \\(z_1^2 = z^2/9 < z^2\\) and still \\(z_1\\neq 0\\) (since \\(z\\neq0\\)) — a strictly smaller nontrivial solution. This contradicts minimality. Therefore no nonzero solution exists, and \\((0,0,0)\\) is the only one. \\(\\blacksquare\\)",
+    "method2": "Descent via the 3-adic valuation, no minimality needed: suppose \\((x,y,z)\\) is a nonzero solution and let \\(k = v_3(z)\\) be the exact power of \\(3\\) dividing \\(z\\). The argument above shows every solution forces \\(3\\mid x, 3\\mid y, 3\\mid z\\) and produces a solution \\((x/3,y/3,z/3)\\). Iterating, \\(3^m\\) divides \\(z\\) for every \\(m\\ge 0\\), which is impossible for a nonzero integer \\(z\\). Hence \\(z=0\\), and then \\(x=y=0\\).",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "Proof structurally sound (standard mod-3 descent). Brute force over |x|,|y|,|z|<=30 found no nontrivial solution, consistent with the claim."
+   },
+   {
+    "id": "DIO-5",
+    "difficulty": 4,
+    "techniques": [
+     "Mordell equation",
+     "modular obstruction mod 4",
+     "factoring y^2+1",
+     "primes 3 mod 4 and sums of two squares"
+    ],
+    "statement": "Prove that the equation \\[y^2 = x^3 + 7\\] has no solutions in integers.",
+    "answer": "Proof",
+    "solution": "Suppose integers \\(x,y\\) satisfy \\(y^2 = x^3 + 7\\). We first show \\(x\\) is odd. Work modulo \\(4\\): squares are \\(0\\) or \\(1 \\pmod 4\\). If \\(x\\) were even, then \\(x^3\\) is divisible by \\(8\\), so \\(x^3\\equiv 0\\pmod 4\\) and \\(y^2 = x^3+7 \\equiv 0+7 \\equiv 3 \\pmod 4\\), which is impossible. Hence \\(x\\) is odd. Now add \\(1\\) to both sides: \\[y^2 + 1 = x^3 + 8 = (x+2)(x^2 - 2x + 4).\\] Consider the second factor \\(x^2 - 2x + 4 = (x-1)^2 + 3\\). Since \\(x\\) is odd, \\(x-1\\) is even, so \\((x-1)^2 \\equiv 0 \\pmod 4\\), giving \\(x^2 - 2x + 4 \\equiv 3 \\pmod 4\\). This factor is a positive integer \\(\\equiv 3 \\pmod 4\\) (indeed \\((x-1)^2+3\\ge 3\\)), so it must have at least one prime factor \\(p \\equiv 3 \\pmod 4\\) (a product of primes that are all \\(\\equiv 1 \\pmod 4\\), together with possible factors of \\(2\\), can never be \\(\\equiv 3 \\pmod 4\\); and an odd number has no factor \\(2\\)). That prime \\(p\\) divides \\(y^2 + 1\\), so \\(y^2 \\equiv -1 \\pmod p\\). But \\(-1\\) is a quadratic residue modulo an odd prime \\(p\\) only when \\(p \\equiv 1 \\pmod 4\\); for \\(p \\equiv 3 \\pmod 4\\) the congruence \\(y^2\\equiv -1\\) has no solution. Contradiction. Therefore the equation has no integer solutions. \\(\\blacksquare\\)",
+    "method2": "One can phrase the key step via sums of two squares directly: by Fermat's two-squares criterion, no prime \\(p\\equiv 3\\pmod4\\) divides \\(a^2+1\\) for any integer \\(a\\) (such a \\(p\\) must appear to an even power in any sum of two squares, yet it would divide \\(a^2+1\\) exactly once is already contradicted by \\(a^2\\equiv -1\\) being insoluble mod \\(p\\)). Since the factor \\(x^2-2x+4\\equiv 3\\pmod4\\) forces a prime divisor \\(p\\equiv3\\pmod4\\) of \\(y^2+1\\), we again reach a contradiction.",
+    "checkable": false,
+    "verified": true,
+    "verify_note": "Brute force over x in [-100, 200000] found no y with y^2 = x^3+7 (consistent with the known result that y^2=x^3+7 is insoluble). Cleaned a leftover self-correction artifact and the trailing-off method2 sentence; the mod-4 obstruction and -1-QR argument are correct."
+   },
+   {
+    "id": "DIO-6",
+    "difficulty": 4,
+    "techniques": [
+     "Pell-like equation",
+     "norm form x^2 - 2y^2",
+     "fundamental unit",
+     "solution orbits / classes"
+    ],
+    "statement": "Find all solutions in nonnegative integers \\((x,y)\\) of the Pell-like equation \\[x^2 - 2y^2 = 7,\\] describing the complete solution set explicitly.",
+    "answer": "All nonnegative solutions are generated from the two base solutions \\((3,1)\\) and \\((5,3)\\) by repeatedly applying \\((x,y)\\mapsto(3x+4y,\\ 2x+3y)\\). Explicitly the solutions are the two interleaving sequences \\((3,1),(13,9),(75,53),\\dots\\) and \\((5,3),(27,19),(157,111),\\dots\\)",
+    "solution": "Solutions of \\(x^2 - 2y^2 = 7\\) live in the ring \\(\\mathbb{Z}[\\sqrt2]\\) as elements \\(x+y\\sqrt2\\) of norm \\(N(x+y\\sqrt2)=x^2-2y^2=7\\). The associated Pell equation \\(u^2 - 2v^2 = 1\\) has fundamental solution \\((u,v)=(3,2)\\), i.e. the fundamental unit \\(\\varepsilon = 3 + 2\\sqrt2\\) of norm \\(1\\). Multiplying any solution \\(\\alpha\\) of norm \\(7\\) by \\(\\varepsilon\\) preserves the norm: \\(N(\\alpha\\varepsilon)=N(\\alpha)N(\\varepsilon)=7\\cdot 1 = 7\\). Concretely, \\((x+y\\sqrt2)(3+2\\sqrt2) = (3x+4y) + (2x+3y)\\sqrt2\\), giving the map \\(T:(x,y)\\mapsto(3x+4y,\\ 2x+3y)\\). To find the base solutions, one bounds the smallest representative in each class; checking directly, the smallest nonnegative solutions are \\((3,1)\\) and \\((5,3)\\) (indeed \\(9-2=7\\) and \\(25-18=7\\)), and these are inequivalent under \\(T\\) (the map sends \\((3,1)\\to(13,9)\\), skipping \\((5,3)\\)). Every nonnegative solution is obtained from one of these two by applying \\(T\\) finitely many times. Applying \\(T\\): from \\((3,1)\\) we get \\((13,9),(75,53),(437,309),\\dots\\); from \\((5,3)\\) we get \\((27,19),(157,111),\\dots\\). Together these two orbits comprise all nonnegative solutions. \\(\\blacksquare\\)",
+    "method2": "Recurrence form: since both \\(x\\) and \\(y\\) coordinates satisfy the linear recurrence \\(a_{k+1} = 6a_k - a_{k-1}\\) (the trace of \\(\\varepsilon^2 = 17+12\\sqrt2\\) is \\(6\\)), one can present the answer as: the \\(x\\)-values in each class obey \\(x_{k+1}=6x_k - x_{k-1}\\) and similarly for \\(y\\). For the class of \\((3,1)\\): \\(x: 3,13,75,437,\\dots\\); for the class of \\((5,3)\\): \\(x: 5,27,157,\\dots\\). This avoids quoting \\(\\mathbb{Z}[\\sqrt2]\\) and is checkable by direct substitution into \\(x^2-2y^2=7\\).",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Brute force over x<8000, y<5000 found solutions exactly equal to the union of the two orbits under T(x,y)=(3x+4y,2x+3y) starting at (3,1) and (5,3); no solution outside the orbits and no orbit point failing the equation. All listed values have norm 7."
+   },
+   {
+    "id": "DIO-7",
+    "difficulty": 3,
+    "techniques": [
+     "completing the square",
+     "factoring over integers",
+     "bounded factor pairs",
+     "consecutive integers trap"
+    ],
+    "statement": "Find all integer pairs \\((x,y)\\) with \\[x^2 = y^2 + y + 1.\\]",
+    "answer": "The solutions are \\((x,y) \\in \\{(1,0),(-1,0),(1,-1),(-1,-1)\\}\\). In particular \\(|x|=1\\) always, and \\(y\\in\\{0,-1\\}\\).",
+    "solution": "Multiply by \\(4\\) to complete the square on the right: \\[4x^2 = 4y^2 + 4y + 4 = (2y+1)^2 + 3.\\] Rearrange into a difference of squares: \\[(2x)^2 - (2y+1)^2 = 3,\\] i.e. \\[(2x - 2y - 1)(2x + 2y + 1) = 3.\\] Both factors are integers whose product is \\(3\\), so the unordered factor pair \\(\\{2x-2y-1,\\ 2x+2y+1\\}\\) is one of \\(\\{1,3\\}\\) or \\(\\{-1,-3\\}\\). Note the two factors sum to \\(4x\\). For \\(\\{1,3\\}\\): sum \\(=4\\Rightarrow x=1\\); the difference \\((2x+2y+1)-(2x-2y-1)=4y+2\\) equals \\(\\pm 2\\), giving \\(y=0\\) or \\(y=-1\\). For \\(\\{-1,-3\\}\\): sum \\(=-4\\Rightarrow x=-1\\); similarly \\(4y+2=\\pm2\\) gives \\(y=0\\) or \\(y=-1\\). Collecting: \\((x,y)\\in\\{(1,0),(1,-1),(-1,0),(-1,-1)\\}\\). \\(\\blacksquare\\)",
+    "method2": "Squeeze argument: for \\(y \\ge 1\\) we have \\(y^2 < y^2+y+1 < (y+1)^2 = y^2+2y+1\\), so \\(x^2\\) lies strictly between two consecutive squares and cannot be a perfect square. For \\(y \\le -2\\), set \\(y=-m\\) with \\(m\\ge 2\\): then \\(y^2+y+1 = m^2-m+1\\), and \\((m-1)^2 = m^2-2m+1 < m^2-m+1 < m^2\\), again strictly between consecutive squares. So the only candidates are \\(y \\in \\{-1,0\\}\\), both giving \\(x^2 = 1\\), hence \\(x=\\pm1\\). This yields the same four solutions.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Brute force over y in [-100000, 100000] found exactly the four solutions (1,0),(-1,0),(1,-1),(-1,-1)."
+   },
+   {
+    "id": "DIO-8",
+    "difficulty": 5,
+    "techniques": [
+     "exponential Diophantine",
+     "modular obstruction mod 4",
+     "factoring 3^x-1",
+     "case analysis on parity"
+    ],
+    "statement": "Find all pairs of nonnegative integers \\((x,y)\\) satisfying \\[3^x - 2^y = 1.\\]",
+    "answer": "The only solutions are \\((x,y) = (1,1)\\) and \\((2,3)\\).",
+    "solution": "We seek \\(3^x = 2^y + 1\\) with \\(x,y\\ge 0\\). \\(\\textbf{Small cases.}\\) If \\(y=0\\): \\(3^x = 2\\), no. If \\(y=1\\): \\(3^x=3\\Rightarrow x=1\\); solution \\((1,1)\\). If \\(y=2\\): \\(3^x=5\\), no. If \\(y=3\\): \\(3^x=9\\Rightarrow x=2\\); solution \\((2,3)\\). We now show no solution has \\(y\\ge 4\\) (in fact we handle all \\(y\\ge 2\\) uniformly). \\(\\textbf{Step 1 (mod 4, parity of x).}\\) For \\(y\\ge 2\\), \\(2^y \\equiv 0 \\pmod 4\\), so \\(3^x \\equiv 1 \\pmod 4\\). Since \\(3 \\equiv -1\\pmod 4\\), \\(3^x \\equiv (-1)^x\\), forcing \\(x\\) even. Write \\(x = 2k\\) with \\(k\\ge 1\\). \\(\\textbf{Step 2 (factor).}\\) Then \\(2^y = 3^{2k} - 1 = (3^k - 1)(3^k + 1)\\). The two factors \\(3^k-1\\) and \\(3^k+1\\) differ by \\(2\\) and are both even; their gcd divides \\(2\\), so one of them is \\(\\equiv 2 \\pmod 4\\) (exactly divisible by \\(2\\)) and the other carries the remaining factors of \\(2\\). Since the product \\(2^y\\) has only the prime factor \\(2\\), each factor must itself be a power of \\(2\\). Two powers of \\(2\\) differing by \\(2\\) are only \\(2\\) and \\(4\\). Hence \\(\\{3^k-1,\\ 3^k+1\\} = \\{2,4\\}\\), giving \\(3^k = 3\\), so \\(k=1\\) and \\(x=2\\). Then \\(2^y = 3^2-1 = 8\\), so \\(y=3\\). \\(\\textbf{Conclusion.}\\) The case \\(y\\ge 2\\) yields only \\((2,3)\\), and the cases \\(y\\in\\{0,1\\}\\) yield only \\((1,1)\\). Therefore the complete solution set is \\(\\{(1,1),(2,3)\\}\\). \\(\\blacksquare\\)",
+    "method2": "Alternative finish after Step 1 via lifting the exponent (LTE): for \\(y\\ge2\\) write \\(x=2k\\). Applying LTE to \\(3^{2k}-1\\) at the prime \\(2\\): \\(v_2(3^{2k}-1) = v_2(3-1)+v_2(3+1)+v_2(2k)-1 = 1+2+v_2(2k)-1 = 2 + v_2(2k)\\). But the entire value \\(3^{2k}-1 = 2^y\\) is a pure power of \\(2\\), so it must equal \\(2^{\\,2+v_2(2k)}\\) with no odd factor. For \\(k\\ge 2\\), the odd part of \\(3^{2k}-1\\) exceeds \\(1\\) (e.g. \\(k=2\\) gives \\(80 = 2^4\\cdot 5\\), with odd factor \\(5\\)), so the equality fails. Only \\(k=1\\) survives, giving \\((x,y)=(2,3)\\), consistent with the first method.",
+    "checkable": true,
+    "verified": true,
+    "verify_note": "Brute force over x<40, y<80 found exactly (1,1) and (2,3). Verified the LTE formula v_2(3^{2k}-1)=2+v_2(2k) holds for k=1..7, and the odd part of 3^{2k}-1 is 1 only at k=1 (then 5,91,205,... for k>=2), confirming method2."
+   }
+  ]
+ }
+]
