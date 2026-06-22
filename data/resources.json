@@ -291,11 +291,11 @@
      "name": "Hungary",
      "flag": "🇭🇺",
      "official": "KöMaL",
-     "officialUrl": "https://www.komal.hu/",
+     "officialUrl": "https://www.komal.hu/home.e.shtml",
      "links": [
       {
        "label": "KöMaL — free problems journal",
-       "url": "https://www.komal.hu/info/idegen.e.shtml",
+       "url": "https://www.komal.hu/home.e.shtml",
        "note": "Monthly problems since the 1890s, free"
       }
      ],
