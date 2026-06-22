@@ -1,0 +1,731 @@
+{
+ "_meta": {
+  "title": "Free Olympiad Resources — by Country",
+  "compiled_by": "Indrajeet Yadav (@Yosoyun)",
+  "note": "Every link here is FREE — no purchase required. Competition problems are linked to their official/community source, never re-hosted. Where a national body's exact archive URL was uncertain, we point to the AoPS Contest Collections hub (free) rather than risk a dead link.",
+  "last_compiled": "2026-06-16"
+ },
+ "regions": [
+  {
+   "region": "Start Here — Global Free Archives",
+   "emoji": "🌐",
+   "sub": "Three free hubs that cover almost every country and contest. Bookmark these first.",
+   "entries": [
+    {
+     "name": "AoPS Contest Collections",
+     "flag": "🧩",
+     "official": "Art of Problem Solving",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Browse contests by country (free)",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": "Community-posted problems + solutions for hundreds of national/international contests"
+      },
+      {
+       "label": "List of math competitions (wiki)",
+       "url": "https://artofproblemsolving.com/wiki/index.php/List_of_mathematics_competitions",
+       "note": "Index that links to each contest's homepage"
+      }
+     ],
+     "aopsUrl": "",
+     "notes": "The single best free, country-organized problem archive. Free account optional."
+    },
+    {
+     "name": "IMO — official",
+     "flag": "🏅",
+     "official": "International Mathematical Olympiad",
+     "officialUrl": "https://www.imo-official.org/",
+     "links": [
+      {
+       "label": "All IMO problems 1959– (40+ languages)",
+       "url": "https://www.imo-official.org/problems.aspx",
+       "note": ""
+      },
+      {
+       "label": "IMO Shortlists — problems WITH solutions",
+       "url": "https://www.imo-official.org/problems.aspx",
+       "note": "Grouped by topic A/C/G/N"
+      },
+      {
+       "label": "Official results by country/year",
+       "url": "https://www.imo-official.org/results.aspx",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": "Free, authoritative. Link-only (do not re-host)."
+    },
+    {
+     "name": "Putnam (university level)",
+     "flag": "🎓",
+     "official": "MAA / K. Kedlaya",
+     "officialUrl": "https://maa.org/maa-putnam-archive/",
+     "links": [
+      {
+       "label": "Official Putnam archive (problems + solutions)",
+       "url": "https://maa.org/maa-putnam-archive/",
+       "note": ""
+      },
+      {
+       "label": "Kedlaya archive 1985– (PDF + solutions)",
+       "url": "https://kskedlaya.org/putnam-archive/",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "region": "India & South Asia",
+   "emoji": "🌏",
+   "sub": "India's olympiad pipeline (IOQM → RMO → INMO → IMOTC) runs through HBCSE — all past papers are free.",
+   "entries": [
+    {
+     "name": "India",
+     "flag": "🇮🇳",
+     "official": "HBCSE–TIFR / NBHM",
+     "officialUrl": "https://olympiads.hbcse.tifr.res.in/",
+     "links": [
+      {
+       "label": "Past papers & sample questions (RMO · INMO · IMOTC)",
+       "url": "https://olympiads.hbcse.tifr.res.in/how-to-prepare/past-papers/",
+       "note": ""
+      },
+      {
+       "label": "Previous papers + full solutions (library)",
+       "url": "https://library.hbcse.tifr.res.in/olympiads/subjects/mathematics/previous-question-papers-and-solutions",
+       "note": ""
+      },
+      {
+       "label": "IOQM — Mathematics Teachers' Association",
+       "url": "https://www.mtai.org.in/",
+       "note": "The Stage-1 qualifier"
+      },
+      {
+       "label": "Find India contests on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": "Free and official. The whole RMO/INMO/IOQM archive needs no purchase."
+    },
+    {
+     "name": "Bangladesh",
+     "flag": "🇧🇩",
+     "official": "Bangladesh Math Olympiad",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Bangladesh MO problems on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Pakistan",
+     "flag": "🇵🇰",
+     "official": "Pakistan Mathematical Olympiad",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Pakistan MO problems on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Sri Lanka / Nepal",
+     "flag": "🇱🇰",
+     "official": "National olympiads",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Find on AoPS Contest Collections",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "region": "East & Southeast Asia",
+   "emoji": "🌏",
+   "sub": "Home of some of the toughest national olympiads — most archived free on AoPS, several with official sites.",
+   "entries": [
+    {
+     "name": "China",
+     "flag": "🇨🇳",
+     "official": "China MO (CMO)",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "China MO / CMO problems on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Japan",
+     "flag": "🇯🇵",
+     "official": "Mathematical Olympiad Foundation of Japan",
+     "officialUrl": "https://www.imojp.org/",
+     "links": [
+      {
+       "label": "JMO past problems (official)",
+       "url": "https://www.imojp.org/",
+       "note": ""
+      },
+      {
+       "label": "Japan MO on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "South Korea",
+     "flag": "🇰🇷",
+     "official": "Korea MO (KMO)",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Korea MO problems on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Vietnam",
+     "flag": "🇻🇳",
+     "official": "Vietnam MO (VMO)",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Vietnam MO / TST on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Singapore",
+     "flag": "🇸🇬",
+     "official": "SMO (SMS / NUS)",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Singapore MO on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Taiwan · Hong Kong · Thailand · Indonesia · Philippines",
+     "flag": "🌏",
+     "official": "National olympiads",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Find each on AoPS Contest Collections",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "region": "Europe",
+   "emoji": "🇪🇺",
+   "sub": "Deep, long-running traditions — UKMT, KöMaL and others publish decades of free papers.",
+   "entries": [
+    {
+     "name": "United Kingdom",
+     "flag": "🇬🇧",
+     "official": "UK Mathematics Trust (UKMT)",
+     "officialUrl": "https://www.ukmt.org.uk/",
+     "links": [
+      {
+       "label": "Free past competition papers",
+       "url": "https://www.ukmt.org.uk/competition-papers",
+       "note": "JMC, IMC, SMC, BMO 1 & 2"
+      },
+      {
+       "label": "UK / BMO on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Hungary",
+     "flag": "🇭🇺",
+     "official": "KöMaL",
+     "officialUrl": "https://www.komal.hu/",
+     "links": [
+      {
+       "label": "KöMaL — free problems journal",
+       "url": "https://www.komal.hu/info/idegen.e.shtml",
+       "note": "Monthly problems since the 1890s, free"
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Russia",
+     "flag": "🇷🇺",
+     "official": "All-Russian MO",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "All-Russian MO problems on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Romania",
+     "flag": "🇷🇴",
+     "official": "Romanian MO / RMM",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Romanian MO & RMM on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": "Andreescu's home tradition."
+    },
+    {
+     "name": "France",
+     "flag": "🇫🇷",
+     "official": "Animath / Olympiades",
+     "officialUrl": "https://www.animath.fr/",
+     "links": [
+      {
+       "label": "Animath — free resources & past problems",
+       "url": "https://www.animath.fr/",
+       "note": ""
+      },
+      {
+       "label": "France on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Germany",
+     "flag": "🇩🇪",
+     "official": "Bundeswettbewerb Mathematik",
+     "officialUrl": "https://www.mathe-wettbewerbe.de/",
+     "links": [
+      {
+       "label": "BWM — official",
+       "url": "https://www.mathe-wettbewerbe.de/",
+       "note": ""
+      },
+      {
+       "label": "Germany on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Poland · Italy · Spain · Netherlands · Turkey · Balkans",
+     "flag": "🇪🇺",
+     "official": "National olympiads",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Find each on AoPS Contest Collections",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "region": "The Americas",
+   "emoji": "🌎",
+   "sub": "The USA and Canada publish enormous free archives (AoPS + CEMC).",
+   "entries": [
+    {
+     "name": "United States",
+     "flag": "🇺🇸",
+     "official": "MAA — American Mathematics Competitions",
+     "officialUrl": "https://maa.org/student-programs/amc/",
+     "links": [
+      {
+       "label": "AMC · AIME · USAMO problems + solutions (AoPS)",
+       "url": "https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions",
+       "note": ""
+      },
+      {
+       "label": "MAA AMC official program",
+       "url": "https://maa.org/student-programs/amc/",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": "The competitions Titu Andreescu directed (1998–2003)."
+    },
+    {
+     "name": "Canada",
+     "flag": "🇨🇦",
+     "official": "CEMC (Waterloo) · CMS",
+     "officialUrl": "https://cemc.uwaterloo.ca/",
+     "links": [
+      {
+       "label": "CEMC — huge free past-contest archive",
+       "url": "https://cemc.uwaterloo.ca/resources/past-contests",
+       "note": "Euclid, CSMC, COMC-style and more, with solutions"
+      },
+      {
+       "label": "Canadian Mathematical Society (COMC/CMO)",
+       "url": "https://cms.math.ca/competitions/",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": "CEMC is one of the richest free archives anywhere."
+    },
+    {
+     "name": "Brazil",
+     "flag": "🇧🇷",
+     "official": "OBM",
+     "officialUrl": "https://www.obm.org.br/",
+     "links": [
+      {
+       "label": "OBM — provas anteriores (official)",
+       "url": "https://www.obm.org.br/",
+       "note": ""
+      },
+      {
+       "label": "Brazil on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Mexico · Argentina · Peru · Colombia · Chile",
+     "flag": "🌎",
+     "official": "National olympiads / Ibero-American",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Find each on AoPS Contest Collections",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "region": "Africa · Oceania · Middle East",
+   "emoji": "🌍",
+   "sub": "Iran's archives are especially rich; Australia's AMT and South Africa's SAMF run major programs.",
+   "entries": [
+    {
+     "name": "Australia",
+     "flag": "🇦🇺",
+     "official": "Australian Maths Trust (AMT)",
+     "officialUrl": "https://www.amt.edu.au/",
+     "links": [
+      {
+       "label": "AMT — competitions & resources",
+       "url": "https://www.amt.edu.au/",
+       "note": ""
+      },
+      {
+       "label": "Australia on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": "Andreescu's '101 Problems in Algebra' was an AMT title."
+    },
+    {
+     "name": "Iran",
+     "flag": "🇮🇷",
+     "official": "Iran TST / IMO team",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Iran MO & TST problems on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": "Famously rich problem archive"
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "South Africa",
+     "flag": "🇿🇦",
+     "official": "SAMF",
+     "officialUrl": "https://www.samf.ac.za/",
+     "links": [
+      {
+       "label": "SAMF — South African MO",
+       "url": "https://www.samf.ac.za/",
+       "note": ""
+      },
+      {
+       "label": "South Africa on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Israel · Saudi Arabia · Nigeria · Egypt · New Zealand",
+     "flag": "🌍",
+     "official": "National olympiads",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Find each on AoPS Contest Collections",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "region": "Regional & International Olympiads",
+   "emoji": "🏆",
+   "sub": "Beyond the IMO — regional championships, all free to read.",
+   "entries": [
+    {
+     "name": "EGMO",
+     "flag": "👩",
+     "official": "European Girls' MO",
+     "officialUrl": "https://www.egmo.org/",
+     "links": [
+      {
+       "label": "EGMO — all past papers (official)",
+       "url": "https://www.egmo.org/egmos/",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "APMO",
+     "flag": "🌏",
+     "official": "Asian Pacific MO",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "APMO problems on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Balkan & Junior Balkan MO",
+     "flag": "🏔️",
+     "official": "BMO / JBMO",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Balkan & JBMO on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "RMM",
+     "flag": "♟️",
+     "official": "Romanian Masters of Mathematics",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "RMM problems on AoPS",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": "Among the hardest"
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Ibero-American · Pan-African",
+     "flag": "🌎",
+     "official": "Regional olympiads",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "Find on AoPS Contest Collections",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "region": "Free Training, Handouts & Books",
+   "emoji": "📚",
+   "sub": "No purchase required — handouts, a free journal, and classic problem sites.",
+   "entries": [
+    {
+     "name": "Mathematical Reflections",
+     "flag": "✦",
+     "official": "Titu Andreescu / AwesomeMath",
+     "officialUrl": "https://www.awesomemath.org/mathematical-reflections/",
+     "links": [
+      {
+       "label": "Free journal — every issue free",
+       "url": "https://www.awesomemath.org/mathematical-reflections/archives/",
+       "note": "Problems by level: J / S / O / U"
+      }
+     ],
+     "aopsUrl": "",
+     "notes": "The free journal he founded — most on-brand free problems."
+    },
+    {
+     "name": "Evan Chen",
+     "flag": "📐",
+     "official": "Free handouts & notes",
+     "officialUrl": "https://web.evanchen.cc/",
+     "links": [
+      {
+       "label": "Olympiad handouts & OTIS Excerpts",
+       "url": "https://web.evanchen.cc/olympiad.html",
+       "note": ""
+      },
+      {
+       "label": "Euclidean Geometry in MO (free book page)",
+       "url": "https://web.evanchen.cc/geombook.html",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Art of Problem Solving",
+     "flag": "🧠",
+     "official": "Free tools & community",
+     "officialUrl": "https://artofproblemsolving.com/",
+     "links": [
+      {
+       "label": "Alcumus — free adaptive practice",
+       "url": "https://artofproblemsolving.com/alcumus",
+       "note": ""
+      },
+      {
+       "label": "AoPS Wiki & videos",
+       "url": "https://artofproblemsolving.com/wiki/",
+       "note": ""
+      },
+      {
+       "label": "Community forums",
+       "url": "https://artofproblemsolving.com/community",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "Cut the Knot",
+     "flag": "✂️",
+     "official": "A. Bogomolny (archive)",
+     "officialUrl": "https://www.cut-the-knot.org/",
+     "links": [
+      {
+       "label": "Thousands of free problems & proofs",
+       "url": "https://www.cut-the-knot.org/",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    },
+    {
+     "name": "The IMO Compendium",
+     "flag": "📘",
+     "official": "Problem + proposer reference",
+     "officialUrl": "https://www.imomath.com/",
+     "links": [
+      {
+       "label": "IMOmath — free lessons & olympiad training",
+       "url": "https://www.imomath.com/",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "notes": ""
+    }
+   ]
+  }
+ ]
+}
