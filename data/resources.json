@@ -1,170 +1,165 @@
 {
  "_meta": {
-  "title": "Free Olympiad Resources — by Country",
+  "title": "The IMO Hub — Countries, Records & Legends",
   "compiled_by": "Indrajeet Yadav (@Yosoyun)",
-  "note": "Every link here is FREE — no purchase required. Competition problems are linked to their official/community source, never re-hosted. Where a national body's exact archive URL was uncertain, we point to the AoPS Contest Collections hub (free) rather than risk a dead link.",
-  "last_compiled": "2026-06-16"
+  "note": "IMO-focused, English-only, free. Top nations are ranked by all-time IMO gold medals (through 2025, source: Wikipedia/IMO official). Problems are linked to their official/community source, never re-hosted.",
+  "last_compiled": "2026-06-23"
  },
  "regions": [
   {
-   "region": "Start Here — Global Free Archives",
-   "emoji": "🌐",
-   "sub": "Three free hubs that cover almost every country and contest. Bookmark these first.",
+   "region": "IMO Essentials",
+   "emoji": "🏅",
+   "sub": "The International Mathematical Olympiad since 1959 — 6 problems over 2 days, 42 points, under-20 only, 100+ countries. Everything here is free and in English.",
    "entries": [
     {
-     "name": "AoPS Contest Collections",
-     "flag": "🧩",
-     "official": "Art of Problem Solving",
-     "officialUrl": "",
+     "name": "Problems — every year (1959–)",
+     "flag": "📜",
+     "official": "IMO official",
+     "officialUrl": "https://www.imo-official.org/problems.aspx",
      "links": [
       {
-       "label": "Browse contests by country (free)",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": "Community-posted problems + solutions for hundreds of national/international contests"
-      },
-      {
-       "label": "List of math competitions (wiki)",
-       "url": "https://artofproblemsolving.com/wiki/index.php/List_of_mathematics_competitions",
-       "note": "Index that links to each contest's homepage"
-      }
-     ],
-     "aopsUrl": "",
-     "notes": "The single best free, country-organized problem archive. Free account optional."
-    },
-    {
-     "name": "IMO — official",
-     "flag": "🏅",
-     "official": "International Mathematical Olympiad",
-     "officialUrl": "https://www.imo-official.org/",
-     "links": [
-      {
-       "label": "All IMO problems 1959– (40+ languages)",
+       "label": "All IMO papers (English + 40 languages)",
        "url": "https://www.imo-official.org/problems.aspx",
        "note": ""
       },
       {
-       "label": "IMO Shortlists — problems WITH solutions",
-       "url": "https://www.imo-official.org/problems.aspx",
-       "note": "Grouped by topic A/C/G/N"
-      },
+       "label": "IMO Problems & Solutions (AoPS wiki)",
+       "url": "https://artofproblemsolving.com/wiki/index.php/IMO_Problems_and_Solutions",
+       "note": "Full solutions, multiple methods"
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "66 olympiads",
+     "notes": ""
+    },
+    {
+     "name": "Shortlist — problems WITH solutions",
+     "flag": "🧩",
+     "official": "IMO official",
+     "officialUrl": "https://www.imo-official.org/problems.aspx",
+     "links": [
       {
-       "label": "Official results by country/year",
+       "label": "Shortlist PDFs, topic-coded A/C/G/N",
+       "url": "https://www.imo-official.org/problems.aspx",
+       "note": "Pattern: imo-official.org/problems/IMO{YEAR}SL.pdf"
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "~30/yr",
+     "notes": "The richest free, topic-sorted problems-with-solutions set anywhere."
+    },
+    {
+     "name": "Results, medals & cut-offs",
+     "flag": "📊",
+     "official": "IMO official",
+     "officialUrl": "https://www.imo-official.org/results.aspx",
+     "links": [
+      {
+       "label": "Results by year & country",
        "url": "https://www.imo-official.org/results.aspx",
        "note": ""
+      },
+      {
+       "label": "Hall of Fame — individual all-time records",
+       "url": "https://www.imo-official.org/hall.aspx",
+       "note": ""
       }
      ],
      "aopsUrl": "",
-     "notes": "Free, authoritative. Link-only (do not re-host)."
+     "stat": "",
+     "notes": ""
     },
     {
-     "name": "Putnam (university level)",
-     "flag": "🎓",
-     "official": "MAA / K. Kedlaya",
-     "officialUrl": "https://maa.org/maa-putnam-archive/",
+     "name": "All-time country ranking",
+     "flag": "🏆",
+     "official": "Wikipedia",
+     "officialUrl": "https://en.wikipedia.org/wiki/List_of_countries_by_medal_count_at_International_Mathematical_Olympiad",
      "links": [
       {
-       "label": "Official Putnam archive (problems + solutions)",
-       "url": "https://maa.org/maa-putnam-archive/",
+       "label": "Medal table by country",
+       "url": "https://en.wikipedia.org/wiki/List_of_countries_by_medal_count_at_International_Mathematical_Olympiad",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "",
+     "notes": ""
+    },
+    {
+     "name": "IMO — overview & history",
+     "flag": "📖",
+     "official": "Wikipedia",
+     "officialUrl": "https://en.wikipedia.org/wiki/International_Mathematical_Olympiad",
+     "links": [
+      {
+       "label": "History, format, records",
+       "url": "https://en.wikipedia.org/wiki/International_Mathematical_Olympiad",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "",
+     "notes": ""
+    },
+    {
+     "name": "Train for the IMO (free)",
+     "flag": "🎯",
+     "official": "IMOmath / Evan Chen",
+     "officialUrl": "https://www.imomath.com/",
+     "links": [
+      {
+       "label": "IMOmath — free lessons & olympiad training",
+       "url": "https://www.imomath.com/",
        "note": ""
       },
       {
-       "label": "Kedlaya archive 1985– (PDF + solutions)",
-       "url": "https://kskedlaya.org/putnam-archive/",
+       "label": "Evan Chen — IMO handouts & notes",
+       "url": "https://web.evanchen.cc/olympiad.html",
+       "note": ""
+      },
+      {
+       "label": "AoPS IMO forum & resources",
+       "url": "https://artofproblemsolving.com/community",
        "note": ""
       }
      ],
      "aopsUrl": "",
+     "stat": "",
      "notes": ""
     }
    ]
   },
   {
-   "region": "India & South Asia",
-   "emoji": "🌏",
-   "sub": "India's olympiad pipeline (IOQM → RMO → INMO → IMOTC) runs through HBCSE — all past papers are free.",
+   "region": "Top IMO Nations — by all-time gold",
+   "emoji": "🌍",
+   "sub": "The countries that have won the most IMO gold medals (all-time, through 2025). English-accessible resources only.",
    "entries": [
     {
-     "name": "India",
+     "name": "India — our home nation",
      "flag": "🇮🇳",
      "official": "HBCSE–TIFR / NBHM",
      "officialUrl": "https://olympiads.hbcse.tifr.res.in/",
      "links": [
       {
-       "label": "Past papers & sample questions (RMO · INMO · IMOTC)",
+       "label": "RMO · INMO · IMOTC past papers (free)",
        "url": "https://olympiads.hbcse.tifr.res.in/how-to-prepare/past-papers/",
        "note": ""
       },
       {
-       "label": "Previous papers + full solutions (library)",
+       "label": "Previous papers + solutions",
        "url": "https://library.hbcse.tifr.res.in/olympiads/subjects/mathematics/previous-question-papers-and-solutions",
        "note": ""
       },
       {
-       "label": "IOQM — Mathematics Teachers' Association",
-       "url": "https://www.mtai.org.in/",
-       "note": "The Stage-1 qualifier"
-      },
-      {
-       "label": "Find India contests on AoPS",
+       "label": "National-team problems in English (AoPS)",
        "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
+       "note": "Find this country under AoPS Contest Collections"
       }
      ],
      "aopsUrl": "",
-     "notes": "Free and official. The whole RMO/INMO/IOQM archive needs no purchase."
+     "stat": "rising",
+     "notes": "India's team has won multiple golds and finished inside the top 10 in recent years — the home pipeline is IOQM → RMO → INMO → IMOTC."
     },
-    {
-     "name": "Bangladesh",
-     "flag": "🇧🇩",
-     "official": "Bangladesh Math Olympiad",
-     "officialUrl": "",
-     "links": [
-      {
-       "label": "Bangladesh MO problems on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
-      }
-     ],
-     "aopsUrl": "",
-     "notes": ""
-    },
-    {
-     "name": "Pakistan",
-     "flag": "🇵🇰",
-     "official": "Pakistan Mathematical Olympiad",
-     "officialUrl": "",
-     "links": [
-      {
-       "label": "Pakistan MO problems on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
-      }
-     ],
-     "aopsUrl": "",
-     "notes": ""
-    },
-    {
-     "name": "Sri Lanka / Nepal",
-     "flag": "🇱🇰",
-     "official": "National olympiads",
-     "officialUrl": "",
-     "links": [
-      {
-       "label": "Find on AoPS Contest Collections",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
-      }
-     ],
-     "aopsUrl": "",
-     "notes": ""
-    }
-   ]
-  },
-  {
-   "region": "East & Southeast Asia",
-   "emoji": "🌏",
-   "sub": "Home of some of the toughest national olympiads — most archived free on AoPS, several with official sites.",
-   "entries": [
     {
      "name": "China",
      "flag": "🇨🇳",
@@ -172,33 +167,51 @@
      "officialUrl": "",
      "links": [
       {
-       "label": "China MO / CMO problems on AoPS",
+       "label": "National-team problems in English (AoPS)",
        "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
+       "note": "Find this country under AoPS Contest Collections"
       }
      ],
      "aopsUrl": "",
-     "notes": ""
+     "stat": "191 golds",
+     "notes": "The all-time leader — 25 team titles."
     },
     {
-     "name": "Japan",
-     "flag": "🇯🇵",
-     "official": "Mathematical Olympiad Foundation of Japan",
-     "officialUrl": "https://www.imojp.org/",
+     "name": "United States",
+     "flag": "🇺🇸",
+     "official": "MAA — AMC/AIME/USAMO",
+     "officialUrl": "https://maa.org/student-programs/amc/",
      "links": [
       {
-       "label": "JMO past problems (official)",
-       "url": "https://www.imojp.org/",
+       "label": "AMC · AIME · USAMO problems + solutions",
+       "url": "https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions",
        "note": ""
       },
       {
-       "label": "Japan MO on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "label": "MAA AMC program",
+       "url": "https://maa.org/student-programs/amc/",
        "note": ""
       }
      ],
      "aopsUrl": "",
-     "notes": ""
+     "stat": "156 golds",
+     "notes": "The pipeline Titu Andreescu directed (1998–2003); coached the 1994 perfect team."
+    },
+    {
+     "name": "Russia",
+     "flag": "🇷🇺",
+     "official": "All-Russian MO",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "National-team problems in English (AoPS)",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": "Find this country under AoPS Contest Collections"
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "106 golds",
+     "notes": "Plus 77 more as the Soviet Union (1959–1991)."
     },
     {
      "name": "South Korea",
@@ -207,84 +220,13 @@
      "officialUrl": "",
      "links": [
       {
-       "label": "Korea MO problems on AoPS",
+       "label": "National-team problems in English (AoPS)",
        "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
+       "note": "Find this country under AoPS Contest Collections"
       }
      ],
      "aopsUrl": "",
-     "notes": ""
-    },
-    {
-     "name": "Vietnam",
-     "flag": "🇻🇳",
-     "official": "Vietnam MO (VMO)",
-     "officialUrl": "",
-     "links": [
-      {
-       "label": "Vietnam MO / TST on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
-      }
-     ],
-     "aopsUrl": "",
-     "notes": ""
-    },
-    {
-     "name": "Singapore",
-     "flag": "🇸🇬",
-     "official": "SMO (SMS / NUS)",
-     "officialUrl": "",
-     "links": [
-      {
-       "label": "Singapore MO on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
-      }
-     ],
-     "aopsUrl": "",
-     "notes": ""
-    },
-    {
-     "name": "Taiwan · Hong Kong · Thailand · Indonesia · Philippines",
-     "flag": "🌏",
-     "official": "National olympiads",
-     "officialUrl": "",
-     "links": [
-      {
-       "label": "Find each on AoPS Contest Collections",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
-      }
-     ],
-     "aopsUrl": "",
-     "notes": ""
-    }
-   ]
-  },
-  {
-   "region": "Europe",
-   "emoji": "🇪🇺",
-   "sub": "Deep, long-running traditions — UKMT, KöMaL and others publish decades of free papers.",
-   "entries": [
-    {
-     "name": "United Kingdom",
-     "flag": "🇬🇧",
-     "official": "UK Mathematics Trust (UKMT)",
-     "officialUrl": "https://www.ukmt.org.uk/",
-     "links": [
-      {
-       "label": "Free past competition papers",
-       "url": "https://www.ukmt.org.uk/competition-papers",
-       "note": "JMC, IMC, SMC, BMO 1 & 2"
-      },
-      {
-       "label": "UK / BMO on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
-      }
-     ],
-     "aopsUrl": "",
+     "stat": "99 golds",
      "notes": ""
     },
     {
@@ -294,28 +236,19 @@
      "officialUrl": "https://www.komal.hu/home.e.shtml",
      "links": [
       {
-       "label": "KöMaL — free problems journal",
+       "label": "KöMaL — free problems journal (English)",
        "url": "https://www.komal.hu/home.e.shtml",
-       "note": "Monthly problems since the 1890s, free"
-      }
-     ],
-     "aopsUrl": "",
-     "notes": ""
-    },
-    {
-     "name": "Russia",
-     "flag": "🇷🇺",
-     "official": "All-Russian MO",
-     "officialUrl": "",
-     "links": [
-      {
-       "label": "All-Russian MO problems on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
        "note": ""
+      },
+      {
+       "label": "National-team problems in English (AoPS)",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": "Find this country under AoPS Contest Collections"
       }
      ],
      "aopsUrl": "",
-     "notes": ""
+     "stat": "90 golds",
+     "notes": "The oldest tradition — KöMaL runs since the 1890s."
     },
     {
      "name": "Romania",
@@ -324,32 +257,66 @@
      "officialUrl": "",
      "links": [
       {
-       "label": "Romanian MO & RMM on AoPS",
+       "label": "National-team problems in English (AoPS)",
        "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
+       "note": "Find this country under AoPS Contest Collections"
       }
      ],
      "aopsUrl": "",
-     "notes": "Andreescu's home tradition."
+     "stat": "88 golds",
+     "notes": "Founding host of the IMO (1959); Titu Andreescu's home tradition."
     },
     {
-     "name": "France",
-     "flag": "🇫🇷",
-     "official": "Animath / Olympiades",
-     "officialUrl": "https://www.animath.fr/",
+     "name": "Vietnam",
+     "flag": "🇻🇳",
+     "official": "Vietnam MO (VMO)",
+     "officialUrl": "",
      "links": [
       {
-       "label": "Animath — free resources & past problems",
-       "url": "https://www.animath.fr/",
+       "label": "National-team problems in English (AoPS)",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": "Find this country under AoPS Contest Collections"
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "71 golds",
+     "notes": ""
+    },
+    {
+     "name": "United Kingdom",
+     "flag": "🇬🇧",
+     "official": "UK Maths Trust (UKMT)",
+     "officialUrl": "https://www.ukmt.org.uk/",
+     "links": [
+      {
+       "label": "Free past papers (JMC→BMO)",
+       "url": "https://www.ukmt.org.uk/competition-papers",
        "note": ""
       },
       {
-       "label": "France on AoPS",
+       "label": "National-team problems in English (AoPS)",
        "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
+       "note": "Find this country under AoPS Contest Collections"
       }
      ],
      "aopsUrl": "",
+     "stat": "59 golds",
+     "notes": ""
+    },
+    {
+     "name": "Bulgaria",
+     "flag": "🇧🇬",
+     "official": "Bulgarian MO",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "National-team problems in English (AoPS)",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": "Find this country under AoPS Contest Collections"
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "57 golds",
      "notes": ""
     },
     {
@@ -359,60 +326,88 @@
      "officialUrl": "https://www.mathe-wettbewerbe.de/",
      "links": [
       {
-       "label": "BWM — official",
+       "label": "BWM (official)",
        "url": "https://www.mathe-wettbewerbe.de/",
        "note": ""
       },
       {
-       "label": "Germany on AoPS",
+       "label": "National-team problems in English (AoPS)",
        "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
+       "note": "Find this country under AoPS Contest Collections"
       }
      ],
      "aopsUrl": "",
+     "stat": "54 golds",
      "notes": ""
     },
     {
-     "name": "Poland · Italy · Spain · Netherlands · Turkey · Balkans",
-     "flag": "🇪🇺",
-     "official": "National olympiads",
+     "name": "Iran",
+     "flag": "🇮🇷",
+     "official": "Iran TST / IMO team",
      "officialUrl": "",
      "links": [
       {
-       "label": "Find each on AoPS Contest Collections",
+       "label": "National-team problems in English (AoPS)",
        "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
+       "note": "Find this country under AoPS Contest Collections"
       }
      ],
      "aopsUrl": "",
-     "notes": ""
-    }
-   ]
-  },
-  {
-   "region": "The Americas",
-   "emoji": "🌎",
-   "sub": "The USA and Canada publish enormous free archives (AoPS + CEMC).",
-   "entries": [
+     "stat": "53 golds",
+     "notes": "Famously rich problem archive on AoPS."
+    },
     {
-     "name": "United States",
-     "flag": "🇺🇸",
-     "official": "MAA — American Mathematics Competitions",
-     "officialUrl": "https://maa.org/student-programs/amc/",
+     "name": "Japan",
+     "flag": "🇯🇵",
+     "official": "Math Olympiad Foundation of Japan",
+     "officialUrl": "https://www.imojp.org/",
      "links": [
       {
-       "label": "AMC · AIME · USAMO problems + solutions (AoPS)",
-       "url": "https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions",
+       "label": "JMO (official)",
+       "url": "https://www.imojp.org/",
        "note": ""
       },
       {
-       "label": "MAA AMC official program",
-       "url": "https://maa.org/student-programs/amc/",
-       "note": ""
+       "label": "National-team problems in English (AoPS)",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": "Find this country under AoPS Contest Collections"
       }
      ],
      "aopsUrl": "",
-     "notes": "The competitions Titu Andreescu directed (1998–2003)."
+     "stat": "51 golds",
+     "notes": ""
+    },
+    {
+     "name": "Taiwan",
+     "flag": "🇹🇼",
+     "official": "Taiwan MO",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "National-team problems in English (AoPS)",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": "Find this country under AoPS Contest Collections"
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "48 golds",
+     "notes": ""
+    },
+    {
+     "name": "Ukraine",
+     "flag": "🇺🇦",
+     "official": "Ukrainian MO",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "National-team problems in English (AoPS)",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": "Find this country under AoPS Contest Collections"
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "44 golds",
+     "notes": ""
     },
     {
      "name": "Canada",
@@ -423,59 +418,18 @@
       {
        "label": "CEMC — huge free past-contest archive",
        "url": "https://cemc.uwaterloo.ca/resources/past-contests",
-       "note": "Euclid, CSMC, COMC-style and more, with solutions"
+       "note": ""
       },
       {
-       "label": "Canadian Mathematical Society (COMC/CMO)",
+       "label": "CMS (COMC/CMO)",
        "url": "https://cms.math.ca/competitions/",
        "note": ""
       }
      ],
      "aopsUrl": "",
-     "notes": "CEMC is one of the richest free archives anywhere."
-    },
-    {
-     "name": "Brazil",
-     "flag": "🇧🇷",
-     "official": "OBM",
-     "officialUrl": "https://www.obm.org.br/",
-     "links": [
-      {
-       "label": "OBM — provas anteriores (official)",
-       "url": "https://www.obm.org.br/",
-       "note": ""
-      },
-      {
-       "label": "Brazil on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
-      }
-     ],
-     "aopsUrl": "",
+     "stat": "44 golds",
      "notes": ""
     },
-    {
-     "name": "Mexico · Argentina · Peru · Colombia · Chile",
-     "flag": "🌎",
-     "official": "National olympiads / Ibero-American",
-     "officialUrl": "",
-     "links": [
-      {
-       "label": "Find each on AoPS Contest Collections",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": ""
-      }
-     ],
-     "aopsUrl": "",
-     "notes": ""
-    }
-   ]
-  },
-  {
-   "region": "Africa · Oceania · Middle East",
-   "emoji": "🌍",
-   "sub": "Iran's archives are especially rich; Australia's AMT and South Africa's SAMF run major programs.",
-   "entries": [
     {
      "name": "Australia",
      "flag": "🇦🇺",
@@ -483,246 +437,233 @@
      "officialUrl": "https://www.amt.edu.au/",
      "links": [
       {
-       "label": "AMT — competitions & resources",
+       "label": "AMT competitions & resources",
        "url": "https://www.amt.edu.au/",
        "note": ""
       },
       {
-       "label": "Australia on AoPS",
+       "label": "National-team problems in English (AoPS)",
        "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": "Find this country under AoPS Contest Collections"
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "31 golds",
+     "notes": "Home of Terence Tao; AMT published Andreescu's '101 Problems in Algebra'."
+    },
+    {
+     "name": "Singapore",
+     "flag": "🇸🇬",
+     "official": "SMO (SMS / NUS)",
+     "officialUrl": "",
+     "links": [
+      {
+       "label": "National-team problems in English (AoPS)",
+       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "note": "Find this country under AoPS Contest Collections"
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "28 golds",
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "region": "Legends — IMO Alumni Who Changed Mathematics",
+   "emoji": "⭐",
+   "sub": "A medal at 17 is often just the start. These contestants went on to the Fields Medal and historic results — proof of where this path can lead.",
+   "entries": [
+    {
+     "name": "Terence Tao",
+     "flag": "🇦🇺",
+     "official": "Gold 1988 at age 13 — youngest-ever gold · Fields Medal 2006",
+     "officialUrl": "https://en.wikipedia.org/wiki/Terence_Tao",
+     "links": [
+      {
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Terence_Tao",
        "note": ""
       }
      ],
      "aopsUrl": "",
-     "notes": "Andreescu's '101 Problems in Algebra' was an AMT title."
+     "stat": "Fields Medal",
+     "notes": ""
     },
     {
-     "name": "Iran",
+     "name": "Maryam Mirzakhani",
      "flag": "🇮🇷",
-     "official": "Iran TST / IMO team",
-     "officialUrl": "",
+     "official": "Two golds (1994–95, one perfect) · first woman to win the Fields Medal (2014)",
+     "officialUrl": "https://en.wikipedia.org/wiki/Maryam_Mirzakhani",
      "links": [
       {
-       "label": "Iran MO & TST problems on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": "Famously rich problem archive"
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Maryam_Mirzakhani",
+       "note": ""
       }
      ],
      "aopsUrl": "",
+     "stat": "Fields Medal",
      "notes": ""
     },
     {
-     "name": "South Africa",
-     "flag": "🇿🇦",
-     "official": "SAMF",
-     "officialUrl": "https://www.samf.ac.za/",
+     "name": "Grigori Perelman",
+     "flag": "🇷🇺",
+     "official": "Perfect 42/42 in 1982 · proved the Poincaré Conjecture · declined the Fields Medal",
+     "officialUrl": "https://en.wikipedia.org/wiki/Grigori_Perelman",
      "links": [
       {
-       "label": "SAMF — South African MO",
-       "url": "https://www.samf.ac.za/",
-       "note": ""
-      },
-      {
-       "label": "South Africa on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Grigori_Perelman",
        "note": ""
       }
      ],
      "aopsUrl": "",
+     "stat": "Perfect score",
      "notes": ""
     },
     {
-     "name": "Israel · Saudi Arabia · Nigeria · Egypt · New Zealand",
-     "flag": "🌍",
-     "official": "National olympiads",
-     "officialUrl": "",
+     "name": "Peter Scholze",
+     "flag": "🇩🇪",
+     "official": "Three golds + a silver · Fields Medal 2018",
+     "officialUrl": "https://en.wikipedia.org/wiki/Peter_Scholze",
      "links": [
       {
-       "label": "Find each on AoPS Contest Collections",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Peter_Scholze",
        "note": ""
       }
      ],
      "aopsUrl": "",
-     "notes": ""
-    }
-   ]
-  },
-  {
-   "region": "Regional & International Olympiads",
-   "emoji": "🏆",
-   "sub": "Beyond the IMO — regional championships, all free to read.",
-   "entries": [
-    {
-     "name": "EGMO",
-     "flag": "👩",
-     "official": "European Girls' MO",
-     "officialUrl": "https://www.egmo.org/",
-     "links": [
-      {
-       "label": "EGMO — all past papers (official)",
-       "url": "https://www.egmo.org/egmos/",
-       "note": ""
-      }
-     ],
-     "aopsUrl": "",
+     "stat": "Fields Medal",
      "notes": ""
     },
     {
-     "name": "APMO",
-     "flag": "🌏",
-     "official": "Asian Pacific MO",
-     "officialUrl": "",
+     "name": "Ngô Bảo Châu",
+     "flag": "🇻🇳",
+     "official": "Two golds (1988, 1989) · Fields Medal 2010",
+     "officialUrl": "https://en.wikipedia.org/wiki/Ng%C3%B4_B%E1%BA%A3o_Ch%C3%A2u",
      "links": [
       {
-       "label": "APMO problems on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ng%C3%B4_B%E1%BA%A3o_Ch%C3%A2u",
        "note": ""
       }
      ],
      "aopsUrl": "",
+     "stat": "Fields Medal",
      "notes": ""
     },
     {
-     "name": "Balkan & Junior Balkan MO",
-     "flag": "🏔️",
-     "official": "BMO / JBMO",
-     "officialUrl": "",
+     "name": "Artur Avila",
+     "flag": "🇧🇷",
+     "official": "Gold 1995 · Fields Medal 2014",
+     "officialUrl": "https://en.wikipedia.org/wiki/Artur_Avila",
      "links": [
       {
-       "label": "Balkan & JBMO on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Artur_Avila",
        "note": ""
       }
      ],
      "aopsUrl": "",
+     "stat": "Fields Medal",
      "notes": ""
     },
     {
-     "name": "RMM",
-     "flag": "♟️",
-     "official": "Romanian Masters of Mathematics",
-     "officialUrl": "",
+     "name": "Stanislav Smirnov",
+     "flag": "🇷🇺",
+     "official": "Two perfect golds · Fields Medal 2010",
+     "officialUrl": "https://en.wikipedia.org/wiki/Stanislav_Smirnov",
      "links": [
       {
-       "label": "RMM problems on AoPS",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
-       "note": "Among the hardest"
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Stanislav_Smirnov",
+       "note": ""
       }
      ],
      "aopsUrl": "",
+     "stat": "Fields Medal",
      "notes": ""
     },
     {
-     "name": "Ibero-American · Pan-African",
-     "flag": "🌎",
-     "official": "Regional olympiads",
-     "officialUrl": "",
+     "name": "Tim Gowers",
+     "flag": "🇬🇧",
+     "official": "Gold 1981 · Fields Medal 1998",
+     "officialUrl": "https://en.wikipedia.org/wiki/Timothy_Gowers",
      "links": [
       {
-       "label": "Find on AoPS Contest Collections",
-       "url": "https://artofproblemsolving.com/community/c13_contest_collections",
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Timothy_Gowers",
        "note": ""
       }
      ],
      "aopsUrl": "",
-     "notes": ""
-    }
-   ]
-  },
-  {
-   "region": "Free Training, Handouts & Books",
-   "emoji": "📚",
-   "sub": "No purchase required — handouts, a free journal, and classic problem sites.",
-   "entries": [
-    {
-     "name": "Mathematical Reflections",
-     "flag": "✦",
-     "official": "Titu Andreescu / AwesomeMath",
-     "officialUrl": "https://www.awesomemath.org/mathematical-reflections/",
-     "links": [
-      {
-       "label": "Free journal — every issue free",
-       "url": "https://www.awesomemath.org/mathematical-reflections/archives/",
-       "note": "Problems by level: J / S / O / U"
-      }
-     ],
-     "aopsUrl": "",
-     "notes": "The free journal he founded — most on-brand free problems."
-    },
-    {
-     "name": "Evan Chen",
-     "flag": "📐",
-     "official": "Free handouts & notes",
-     "officialUrl": "https://web.evanchen.cc/",
-     "links": [
-      {
-       "label": "Olympiad handouts & OTIS Excerpts",
-       "url": "https://web.evanchen.cc/olympiad.html",
-       "note": ""
-      },
-      {
-       "label": "Euclidean Geometry in MO (free book page)",
-       "url": "https://web.evanchen.cc/geombook.html",
-       "note": ""
-      }
-     ],
-     "aopsUrl": "",
+     "stat": "Fields Medal",
      "notes": ""
     },
     {
-     "name": "Art of Problem Solving",
-     "flag": "🧠",
-     "official": "Free tools & community",
-     "officialUrl": "https://artofproblemsolving.com/",
+     "name": "Reid Barton",
+     "flag": "🇺🇸",
+     "official": "First to win four golds (1998–2001) · also 4× Putnam Fellow",
+     "officialUrl": "https://en.wikipedia.org/wiki/Reid_W._Barton",
      "links": [
       {
-       "label": "Alcumus — free adaptive practice",
-       "url": "https://artofproblemsolving.com/alcumus",
-       "note": ""
-      },
-      {
-       "label": "AoPS Wiki & videos",
-       "url": "https://artofproblemsolving.com/wiki/",
-       "note": ""
-      },
-      {
-       "label": "Community forums",
-       "url": "https://artofproblemsolving.com/community",
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Reid_W._Barton",
        "note": ""
       }
      ],
      "aopsUrl": "",
+     "stat": "4× gold",
      "notes": ""
     },
     {
-     "name": "Cut the Knot",
-     "flag": "✂️",
-     "official": "A. Bogomolny (archive)",
-     "officialUrl": "https://www.cut-the-knot.org/",
+     "name": "Ciprian Manolescu",
+     "flag": "🇷🇴",
+     "official": "The only person to score a perfect 42 three times (1995–97)",
+     "officialUrl": "https://en.wikipedia.org/wiki/Ciprian_Manolescu",
      "links": [
       {
-       "label": "Thousands of free problems & proofs",
-       "url": "https://www.cut-the-knot.org/",
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Ciprian_Manolescu",
        "note": ""
       }
      ],
      "aopsUrl": "",
+     "stat": "3× perfect",
      "notes": ""
     },
     {
-     "name": "The IMO Compendium",
-     "flag": "📘",
-     "official": "Problem + proposer reference",
-     "officialUrl": "https://www.imomath.com/",
+     "name": "Lisa Sauermann",
+     "flag": "🇩🇪",
+     "official": "Four golds and a silver — among the most decorated contestants ever",
+     "officialUrl": "https://en.wikipedia.org/wiki/Lisa_Sauermann",
      "links": [
       {
-       "label": "IMOmath — free lessons & olympiad training",
-       "url": "https://www.imomath.com/",
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Lisa_Sauermann",
        "note": ""
       }
      ],
      "aopsUrl": "",
+     "stat": "5× medalist",
+     "notes": ""
+    },
+    {
+     "name": "Zhuo Qun (Alex) Song",
+     "flag": "🇨🇦",
+     "official": "Record six IMO medals — five gold (one perfect, 2015) and a bronze",
+     "officialUrl": "https://www.imo-official.org/hall.aspx",
+     "links": [
+      {
+       "label": "IMO Hall of Fame",
+       "url": "https://www.imo-official.org/hall.aspx",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "6 medals",
      "notes": ""
     }
    ]
