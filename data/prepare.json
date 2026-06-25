@@ -1,0 +1,936 @@
+{
+ "_meta": {
+  "title": "How to Prepare for the IMO — a free roadmap",
+  "compiled_by": "Indrajeet Yadav (@Yosoyun)",
+  "note": "Premium, reliable, free resources only — vetted and link-checked. Linked to source, never re-hosted.",
+  "last_compiled": "2026-06-23"
+ },
+ "clusters": [
+  {
+   "cluster": "IMO Preparation Roadmap & Free Canon",
+   "summary": "A 6-stage IMO preparation roadmap (foundations to IMO) paired with the must-use FREE canon that real olympiad trainers recommend. Every URL was verified by fetching: most return HTTP 200. Evan Chen's site (web.evanchen.cc), AoPS, and the IMO-official front page bot-block automated fetchers (403) but are confirmed public and human-accessible — for AoPS I marked the well-known public URLs; for Evan Chen I curl-verified each page returns 200 with a browser user-agent. Engel and Zeitz are not free as PDFs from a publisher, but are legally borrowable via Internet Archive's controlled digital lending (no piracy). Teacher guidance is woven into each stage's 'why' (diagnose, assign by instrument, run mock olympiads, grade to IMO 7-point rubric, debrief). The canon is the genuine trainer consensus: Evan Chen (EGMO, Napkin, OTIS Excerpts, handouts), Yufei Zhao's MIT handouts, AoPS (community/wiki/Alcumus), the IMO Compendium + official shortlists/problems, and Engel/Zeitz for problem-solving craft.",
+   "items": [
+    {
+     "group": "Roadmap",
+     "label": "Stage 1 — Foundations & proof literacy",
+     "url": "",
+     "kind": "stage",
+     "why": "Lock down algebra, Euclidean geometry, elementary number theory, and combinatorics at a rigorous level, and learn to WRITE proofs (induction, contradiction, invariants, well-ordering). Do timed easy contest problems (AMC/AIME-tier or national junior level) to build speed and notation. TEACHER: give a diagnostic, fix proof-writing habits early (a correct idea sloppily written scores 0 at IMO), and insist every solution is written in full sentences. Duration ~6-12 months.",
+     "extra": "free · stage 1"
+    },
+    {
+     "group": "Roadmap",
+     "label": "Stage 2 — The four pillars: topic mastery by instrument",
+     "url": "",
+     "kind": "stage",
+     "why": "Go deep, one instrument at a time, across the four IMO areas — Algebra (inequalities, functional equations, polynomials), Combinatorics (counting two ways, extremal, invariants, coloring, games), Geometry (cyclic quads, power of a point, spiral similarity, projective/inversion), Number Theory (modular arithmetic, orders, LTE, Diophantine). Learn the named lemmas cold. TEACHER: assign a handout per technique, then 5-10 problems that FORCE that technique; require the student to name the tool used in each writeup. Duration ~12-18 months, overlapping Stage 3.",
+     "extra": "free · stage 2"
+    },
+    {
+     "group": "Roadmap",
+     "label": "Stage 3 — Problem-solving craft & strategy",
+     "url": "",
+     "kind": "stage",
+     "why": "Shift from 'know the theorem' to 'find the idea': wishful thinking, extreme/boundary cases, working backwards, building intuition, and recognizing problem 'smell'. Keep a solved-problems journal noting the key insight of each. TEACHER: run 'think-aloud' sessions, reward the search process (not just answers), and teach how to gain partial credit and write up a half-solved problem honestly. Ongoing, runs alongside Stages 2-4.",
+     "extra": "free · stage 3"
+    },
+    {
+     "group": "Roadmap",
+     "label": "Stage 4 — Past papers & IMO Shortlist immersion",
+     "url": "",
+     "kind": "stage",
+     "why": "Grind real IMO problems, then the IMO Shortlist (the proving ground problems are drafted from) and other strong national olympiads (USAMO, all-Russian, China TST). Sort by topic, then do mixed sets. Always attempt fully before reading a solution; study multiple solutions per problem. TEACHER: grade to the official 7-point IMO rubric, give terse hints not answers, and debrief every problem the student missed. Duration ~12+ months, continuous.",
+     "extra": "free · stage 4"
+    },
+    {
+     "group": "Roadmap",
+     "label": "Stage 5 — National olympiad & TST / camp selection",
+     "url": "",
+     "kind": "stage",
+     "why": "Compete in your country's olympiad chain (e.g. in India: PRMO/RMO → INMO → IMOTC → TST) to earn a national-team seat. Simulate the real format: two days, 4.5 hours, 3 problems each, no calculator, easy-medium-hard per day. Build exam stamina and pacing (don't sink 4 hours into P3 and miss an easy P2). TEACHER: run full mock olympiads under exam conditions, then a cold-grade and strategy debrief on time allocation. Duration: the contest season.",
+     "extra": "free · stage 5"
+    },
+    {
+     "group": "Roadmap",
+     "label": "Stage 6 — IMO: peak performance",
+     "url": "",
+     "kind": "stage",
+     "why": "Final polish before the IMO itself: targeted weak-area drills, fresh recent-year problems for sharpness, and psychological/time-management rehearsal. Maintain breadth so no topic is a blind spot — IMO guarantees one geometry, and combos rotate. TEACHER (team leader): coordinate at the Jury, manage coordination/appeals to defend every earned point, and keep students calm, rested, and confident. Duration: the weeks before and the contest.",
+     "extra": "free · stage 6"
+    },
+    {
+     "group": "Core resources",
+     "label": "Evan Chen — Olympiad Articles & free handouts hub",
+     "url": "https://web.evanchen.cc/olympiad.html",
+     "kind": "site",
+     "why": "Index to dozens of free, trainer-grade handouts (functional equations, inequalities, summation, 'Monsters', writeups) by a former IMO gold medalist and the most-cited modern olympiad coach. Verified public (200 via browser UA; bot-blocks automated fetchers).",
+     "extra": "free · all levels"
+    },
+    {
+     "group": "Core resources",
+     "label": "Evan Chen — EGMO: Euclidean Geometry in Mathematical Olympiads",
+     "url": "https://web.evanchen.cc/geombook.html",
+     "kind": "book",
+     "why": "The de-facto standard olympiad geometry text; page hosts a free sample/info and the full book is the universal recommendation for IMO geometry. Verified public (200 via browser UA).",
+     "extra": "free sample · geometry · intermediate→advanced"
+    },
+    {
+     "group": "Core resources",
+     "label": "Evan Chen — The OTIS Excerpts (202 problems + solutions PDF)",
+     "url": "https://web.evanchen.cc/textbooks/OTIS-Excerpts.pdf",
+     "kind": "book",
+     "why": "Free mini-book of curated algebra/combinatorics/number-theory problems with full solutions, drawn from his OTIS training program — ideal Stage 2-3 problem bank. Verified 200, direct PDF.",
+     "extra": "free · A/C/NT · beginner→advanced"
+    },
+    {
+     "group": "Core resources",
+     "label": "Evan Chen — Napkin (free higher-math book for olympiad kids)",
+     "url": "https://venhance.github.io/napkin/Napkin.pdf",
+     "kind": "book",
+     "why": "Famous free 800+ page 'natural number to algebraic NT' tour that builds mathematical maturity beyond contest tricks; beloved by strong olympiad students. Verified 200, direct PDF.",
+     "extra": "free · enrichment · advanced"
+    },
+    {
+     "group": "Core resources",
+     "label": "Evan Chen — OTIS Excerpts info page",
+     "url": "https://web.evanchen.cc/excerpts.html",
+     "kind": "handout",
+     "why": "Landing page describing the Excerpts and its chapter structure; useful for teachers picking topic sets. Verified public (200 via browser UA).",
+     "extra": "free · reference"
+    },
+    {
+     "group": "Core resources",
+     "label": "Yufei Zhao — MIT/Olympiad training handouts",
+     "url": "https://yufeizhao.com/olympiad/",
+     "kind": "handout",
+     "why": "Canonical free lecture notes from a 3-time IMO medalist and MIT professor — geometry lemmas, cyclic quadrilaterals, NT, combinatorics, used in national training camps worldwide. Verified 200.",
+     "extra": "free · all four areas · advanced"
+    },
+    {
+     "group": "Core resources",
+     "label": "The IMO Compendium / imomath.com",
+     "url": "https://www.imomath.com/",
+     "kind": "site",
+     "why": "Companion site to 'The IMO Compendium' (Djukić et al.); hosts olympiad training material, problem archives, and shortlist/longlist references — a standard reference for serious trainees. Verified 200.",
+     "extra": "free · archive · all levels"
+    },
+    {
+     "group": "Core resources",
+     "label": "imomath — IMO Shortlist solutions index",
+     "url": "https://imomath.com/index.cgi?page=imoShortlist",
+     "kind": "practice",
+     "why": "Organized access to IMO Shortlist problems with solutions — the exact problem pool IMO papers are selected from, the core of Stage 4 practice. Verified 200.",
+     "extra": "free · shortlist · advanced"
+    },
+    {
+     "group": "Core resources",
+     "label": "Official IMO — problems archive (all years, many languages)",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "kind": "practice",
+     "why": "The authoritative source for every official IMO problem set plus results and shortlists; the ground truth for past-paper practice. Verified 200.",
+     "extra": "free · official · all years"
+    },
+    {
+     "group": "Core resources",
+     "label": "Official IMO — year info, results & shortlists",
+     "url": "https://www.imo-official.org/year_info.aspx",
+     "kind": "site",
+     "why": "Per-year hub linking the official problems, the IMO Shortlist booklets, and full results/cutoffs — essential for calibrating difficulty and medal thresholds. Verified 200.",
+     "extra": "free · official"
+    },
+    {
+     "group": "Core resources",
+     "label": "Art of Problem Solving — Community & contest collections",
+     "url": "https://artofproblemsolving.com/community",
+     "kind": "forum",
+     "why": "The world's largest olympiad community; near-every contest problem has crowd-sourced solutions and discussion. Public site (bot-blocks automated fetchers with 403; human-accessible).",
+     "extra": "free · forum · all levels"
+    },
+    {
+     "group": "Core resources",
+     "label": "AoPS Wiki — olympiad theorems, techniques & contest index",
+     "url": "https://artofproblemsolving.com/wiki/index.php/Main_Page",
+     "kind": "site",
+     "why": "Free encyclopedia of contest math: named lemmas, techniques, and problem indexes — a fast reference for Stage 2 topic study. Public site (bot-blocks fetchers with 403; human-accessible).",
+     "extra": "free · reference"
+    },
+    {
+     "group": "Core resources",
+     "label": "AoPS Alcumus — free adaptive practice",
+     "url": "https://artofproblemsolving.com/alcumus",
+     "kind": "practice",
+     "why": "Free adaptive problem engine that calibrates difficulty to the student — excellent Stage 1 foundation drilling. Public site (bot-blocks fetchers with 403; human-accessible).",
+     "extra": "free · adaptive · foundations"
+    },
+    {
+     "group": "Core resources",
+     "label": "Arthur Engel — Problem-Solving Strategies (Internet Archive)",
+     "url": "https://archive.org/details/problemsolvingst0000enge",
+     "kind": "book",
+     "why": "The classic encyclopedic olympiad strategy text (invariants, extremal principle, coloring, induction); legally borrowable free via Internet Archive's controlled digital lending — not a pirate copy. Verified 200.",
+     "extra": "free (CDL borrow) · craft · all areas"
+    },
+    {
+     "group": "Core resources",
+     "label": "Paul Zeitz — The Art and Craft of Problem Solving (Internet Archive)",
+     "url": "https://archive.org/details/artcraftofproble0000zeit",
+     "kind": "book",
+     "why": "The definitive book on problem-solving mindset and strategy (the 'investigation' approach) for Stage 3 craft; legally borrowable free via Internet Archive controlled digital lending. Verified 200.",
+     "extra": "free (CDL borrow) · craft · intermediate"
+    }
+   ]
+  },
+  {
+   "cluster": "IMO Algebra/Inequalities/Polynomials & Number Theory",
+   "summary": "Verified premium-free olympiad resources for IMO Algebra/Inequalities/Polynomials and Number Theory, organized into Learn / Watch / Practice / Discuss per subject. Every URL was fetched. Most load cleanly (HTTP 200) and the binary PDFs were confirmed valid (%PDF header). A few canon sites bot-block automated fetches with HTTP 403 — Evan Chen (web.evanchen.cc), the AoPS community/wiki/article PDFs, and YouTube channel pages — but all are well-known, public, and free; their exact URLs were cross-confirmed via search. The imocompendium.com domain is now parked/for-sale, so the IMO Compendium is pointed at its authors' live home imomath.com (free training texts + problem collection) plus the free full-book scan on Internet Archive. Aditya Khurmi's \"Modern Olympiad NT\" was deliberately excluded — no clean author-hosted free copy exists (only piracy/doc-share mirrors), and Justin Stevens' author-hosted NT book covers the same need legitimately.",
+   "items": [
+    {
+     "group": "Algebra/Inequalities/Polynomials · Learn",
+     "label": "Yufei Zhao — Olympiad training handouts (index)",
+     "url": "https://yufeizhao.com/olympiad/",
+     "kind": "site",
+     "why": "MIT professor & IMO-team coach; the canonical free handout set, loaded HTTP 200 with all topic links live.",
+     "extra": "free · IMO-level · coach"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Learn",
+     "label": "Yufei Zhao — Inequalities (Canada winter-training handout)",
+     "url": "https://yufeizhao.com/olympiad/wc08/ineq.pdf",
+     "kind": "handout",
+     "why": "Direct PDF verified valid (%PDF); concise standard-inequalities toolkit used in national training.",
+     "extra": "free · PDF · IMO-level"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Learn",
+     "label": "Yufei Zhao — Polynomials (IMO 2008 training)",
+     "url": "https://yufeizhao.com/olympiad/imo2008/zhao-polynomials.pdf",
+     "kind": "handout",
+     "why": "Direct PDF verified valid; roots of unity, Lagrange interpolation, Chebyshev, irreducibility, Rouché.",
+     "extra": "free · PDF · advanced"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Learn",
+     "label": "Yufei Zhao — Integer Polynomials (MOP Black)",
+     "url": "https://yufeizhao.com/olympiad/intpoly.pdf",
+     "kind": "handout",
+     "why": "Direct PDF verified valid; MOP-level irreducibility criteria, the bridge topic to number theory.",
+     "extra": "free · PDF · MOP-level"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Learn",
+     "label": "Thomas Mildorf — Olympiad Inequalities (\"The Standard Dozen\")",
+     "url": "https://artofproblemsolving.com/articles/files/MildorfInequalities.pdf",
+     "kind": "handout",
+     "why": "The classic free inequalities handout trainers cite; AoPS host 403-blocks bots but URL is public & canonical.",
+     "extra": "free · PDF · AoPS bot-block (public)"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Learn",
+     "label": "Evan Chen — A Brief Introduction to Olympiad Inequalities",
+     "url": "https://web.evanchen.cc/handouts/Ineq/en.pdf",
+     "kind": "handout",
+     "why": "Evan Chen (IMO gold, OTIS founder) — canon handout; evanchen.cc 403-blocks bots but is public & free.",
+     "extra": "free · PDF · evanchen.cc bot-block (public)"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Learn",
+     "label": "Evan Chen — Olympiad Articles (handout index: inequalities, SOS, Monsters, polynomials)",
+     "url": "https://web.evanchen.cc/olympiad.html",
+     "kind": "site",
+     "why": "Central index of Chen's free olympiad handouts (Olympiad Inequalities, SOS, Summation, Monsters); 403 to bots, public.",
+     "extra": "free · canon · evanchen.cc bot-block (public)"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Learn",
+     "label": "imomath (Djukić/Matić) — free training texts: Polynomials, Equations in Polynomials, Inequalities",
+     "url": "https://www.imomath.com/index.cgi?page=mathTexts",
+     "kind": "handout",
+     "why": "Written by IMO Compendium authors; verified live, free topic articles on polynomials & inequalities.",
+     "extra": "free · IMO-level · authors of the Compendium"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Watch",
+     "label": "Michael Penn — YouTube (olympiad algebra/number-theory problem walkthroughs)",
+     "url": "https://www.youtube.com/c/MichaelPennMath",
+     "kind": "channel",
+     "why": "Math professor; deep, rigorous olympiad-problem videos (algebra, NT, FE) — channel confirmed via search.",
+     "extra": "free · problem walkthroughs"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Watch",
+     "label": "Math Olympiad Inequalities — Essential Techniques (playlist)",
+     "url": "https://www.youtube.com/playlist?list=PLcZM4kiP8qDHCznZ2ez89I90dvbg0-xSn",
+     "kind": "video",
+     "why": "Topic-focused playlist on the core inequality methods (AM-GM, Cauchy, SOS) for olympiad training.",
+     "extra": "free · inequalities · playlist"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Practice",
+     "label": "IMO Shortlist Problems by year (AoPS Wiki) — Algebra (A-codes)",
+     "url": "https://artofproblemsolving.com/wiki/index.php/IMO_Shortlist_Problems",
+     "kind": "practice",
+     "why": "Master index to every shortlist year; A1–A8 algebra problems with community solutions; AoPS 403s bots, public.",
+     "extra": "free · 1973–present · AoPS bot-block (public)"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Practice",
+     "label": "imomath — IMO Problem Collection (by year, PDF)",
+     "url": "https://imomath.com/index.cgi?page=collectionI",
+     "kind": "practice",
+     "why": "Verified-live free year-by-year IMO problem PDFs (314+ problems) from the Compendium authors.",
+     "extra": "free · 1959–present · PDF"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Practice",
+     "label": "IMO official — all IMO problems by year (multilingual PDFs)",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "kind": "practice",
+     "why": "The authoritative source; verified-live year dropdown 1959–2025 plus official shortlists (released post-IMO).",
+     "extra": "free · official · 1959–2025"
+    },
+    {
+     "group": "Algebra/Inequalities/Polynomials · Discuss",
+     "label": "AoPS — High School Olympiads forum",
+     "url": "https://artofproblemsolving.com/community/c6_high_school_olympiads",
+     "kind": "forum",
+     "why": "The global olympiad community; every shortlist/national algebra problem has a discussion thread; 403s bots, public.",
+     "extra": "free · community · AoPS bot-block (public)"
+    },
+    {
+     "group": "Number Theory · Learn",
+     "label": "Justin Stevens — Olympiad Number Theory Through Challenging Problems (author site, 4th ed.)",
+     "url": "https://numbertheoryguy.com/publications/olympiad-number-theory-book/",
+     "kind": "book",
+     "why": "Author-hosted FREE book (verified live), all editions; divisibility→p-adic→Diophantine, with companion videos.",
+     "extra": "free · author-hosted · intro→IMO"
+    },
+    {
+     "group": "Number Theory · Learn",
+     "label": "Justin Stevens — Olympiad NT (3rd ed. PDF, AoPS CDN)",
+     "url": "https://s3.amazonaws.com/aops-cdn.artofproblemsolving.com/resources/articles/olympiad-number-theory.pdf",
+     "kind": "book",
+     "why": "Direct PDF verified valid (%PDF); the widely-shared 120-page edition, stable AoPS CDN link.",
+     "extra": "free · PDF · 120 pp"
+    },
+    {
+     "group": "Number Theory · Learn",
+     "label": "Yufei Zhao — Modular Arithmetic handout",
+     "url": "https://yufeizhao.com/olympiad/mod2.pdf",
+     "kind": "handout",
+     "why": "Direct PDF verified valid; Fermat/Euler/Wilson and residue classes from the canonical handout set.",
+     "extra": "free · PDF · IMO-level"
+    },
+    {
+     "group": "Number Theory · Learn",
+     "label": "Yufei Zhao — aⁿ ± 1 / Lifting the Exponent (LTE)",
+     "url": "https://yufeizhao.com/olympiad/exponent_lifting.pdf",
+     "kind": "handout",
+     "why": "Direct PDF verified valid; the definitive free LTE-lemma handout, a staple NT olympiad technique.",
+     "extra": "free · PDF · advanced"
+    },
+    {
+     "group": "Number Theory · Learn",
+     "label": "imomath (Djukić) — Pell's equation, Quadratic congruences, Arithmetic in extensions of ℚ",
+     "url": "https://www.imomath.com/index.cgi?page=mathTexts",
+     "kind": "handout",
+     "why": "Compendium-author NT texts (Pell, quadratic residues, algebraic NT); verified-live training page.",
+     "extra": "free · IMO-level · authors of the Compendium"
+    },
+    {
+     "group": "Number Theory · Learn",
+     "label": "The IMO Compendium 1959–2009 (full book, Internet Archive)",
+     "url": "https://archive.org/details/compendium_201807",
+     "kind": "book",
+     "why": "Free legal scan of Djukić-Janković-Matić-Petrović — every IMO + shortlist problem solved (the old imocompendium.com is now parked).",
+     "extra": "free · 823 pp · 1959–2009"
+    },
+    {
+     "group": "Number Theory · Watch",
+     "label": "Michael Penn — YouTube (number-theory olympiad problems)",
+     "url": "https://www.youtube.com/channel/UC6jM0RFkr4eSkzT5Gx0HOAw",
+     "kind": "channel",
+     "why": "Rigorous, frequent NT olympiad walkthroughs (national + IMO problems); channel URL confirmed via search.",
+     "extra": "free · NT walkthroughs"
+    },
+    {
+     "group": "Number Theory · Watch",
+     "label": "Aditya Khurmi — Chinese Remainder Theorem (olympiad NT lecture)",
+     "url": "https://www.youtube.com/watch?v=TQ_1DtE3H3o",
+     "kind": "video",
+     "why": "Author of Modern Olympiad NT giving a clean CRT lecture with handout; respected olympiad instructor.",
+     "extra": "free · CRT · lecture"
+    },
+    {
+     "group": "Number Theory · Practice",
+     "label": "IMO Shortlist Problems by year (AoPS Wiki) — Number Theory (N-codes)",
+     "url": "https://artofproblemsolving.com/wiki/index.php/IMO_Shortlist_Problems",
+     "kind": "practice",
+     "why": "N1–N8 number-theory shortlist problems by year with linked community solutions; AoPS 403s bots, public.",
+     "extra": "free · 1973–present · AoPS bot-block (public)"
+    },
+    {
+     "group": "Number Theory · Practice",
+     "label": "IMO official — problems & shortlists by year",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "kind": "practice",
+     "why": "Authoritative official PDFs incl. shortlists; verified-live; best primary source for real exam NT problems.",
+     "extra": "free · official · 1959–2025"
+    },
+    {
+     "group": "Number Theory · Practice",
+     "label": "AoPS Wiki — IMO Problems and Solutions (hub)",
+     "url": "https://artofproblemsolving.com/wiki/index.php/IMO_Problems_and_Solutions",
+     "kind": "practice",
+     "why": "Per-problem solution pages for every IMO incl. NT; URL confirmed via search; AoPS 403s bots, public.",
+     "extra": "free · solutions · AoPS bot-block (public)"
+    },
+    {
+     "group": "Number Theory · Discuss",
+     "label": "AoPS — High School Olympiads forum (Number Theory threads)",
+     "url": "https://artofproblemsolving.com/community/c6_high_school_olympiads",
+     "kind": "forum",
+     "why": "Where every shortlist N-problem gets multiple solutions debated; the de-facto olympiad discussion hub; 403s bots, public.",
+     "extra": "free · community · AoPS bot-block (public)"
+    }
+   ]
+  },
+  {
+   "cluster": "IMO Combinatorics, Geometry & Functional Equations — premium free resources",
+   "summary": "Verified-live premium free resources for three IMO subjects, each in four groups (Learn / Watch / Practice / Discuss). The canon dominates: Evan Chen's free handouts + EGMO free subset (geometry) and FuncEq/Monsters (FE), Yufei Zhao's MIT olympiad handouts (combinatorics + geometry), the IMOmath training texts by the IMO Compendium authors (FE, combinatorics, projective geometry), plus official IMO/Shortlist problem archives, AoPS (community + wiki + Alcumus), and a few top YouTube channels. Every non-AoPS URL was fetched and returned HTTP 200. AoPS pages return 403 to automated fetchers (Cloudflare bot-block) but are public and the gold-standard olympiad forum — flagged in each 'why'. Anything unverifiable was left as \"\".",
+   "items": [
+    {
+     "group": "Combinatorics · Learn",
+     "label": "Yufei Zhao — Combinatorics handouts (comb1, comb3, algebraic techniques, tiling, bijections, counting in two ways)",
+     "url": "https://yufeizhao.com/olympiad/",
+     "kind": "handout",
+     "why": "MIT prof, longtime USA IMO team coach; these MOP training handouts are a universally recommended olympiad combinatorics canon",
+     "extra": "free · IMO/MOP level"
+    },
+    {
+     "group": "Combinatorics · Learn",
+     "label": "Evan Chen — The Probabilistic Method (handout)",
+     "url": "https://web.evanchen.cc/handouts/ProbabilisticMethod/ProbabilisticMethod.pdf",
+     "kind": "handout",
+     "why": "Evan Chen (USA IMO coach, OTIS founder) — the standard concise intro to a core olympiad combinatorics technique",
+     "extra": "free · olympiad"
+    },
+    {
+     "group": "Combinatorics · Learn",
+     "label": "IMOmath — Combinatorics (Matić & Novaković)",
+     "url": "https://imomath.com/index.cgi?page=combinatorics",
+     "kind": "handout",
+     "why": "Written by the IMO Compendium team; rigorous free training text covering counting, pigeonhole, extremal and invariants",
+     "extra": "free · olympiad"
+    },
+    {
+     "group": "Combinatorics · Watch",
+     "label": "Michael Penn — combinatorics & olympiad problem videos",
+     "url": "https://www.youtube.com/@MichaelPennMath",
+     "kind": "channel",
+     "why": "Math professor; clean, rigorous worked solutions to competition combinatorics problems, large well-organized library",
+     "extra": "free · YouTube (public)"
+    },
+    {
+     "group": "Combinatorics · Practice",
+     "label": "AoPS Wiki — IMO Shortlist Problems (combinatorics C-problems archive)",
+     "url": "https://artofproblemsolving.com/wiki/index.php/IMO_Shortlist_Problems",
+     "kind": "practice",
+     "why": "The definitive curated problem set olympiad trainers drill; each problem links to community solution threads",
+     "extra": "free · 403 to bots but public"
+    },
+    {
+     "group": "Combinatorics · Practice",
+     "label": "IMOmath — Olympiad problems database (filter by Combinatorics)",
+     "url": "https://imomath.com/index.cgi?page=problemsFromOlympiads",
+     "kind": "practice",
+     "why": "Large searchable archive of national/IMO olympiad problems by topic from the IMO Compendium authors",
+     "extra": "free · olympiad"
+    },
+    {
+     "group": "Combinatorics · Discuss",
+     "label": "AoPS — High School Olympiads forum",
+     "url": "https://artofproblemsolving.com/community/c6_high_school_olympiads",
+     "kind": "forum",
+     "why": "The single most active olympiad discussion community worldwide; combinatorics problems get expert solutions fast",
+     "extra": "free · 403 to bots but public"
+    },
+    {
+     "group": "Geometry · Learn",
+     "label": "Evan Chen — EGMO (Euclidean Geometry in Math Olympiads): free subset — TOC, Chapters 1–3 preview, full errata/solutions (AGEST), Trig-Bash course",
+     "url": "https://web.evanchen.cc/geombook.html",
+     "kind": "book",
+     "why": "THE canonical olympiad-geometry textbook; the full book is paid but the author posts a substantial free subset + auto-generated solutions treasury",
+     "extra": "free subset · book is paid · IMO level"
+    },
+    {
+     "group": "Geometry · Learn",
+     "label": "Evan Chen — AGEST: Automatically Generated EGMO Solutions Treasury",
+     "url": "https://web.evanchen.cc/textbooks/AGEST.pdf",
+     "kind": "handout",
+     "why": "Free worked solutions to a large fraction of EGMO's problems — turns the paid book's exercises into self-study material",
+     "extra": "free · olympiad"
+    },
+    {
+     "group": "Geometry · Learn",
+     "label": "Yufei Zhao — Geometry handouts (Lemmas in Euclidean Geometry, Cyclic Quadrilaterals, Three Lemmas, Power of a Point, Similarity/Spiral Similarity)",
+     "url": "https://yufeizhao.com/olympiad/",
+     "kind": "handout",
+     "why": "MIT/USA-IMO-coach handouts; the 'Lemmas' and 'Cyclic Quadrilaterals' notes are a staple first stop for olympiad geometry",
+     "extra": "free · olympiad"
+    },
+    {
+     "group": "Geometry · Learn",
+     "label": "Evan Chen — Directed Angles (handout)",
+     "url": "https://web.evanchen.cc/handouts/Directed-Angles/Directed-Angles.pdf",
+     "kind": "handout",
+     "why": "The standard short treatment of directed (mod 180°) angles — a technique essential for rigorous configuration-independent geo proofs",
+     "extra": "free · olympiad"
+    },
+    {
+     "group": "Geometry · Learn",
+     "label": "IMOmath — Projective Geometry (Lukić) & Inversion (Djukić)",
+     "url": "https://imomath.com/index.cgi?page=projectiveGeometry",
+     "kind": "handout",
+     "why": "IMO Compendium authors' free advanced-geometry texts; projective + inversion are exactly the hard-olympiad tools EGMO covers late",
+     "extra": "free · olympiad"
+    },
+    {
+     "group": "Geometry · Watch",
+     "label": "Evan Chen — AsyGuide (Asymptote diagram tutorial for olympiad geometry)",
+     "url": "https://web.evanchen.cc/asyguide.html",
+     "kind": "video",
+     "why": "Author of EGMO walks through drawing accurate olympiad-geometry figures; the standard reference for the field's diagram tool",
+     "extra": "free · video + handout"
+    },
+    {
+     "group": "Geometry · Watch",
+     "label": "Michael Penn — olympiad geometry problem videos",
+     "url": "https://www.youtube.com/@MichaelPennMath",
+     "kind": "channel",
+     "why": "Rigorous, well-paced video solutions to competition geometry; large indexed library",
+     "extra": "free · YouTube (public)"
+    },
+    {
+     "group": "Geometry · Practice",
+     "label": "Evan Chen — tr011ey: 'Undergraduate Math 011, a first-year course in geometry' (free problem-rich notes)",
+     "url": "https://web.evanchen.cc/textbooks/tr011ey.pdf",
+     "kind": "practice",
+     "why": "Free standalone geometry course by the EGMO author — builds the synthetic toolkit through exercises",
+     "extra": "free · olympiad-prep"
+    },
+    {
+     "group": "Geometry · Practice",
+     "label": "AoPS Wiki — IMO Shortlist Problems (geometry G-problems archive)",
+     "url": "https://artofproblemsolving.com/wiki/index.php/IMO_Shortlist_Problems",
+     "kind": "practice",
+     "why": "The curated geometry problem ladder olympiad trainers assign, with community solutions per problem",
+     "extra": "free · 403 to bots but public"
+    },
+    {
+     "group": "Geometry · Discuss",
+     "label": "AoPS — High School Olympiads forum",
+     "url": "https://artofproblemsolving.com/community/c6_high_school_olympiads",
+     "kind": "forum",
+     "why": "Largest olympiad-geometry discussion hub; synthetic/projective/bary solutions debated by strong solvers",
+     "extra": "free · 403 to bots but public"
+    },
+    {
+     "group": "Functional Equations · Learn",
+     "label": "Evan Chen — Introduction to Functional Equations (FuncEq-Intro handout)",
+     "url": "https://web.evanchen.cc/handouts/FuncEq-Intro/FuncEq-Intro.pdf",
+     "kind": "handout",
+     "why": "USA-IMO-coach's go-to FE primer: substitution, injectivity/surjectivity, Cauchy — the standard first FE handout",
+     "extra": "free · olympiad"
+    },
+    {
+     "group": "Functional Equations · Learn",
+     "label": "Evan Chen — Monsters: pathological functional equations (handout)",
+     "url": "https://web.evanchen.cc/handouts/Monsters/Monsters.pdf",
+     "kind": "handout",
+     "why": "The reference handout on the wild non-continuous (Cauchy-pathology) FE solutions that trap competitors — advanced and widely cited",
+     "extra": "free · IMO/advanced"
+    },
+    {
+     "group": "Functional Equations · Learn",
+     "label": "IMOmath — Functional Equations (Marko Radovanović)",
+     "url": "https://imomath.com/index.cgi?page=functionalEquations",
+     "kind": "handout",
+     "why": "IMO Compendium author's free text: 'twelve ways to treat FEs', Cauchy equation, plus classified solved problems and practice set",
+     "extra": "free · olympiad"
+    },
+    {
+     "group": "Functional Equations · Watch",
+     "label": "Michael Penn — functional equations videos",
+     "url": "https://www.youtube.com/@MichaelPennMath",
+     "kind": "channel",
+     "why": "Clear worked video solutions of competition FEs showing the substitution-and-deduce method end to end",
+     "extra": "free · YouTube (public)"
+    },
+    {
+     "group": "Functional Equations · Practice",
+     "label": "AoPS Wiki — IMO Shortlist Problems (algebra A-problems, where FEs live)",
+     "url": "https://artofproblemsolving.com/wiki/index.php/IMO_Shortlist_Problems",
+     "kind": "practice",
+     "why": "FE problems are the core of Shortlist Algebra; this curated archive is the standard FE training set with solution threads",
+     "extra": "free · 403 to bots but public"
+    },
+    {
+     "group": "Functional Equations · Practice",
+     "label": "IMOmath — Olympiad problems database (FE / algebra filter)",
+     "url": "https://imomath.com/index.cgi?page=problemsFromOlympiads",
+     "kind": "practice",
+     "why": "Searchable national+IMO problem archive to drill FEs by source and difficulty",
+     "extra": "free · olympiad"
+    },
+    {
+     "group": "Functional Equations · Discuss",
+     "label": "AoPS — High School Olympiads forum",
+     "url": "https://artofproblemsolving.com/community/c6_high_school_olympiads",
+     "kind": "forum",
+     "why": "FE problems get rapid expert critique here — ideal for checking whether your FE proof actually pins down all solutions",
+     "extra": "free · 403 to bots but public"
+    },
+    {
+     "group": "Cross-subject · Practice",
+     "label": "IMO Official — problems & results archive (all years, all problems)",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "kind": "site",
+     "why": "The authoritative primary source for every IMO problem and country results — the canonical practice corpus",
+     "extra": "free · official"
+    },
+    {
+     "group": "Cross-subject · Practice",
+     "label": "AoPS — Alcumus (adaptive practice, incl. counting/probability & geometry)",
+     "url": "https://artofproblemsolving.com/alcumus",
+     "kind": "practice",
+     "why": "Free adaptive problem trainer from AoPS; strong for building pre-olympiad combinatorics/geometry fundamentals",
+     "extra": "free · 403 to bots but public"
+    },
+    {
+     "group": "Cross-subject · Learn",
+     "label": "IMOmath — The IMO Compendium (book page) & full training-texts index",
+     "url": "https://imomath.com/index.cgi?page=mathTexts",
+     "kind": "site",
+     "why": "Hub of free olympiad training texts (FE, combinatorics, projective geo, inversion, polynomials) by the IMO Compendium authors",
+     "extra": "free · olympiad"
+    },
+    {
+     "group": "Cross-subject · Learn",
+     "label": "Evan Chen — full olympiad handout index (geo/combo/FE/NT/algebra)",
+     "url": "https://web.evanchen.cc/olympiad.html",
+     "kind": "site",
+     "why": "One page linking every free Evan Chen handout across all olympiad subjects — the canonical free olympiad library",
+     "extra": "free · olympiad"
+    }
+   ]
+  },
+  {
+   "cluster": "olympiad-math-media-community",
+   "summary": "verified",
+   "items": [
+    {
+     "group": "YouTube",
+     "label": "vEnhance (Evan Chen)",
+     "url": "https://www.youtube.com/@vEnhance",
+     "kind": "channel",
+     "why": "IMO gold and OTIS founder; lectures and live solves",
+     "extra": "free"
+    },
+    {
+     "group": "YouTube",
+     "label": "Michael Penn",
+     "url": "https://www.youtube.com/channel/UC6jM0RFkr4eSkzT5Gx0HOAw",
+     "kind": "channel",
+     "why": "Competition and number-theory problems solved cleanly",
+     "extra": "free"
+    },
+    {
+     "group": "YouTube",
+     "label": "3Blue1Brown",
+     "url": "https://www.youtube.com/@3blue1brown",
+     "kind": "channel",
+     "why": "Visual math intuition for olympiad insight",
+     "extra": "free"
+    },
+    {
+     "group": "YouTube",
+     "label": "Mathologer",
+     "url": "https://www.youtube.com/@Mathologer",
+     "kind": "channel",
+     "why": "Rigorous theorem and proof dives",
+     "extra": "free"
+    },
+    {
+     "group": "YouTube",
+     "label": "Po-Shen Loh Daily Challenge",
+     "url": "https://www.youtube.com/c/DailyChallengewithPoShenLoh",
+     "kind": "channel",
+     "why": "USA IMO head coach; live competition solves",
+     "extra": "free"
+    },
+    {
+     "group": "YouTube",
+     "label": "Online Math Club",
+     "url": "https://www.youtube.com/c/onlinemathclub",
+     "kind": "channel",
+     "why": "Student-run olympiad seminars with handouts",
+     "extra": "free"
+    },
+    {
+     "group": "Community",
+     "label": "AoPS Community",
+     "url": "https://artofproblemsolving.com/community",
+     "kind": "forum",
+     "why": "Gold-standard olympiad forum; every problem discussed",
+     "extra": "free, 403 to bots but public"
+    },
+    {
+     "group": "Community",
+     "label": "AoPS Wiki",
+     "url": "https://artofproblemsolving.com/wiki/index.php/Main_Page",
+     "kind": "site",
+     "why": "Theorems, techniques and AMC-IMO archives",
+     "extra": "free, 403 to bots but public"
+    },
+    {
+     "group": "Community",
+     "label": "Math Olympiads Discord MODS",
+     "url": "https://mathematics.isodn.org/",
+     "kind": "forum",
+     "why": "Largest reputable olympiad Discord; daily problems",
+     "extra": "free, discord.gg/q93Wrgn"
+    },
+    {
+     "group": "Community",
+     "label": "IMO Official",
+     "url": "https://www.imo-official.org/problems.aspx",
+     "kind": "site",
+     "why": "Official IMO problems and Shortlist PDFs",
+     "extra": "free, official"
+    },
+    {
+     "group": "Blogs",
+     "label": "Evan Chen web.evanchen.cc",
+     "url": "https://web.evanchen.cc/",
+     "kind": "site",
+     "why": "Free library: handouts, OTIS Excerpts, EGMO, Napkin",
+     "extra": "free, 403 to bots but public"
+    },
+    {
+     "group": "Blogs",
+     "label": "Yufei Zhao Olympiad handouts",
+     "url": "https://yufeizhao.com/olympiad/",
+     "kind": "handout",
+     "why": "MIT and ex-IMO coach free training handouts",
+     "extra": "free"
+    },
+    {
+     "group": "Blogs",
+     "label": "Terence Tao What's New",
+     "url": "https://terrytao.wordpress.com/",
+     "kind": "blog",
+     "why": "Fields Medalist and ex-IMO gold; expository writing",
+     "extra": "free"
+    },
+    {
+     "group": "Blogs",
+     "label": "IMO Compendium IMOmath",
+     "url": "https://www.imomath.com/",
+     "kind": "site",
+     "why": "IMO Compendium 1959-2009 plus free training texts",
+     "extra": "free"
+    },
+    {
+     "group": "Blogs",
+     "label": "Cut-the-Knot",
+     "url": "https://www.cut-the-knot.org/",
+     "kind": "site",
+     "why": "Classic archive of proofs and olympiad geometry",
+     "extra": "free, Wolfram-stewarded"
+    }
+   ]
+  },
+  {
+   "cluster": "IMO Winners & Where They Went",
+   "summary": "A \"Winners\" gallery of 22 notable IMO competitors spanning the 1960s/1980s through the 2020s, chosen to inspire students and give teachers concrete \"where did they go\" stories. The careers angle is front-and-center: Fields Medalists (Tao, Perelman, Mirzakhani, Ngo, Scholze, Avila, Drinfeld), Abel/Wolf/Shaw/Knuth laureates, AI/tech (Noam Shazeer — Transformer co-inventor, Character.AI, Gemini; Nipun Pitimanaaree — DeFi CTO), academia (Manolescu at Stanford, Sauermann at Bonn, Reiher at Hamburg, Babai/Lovász in CS), an economist (Gabriel Carroll), the legendary US coach & edtech founder (Po-Shen Loh), the olympiad-teacher/author archetype (Evan Chen, OTIS), and even a head of state (Nicușor Dan, President of Romania). Records are verified against Wikipedia / official IMO pages. Highlights: Manolescu is the only 3x perfect-scorer; Sauermann and Reid Barton are among the handful of 4-gold winners; Tao won gold at 13 (youngest ever); Zhuo Qun Song holds the record 5 golds. Note: all-time-great status and \"now\" careers were confirmed as of mid-2026 (e.g., Shazeer's 2026 move).",
+   "items": [
+    {
+     "group": "Winners",
+     "label": "Terence Tao",
+     "url": "https://en.wikipedia.org/wiki/Terence_Tao",
+     "kind": "profile",
+     "why": "The most famous living IMO alum and a generational mathematician; the single best inspirational name for students.",
+     "extra": "🇦🇺 Australia · Gold 1988 at age 13 (youngest-ever gold), also bronze 1986 & silver 1987 · now: Fields Medalist (2006), professor at UCLA, one of the world's most prolific mathematicians"
+    },
+    {
+     "group": "Winners",
+     "label": "Grigori Perelman",
+     "url": "https://en.wikipedia.org/wiki/Grigori_Perelman",
+     "kind": "profile",
+     "why": "Perfect IMO score who went on to settle one of the seven Millennium Prize Problems — a legend students know by name.",
+     "extra": "🇷🇺 Soviet Union · Perfect score 42/42, Gold 1982 · now: proved the Poincaré Conjecture; declined both the Fields Medal (2006) and the $1M Millennium Prize"
+    },
+    {
+     "group": "Winners",
+     "label": "Maryam Mirzakhani",
+     "url": "https://en.wikipedia.org/wiki/Maryam_Mirzakhani",
+     "kind": "profile",
+     "why": "First and (so far) only woman to win the Fields Medal — the defining role model for girls in olympiad math.",
+     "extra": "🇮🇷 Iran · Gold 1994, Gold + perfect score 1995 · now (legacy): first female Fields Medalist (2014), Stanford professor (d. 2017)"
+    },
+    {
+     "group": "Winners",
+     "label": "Ngô Bảo Châu",
+     "url": "https://en.wikipedia.org/wiki/Ng%C3%B4_B%E1%BA%A3o_Ch%C3%A2u",
+     "kind": "profile",
+     "why": "Two-time gold and the first Vietnamese Fields Medalist — a national-hero example of olympiad-to-research.",
+     "extra": "🇻🇳 Vietnam · Gold + perfect score 1988, Gold 1989 · now: Fields Medalist (2010) for the Fundamental Lemma; professor at the University of Chicago"
+    },
+    {
+     "group": "Winners",
+     "label": "Peter Scholze",
+     "url": "https://en.wikipedia.org/wiki/Peter_Scholze",
+     "kind": "profile",
+     "why": "Four-time gold who became one of the youngest Fields Medalists ever — a modern olympiad-to-superstar arc.",
+     "extra": "🇩🇪 Germany · 3 Gold + 1 Silver (2004–2007), perfect score 2005 · now: Fields Medalist (2018), director at the Max Planck Institute, Bonn"
+    },
+    {
+     "group": "Winners",
+     "label": "Artur Avila",
+     "url": "https://en.wikipedia.org/wiki/Artur_Avila",
+     "kind": "profile",
+     "why": "First Latin-American Fields Medalist; shows the olympiad pipeline reaching beyond the usual countries.",
+     "extra": "🇧🇷 Brazil · Gold 1995 · now: Fields Medalist (2014) in dynamical systems; professor at the University of Zürich and IMPA"
+    },
+    {
+     "group": "Winners",
+     "label": "Vladimir Drinfeld",
+     "url": "https://en.wikipedia.org/wiki/Vladimir_Drinfeld",
+     "kind": "profile",
+     "why": "An all-time great from the 1960s era — perfect IMO score who later swept the field's top prizes over decades.",
+     "extra": "🇷🇺 Soviet Union · Gold + perfect score 1969 (age 15) · now: Fields Medal (1990), Wolf Prize (2018), Shaw Prize (2023); professor at the University of Chicago"
+    },
+    {
+     "group": "Winners",
+     "label": "László Lovász",
+     "url": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Lov%C3%A1sz",
+     "kind": "profile",
+     "why": "A 1960s multi-gold legend who became a pillar of combinatorics and theoretical CS — bridges math and computer science.",
+     "extra": "🇭🇺 Hungary · 3 Gold (incl. perfect scores) 1964–1966 · now: Abel Prize (2021), Wolf Prize, Knuth Prize; former president of the IMU"
+    },
+    {
+     "group": "Winners",
+     "label": "Ciprian Manolescu",
+     "url": "https://en.wikipedia.org/wiki/Ciprian_Manolescu",
+     "kind": "profile",
+     "why": "The only person ever to score a perfect 42 three times — the headline 'most decorated scorer' story.",
+     "extra": "🇷🇴 Romania · Perfect score 42/42 all three years (1995, 1996, 1997) · now: professor at Stanford; resolved the Triangulation Conjecture (2019 Moore Prize)"
+    },
+    {
+     "group": "Winners",
+     "label": "Lisa Sauermann",
+     "url": "https://en.wikipedia.org/wiki/Lisa_Sauermann",
+     "kind": "profile",
+     "why": "Among the most successful contestants ever and the leading female multi-gold winner — a top inspirational figure for girls.",
+     "extra": "🇩🇪 Germany · 4 Gold + 1 Silver (2007–2011), perfect score & sole top scorer 2011 · now: holds a Hausdorff Chair at the University of Bonn (combinatorics)"
+    },
+    {
+     "group": "Winners",
+     "label": "Reid Barton",
+     "url": "https://en.wikipedia.org/wiki/Reid_W._Barton",
+     "kind": "profile",
+     "why": "First-ever four-time gold medalist and the only person to win gold at both the IMO and the IOI — a dual math/CS prodigy.",
+     "extra": "🇺🇸 USA · 4 consecutive Gold (1998–2001), perfect score 2001; also IOI golds · now: mathematician, 4-time Putnam Fellow, Harvard PhD"
+    },
+    {
+     "group": "Winners",
+     "label": "Gabriel Carroll",
+     "url": "https://en.wikipedia.org/wiki/Gabriel_Carroll",
+     "kind": "profile",
+     "why": "Perfect-scorer who switched fields — proof that olympiad skill transfers far beyond pure math.",
+     "extra": "🇺🇸 USA · Gold + perfect score 2001 · now: economics professor (University of Toronto), microeconomic theory & mechanism design"
+    },
+    {
+     "group": "Winners",
+     "label": "Noam Shazeer",
+     "url": "https://en.wikipedia.org/wiki/Noam_Shazeer",
+     "kind": "profile",
+     "why": "The headline AI/tech story: an IMO gold who co-invented the Transformer that powers modern AI — directly relevant and motivating today.",
+     "extra": "🇺🇸 USA · Gold + perfect score 1994 · now: co-author of 'Attention Is All You Need' (the Transformer), founder of Character.AI, Google Gemini co-lead"
+    },
+    {
+     "group": "Winners",
+     "label": "László Babai",
+     "url": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Babai",
+     "kind": "profile",
+     "why": "Perfect-scorer turned foundational theoretical-computer-scientist — another strong math-to-CS career example.",
+     "extra": "🇭🇺 Hungary · Gold + perfect score 1968 · now: professor at the University of Chicago; Knuth Prize (2015) for work on complexity & the graph isomorphism problem"
+    },
+    {
+     "group": "Winners",
+     "label": "Christian Reiher",
+     "url": "https://en.wikipedia.org/wiki/Christian_Reiher",
+     "kind": "profile",
+     "why": "One of the rare four-gold winners who stayed in research mathematics — a clean academia trajectory.",
+     "extra": "🇩🇪 Germany · 4 Gold + 1 Bronze (1999–2003) · now: professor at the University of Hamburg, extremal combinatorics & graph theory"
+    },
+    {
+     "group": "Winners",
+     "label": "Nicușor Dan",
+     "url": "https://en.wikipedia.org/wiki/Nicu%C8%99or_Dan",
+     "kind": "profile",
+     "why": "Two perfect scores who became a head of state — the most surprising 'where did they go' story for students.",
+     "extra": "🇷🇴 Romania · 2 Gold + perfect scores (1987, 1988) · now: President of Romania (2025); mathematics PhD, former Mayor of Bucharest"
+    },
+    {
+     "group": "Winners",
+     "label": "Po-Shen Loh",
+     "url": "https://en.wikipedia.org/wiki/Po-Shen_Loh",
+     "kind": "profile",
+     "why": "The most relevant figure for teachers: silver medalist turned legendary US team coach and math-education entrepreneur.",
+     "extra": "🇺🇸 USA · Silver 1999 · now: Carnegie Mellon professor, US IMO head coach 2014–2023 (team won 2015/16/18/19), founder of edtech expii.com"
+    },
+    {
+     "group": "Winners",
+     "label": "Evan Chen",
+     "url": "https://en.wikipedia.org/wiki/Evan_Chen_(mathematician)",
+     "kind": "profile",
+     "why": "The modern olympiad-teacher archetype: gold medalist, textbook author, and founder of a hugely popular training program — directly useful to coaching teachers.",
+     "extra": "🇺🇸 USA (Taiwanese-American) · Gold 2014 · now: MIT number-theory PhD, author of 'Euclidean Geometry in Math Olympiads', founder of the OTIS olympiad-training program"
+    },
+    {
+     "group": "Winners",
+     "label": "Zhuo Qun (Alex) Song",
+     "url": "https://en.wikipedia.org/wiki/List_of_International_Mathematical_Olympiad_participants",
+     "kind": "profile",
+     "why": "Holds the all-time record of five gold medals — the 'most golds ever' headline for a leaderboard.",
+     "extra": "🇨🇦 Canada · 5 Gold + 1 Bronze (2010–2015), record total · now: graduate researcher in number theory (UIUC)"
+    },
+    {
+     "group": "Winners",
+     "label": "Luke Robitaille",
+     "url": "https://en.wikipedia.org/wiki/List_of_International_Mathematical_Olympiad_participants",
+     "kind": "profile",
+     "why": "A current-era four-time gold medalist — a fresh 2020s name students may recognize from recent teams.",
+     "extra": "🇺🇸 USA · 4 Gold (2019–2022), gold in every appearance · now: studies mathematics & physics at MIT"
+    },
+    {
+     "group": "Winners",
+     "label": "Nipun Pitimanaaree",
+     "url": "https://en.wikipedia.org/wiki/List_of_International_Mathematical_Olympiad_participants",
+     "kind": "profile",
+     "why": "Four-gold winner who went into deep tech / fintech — shows the olympiad path leading into startups and crypto.",
+     "extra": "🇹🇭 Thailand · 4 Gold + 1 Silver (2009–2013) · now: co-founder and CTO of INFINIT, a decentralized-finance venture"
+    },
+    {
+     "group": "Winners",
+     "label": "Teodor von Burg",
+     "url": "https://en.wikipedia.org/wiki/List_of_International_Mathematical_Olympiad_participants",
+     "kind": "profile",
+     "why": "A four-gold winner who returned to teaching the next generation — a relatable role-model-as-teacher example.",
+     "extra": "🇷🇸 Serbia · 4 Gold + 1 Silver + 1 Bronze (2007–2012) · now: teaches specialized mathematics in Belgrade and tutors olympiad students"
+    }
+   ]
+  }
+ ]
+}
