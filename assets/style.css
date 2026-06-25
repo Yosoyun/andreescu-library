@@ -320,3 +320,10 @@
 .rcard .rlinks a span.lbl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .rcard .rnote{font-size:.8rem;color:var(--ink-dim);margin-top:.6rem;font-style:italic;}
 .atlas-empty{grid-column:1/-1;text-align:center;color:var(--ink-soft);padding:40px;font-style:italic;}
+
+/* India panel + records (IMO hub) */
+.bigstats{display:flex;flex-wrap:wrap;gap:26px;justify-content:center;margin:4px 0 18px;}
+.bigstat{text-align:center;min-width:90px;}
+.bigstat b{display:block;font-family:"Fraunces";font-weight:900;font-size:2rem;color:var(--gold);line-height:1;}
+.bigstat span{font-size:.68rem;text-transform:uppercase;letter-spacing:.13em;color:var(--ink-soft);}
+.imo-best{color:var(--gold);font-weight:700;}

@@ -82,21 +82,35 @@ function cardHTML(e){
     <div class="rhead">${e.flag?`<span class="rflag">${e.flag}</span>`:''}<span class="rname">${e.name}</span>${e.stat?`<span class="pbadge official" style="margin-left:auto">${e.stat}</span>`:''}</div>
     ${official}<div class="rlinks">${links}</div>${note}</div>`;
 }
+function regionHTML(r){return `<div class="rregion" id="${slug(r.region)}"><h2 class="region-title"><span>${r.emoji||''}</span> ${r.region}</h2>${r.sub?`<p class="region-sub">${r.sub}</p>`:''}<div class="rgrid">${r.entries.map(cardHTML).join('')}</div></div>`;}
+function indiaHTML(d){ if(!d)return''; const rows=d.recent.map(y=>`<tr><td><b>${y.year}</b></td><td>${y.host}</td><td class="imo-best">#${y.rank}</td><td>${y.g}G ${y.s}S ${y.b}B</td><td style="color:var(--ink-dim)">${y.note||''}</td></tr>`).join('');
+  return `<div class="rregion" id="india-at-the-imo"><h2 class="region-title"><span>🇮🇳</span> India at the IMO</h2><p class="region-sub">${d.note}</p>
+    <div class="perfect" style="text-align:left">
+      <div class="bigstats">
+        <div class="bigstat"><b>${d.firstYear}</b><span>First competed</span></div>
+        <div class="bigstat"><b>${d.allTime.gold}</b><span>All-time golds</span></div>
+        <div class="bigstat"><b>${d.allTime.total}</b><span>Total medals</span></div>
+        <div class="bigstat"><b>#${d.best.rank}</b><span>Best rank · ${d.best.year}</span></div>
+      </div>
+      <div style="overflow:auto"><table class="sltable"><thead><tr><th>Year</th><th>Host</th><th>Rank</th><th>Medals</th><th>Highlight</th></tr></thead><tbody>${rows}</tbody></table></div>
+      <div class="reclinks" style="margin-top:16px;justify-content:flex-start"><a class="btn" href="${d.officialUrl}" target="_blank" rel="noopener">India team results (official) ↗</a><a class="btn" href="${d.individualUrl}" target="_blank" rel="noopener">Individual results ↗</a></div>
+    </div></div>`; }
+function recordsHTML(rec){ if(!rec)return''; const rows=rec.map(r=>`<tr><td><b>${r.label}</b></td><td>${r.holder}</td><td style="color:var(--ink-soft)">${r.detail}</td><td><a href="${r.url}" target="_blank" rel="noopener">source ↗</a></td></tr>`).join('');
+  return `<div class="rregion" id="imo-records"><h2 class="region-title"><span>🏆</span> IMO Records</h2><p class="region-sub">A few all-time highs from 65+ years of the competition.</p><div style="overflow:auto"><table class="sltable"><thead><tr><th>Record</th><th>Holder</th><th>Detail</th><th></th></tr></thead><tbody>${rows}</tbody></table></div></div>`; }
 function render(){
-  $('#regionnav').innerHTML=DATA.regions.map(r=>`<a class="tchip" href="#${slug(r.region)}">${r.emoji||''} ${r.region}</a>`).join('');
-  $('#atlasbody').innerHTML=DATA.regions.map(r=>`
-    <div class="rregion" id="${slug(r.region)}">
-      <h2 class="region-title"><span>${r.emoji||''}</span> ${r.region}</h2>
-      ${r.sub?`<p class="region-sub">${r.sub}</p>`:''}
-      <div class="rgrid">${r.entries.map(cardHTML).join('')}</div>
-    </div>`).join('');
+  const nav=[];
+  DATA.regions.forEach((r,i)=>{ nav.push(`<a class="tchip" href="#${slug(r.region)}">${r.emoji||''} ${r.region}</a>`); if(i===0){ nav.push('<a class="tchip" href="#india-at-the-imo">🇮🇳 India at the IMO</a>'); nav.push('<a class="tchip" href="#imo-records">🏆 Records</a>'); } });
+  $('#regionnav').innerHTML=nav.join('');
+  let body=regionHTML(DATA.regions[0])+indiaHTML(DATA.india)+recordsHTML(DATA.records);
+  for(let i=1;i<DATA.regions.length;i++) body+=regionHTML(DATA.regions[i]);
+  $('#atlasbody').innerHTML=body;
 }
 function initChrome(){
   // search
   $('#q').addEventListener('input',e=>{
     const q=e.target.value.toLowerCase().trim();
     document.querySelectorAll('.rcard').forEach(c=>{c.style.display=(!q||c.dataset.txt.includes(q))?'':'none';});
-    document.querySelectorAll('.rregion').forEach(r=>{const any=[...r.querySelectorAll('.rcard')].some(c=>c.style.display!=='none');r.style.display=any?'':'none';});
+    document.querySelectorAll('.rregion').forEach(r=>{const cards=r.querySelectorAll('.rcard');if(cards.length===0){r.style.display=q?'none':'';return;}const any=[...cards].some(c=>c.style.display!=='none');r.style.display=any?'':'none';});
   });
   // reveal
   const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{threshold:.08});

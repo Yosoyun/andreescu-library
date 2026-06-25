@@ -157,8 +157,8 @@
       }
      ],
      "aopsUrl": "",
-     "stat": "rising",
-     "notes": "India's team has won multiple golds and finished inside the top 10 in recent years — the home pipeline is IOQM → RMO → INMO → IMOTC."
+     "stat": "23 golds",
+     "notes": "All-time 23 gold / 179 medals (26th). Top-10 three years running: #9 (2023), #4 (2024, best-ever), #7 (2025, record score 193/252). Pipeline: IOQM → RMO → INMO → IMOTC."
     },
     {
      "name": "China",
@@ -472,7 +472,7 @@
   {
    "region": "Legends — IMO Alumni Who Changed Mathematics",
    "emoji": "⭐",
-   "sub": "A medal at 17 is often just the start. These contestants went on to the Fields Medal and historic results — proof of where this path can lead.",
+   "sub": "A medal at 17 is often just the start — these contestants went on to the Fields Medal, the Abel Prize and historic results. Proof of where this path can lead.",
    "entries": [
     {
      "name": "Terence Tao",
@@ -665,8 +665,210 @@
      "aopsUrl": "",
      "stat": "6 medals",
      "notes": ""
+    },
+    {
+     "name": "László Lovász",
+     "flag": "🇭🇺",
+     "official": "Three golds (1964–66) · Abel Prize 2021",
+     "officialUrl": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Lov%C3%A1sz",
+     "links": [
+      {
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/L%C3%A1szl%C3%B3_Lov%C3%A1sz",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "Abel Prize",
+     "notes": ""
+    },
+    {
+     "name": "Grigory Margulis",
+     "flag": "🇷🇺",
+     "official": "Silver 1962 · Fields Medal 1978",
+     "officialUrl": "https://en.wikipedia.org/wiki/Grigory_Margulis",
+     "links": [
+      {
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Grigory_Margulis",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "Fields Medal",
+     "notes": ""
+    },
+    {
+     "name": "Vladimir Drinfeld",
+     "flag": "🇺🇦",
+     "official": "Perfect gold 1969 · Fields Medal 1990",
+     "officialUrl": "https://en.wikipedia.org/wiki/Vladimir_Drinfeld",
+     "links": [
+      {
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Vladimir_Drinfeld",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "Fields Medal",
+     "notes": ""
+    },
+    {
+     "name": "Jean-Christophe Yoccoz",
+     "flag": "🇫🇷",
+     "official": "Two golds (1973–74) · Fields Medal 1994",
+     "officialUrl": "https://en.wikipedia.org/wiki/Jean-Christophe_Yoccoz",
+     "links": [
+      {
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Jean-Christophe_Yoccoz",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "Fields Medal",
+     "notes": ""
+    },
+    {
+     "name": "Laurent Lafforgue",
+     "flag": "🇫🇷",
+     "official": "Two silvers · Fields Medal 2002",
+     "officialUrl": "https://en.wikipedia.org/wiki/Laurent_Lafforgue",
+     "links": [
+      {
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Laurent_Lafforgue",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "Fields Medal",
+     "notes": ""
+    },
+    {
+     "name": "Noam Elkies",
+     "flag": "🇺🇸",
+     "official": "Perfect gold 1982 · youngest tenured Harvard professor",
+     "officialUrl": "https://en.wikipedia.org/wiki/Noam_Elkies",
+     "links": [
+      {
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Noam_Elkies",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "Perfect score",
+     "notes": ""
+    },
+    {
+     "name": "Po-Shen Loh",
+     "flag": "🇺🇸",
+     "official": "Silver 1999 · USA IMO head coach (2014–)",
+     "officialUrl": "https://en.wikipedia.org/wiki/Po-Shen_Loh",
+     "links": [
+      {
+       "label": "Read on Wikipedia",
+       "url": "https://en.wikipedia.org/wiki/Po-Shen_Loh",
+       "note": ""
+      }
+     ],
+     "aopsUrl": "",
+     "stat": "USA coach",
+     "notes": ""
     }
    ]
+  }
+ ],
+ "india": {
+  "firstYear": 1989,
+  "allTime": {
+   "gold": 23,
+   "silver": 76,
+   "bronze": 80,
+   "total": 179,
+   "rank": 26
+  },
+  "best": {
+   "rank": 4,
+   "year": 2024
+  },
+  "officialUrl": "https://www.imo-official.org/country_team_r.aspx?code=IND",
+  "individualUrl": "https://www.imo-official.org/country_individual_r.aspx?code=IND",
+  "note": "India first competed in 1989 and has placed in the top 10 for three straight years. The home pipeline is IOQM → RMO → INMO → IMOTC, run by HBCSE.",
+  "recent": [
+   {
+    "year": 2025,
+    "host": "Australia",
+    "rank": 7,
+    "g": 3,
+    "s": 2,
+    "b": 1,
+    "note": "Record team score 193/252 — India's highest ever"
+   },
+   {
+    "year": 2024,
+    "host": "Bath, UK",
+    "rank": 4,
+    "g": 4,
+    "s": 1,
+    "b": 0,
+    "note": "Best-ever rank & gold haul (+1 honourable mention)"
+   },
+   {
+    "year": 2023,
+    "host": "Chiba, Japan",
+    "rank": 9,
+    "g": 2,
+    "s": 2,
+    "b": 2,
+    "note": ""
+   }
+  ]
+ },
+ "records": [
+  {
+   "label": "Most IMO medals",
+   "holder": "Zhuo Qun (Alex) Song 🇨🇦",
+   "detail": "6 medals — five gold (one perfect, 2015) + a bronze",
+   "url": "https://www.imo-official.org/hall.aspx"
+  },
+  {
+   "label": "Most perfect scores",
+   "holder": "Ciprian Manolescu 🇷🇴",
+   "detail": "42/42 in all three years he competed (1995–97)",
+   "url": "https://en.wikipedia.org/wiki/Ciprian_Manolescu"
+  },
+  {
+   "label": "First to win four golds",
+   "holder": "Reid Barton 🇺🇸",
+   "detail": "Gold every year 1998–2001 (also 4× Putnam Fellow)",
+   "url": "https://en.wikipedia.org/wiki/Reid_W._Barton"
+  },
+  {
+   "label": "Youngest gold medalist",
+   "holder": "Terence Tao 🇦🇺",
+   "detail": "Gold at age 13 in 1988",
+   "url": "https://en.wikipedia.org/wiki/Terence_Tao"
+  },
+  {
+   "label": "First perfect team score",
+   "holder": "United States 🇺🇸",
+   "detail": "252/252 in 1994 — the team Titu Andreescu coached",
+   "url": "https://en.wikipedia.org/wiki/International_Mathematical_Olympiad"
+  },
+  {
+   "label": "Most team titles",
+   "holder": "China 🇨🇳",
+   "detail": "Topped the team table ~25 times (through 2025)",
+   "url": "https://en.wikipedia.org/wiki/List_of_countries_by_medal_count_at_International_Mathematical_Olympiad"
+  },
+  {
+   "label": "Founded",
+   "holder": "The IMO",
+   "detail": "First held in 1959 in Romania — the oldest international science olympiad",
+   "url": "https://en.wikipedia.org/wiki/International_Mathematical_Olympiad"
   }
  ]
 }
